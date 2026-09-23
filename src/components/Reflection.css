@@ -1,0 +1,106 @@
+.reflection-section {
+  padding: 100px 20px;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+}
+
+.reflection-container {
+  max-width: 900px;
+  margin: 0 auto;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.reflection-glow {
+  position: absolute;
+  top: -100px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.2) 0%, transparent 70%);
+  pointer-events: none;
+  animation: glowPulse 4s ease-in-out infinite;
+}
+
+@keyframes glowPulse {
+  0%, 100% {
+    opacity: 0.5;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.8;
+    transform: translateX(-50%) scale(1.1);
+  }
+}
+
+.reflection-title {
+  font-size: clamp(1.7rem, 4vw, 2.5rem);
+  line-height: 1.2;
+  color: var(--white);
+  margin-bottom: 24px;
+  font-weight: 700;
+  letter-spacing: -0.3px;
+}
+
+.reflection-text {
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 40px;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  font-weight: 400;
+}
+
+.reflection-keywords {
+  display: flex;
+  justify-content: center;
+  gap: 24px;
+  flex-wrap: wrap;
+}
+
+.reflection-keywords span {
+  font-size: 0.8rem;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: var(--accent-cyan);
+  padding: 12px 24px;
+  background: rgba(0, 217, 255, 0.1);
+  border: 1px solid rgba(0, 217, 255, 0.3);
+  border-radius: var(--radius-pill);
+  transition: var(--transition);
+}
+
+.reflection-keywords span:hover {
+  background: rgba(0, 217, 255, 0.2);
+  box-shadow: 0 0 30px rgba(0, 217, 255, 0.4);
+  transform: translateY(-4px);
+}
+
+@media (max-width: 640px) {
+  .reflection-section {
+    padding: 80px 20px;
+  }
+
+  .reflection-title {
+    font-size: 1.8rem;
+  }
+
+  .reflection-text {
+    font-size: 1rem;
+  }
+
+  .reflection-keywords {
+    gap: 12px;
+  }
+
+  .reflection-keywords span {
+    font-size: 0.7rem;
+    padding: 10px 18px;
+  }
+}
