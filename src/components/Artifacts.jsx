@@ -15,16 +15,8 @@ const artifactsData = [
     description: 'Dokumentasi media pendukung pembelajaran Informatika.'
   },
   {
-    title: 'LKPD',
-    description: 'Ruang untuk lembar kerja peserta didik dan aktivitas belajar.'
-  },
-  {
     title: 'Asesmen',
     description: 'Tempat mengarsipkan instrumen, rubrik, dan hasil evaluasi.'
-  },
-  {
-    title: 'Jurnal Refleksi',
-    description: 'Catatan refleksi berkala selama mengikuti proses PPG.'
   },
   {
     title: 'Dokumentasi Praktik',
