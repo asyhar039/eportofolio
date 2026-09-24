@@ -49,14 +49,74 @@ function About() {
           </div>
 
           <div className="about-commitment-card">
+            <div className="commitment-glow"></div>
             <div className="commitment-icon">
-              <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <circle cx="12" cy="8" r="6"></circle>
                 <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11"></path>
               </svg>
             </div>
-            <span className="commitment-label">KOMITMEN</span>
-            <h4 className="commitment-title">Pembelajar Seumur Hidup</h4>
+            <div className="commitment-body">
+              <span className="commitment-label">KOMITMEN</span>
+              <h4 className="commitment-title">Pembelajar Seumur Hidup</h4>
+              <p className="commitment-desc">Terus bertumbuh, menginspirasi, dan menghadirkan pembelajaran yang bermakna bagi generasi.</p>
+            </div>
+            <div className="commitment-pattern"></div>
+          </div>
+        </div>
+      </div>
+
+      <div className="about-story">
+        <div className="story-head">
+          <span className="story-label">SEPINTAS TENTANG SAYA</span>
+          <h3>Berakar dari Bumi Pertiwi, Bertumbuh di Era Digital.</h3>
+        </div>
+
+        <div className="story-grid">
+          <div className="story-text">
+            <p>
+              Halo, nama saya <strong>Asyhar Qowiim</strong>. Saya berasal dari Kecamatan Kombeng, Kutai Timur, sebuah wilayah unik yang terus bertransformasi dan menunjukkan perkembangan pesat setiap tahunnya. Daerah kami dianugerahi kesuburan tanah yang luar biasa, menjadikannya lumbung kekayaan hasil bumi seperti minyak kelapa sawit yang luas serta potensi pertambangan batu bara yang melimpah.
+            </p>
+            <p>
+              Tumbuh di lingkungan keluarga pendidik—dengan orang tua sebagai guru SD dan kakak yang mengabdi di pondok pesantren—telah membentuk karakter saya untuk menghargai pengabdian. Sebagai lulusan S1 Informatika dari Universitas Teknologi Yogyakarta angkatan 2025, saya merasa memiliki tanggung jawab besar untuk memastikan bahwa kekayaan alam yang dimiliki Kombeng diimbangi dengan kualitas sumber daya manusia yang mumpuni di era digital.
+            </p>
+            <p>
+              Inspirasi saya untuk menjadi guru profesional berakar dari keinginan melanjutkan estafet perjuangan ayah saya yang telah memasuki masa pensiun, di tengah kondisi daerah yang masih sangat kekurangan tenaga pendidik informatika. Tujuan saya adalah pulang dan mengabdi untuk menjembatani kesenjangan literasi digital, sehingga generasi muda di Kalimantan Timur tidak hanya menjadi penonton dalam kemajuan daerahnya, tetapi mampu menjadi inovator yang mengelola potensi lokal dengan teknologi modern.
+            </p>
+            <p className="story-commit">
+              Saya berkomitmen penuh untuk mendedikasikan ilmu saya demi mencetak generasi yang kompetitif dan siap menghadapi tantangan masa depan.
+            </p>
+          </div>
+
+          <div className="story-facts">
+            <div className="fact-card">
+              <span className="fact-icon">📍</span>
+              <div>
+                <strong>Kombeng, Kutai Timur</strong>
+                <span>Kalimantan Timur</span>
+              </div>
+            </div>
+            <div className="fact-card">
+              <span className="fact-icon">🌱</span>
+              <div>
+                <strong>Keluarga Pendidik</strong>
+                <span>Guru SD & Abdi Pondok Pesantren</span>
+              </div>
+            </div>
+            <div className="fact-card">
+              <span className="fact-icon">🎓</span>
+              <div>
+                <strong>S1 Informatika</strong>
+                <span>Universitas Teknologi Yogyakarta · 2025</span>
+              </div>
+            </div>
+            <div className="fact-card">
+              <span className="fact-icon">🎯</span>
+              <div>
+                <strong>Mengabdi untuk Daerah</strong>
+                <span>Jembatani literasi digital generasi muda</span>
+              </div>
+            </div>
           </div>
         </div>
       </div>
