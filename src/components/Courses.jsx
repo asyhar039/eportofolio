@@ -151,9 +151,9 @@ const coursesData = [
           ]
         },
         {
-          name: 'Evaluasi, Refleksi dan Memaknai Rencana Tindak Lanjut Pelaksanaan Pembelajaran Mendalam dan Asesmen',
+          name: 'Evaluasi, Refleksi dan Memaknai Pelaksanaan Pembelajaran Mendalam dan Asesmen',
           learningObjectives: [
-            'Mahasiswa mampu mengevaluasi pelaksanaan pembelajaran dan asesmen, melakukan refleksi kritis, dan merumuskan tindak lanjut perbaikan berbasis temuan dan data hasil belajar.'
+            'Mahasiswa mampu mengevaluasi pelaksanaan pembelajaran dan asesmen, melakukan refleksi kritis, dan merumuskan langkah perbaikan berbasis temuan dan data hasil belajar.'
           ]
         }
       ]

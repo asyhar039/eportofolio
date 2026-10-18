@@ -31,7 +31,7 @@ const semesterData = {
       competencies: [
         'Reflektif & Kolaboratif',
         'Diferensiasi & Analisis Profiling',
-        'Penyusunan Modul & Aksi Nyata (RTL)'
+        'Penyusunan Modul & Aksi Nyata'
       ],
       reflection: 'Pembelajaran menjadi jauh lebih bermakna ketika pendidik mampu melihat perbedaan dan kompleksitas peserta didik bukan sebagai hambatan, melainkan sebagai fondasi utama untuk merancang strategi pembelajaran yang inklusif, kontekstual, dan berpihak pada tumbuh kembang seluruh murid secara utuh.'
     },
