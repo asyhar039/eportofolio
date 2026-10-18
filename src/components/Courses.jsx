@@ -306,6 +306,78 @@ const reflectionData = {
       'Artefak ini merekam bukti otentik pelaksanaan mengajar di sekolah mitra, identifikasi kendala nyata kelas, serta rencana tindakan perbaikan berorientasi umpan balik pamong.',
       'Bagian uraian kendala waktu/keaktifan siswa (poin A.2-3) dan lembar refleksi perubahan rancangan pembelajaran berbasis umpan balik pamong (poin B.1-2).'
     ]
+  },
+  '07': {
+    topic: 'Topik 2: Pengembangan Keprofesian Berkelanjutan (PKB)',
+    connection: 'PKB menguatkan peran guru sebagai praktisi reflektif dan ilmuwan pendidik. Pemahaman ontologi, epistemologi, dan aksiologi membantu saya mengkaji masalah kelas dengan metode yang dapat dipertanggungjawabkan.',
+    challenge: 'Saya perlu mengubah laporan yang sebelumnya cenderung deskriptif dan subjektif menjadi kajian berbasis data, instrumen yang valid dan reliabel, serta penalaran ilmiah yang tepat.',
+    concept: 'Konsep utama meliputi filsafat ilmu, penalaran Deductive Nomological dan Inductive Statistical, sarana berpikir ilmiah (bahasa, matematika, statistika), teori kebenaran rasional-empirik-transendental, serta etika penelitian.',
+    change: 'Saya akan membiasakan pengajaran berbasis bukti, mendokumentasikan praktik baik, menguji kualitas instrumen, menulis dengan logika yang koheren, dan menjaga integritas akademik.',
+    artifacts: [
+      'Laporan LMS “Analisis Best Practice dan Tes Formatif Karya Tulis Ilmiah (KTI)” serta laporan Best Practice Moch. Basuni tentang pendekatan Scientific dan Problem Based Learning berorientasi HOTS.',
+      'Artefak menunjukkan kemampuan menganalisis karya dari landasan filosofis hingga metode, instrumen, dan etika ilmiah.',
+      'Bagian identifikasi ontologi-epistemologi-aksiologi, analisis penalaran induktif-statistik dan validitas-reliabilitas, teori kebenaran ilmiah, serta etika dan tanggung jawab ilmuwan.'
+    ]
+  },
+  '08': {
+    topic: 'Topik 4: Pembelajaran Mendalam dan Asesmen Lanjut di SMK',
+    connection: 'Pembelajaran mendalam menghubungkan pemahaman konsep, keterampilan praktik, dan sikap profesional. Informatika dapat dikontekstualisasikan dengan bidang keahlian, seperti basis data inventaris bengkel TKR atau e-commerce Tata Busana.',
+    challenge: 'Tantangannya adalah mengatasi pembelajaran yang terpisah dari kompetensi kejuruan dan merancang asesmen autentik yang relevan dengan pemecahan masalah serta standar dunia usaha dan dunia industri (DUDI).',
+    concept: 'Saya mempelajari experiential learning, keterkaitan pembelajaran dengan model vokasi (Kewirausahaan, Teaching Factory, Kelas Industri, dan PKL), alur belajar Fase X–XII, kontekstualisasi lintas disiplin, dan asesmen berbasis unjuk kerja serta SOP.',
+    change: 'Saya akan merancang modul Informatika lintas disiplin, menggunakan rubrik unjuk kerja yang mengukur kepatuhan SOP dan kualitas solusi, serta berkolaborasi dengan guru kejuruan dan instruktur industri.',
+    artifacts: [
+      'Tugas LMS “2.C. Diskusi Pemecahan Kasus: Alternatif Solusi Pembelajaran Mendalam di SMK” yang disusun bersama Kelompok 4.',
+      'Artefak dipilih karena memuat alur pembelajaran vokasi berjenjang, proyek Informatika kontekstual, dan rancangan asesmen autentik terintegrasi DUDI.',
+      'Bagian pemetaan experiential learning, proyek basis data inventaris bengkel TKR dan e-commerce Tata Busana, serta strategi asesmen unjuk kerja dan kepatuhan SOP.'
+    ]
+  },
+  '09': {
+    topic: 'Topik 1: Pembelajaran Sosial Emosional (PSE)',
+    connection: 'PSE mengingatkan saya bahwa pembelajaran Informatika juga perlu memperhatikan kesiapan emosi murid. Saat menghadapi error atau ketidakcocokan data, murid membutuhkan dukungan untuk mengelola frustrasi dan tetap tekun memecahkan masalah.',
+    challenge: 'Saya perlu beralih dari fokus pada ketuntasan teknis dan perbaikan instan menuju pendampingan yang melatih regulasi emosi murid, sekaligus menjaga kestabilan emosi saya sebagai pendidik.',
+    concept: 'Konsep utama mencakup lima kompetensi CASEL: kesadaran diri, manajemen diri, kesadaran sosial, keterampilan berelasi, dan pengambilan keputusan bertanggung jawab. Praktiknya meliputi Roda Emosi, teknik STOP, umpan balik Apresiasi-Saran-Pertanyaan, dan etika digital.',
+    change: 'Saya akan mengintegrasikan PSE dalam modul ajar, memulai kelas dengan check-in emosi dan latihan STOP, mendampingi murid saat menemui kendala teknis, serta menggunakan jurnal refleksi dan rubrik PSE.',
+    artifacts: [
+      'Tugas LMS Ruang Kolaborasi “1.D. Analisis dan Sintesis Pembelajaran Sosial Emosional (PSE) di Lingkungan Sekolah” dan Modul Ajar Informatika Kelas X terintegrasi PSE.',
+      'Keduanya menghubungkan pemetaan konsep CASEL dengan praktik nyata, seperti latihan STOP, Roda Emosi, rubrik PSE, dan jurnal refleksi murid.',
+      'Bagian matriks kompetensi PSE, kegiatan pendahuluan dengan check-in emosi dan STOP, umpan balik santun, jurnal refleksi, serta rubrik asesmen PSE skala 1–4.'
+    ]
+  },
+  '10': {
+    topic: 'Topik 3: Praktik Pengalaman Lapangan (PPL) Mandiri',
+    connection: 'PPL Mandiri menghubungkan teori pedagogik dan penguasaan Informatika dengan praktik mengajar di SMA Negeri 11 Yogyakarta. Analogi sorting dan searching dengan buku membantu menjembatani algoritma abstrak dengan pengalaman sehari-hari murid.',
+    challenge: 'Saya menghadapi keterbatasan waktu untuk diskusi dan presentasi, partisipasi murid yang belum merata, serta kebutuhan menyelaraskan tujuan, LKPD, dan asesmen dengan kesiapan belajar Fase E.',
+    concept: 'Pembelajaran kontekstual dan computational thinking, kolaborasi kelompok kecil, penyelarasan modul ajar berdasarkan umpan balik Guru Pamong, serta manajemen waktu dan pengelolaan kelas.',
+    change: 'Saya akan merinci alokasi waktu tiap tahap, memakai media dan gamifikasi untuk meningkatkan partisipasi, menindaklanjuti masukan Guru Pamong dan DPL, serta melakukan refleksi setelah mengajar.',
+    artifacts: [
+      'Dokumen LK 3 Refleksi Praktik Mengajar Terbimbing PPL Mandiri yang disetujui Guru Pamong dan DPL, serta Modul Ajar Informatika Fase E tentang sorting dan searching beserta LKPD dan instrumen penilaian.',
+      'Artefak merekam praktik mengajar, keberhasilan penggunaan analogi kontekstual, kendala kelas, umpan balik pembimbing, dan rencana perbaikan.',
+      'Bagian kegiatan pembelajaran yang berhasil, kegiatan dan hambatan yang belum maksimal, umpan balik Guru Pamong dan DPL, serta rencana perbaikan pembelajaran.'
+    ]
+  },
+  '11': {
+    topic: 'Topik 5: Seminar Pendidikan Profesi Guru (Seminar PPG)',
+    connection: 'Seminar PPG menguatkan refleksi berbasis data dan komunikasi ilmiah. Visi pendidikan yang inklusif dan humanis berlandaskan Ki Hadjar Dewantara menjadi arah bagi saya sebagai pamong, fasilitator, dan calon guru yang reflektif.',
+    challenge: 'Saya belajar beralih dari refleksi naratif-subjektif ke refleksi berbasis bukti, sekaligus memilih dan mengkurasi artefak lintas mata kuliah agar perkembangan kompetensi tersampaikan secara runtut.',
+    concept: 'Konsep pentingnya adalah identifikasi diri, refleksi model 4C, penyusunan karya inovasi, diseminasi melalui seminar dan portofolio digital, komunikasi ilmiah, serta penilaian autentik.',
+    change: 'Saya akan memperbarui portofolio digital secara konsisten, membangun kebiasaan refleksi berbasis bukti dan PTK, serta menjalankan lima langkah strategis LK 1 dalam praktik pembelajaran.',
+    artifacts: [
+      'Dokumen “LK 1 Identifikasi Diri - Seminar Pendidikan Guru” dan portofolio digital yang memuat refleksi LK 2 serta artefak pembelajaran PPG Semester II.',
+      'LK 1 menjadi dasar refleksi dan pengembangan profesi karena memuat visi pendidikan, landasan Ki Hadjar Dewantara, dan rencana aksi calon guru.',
+      'Bagian visi pendidikan Indonesia, visi calon guru sebagai pamong dan agent of change, serta lima langkah strategis: diferensiasi, integrasi PSE, PTK, teknologi digital, dan Komunitas Belajar.'
+    ]
+  },
+  '12': {
+    topic: 'Topik 6: Projek Kepemimpinan',
+    connection: 'Projek Kepemimpinan menghubungkan personal leadership dan growth mindset dengan pemecahan masalah nyata di sekolah. Tim merancang sistem presensi digital berbasis QR Code untuk mendukung efisiensi dan transparansi di SMAN 11 Yogyakarta.',
+    challenge: 'Saya belajar menyelaraskan delapan anggota tim, mengelola perbedaan pendapat, mengatur sumber daya dan milestones, serta bertahan saat menghadapi kendala teknis dan adaptasi pengguna.',
+    concept: 'Konsepnya mencakup growth mindset, personal leadership, tujuh elemen perancangan projek, komunikasi efektif, pengelolaan konflik, eksekusi agile, dan pemberdayaan sekolah melalui teknologi.',
+    change: 'Saya akan berinisiatif menghadirkan solusi teknologi yang kontekstual, memimpin secara kolaboratif, mengelola konflik dengan empati, serta mengevaluasi milestones dan menyesuaikan langkah secara luwes.',
+    artifacts: [
+      'Mindmap “2.3.a. Tugas 5.1. Mindmap Kelompok A2 Fix” tentang sistem presensi digital QR Code dan Panduan Projek Kepemimpinan PPG.',
+      'Artefak menunjukkan penerjemahan growth mindset, kepemimpinan personal, komunikasi, dan pengelolaan konflik ke dalam perencanaan projek kolaboratif.',
+      'Mindmap tujuh elemen perencanaan projek, serta Panduan Projek Kepemimpinan subbab latar belakang, tujuan, dan manfaat.'
+    ]
   }
 }
 
@@ -315,7 +387,7 @@ function Courses({ onViewCourse, onViewReflection }) {
   const [activeCategory, setActiveCategory] = useState('Semua')
   const filteredCourses = useMemo(() => {
     if (activeCategory === 'Semua') return coursesData
-    if (activeCategory === 'Refleksi') return coursesData.filter(course => course.semester === 1)
+    if (activeCategory === 'Refleksi') return coursesData.filter(course => reflectionData[course.number])
     return coursesData.filter(course => course.category === activeCategory)
   }, [activeCategory])
 
