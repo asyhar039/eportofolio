@@ -103,33 +103,99 @@ const semesterData = {
   semester2: [
     {
       number: '01',
-      title: 'Pengembangan Keprofesian Berkelanjutan',
-      summary: 'Dokumentasi pembelajaran dan pengembangan kompetensi profesional secara berkelanjutan.'
+      title: 'Pembelajaran Sosial Emosional',
+      summary: 'Pengembangan kesiapan mental, regulasi emosi (CASEL), dan iklim interaksi positif peserta didik dalam laboratorium komputer.',
+      learnings: [
+        'Implementasi 5 Kompetensi Sosial Emosional (CASEL)',
+        'Latihan Berkesadaran Penuh (Mindfulness) & Teknik S-T-O-P 2 Menit',
+        'Regulasi Frustrasi Murid Saat Kendala Teknis & Resiliensi Guru'
+      ],
+      competencies: [
+        'Penyusunan RPP/Modul Ajar Responsif Emosi',
+        'Pendampingan Regulasi Emosi Belajar Siswa',
+        'Pencegahan Burnout & Resiliensi Pendidik'
+      ],
+      reflection: 'Penguasaan konsep teknis Informatika tidak dapat dipisahkan dari kesiapan emosi siswa. Melalui PSE, guru hadir menuntun ketahanan emosional (resilience), kolaborasi tim yang sehat, serta etika digital saat memecahkan masalah komputasional.'
     },
     {
       number: '02',
-      title: 'Pembelajaran Mendalam dan Asesmen Lanjut SMK',
-      summary: 'Ruang dokumentasi perancangan pembelajaran mendalam dan asesmen lanjut pada konteks SMK.'
+      title: 'Pengembangan Keprofesian Berkelanjutan',
+      summary: 'Dokumentasi pembelajaran dan pengembangan kompetensi profesional secara berkelanjutan melalui filsafat ilmu, Best Practice, dan Karya Tulis Ilmiah (KTI).',
+      learnings: [
+        'Struktur Filosofis Best Practice (Ontologi, Epistemologi, Aksiologi)',
+        'Model Penalaran Deduktif-Nomologikal & Induktif-Statistik',
+        'Triad Sarana Berpikir Ilmiah & Etika Publikasi Penelitian'
+      ],
+      competencies: [
+        'Praktisi Reflektif & Ilmuwan Pendidik',
+        'Penyusunan Best Practice Berbasis Bukti',
+        'Integritas & Etika Riset Ilmiah'
+      ],
+      reflection: 'Pengembangan keprofesian menjadi bermakna ketika pendidik bertransformasi menjadi praktisi reflektif dan peneliti yang menguji setiap tindakan pembelajaran berbasis data empiris terukur, instrumen yang valid, serta menjunjung tinggi etika akademik.'
     },
     {
       number: '03',
-      title: 'Pembelajaran Sosial Emosional',
-      summary: 'Dokumentasi pengembangan pembelajaran yang memperhatikan aspek sosial dan emosional peserta didik.'
+      title: 'Praktik Pengalaman Lapangan (PPL) Mandiri',
+      summary: 'Dokumentasi pelaksanaan praktik mengajar mandiri di SMA Negeri 11 Yogyakarta pada materi logika algoritma sorting dan searching.',
+      learnings: [
+        'Penggunaan Analogi Nyata Kontekstual Algoritma Sorting & Searching',
+        'Penyelarasan Modul Ajar Berbasis Masukan Pamong dan DPL',
+        'Pengelolaan Manajemen Waktu & Strategi Mengaktifkan Murid Pasif'
+      ],
+      competencies: [
+        'Pengajaran Konsep Komputasional Abstrak (Computational Thinking)',
+        'Manajemen Waktu & Pengelolaan Kelas Laboratorium',
+        'Evaluasi Tindakan Mengajar Berkelanjutan (Action-Reflection)'
+      ],
+      reflection: 'PPL Mandiri mempertegas peran guru bukan sekadar penyampai sintaks, melainkan pembimbing ketangkasan berpikir kritis yang mampu menjembatani materi abstrak dengan analogi nyata sehari-hari serta sigap menata manajemen waktu kelas.'
     },
     {
       number: '04',
-      title: 'Yogyakarta_Praktik Pengalaman Lapangan (PPL) Mandiri',
-      summary: 'Dokumentasi pelaksanaan praktik pengalaman lapangan mandiri di Yogyakarta.'
+      title: 'Pembelajaran Mendalam dan Asesmen Lanjut SMK',
+      summary: 'Perancangan pembelajaran mendalam (deep learning) dan asesmen autentik berorientasi dunia usaha dan dunia industri (DUDI) pada konteks SMK.',
+      learnings: [
+        'Integrasi Deep Learning pada 4 Model Vokasi (TeFa, Kelas Industri, PKL)',
+        'Kontekstualisasi Lintas Disiplin (Cross-Curricular Informatics)',
+        'Perancangan Asesmen Autentik Berstandar SOP Industri'
+      ],
+      competencies: [
+        'Desain Pembelajaran Vokasi Berjenjang (Fase X–XII)',
+        'Pengembangan Asesmen Kepatuhan SOP & Unjuk Kerja',
+        'Kolaborasi Teaching Factory & Mitra Industri'
+      ],
+      reflection: 'Pembelajaran Informatika di SMK menjadi sangat bernilai ketika dikontekstualisasikan secara nyata dengan keahlian kejuruan siswa (seperti inventaris bengkel TKR atau e-commerce Tata Busana) dan diukur melalui asesmen autentik standar DUDI.'
     },
     {
       number: '05',
       title: 'Seminar Pendidikan Profesi Guru',
-      summary: 'Ruang dokumentasi kegiatan seminar, presentasi, dan diseminasi hasil pembelajaran PPG.'
+      summary: 'Refleksi pengalaman belajar berbasis data, kurasi portofolio digital komprehensif, dan diseminasi karya inovasi calon guru profesional.',
+      learnings: [
+        'Konstruksi Identifikasi Diri & Visi Pendidikan Ki Hadjar Dewantara (LK 1)',
+        'Sintesis Refleksi 4C & Kurasi Artefak Fisik Lintas Mata Kuliah',
+        'Strategi Komunikasi Ilmiah & Presentasi Karya Inovasi Pendidikan'
+      ],
+      competencies: [
+        'Refleksi Berbasis Bukti Nyata (Evidence-Based Practitioner)',
+        'Pengelolaan Portofolio Digital Berkelanjutan',
+        'Advokasi & Komunikasi Gagasan Inovasi Pendidikan'
+      ],
+      reflection: 'Seminar PPG menguatkan jati diri calon pendidik sebagai pamong, fasilitator, dan agen perubahan yang memiliki visi inklusif-humanis serta membiasakan refleksi berbasis data yang dapat dipertanggungjawabkan.'
     },
     {
       number: '06',
       title: 'Projek Kepemimpinan',
-      summary: 'Dokumentasi projek kepemimpinan sebagai bagian dari penguatan peran profesional calon guru.'
+      summary: 'Dokumentasi perancangan sistem presensi digital berbasis QR Code di SMAN 11 Yogyakarta berbasis personal leadership, growth mindset, dan kerja tim.',
+      learnings: [
+        'Penerapan Personal Leadership & Growth Mindset dalam Tim Kolaboratif',
+        'Tujuh Elemen Perancangan Projek & Eksekusi Bertahap (Agile)',
+        'Komunikasi Efektif, Manajemen Konflik, & Transformasi Digital Sekolah'
+      ],
+      competencies: [
+        'Kepemimpinan Personal & Pemecahan Masalah Kolaboratif',
+        'Inovasi Tata Kelola Digital Lingkungan Sekolah',
+        'Resiliensi Menghadapi Hambatan Teknis & Adaptasi Pengguna'
+      ],
+      reflection: 'Kepemimpinan sejati dibuktikan melalui inisiatif nyata menjawab kebutuhan sekolah, mengubah perbedaan pendapat menjadi kekuatan sinergis, serta menghadirkan solusi teknologi kontekstual yang memberdayakan ekosistem pendidikan.'
     }
   ]
 }

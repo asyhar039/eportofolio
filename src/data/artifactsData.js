@@ -15,9 +15,9 @@ export const seminarWorksheets = [
     date: 'Semester I',
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
-    pdfUrl: '/assets/LK_2_Refleksi_Pembelajaran_semester_1.pdf',
+    pdfUrl: '/assets/LK_2_Refleksi_Pembelajaran%20semester%201.pdf',
     pdfFileName: 'LK_2_Refleksi_Pembelajaran semester 1.pdf',
-    pdfSize: '170 KB',
+    pdfSize: '77 KB',
     summary: 'Refleksi komprehensif alur 4C (Connection, Challenge, Concept, Change) dan analisis bukti dukung artefak pembelajaran untuk 6 mata kuliah inti Semester I: Filosofi Pendidikan & Nilai, Pemahaman Peserta Didik, Growth Mindset, Pembelajaran Kreatif & Inovatif, PMA Dasar, dan PPL Terbimbing.',
     highlights: [
       'Tersedia Berkas PDF Asli: LK_2_Refleksi_Pembelajaran semester 1.pdf',
@@ -282,12 +282,12 @@ export const seminarWorksheets = [
     date: 'Semester II',
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
-    pdfUrl: '/assets/lk-2-refleksi-pengalaman-belajar-semester-2.pdf',
-    pdfFileName: 'lk-2-refleksi-pengalaman-belajar-semester-2.pdf',
-    pdfSize: '183 KB',
+    pdfUrl: '/assets/lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar%20Qowiim.pdf',
+    pdfFileName: 'lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar Qowiim.pdf',
+    pdfSize: '178 KB',
     summary: 'Refleksi mendalam 4C (Connection, Challenge, Concept, Change) dan bukti artefak LMS untuk 6 mata kuliah Semester II: Pembelajaran Sosial Emosional (PSE), Pengembangan Keprofesian Berkelanjutan (PKB), PPL Mandiri SMAN 11 Yogyakarta, PMA Lanjut SMK, Seminar PPG, dan Projek Kepemimpinan.',
     highlights: [
-      'Tersedia Berkas PDF Asli: lk-2-refleksi-pengalaman-belajar-semester-2.pdf',
+      'Tersedia Berkas PDF Asli: lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar Qowiim.pdf',
       '6 Topik Refleksi Mata Kuliah Inti Semester II',
       'Refleksi Berbasis Sintesis Nyata 4C & Bukti Artefak LMS',
       'Dokumentasi Teruji PPL Mandiri & Projek Presensi QR Code SMAN 11',
@@ -298,15 +298,15 @@ export const seminarWorksheets = [
         id: 'sem2-t1',
         topicNumber: 'Topik 1',
         title: 'Pembelajaran Sosial Emosional (PSE)',
-        descriptionMeta: 'Refleksi pengalaman belajar mata kuliah Pembelajaran Sosial Emosional (Semester II) berdasarkan penugasan LMS Ruang Kolaborasi 1.D dan Aksi Nyata Modul Ajar Informatika Kelas X SMA Negeri 11 Yogyakarta.',
+        descriptionMeta: 'Refleksi pengalaman belajar mata kuliah Pembelajaran Sosial Emosional (Semester II) berdasarkan penugasan LMS Ruang Kolaborasi 1.D dan Aksi Nyata Modul Ajar Informatika Kelas X SMA.',
         reflection4C: {
           connection: {
             question: '1. Apa keterkaitan materi perkuliahan dengan peran saya sebagai calon guru?',
-            answer: 'Materi Pembelajaran Sosial Emosional (PSE) mengaitkan pemahaman psikologis, regulasi emosi, dan iklim interaksi peserta didik dengan peran strategis saya sebagai calon guru Informatika di SMA Negeri 11 Yogyakarta. Penguasaan aspek teknis seperti analisis data, pengolahan spreadsheet, maupun perancangan algoritma tidak dapat dipisahkan dari kesiapan mental peserta didik. Ketika siswa mengalami hambatan teknis atau pesan kesalahan (syntax error/data mismatch), mereka rentan mengalami kecemasan atau frustrasi. Melalui PSE, saya menyadari peran guru tidak terbatas pada pengajaran kurikulum kognitif, melainkan mencakup pembimbingan ketahanan emosional (resilience), kolaborasi tim yang sehat, serta keteladanan dalam bersikap tenang dan etis saat memecahkan masalah komputasional.'
+            answer: 'Materi Pembelajaran Sosial Emosional (PSE) mengaitkan pemahaman psikologis, regulasi emosi, dan iklim interaksi peserta didik dengan peran strategis saya sebagai calon guru Informatika. Penguasaan aspek teknis maupun perancangan algoritma tidak dapat dipisahkan dari kesiapan mental peserta didik. Ketika siswa mengalami hambatan teknis atau pesan kesalahan (syntax error/data mismatch), murid rentan mengalami kecemasan atau frustrasi. Melalui PSE, saya menyadari peran guru tidak terbatas pada pengajaran kurikulum kognitif, melainkan mencakup pembimbingan ketahanan emosional (resilience), kolaborasi tim yang sehat, serta keteladanan dalam bersikap tenang dan etis saat memecahkan masalah komputasional.'
           },
           challenge: {
             question: '2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?',
-            answer: 'Tantangan terbesar adalah mendisrupsi kebiasaan mengajar konvensional yang semata-mata berfokus pada ketuntasan materi teknis dan kebenaran formula spreadsheet tanpa memperhatikan dinamika emosi kelas. Sebelumnya, ketika siswa panik menghadapi kendala eror data di laboratorium komputer, respons guru cenderung hanya memberikan perbaikan teknis instan tanpa melatih ketenangan berpikir mandiri siswa. Selain itu, tantangan nyata datang dari pengelolaan emosi pendidik itu sendiri: bagaimana mengelola kelelahan psikologis dan menjaga kestabilan respon saat berhadapan dengan kelas yang pasif atau siswa yang mengalami resistensi belajar.'
+            answer: 'Tantangan terbesar adalah mengubah cara mengajar yang hanya berfokus pada materi dan kode python tanpa memperhatikan emosi siswa. Guru perlu membimbing siswa agar tetap tenang saat menghadapi kesalahan, sekaligus mampu mengendalikan emosi dan menjaga kesabaran ketika menghadapi kelas yang pasif atau siswa yang kurang semangat belajar.'
           },
           concept: {
             question: '3. Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?',
@@ -315,13 +315,13 @@ export const seminarWorksheets = [
 3. Kesadaran Sosial (Social Awareness): Menumbuhkan empati, saling menghargai keragaman kecepatan belajar, dan inklusivitas antaranggota kelompok di ruang kelas.
 4. Keterampilan Berelasi (Relationship Skills): Membangun komunikasi positif, kerja sama tim dalam pengolahan data, dan pemberian umpan balik santun berbasis kerangka Apresiasi – Saran – Pertanyaan.
 5. Pengambilan Keputusan Bertanggung Jawab (Responsible Decision-Making): Menanamkan etika digital, kejujuran penyajian data, dan tanggung jawab atas dampak penggunaan teknologi.
-6. Sinergi PSE dengan BK dan Asesmen: Mengintegrasikan PSE dalam layanan Bimbingan Konseling serta pemanfaatan data asesmen secara komprehensif dan objektif.`
+6. Integrasi PSE dengan Asesmen: Mengintegrasikan pembelajaran sosial emosional (PSE) dengan hasil asesmen untuk memahami kebutuhan siswa secara menyeluruh dan objektif.`
           },
           change: {
             question: '4. Apa saja perubahan yang ingin saya lakukan setelah mendapatkan materi perkuliahan ini?',
             answer: `1. Desain RPP/Modul Ajar Responsif Emosi: Mengintegrasikan 5 kompetensi sosial emosional secara eksplisit ke dalam tahapan pendahuluan, inti, dan penutup pada Modul Ajar Informatika.
 2. Pembiasaan Latihan Berkesadaran Penuh (Mindfulness): Membuka sesi laboratorium komputer dengan identifikasi emosi (Roda Emosi) dan latihan teknik S-T-O-P selama 2 menit untuk membangun kesiapan fokus murid.
-3. Pembimbingan Regulasi Emosi Saat Kendala Teknis: Mendampingi murid mengelola rasa frustrasi saat menghadapi error spreadsheet atau kegagalan program melalui instruksi bernalar tenang.
+3. Pembimbingan Regulasi Emosi Saat Kendala Teknis: Mendampingi murid mengelola rasa frustrasi saat menghadapi error kode python atau kegagalan program melalui instruksi bernalar tenang.
 4. Penerapan Jurnal Refleksi & Resiliensi Guru: Mewajibkan refleksi emosional murid secara berkala dan menjalankan praktik self-care serta diskusi sejawat ("Ruang Refleksi & Resiliensi Emosional Guru") untuk mencegah burnout pendidik.`
           }
         },
@@ -329,12 +329,12 @@ export const seminarWorksheets = [
           {
             label: 'Artefak 1',
             question: '1. Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung?',
-            answer: '1. Tugas LMS Kolaboratif (Ruang Kolaborasi): Dokumen "1.D. Analisis dan Sintesis Pembelajaran Sosial Emosional (PSE) di Lingkungan Sekolah" (Kelompok 3: Arkan Bhanu Kurniadi, Rayhan Pangestu W., dan Asyhar Qowiim).\n2. Dokumen Aksi Nyata Modul Ajar: "Modul Ajar / Rencana Pembelajaran (RPP) Informatika Kelas X SMA Terintegrasi PSE" pada materi Analisis Data di SMA Negeri 11 Yogyakarta.'
+            answer: '1. Tugas LMS Kolaboratif (Ruang Kolaborasi): Dokumen "1.D. Analisis dan Sintesis Pembelajaran Sosial Emosional (PSE) di Lingkungan Sekolah" (Kelompok 3: Arkan Bhanu Kurniadi, Rayhan Pangestu W., dan Asyhar Qowiim).\n2. Dokumen Aksi Nyata Modul Ajar: "Modul Ajar / Rencana Pembelajaran (RPP) Informatika Kelas X SMA Terintegrasi PSE" pada materi Analisis Data.'
           },
           {
             label: 'Artefak 2',
             question: '2. Mengapa artefak tersebut yang saya pilih?',
-            answer: 'Kedua artefak ini dipilih karena menyajikan kesinambungan yang utuh antara pemahaman konseptual-teoretis dan eksekusi operasional di ruang kelas. Dokumen 1.D menyediakan pemetaan sistematis matriks CASEL untuk mata kuliah keahlian, analisis sinergi PSE dengan layanan BK/asesmen, serta rancangan program resiliensi emosi guru. Sementara itu, Modul Ajar Informatika membuktikan kemampuan praktis saya dalam menerapkan latihan STOP, Roda Emosi, rubrik penilaian PSE skala 1–4, dan jurnal refleksi peserta didik dalam pembelajaran Analisis Data di SMA Negeri 11 Yogyakarta.'
+            answer: 'Kedua artefak ini dipilih karena menyajikan kesinambungan yang utuh antara pemahaman konseptual-teoretis dan eksekusi operasional di ruang kelas. Dokumen 1.D menyediakan pemetaan sistematis matriks CASEL untuk mata kuliah keahlian, analisis sinergi PSE dengan layanan BK/asesmen, serta rancangan program resiliensi emosi guru. Sementara itu, Modul Ajar Informatika membuktikan kemampuan praktis saya dalam menerapkan latihan STOP, Roda Emosi, rubrik penilaian PSE skala 1–4, dan jurnal refleksi peserta didik dalam pembelajaran Analisis Data.'
           },
           {
             label: 'Artefak 3',
@@ -342,7 +342,7 @@ export const seminarWorksheets = [
             answer: `• Tugas 1.D — Poin 1 (Tabel Matriks PSE): Menunjukkan pemetaan operasional kompetensi Self-Management saat menghadapi kendala teknis dan Responsible Decision-Making dalam menjaga etika privasi dan keamanan data.
 • Tugas 1.D — Poin 2 & Pertanyaan Diskusi: Merumuskan strategi langsung teknik S-T-O-P dan inisiatif program "Ruang Refleksi & Resiliensi Emosional Guru" untuk memitigasi kelelahan emosional (burnout).
 • Modul Ajar — Poin IV.A (Kegiatan Pendahuluan): Langkah konkret integrasi Check-in Roda Emosi dan latihan kesadaran penuh melalui teknik STOP 2 menit untuk membangun kesiapan belajar siswa.
-• Modul Ajar — Poin IV.B & IV.C (Kegiatan Inti & Penutup): Instruksi regulasi emosi saat error spreadsheet, presentasi dengan format umpan balik santun (Apresiasi – Saran – Pertanyaan), serta lembar evaluasi Jurnal Refleksi PSE.
+• Modul Ajar — Poin IV.B & IV.C (Kegiatan Inti & Penutup): Instruksi regulasi emosi saat error kode python, presentasi dengan format umpan balik santun (Apresiasi – Saran – Pertanyaan), serta lembar evaluasi Jurnal Refleksi PSE.
 • Modul Ajar — Poin V (Rubrik Asesmen PSE): Rubrik pengamatan 4 skala capaian untuk Kesadaran Diri, Pengelolaan Diri, dan Keterampilan Berelasi siswa secara terukur.`
           }
         ]
@@ -674,7 +674,7 @@ export const seminarWorksheets = [
           {
             no: 2,
             program: 'Pengembangan Media Interaktif & Inovasi Pembelajaran Komputasional Berbasis Problem-Based Learning',
-            description: 'Merancang dan menerapkan media pembelajaran digital interaktif, gamifikasi edukatif, serta tugas proyek kontekstual yang mengasah Computational Thinking (seperti studi kasus pengolahan data spreadsheet dan analisis algoritma sorting/searching). Memanfaatkan teknologi presensi digital/QR code untuk membiasakan kedisiplinan.',
+            description: 'Merancang dan menerapkan media pembelajaran digital interaktif, gamifikasi edukatif, serta tugas proyek kontekstual yang mengasah Computational Thinking (seperti studi kasus analisis data komputasi dan analisis algoritma sorting/searching). Memanfaatkan teknologi presensi digital/QR code untuk membiasakan kedisiplinan.',
             indicator: 'Peningkatan partisipasi aktif siswa pasif, peningkatan hasil belajar di atas KKM, dan terciptanya suasana kelas yang kondusif.'
           },
           {
@@ -701,7 +701,7 @@ export const generalArtifacts = [
     date: 'Februari 2026',
     status: 'Telah Diujicobakan di Sekolah Mitra',
     summary: 'Rancangan modul ajar materi Jaringan Komputer dan Algoritma dengan pendekatan Understanding by Design (UbD) dan diferensiasi konten, proses, serta produk.',
-    author: 'Asyhar Qowiim, S.Kom.',
+    author: 'Asyhar Qowiim',
     highlights: [
       'Pendekatan Understanding by Design (UbD)',
       'Diferensiasi Konten, Proses, & Produk',
@@ -730,7 +730,7 @@ export const generalArtifacts = [
     date: 'Maret 2026',
     status: 'Terverifikasi DPL',
     summary: 'Integrasi lima kompetensi CASEL ke dalam kelas praktikum laboratorium komputer: teknik STOP, lembar check-in roda emosi, dan rubrik asesmen sikap kolaboratif.',
-    author: 'Asyhar Qowiim, S.Kom.',
+    author: 'Asyhar Qowiim',
     highlights: [
       'Penerapan 5 Kompetensi Sosial Emosional CASEL',
       'Teknik STOP untuk Mengelola Frustrasi Debugging',
@@ -755,7 +755,7 @@ export const generalArtifacts = [
     date: 'Januari 2026',
     status: 'Diterapkan di Kelas XI SMAN 11 Yogyakarta',
     summary: 'Bundel media ajar interaktif mencakup berkas simulasi file .pkt topologi jaringan, slide interaktif, dan video panduan ringkas konfigurasi perangkat keras jaringan.',
-    author: 'Asyhar Qowiim, S.Kom.',
+    author: 'Asyhar Qowiim',
     highlights: [
       'Topologi Jaringan Virtual Interaktif',
       'Analogi Pengiriman Paket Pesan dalam Kehidupan Riil',
@@ -780,7 +780,7 @@ export const generalArtifacts = [
     date: 'Desember 2025',
     status: 'Validasi Sejawat & Dosen',
     summary: 'Dokumentasi instrumen evaluasi otentik meliputi rubrik penilaian proyek, lembar observasi keaktifan diskusi, tes diagnostik kognitif, dan rubrik portofolio unjuk kerja.',
-    author: 'Asyhar Qowiim, S.Kom.',
+    author: 'Asyhar Qowiim',
     highlights: [
       'Rubrik Skala Deskriptif Analitis Kinerja Coding',
       'Instrumen Observasi Keterampilan Kolaborasi 4C',
@@ -805,7 +805,7 @@ export const generalArtifacts = [
     date: 'Januari - Mei 2026',
     status: 'Disahkan Kepala Sekolah & Dosen',
     summary: 'Laporan komprehensif pelaksanaan asistensi mengajar, pengenalan lingkungan persekolahan, studi kasus penanganan siswa pasif, dan hasil refleksi praktik mengajar mandiri.',
-    author: 'Asyhar Qowiim, S.Kom.',
+    author: 'Asyhar Qowiim',
     highlights: [
       'Studi Kasus Penanganan Pasif Siswa dengan Think-Pair-Share',
       'Dokumentasi Praktik Mengajar Terbimbing dan Mandiri',
@@ -830,7 +830,7 @@ export const generalArtifacts = [
     date: 'Mei 2026',
     status: 'Telah Diimplementasikan Tim Kelompok A2',
     summary: 'Rancang bangun solusi inovasi manajerial sekolah berupa sistem presensi digital berbasis QR Code untuk meningkatkan akurasi kehadiran dan efisiensi waktu piket di SMAN 11 Yogyakarta.',
-    author: 'Asyhar Qowiim, S.Kom. (Koordinator Teknis Tim A2)',
+    author: 'Asyhar Qowiim (Koordinator Teknis Tim A2)',
     highlights: [
       'Penerapan 7 Elemen Perancangan Projek Kolaboratif',
       'Sistem Presensi Real-Time Berbasis Pemindaian QR Code',

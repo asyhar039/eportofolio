@@ -9,6 +9,8 @@ import CourseDetail from './components/CourseDetail'
 import ReflectionDetail from './components/ReflectionDetail'
 import Gallery from './components/Gallery'
 import Artifacts from './components/Artifacts'
+import Seminar from './components/Seminar'
+import PPLMandiri from './components/PPLMandiri'
 import Footer from './components/Footer'
 
 function App() {
@@ -51,8 +53,10 @@ function App() {
       tentang: <About />,
       perjalanan: <Journey />,
       matkul: <Courses onViewCourse={handleViewCourse} onViewReflection={handleViewReflection} />,
-      galeri: <Gallery />,
-      artifak: <Artifacts />
+      seminar: <Seminar />,
+      'ppl-mandiri': <PPLMandiri />,
+      artifak: <Artifacts onNavigate={handleNavigate} />,
+      galeri: <Gallery />
     }
 
     return pages[currentPage] || pages.beranda

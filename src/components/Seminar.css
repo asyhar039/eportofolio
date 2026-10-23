@@ -1,0 +1,693 @@
+/* Styling untuk Halaman Seminar PPG */
+.seminar-section {
+  padding: 100px 20px 80px;
+  max-width: 1240px;
+  margin: 0 auto;
+}
+
+.seminar-hero-banner {
+  background: linear-gradient(135deg, rgba(15, 34, 64, 0.95), rgba(29, 111, 165, 0.9)),
+              radial-gradient(circle at top right, rgba(0, 180, 216, 0.25), transparent);
+  border-radius: 24px;
+  padding: 36px 40px;
+  color: #ffffff;
+  margin-bottom: 32px;
+  box-shadow: 0 16px 40px rgba(15, 34, 64, 0.25);
+  position: relative;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.seminar-hero-banner::before {
+  content: '';
+  position: absolute;
+  top: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(0, 180, 216, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.seminar-badge-top {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 6px 14px;
+  border-radius: 9999px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  color: #90e0ef;
+  margin-bottom: 14px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.seminar-badge-top .pulse-dot {
+  width: 8px;
+  height: 8px;
+  background-color: #00b4d8;
+  border-radius: 50%;
+  box-shadow: 0 0 10px #00b4d8;
+  animation: pulseSeminar 2s infinite;
+}
+
+@keyframes pulseSeminar {
+  0%, 100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+.seminar-hero-banner h1 {
+  font-size: 2.2rem;
+  font-weight: 800;
+  line-height: 1.25;
+  margin: 0 0 12px;
+  color: #ffffff;
+}
+
+.seminar-hero-banner p {
+  font-size: 1.05rem;
+  line-height: 1.65;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 900px;
+  margin: 0 0 24px;
+}
+
+.seminar-stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 16px;
+  padding-top: 16px;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.seminar-stat-card {
+  background: rgba(255, 255, 255, 0.08);
+  border-radius: 14px;
+  padding: 12px 18px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.seminar-stat-val {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #00b4d8;
+  display: block;
+}
+
+.seminar-stat-lbl {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-top: 2px;
+}
+
+/* Sub-Menu / Main Tabs Switcher */
+.seminar-tabs-nav {
+  display: flex;
+  gap: 12px;
+  background: #ffffff;
+  padding: 8px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border: 1px solid #e2e8f0;
+  margin-bottom: 28px;
+}
+
+.seminar-tab-btn {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  border: none;
+  background: transparent;
+  font-size: 1rem;
+  font-weight: 700;
+  color: #475569;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.seminar-tab-btn:hover {
+  background: rgba(29, 111, 165, 0.06);
+  color: #0f2240;
+}
+
+.seminar-tab-btn.active {
+  background: linear-gradient(135deg, #0f2240, #1d6fa5);
+  color: #ffffff;
+  box-shadow: 0 4px 14px rgba(29, 111, 165, 0.35);
+}
+
+.tab-count-badge {
+  background: rgba(255, 255, 255, 0.2);
+  color: inherit;
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 9999px;
+  font-weight: 700;
+}
+
+.seminar-tab-btn:not(.active) .tab-count-badge {
+  background: #e2e8f0;
+  color: #475569;
+}
+
+/* Secondary Controls (Search & Category Filters) */
+.seminar-sub-controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+  margin-bottom: 24px;
+}
+
+.seminar-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.seminar-chip-btn {
+  padding: 8px 16px;
+  border-radius: 9999px;
+  border: 1px solid #cbd5e1;
+  background: #ffffff;
+  color: #475569;
+  font-size: 0.85rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.seminar-chip-btn:hover {
+  border-color: #1d6fa5;
+  color: #1d6fa5;
+  background: #f8fafc;
+}
+
+.seminar-chip-btn.active {
+  background: #1d6fa5;
+  color: #ffffff;
+  border-color: #1d6fa5;
+  box-shadow: 0 2px 8px rgba(29, 111, 165, 0.25);
+}
+
+.seminar-search-input-wrap {
+  position: relative;
+  min-width: 280px;
+}
+
+.seminar-search-input-wrap svg {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: #94a3b8;
+}
+
+.seminar-search-input-wrap input {
+  width: 100%;
+  padding: 10px 16px 10px 42px;
+  border-radius: 12px;
+  border: 1px solid #cbd5e1;
+  font-size: 0.9rem;
+  outline: none;
+  background: #ffffff;
+  transition: border-color 0.2s ease;
+}
+
+.seminar-search-input-wrap input:focus {
+  border-color: #1d6fa5;
+  box-shadow: 0 0 0 3px rgba(29, 111, 165, 0.15);
+}
+
+/* Worksheets Grid */
+.lk-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+  gap: 24px;
+}
+
+.lk-card {
+  background: #ffffff;
+  border-radius: 20px;
+  padding: 26px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, 0.05);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.lk-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(15, 34, 64, 0.12);
+  border-color: #cbd5e1;
+}
+
+.lk-card-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.lk-badge-num {
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.5px;
+  background: linear-gradient(135deg, rgba(15, 34, 64, 0.08), rgba(29, 111, 165, 0.12));
+  color: #0f2240;
+  padding: 4px 12px;
+  border-radius: 8px;
+  border: 1px solid rgba(29, 111, 165, 0.2);
+}
+
+.lk-pdf-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #e63946;
+  background: #ffe5e8;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.lk-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #0f2240;
+  margin: 0 0 8px;
+  line-height: 1.35;
+}
+
+.lk-desc {
+  font-size: 0.92rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 18px;
+  flex-grow: 1;
+}
+
+.lk-highlights-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lk-highlights-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #334155;
+  line-height: 1.45;
+}
+
+.lk-check-icon {
+  color: #059669;
+  flex-shrink: 0;
+  margin-top: 2px;
+}
+
+.lk-action-footer {
+  display: flex;
+  gap: 10px;
+  padding-top: 16px;
+  border-top: 1px solid #f1f5f9;
+}
+
+.lk-btn-open {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 18px;
+  background: linear-gradient(135deg, #0f2240, #1d6fa5);
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.lk-btn-open:hover {
+  background: linear-gradient(135deg, #1d6fa5, #00b4d8);
+  box-shadow: 0 4px 12px rgba(29, 111, 165, 0.35);
+}
+
+.lk-btn-pdf {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px 14px;
+  background: #f8fafc;
+  color: #e63946;
+  border: 1px solid #fecdd3;
+  border-radius: 12px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.2s ease;
+}
+
+.lk-btn-pdf:hover {
+  background: #ffe4e6;
+}
+
+/* Karya Inovasi Grid */
+.inovasi-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+  gap: 28px;
+}
+
+.inovasi-card {
+  background: #ffffff;
+  border-radius: 22px;
+  padding: 28px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  display: flex;
+  flex-direction: column;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.inovasi-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 36px rgba(15, 34, 64, 0.12);
+  border-color: #94a3b8;
+}
+
+.inovasi-top-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.inovasi-tag {
+  background: rgba(0, 180, 216, 0.12);
+  color: #0077b6;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-size: 0.78rem;
+  font-weight: 700;
+}
+
+.inovasi-cat-pill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #64748b;
+}
+
+.inovasi-title {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #0f2240;
+  margin: 0 0 6px;
+  line-height: 1.35;
+}
+
+.inovasi-subtitle {
+  font-size: 0.85rem;
+  color: #1d6fa5;
+  font-weight: 600;
+  margin: 0 0 16px;
+  line-height: 1.45;
+}
+
+.inovasi-metrics-strip {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+  background: #f8fafc;
+  border-radius: 12px;
+  padding: 12px;
+  margin-bottom: 18px;
+  border: 1px solid #f1f5f9;
+}
+
+.inovasi-metric-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.inovasi-metric-val {
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: #0f2240;
+}
+
+.inovasi-metric-lbl {
+  font-size: 0.72rem;
+  color: #64748b;
+  margin-top: 2px;
+}
+
+.inovasi-summary {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0 0 16px;
+  flex-grow: 1;
+}
+
+.inovasi-tech-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 20px;
+}
+
+.inovasi-chip {
+  background: #f1f5f9;
+  color: #334155;
+  font-size: 0.75rem;
+  padding: 4px 10px;
+  border-radius: 6px;
+  font-weight: 600;
+}
+
+.inovasi-action-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  width: 100%;
+  padding: 12px;
+  border-radius: 12px;
+  border: none;
+  background: #0f2240;
+  color: #ffffff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.inovasi-action-btn:hover {
+  background: #1d6fa5;
+  box-shadow: 0 4px 12px rgba(15, 34, 64, 0.25);
+}
+
+/* Modal Styling for Seminar Worksheets and Innovation Details */
+.seminar-modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  z-index: 2000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.seminar-modal-card {
+  background: #ffffff;
+  border-radius: 24px;
+  width: 100%;
+  max-width: 960px;
+  max-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+}
+
+.seminar-modal-head {
+  padding: 20px 28px;
+  background: #0f2240;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.seminar-modal-title-wrap h2 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 0;
+  color: #ffffff;
+}
+
+.seminar-modal-title-wrap p {
+  font-size: 0.82rem;
+  color: #90e0ef;
+  margin: 4px 0 0;
+}
+
+.seminar-modal-close-btn {
+  background: rgba(255, 255, 255, 0.15);
+  border: none;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.2s ease;
+}
+
+.seminar-modal-close-btn:hover {
+  background: rgba(255, 255, 255, 0.28);
+}
+
+.seminar-modal-body {
+  padding: 28px;
+  overflow-y: auto;
+  flex-grow: 1;
+}
+
+.seminar-modal-foot {
+  padding: 16px 28px;
+  background: #f8fafc;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Modal Inner Components */
+.modal-pdf-bar {
+  background: linear-gradient(135deg, #fff1f2, #ffe4e6);
+  border: 1px solid #fecdd3;
+  border-radius: 14px;
+  padding: 14px 18px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-bottom: 24px;
+}
+
+.modal-pdf-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.modal-pdf-bar-left strong {
+  display: block;
+  font-size: 0.95rem;
+  color: #9f1239;
+}
+
+.modal-pdf-bar-left span {
+  font-size: 0.78rem;
+  color: #be123c;
+}
+
+.modal-pdf-btns {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.modal-pdf-btn-open {
+  background: #e11d48;
+  color: #ffffff;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-pdf-btn-open:hover {
+  background: #be123c;
+}
+
+.modal-pdf-btn-embed {
+  background: #ffffff;
+  color: #9f1239;
+  border: 1px solid #fecdd3;
+  padding: 8px 14px;
+  border-radius: 8px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.modal-pdf-btn-embed:hover {
+  background: #ffe4e6;
+}
+
+.modal-embed-frame {
+  width: 100%;
+  height: 480px;
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .seminar-section {
+    padding: 80px 14px 60px;
+  }
+  .seminar-hero-banner {
+    padding: 24px 20px;
+  }
+  .seminar-hero-banner h1 {
+    font-size: 1.6rem;
+  }
+  .lk-grid, .inovasi-grid {
+    grid-template-columns: 1fr;
+  }
+  .seminar-tabs-nav {
+    flex-direction: column;
+  }
+}

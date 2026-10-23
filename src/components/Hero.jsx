@@ -8,8 +8,10 @@ function Hero({ onNavigate }) {
     { id: 'tentang', label: 'Tentang' },
     { id: 'perjalanan', label: 'Perjalanan' },
     { id: 'matkul', label: 'Matkul' },
-    { id: 'galeri', label: 'Galeri' },
-    { id: 'artifak', label: 'Artifak' }
+    { id: 'seminar', label: 'Seminar' },
+    { id: 'ppl-mandiri', label: 'PPL Mandiri SMAN 11 Yogyakarta' },
+    { id: 'artifak', label: 'Artifak' },
+    { id: 'galeri', label: 'Galeri' }
   ]
 
   const handleExplore = (id) => {
