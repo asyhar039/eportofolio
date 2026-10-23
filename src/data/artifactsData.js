@@ -15,7 +15,7 @@ export const seminarWorksheets = [
     date: 'Semester I',
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
-    pdfUrl: '/assets/LK_2_Refleksi_Pembelajaran%20semester%201.pdf',
+    pdfUrl: '/assets/seminar/LK_2_Refleksi_Pembelajaran%20semester%201.pdf',
     pdfFileName: 'LK_2_Refleksi_Pembelajaran semester 1.pdf',
     pdfSize: '77 KB',
     summary: 'Refleksi komprehensif alur 4C (Connection, Challenge, Concept, Change) dan analisis bukti dukung artefak pembelajaran untuk 6 mata kuliah inti Semester I: Filosofi Pendidikan & Nilai, Pemahaman Peserta Didik, Growth Mindset, Pembelajaran Kreatif & Inovatif, PMA Dasar, dan PPL Terbimbing.',
@@ -282,7 +282,7 @@ export const seminarWorksheets = [
     date: 'Semester II',
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
-    pdfUrl: '/assets/lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar%20Qowiim.pdf',
+    pdfUrl: '/assets/seminar/lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar%20Qowiim.pdf',
     pdfFileName: 'lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar Qowiim.pdf',
     pdfSize: '178 KB',
     summary: 'Refleksi mendalam 4C (Connection, Challenge, Concept, Change) dan bukti artefak LMS untuk 6 mata kuliah Semester II: Pembelajaran Sosial Emosional (PSE), Pengembangan Keprofesian Berkelanjutan (PKB), PPL Mandiri SMAN 11 Yogyakarta, PMA Lanjut SMK, Seminar PPG, dan Projek Kepemimpinan.',
@@ -615,7 +615,7 @@ export const seminarWorksheets = [
     date: '2026',
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
-    pdfUrl: '/assets/lk-3-refleksi-pengalaman-belajar-ppg-asyhar-qowiim.pdf',
+    pdfUrl: '/assets/seminar/lk-3-refleksi-pengalaman-belajar-ppg-asyhar-qowiim.pdf',
     pdfFileName: 'lk-3-refleksi-pengalaman-belajar-ppg-asyhar-qowiim.pdf',
     pdfSize: '26 KB',
     summary: 'Refleksi komprehensif seluruh pengalaman belajar selama mengikuti PPG, mencakup transformasi paradigma pendidikan nasional berbasis Ki Hadjar Dewantara & Kurikulum Merdeka, 5 langkah aksi strategis guru profesional, serta komitmen aksi nyata untuk memulai karier guru profesional.',
@@ -747,25 +747,33 @@ export const generalArtifacts = [
   {
     id: 'art-media-simulasi',
     number: 'ART-03',
-    code: 'MEDIA-SIM-CISCO-2026',
-    title: 'Media Pembelajaran & Simulasi Cisco Packet Tracer',
+    code: 'PRODUK-INOVASI-NETLAB-2026',
+    title: 'Produk Karya Inovasi: Simulasi Topologi Jaringan Minimarket Berkah (NetLab JSON)',
     category: 'Media Pembelajaran & Asesmen',
-    course: 'Pengalaman Lapangan (PPL) Terbimbing',
-    semester: 'Semester 1',
-    date: 'Januari 2026',
-    status: 'Diterapkan di Kelas XI SMAN 11 Yogyakarta',
-    summary: 'Bundel media ajar interaktif mencakup berkas simulasi file .pkt topologi jaringan, slide interaktif, dan video panduan ringkas konfigurasi perangkat keras jaringan.',
+    course: 'Seminar Pendidikan Guru & Media Interaktif',
+    semester: 'Semester 2',
+    date: '2026',
+    status: 'Produk Digital Siap Simulasikan (NetLab JSON)',
+    summary: 'Produk karya inovasi berkas JSON topologi jaringan retail Minimarket Berkah yang dirancang untuk platform simulator web NetLab (https://netlab.thecybersecguru.com). Menghubungkan Server Kasir, PC Kasir front-end, dan PC Gudang melalui Cisco Catalyst 2960-24TT Switch.',
     author: 'Asyhar Qowiim',
+    jsonUrl: '/assets/seminar/produk-karya-inovasi.json',
+    jsonFileName: 'produk-karya-inovasi.json',
+    netlabUrl: 'https://netlab.thecybersecguru.com',
     highlights: [
-      'Topologi Jaringan Virtual Interaktif',
-      'Analogi Pengiriman Paket Pesan dalam Kehidupan Riil',
-      'Panduan Troubleshooting Konektivitas Jaringan',
-      'Peningkatan Ketuntasan Belajar Praktik dari 62% ke 91%'
+      'Berkas Resmi JSON: produk-karya-inovasi.json (Tersedia Unduh)',
+      'Simulator Jaringan Berbasis Web NetLab: https://netlab.thecybersecguru.com',
+      'Panduan 4 Langkah Praktis: Unduh -> Buka NetLab -> Open Individual Workplace -> Upload JSON',
+      'Studi Kasus Ritel Minimarket Berkah: Server Kasir (192.168.1.1), PC Kasir (192.168.1.10), PC Gudang (192.168.1.50)',
+      'Switch Cisco 2960-24TT dengan PVST Spanning Tree & Kabel Straight-Through FastEthernet'
     ],
     components: [
       {
-        title: 'Deskripsi Implementasi',
-        content: 'Digunakan saat pembelajaran materi jaringan komputer untuk memvisualisasikan bagaimana paket data bergerak antar switch, router, dan workstation secara real-time.'
+        title: 'Cara Menguji di NetLab Simulator',
+        content: '1. Unduh berkas produk-karya-inovasi.json dari aplikasi ini. 2. Buka https://netlab.thecybersecguru.com. 3. Klik tombol "Open Individual Workplace". 4. Unggah (Upload) file JSON tersebut untuk mengeksplorasi dan mensimulasikan jaringan secara interaktif.'
+      },
+      {
+        title: 'Deskripsi Topologi & Subnetting',
+        content: 'Mengintegrasikan Server Kasir (192.168.1.1/24) sebagai database POS terpusat, PC Kasir (192.168.1.10/24) untuk kasir transaksi depan, dan PC Gudang (192.168.1.50/27) dengan segmentasi subnet khusus inventaris barang melalui Switch Cisco Catalyst 2960-24TT.'
       }
     ]
   },

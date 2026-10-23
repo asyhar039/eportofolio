@@ -55,6 +55,22 @@ const IconPrinter = ({ size = 16, className = "" }) => (
   </svg>
 )
 
+const IconDownload = ({ size = 16, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+    <polyline points="7 10 12 15 17 10" />
+    <line x1="12" y1="15" x2="12" y2="3" />
+  </svg>
+)
+
+const IconExternal = ({ size = 14, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+    <polyline points="15 3 21 3 21 9" />
+    <line x1="10" y1="14" x2="21" y2="3" />
+  </svg>
+)
+
 function Artifacts({ onNavigate }) {
   const [activeCategory, setActiveCategory] = useState('Semua Artefak')
   const [searchQuery, setSearchQuery] = useState('')
@@ -139,51 +155,6 @@ ${selectedArtifact.summary}\n\n`
         </p>
       </div>
 
-      {/* Navigational Cards to Seminar & PPL Mandiri */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px', marginBottom: '32px' }}>
-        <div style={{ background: 'linear-gradient(135deg, #0f2240, #1d6fa5)', borderRadius: '18px', padding: '22px 26px', color: '#ffffff', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-          <div>
-            <span style={{ background: 'rgba(255,255,255,0.18)', color: '#90e0ef', padding: '4px 10px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '700', textTransform: 'uppercase' }}>
-              Menu Khusus Seminar
-            </span>
-            <h3 style={{ margin: '10px 0 6px', color: '#ffffff', fontSize: '1.25rem' }}>Lembar Kerja Seminar & Karya Inovasi</h3>
-            <p style={{ margin: 0, color: 'rgba(255,255,255,0.85)', fontSize: '0.88rem', lineHeight: '1.5' }}>
-              Lembar Kerja resmi Seminar PPG (LK 1, LK 2 Semester 1 & 2, LK 3) dan 6 karya inovasi pendidikan kini telah dipisahkan ke menu tersendiri dengan berkas PDF lengkap.
-            </p>
-          </div>
-          {onNavigate && (
-            <button
-              onClick={() => onNavigate('seminar')}
-              style={{ marginTop: '16px', alignSelf: 'flex-start', background: '#ffffff', color: '#0f2240', border: 'none', padding: '8px 16px', borderRadius: '10px', fontWeight: '700', fontSize: '0.85rem', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
-            >
-              <span>Buka Menu Seminar</span>
-              <IconArrowRight size={14} />
-            </button>
-          )}
-        </div>
-
-        <div style={{ background: 'linear-gradient(135deg, #154c79, #0077b6)', borderRadius: '18px', padding: '22px 26px', color: '#ffffff', display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
-          <div>
-            <span style={{ background: 'rgba(255,255,255,0.18)', color: '#caf0f8', padding: '4px 10px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '700', textTransform: 'uppercase' }}>
-              Menu Khusus PPL Sekolah Mitra
-            </span>
-            <h3 style={{ margin: '10px 0 6px', color: '#ffffff', fontSize: '1.25rem' }}>PPL Mandiri SMAN 11 Yogyakarta</h3>
-            <p style={{ margin: 0, color: 'rgba(255,255,255,0.85)', fontSize: '0.88rem', lineHeight: '1.5' }}>
-              Dokumentasi tahapan asistensi terbimbing, pengajaran mandiri, modul algoritma konteks riil, dan inovasi presensi QR Code di SMA Kebangsaan 11 Yogyakarta.
-            </p>
-          </div>
-          {onNavigate && (
-            <button
-              onClick={() => onNavigate('ppl-mandiri')}
-              style={{ marginTop: '16px', alignSelf: 'flex-start', background: '#ffffff', color: '#154c79', border: 'none', padding: '8px 16px', borderRadius: '10px', fontWeight: '700', fontSize: '0.85rem', cursor: 'pointer', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
-            >
-              <span>Buka Menu PPL Mandiri SMAN 11</span>
-              <IconArrowRight size={14} />
-            </button>
-          )}
-        </div>
-      </div>
-
       {/* Controls Bar: Filters & Search */}
       <div className="artifacts-controls-bar">
         <div className="artifacts-filter-group" role="tablist" aria-label="Filter kategori artefak">
@@ -230,7 +201,14 @@ ${selectedArtifact.summary}\n\n`
             <article key={artifact.id} className="artifact-card">
               <div className="card-topline">
                 <span className="card-category-badge">{artifact.number}</span>
-                <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: '600' }}>{artifact.semester}</span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
+                  {artifact.jsonUrl && (
+                    <span style={{ fontSize: '0.72rem', background: '#ecfdf5', color: '#059669', border: '1px solid #a7f3d0', padding: '2px 8px', borderRadius: '6px', fontWeight: '700' }}>
+                      JSON NetLab
+                    </span>
+                  )}
+                  <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: '600' }}>{artifact.semester}</span>
+                </div>
               </div>
 
               <div className="card-icon-wrap">
@@ -400,6 +378,29 @@ ${selectedArtifact.summary}\n\n`
               {/* Modal Actions Footer */}
               <div className="modal-actions-bar">
                 <div className="modal-action-btn-group">
+                  {selectedArtifact.jsonUrl && (
+                    <>
+                      <a
+                        href={selectedArtifact.jsonUrl}
+                        download={selectedArtifact.jsonFileName || 'produk-karya-inovasi.json'}
+                        className="modal-copy-btn"
+                        style={{ textDecoration: 'none', background: '#059669', color: '#ffffff', borderColor: '#059669', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                      >
+                        <IconDownload size={14} />
+                        <span>Unduh File JSON</span>
+                      </a>
+                      <a
+                        href={selectedArtifact.netlabUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="modal-copy-btn"
+                        style={{ textDecoration: 'none', background: '#0284c7', color: '#ffffff', borderColor: '#0284c7', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
+                      >
+                        <IconExternal size={14} />
+                        <span>Buka NetLab Simulator</span>
+                      </a>
+                    </>
+                  )}
                   <button className="modal-copy-btn" onClick={handleCopyText}>
                     <IconCopy size={15} />
                     <span>Salin Ringkasan</span>

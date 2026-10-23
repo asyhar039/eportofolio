@@ -2,6 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import './Seminar.css'
 import { seminarWorksheets, karyaInovasiList } from '../data/seminarData'
+import PdfReviewModal, { PdfCanvasViewer } from './PdfReviewModal'
 
 // Modern Minimalist SVG Icons
 const IconDoc = ({ size = 20, className = "" }) => (
@@ -20,6 +21,18 @@ const IconSparkles = ({ size = 20, className = "" }) => (
     <path d="M19 17v4" />
     <path d="M3 5h4" />
     <path d="M17 19h4" />
+  </svg>
+)
+
+const IconRouter = ({ size = 22, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="11" width="20" height="9" rx="2" />
+    <path d="M6 11V5" />
+    <path d="M18 11V5" />
+    <line x1="6" y1="15" x2="6.01" y2="15" strokeWidth="2.5" />
+    <line x1="10" y1="15" x2="10.01" y2="15" strokeWidth="2.5" />
+    <line x1="14" y1="15" x2="14.01" y2="15" strokeWidth="2.5" />
+    <line x1="18" y1="15" x2="18.01" y2="15" strokeWidth="2.5" />
   </svg>
 )
 
@@ -76,13 +89,62 @@ const IconDownload = ({ size = 16, className = "" }) => (
 
 const inovasiCategories = [
   'Semua Inovasi',
-  'Inovasi Manajerial & Teknologi Sekolah',
-  'Inovasi Media Pembelajaran Interaktif',
-  'Inovasi Perangkat & Pendekatan Pedagogik',
-  'Inovasi Asesmen & Evaluasi Pembelajaran',
-  'Inovasi Bahan Ajar & Aktivitas Kelas',
-  'Inovasi Diseminasi & Portofolio Digital'
+  'Inovasi Media Pembelajaran Interaktif'
 ]
+
+const netlabJsonPreview = `{
+  "schemaVersion": "1.0",
+  "metadata": {
+    "name": "Studi Kasus Topologi Jaringan Minimarket Berkah",
+    "version": "1.0",
+    "description": "Topologi jaringan retail: Server Kasir (POS Database), PC Kasir front-end, PC Gudang, Cisco Catalyst 2960-24TT Switch",
+    "author": "Asyhar Qowiim",
+    "simulator": "NetLab (https://netlab.thecybersecguru.com)"
+  },
+  "topology": {
+    "devices": [
+      {
+        "model": "2960-24TT",
+        "fullName": "Cisco Catalyst 2960-24TT Switch",
+        "hostname": "2960-24TT3",
+        "stp": { "enabled": true, "mode": "pvst", "priority": 32768 },
+        "ports": ["fa0/1 (Server Kasir)", "fa0/2 (PC Kasir)", "fa0/3 (PC Gudang)", "fa0/4-24", "gi0/1-2"]
+      },
+      {
+        "model": "PC-PT",
+        "fullName": "Server Kasir (POS Database)",
+        "hostname": "server-kasir",
+        "ip": "192.168.1.1",
+        "subnet": "255.255.255.0 (/24)",
+        "gateway": "192.168.1.254",
+        "mac": "72:AA:27:9C:6B:49"
+      },
+      {
+        "model": "PC",
+        "fullName": "PC Kasir (Kasir Front-Office)",
+        "hostname": "PC kasir",
+        "ip": "192.168.1.10",
+        "subnet": "255.255.255.0 (/24)",
+        "gateway": "192.168.1.1",
+        "mac": "6E:75:73:67:90:F5"
+      },
+      {
+        "model": "PC",
+        "fullName": "PC Gudang (Logistik & Inventaris)",
+        "hostname": "PC Gudang",
+        "ip": "192.168.1.50",
+        "subnet": "255.255.255.224 (/27)",
+        "gateway": "192.168.1.1",
+        "mac": "C3:88:87:7E:05:45"
+      }
+    ],
+    "connections": [
+      { "type": "straight", "from": "Switch fa0/1", "to": "Server Kasir fa0", "speed": "100 Mbps", "latency": "0.18 ms" },
+      { "type": "straight", "from": "Switch fa0/2", "to": "PC Kasir fa0", "speed": "100 Mbps", "latency": "0.18 ms" },
+      { "type": "straight", "from": "Switch fa0/3", "to": "PC Gudang fa0", "speed": "100 Mbps", "latency": "0.18 ms" }
+    ]
+  }
+}`
 
 function Seminar() {
   const [activeTab, setActiveTab] = useState('lembar-kerja') // 'lembar-kerja' or 'karya-inovasi'
@@ -92,11 +154,25 @@ function Seminar() {
   const [selectedInovasi, setSelectedInovasi] = useState(null)
   const [activeTopicIndex, setActiveTopicIndex] = useState(0)
   const [showPdfEmbed, setShowPdfEmbed] = useState(false)
+  const [showInovasiPdfEmbed, setShowInovasiPdfEmbed] = useState(false)
   const [copiedState, setCopiedState] = useState(false)
+  const [showJsonPreview, setShowJsonPreview] = useState(false)
+  const [jsonCopied, setJsonCopied] = useState(false)
+  const [activeReviewPdf, setActiveReviewPdf] = useState(null)
+
+  const openPdfReview = (url, title, fileName, fileSize, pages = []) => {
+    setActiveReviewPdf({
+      pdfUrl: url,
+      title: title || 'Dokumen PDF',
+      fileName: fileName || 'dokumen.pdf',
+      fileSize: fileSize || '',
+      pages: pages || []
+    })
+  }
 
   // Manage body scroll lock when modal is open
   useEffect(() => {
-    if (selectedLk || selectedInovasi) {
+    if (selectedLk || selectedInovasi || activeReviewPdf) {
       document.body.style.overflow = 'hidden'
     } else {
       document.body.style.overflow = ''
@@ -104,7 +180,7 @@ function Seminar() {
     return () => {
       document.body.style.overflow = ''
     }
-  }, [selectedLk, selectedInovasi])
+  }, [selectedLk, selectedInovasi, activeReviewPdf])
 
   // Filter Lembar Kerja
   const filteredWorksheets = useMemo(() => {
@@ -183,11 +259,13 @@ function Seminar() {
 
   return (
     <section id="seminar" className="seminar-section">
+      <span className="seminar-section-eyebrow">05 · SEMINAR PPG</span>
+
       {/* Hero Banner */}
       <div className="seminar-hero-banner">
         <div className="seminar-badge-top">
           <span className="pulse-dot"></span>
-          Mata Kuliah Inti Seminar PPG Informatika
+          Mata Kuliah Seminar PPG Informatika
         </div>
         <h1>Seminar Pendidikan Profesi Guru</h1>
         <p>
@@ -200,12 +278,12 @@ function Seminar() {
             <span className="seminar-stat-lbl">Lembar Kerja Resmi (LK 1, LK 2, LK 3)</span>
           </div>
           <div className="seminar-stat-card">
-            <span className="seminar-stat-val">3 Berkas PDF</span>
-            <span className="seminar-stat-lbl">Tersedia Berkas Asli di Direktori Assets</span>
+            <span className="seminar-stat-val">4 Berkas PDF</span>
+            <span className="seminar-stat-lbl">Tersedia Berkas Asli LK 1-3 & Slide Presentasi</span>
           </div>
           <div className="seminar-stat-card">
-            <span className="seminar-stat-val">6 Karya Inovasi</span>
-            <span className="seminar-stat-lbl">Teknologi, Media, Asesmen & Pedagogik</span>
+            <span className="seminar-stat-val">Karya Inovasi</span>
+            <span className="seminar-stat-lbl">Simulasi Topologi Jaringan NetLab</span>
           </div>
           <div className="seminar-stat-card">
             <span className="seminar-stat-val">12 Topik 4C</span>
@@ -239,9 +317,9 @@ function Seminar() {
           role="tab"
           aria-selected={activeTab === 'karya-inovasi'}
         >
-          <IconSparkles size={20} />
+          <IconRouter size={20} />
           <span>Karya Inovasi</span>
-          <span className="tab-count-badge">6 Inovasi Pilihan</span>
+          <span className="tab-count-badge">Karya Inovasi Pembelajaran</span>
         </button>
       </div>
 
@@ -275,10 +353,16 @@ function Seminar() {
                 <div className="lk-card-top">
                   <span className="lk-badge-num">{lk.number}</span>
                   {lk.pdfUrl && (
-                    <span className="lk-pdf-tag">
+                    <button
+                      type="button"
+                      onClick={() => openPdfReview(lk.pdfUrl, lk.title, lk.pdfFileName, lk.pdfSize, lk.previewPages)}
+                      className="lk-pdf-tag"
+                      style={{ cursor: 'pointer', border: 'none', fontFamily: 'inherit' }}
+                      title="Klik untuk Review Dokumen PDF di Layar"
+                    >
                       <IconPdf size={13} />
-                      <span>PDF ({lk.pdfSize})</span>
-                    </span>
+                      <span>Review PDF ({lk.pdfSize})</span>
+                    </button>
                   )}
                 </div>
 
@@ -303,15 +387,15 @@ function Seminar() {
                   </button>
 
                   {lk.pdfUrl && (
-                    <a
-                      href={lk.pdfUrl}
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      type="button"
+                      onClick={() => openPdfReview(lk.pdfUrl, lk.title, lk.pdfFileName, lk.pdfSize, lk.previewPages)}
                       className="lk-btn-pdf"
-                      title="Buka Berkas PDF Resmi"
+                      title="Review Berkas PDF Resmi (Tanpa Mengunduh)"
+                      style={{ cursor: 'pointer', border: 'none' }}
                     >
                       <IconPdf size={16} />
-                    </a>
+                    </button>
                   )}
                 </div>
               </article>
@@ -344,7 +428,7 @@ function Seminar() {
               </svg>
               <input
                 type="text"
-                placeholder="Cari inovasi QR, Cisco, PSE..."
+                placeholder="Cari inovasi NetLab, Minimarket, QR, PSE..."
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -380,13 +464,59 @@ function Seminar() {
                   ))}
                 </div>
 
-                <button
-                  className="inovasi-action-btn"
-                  onClick={() => setSelectedInovasi(item)}
-                >
-                  <span>Lihat Selengkapnya & Rekam Bukti</span>
-                  <IconExternal size={14} />
-                </button>
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', marginTop: 'auto' }}>
+                  <div style={{ display: 'grid', gridTemplateColumns: item.pdfUrl ? 'repeat(3, 1fr)' : '1fr 1fr', gap: '8px' }}>
+                    {item.jsonUrl && (
+                      <a
+                        href={item.jsonUrl}
+                        download={item.jsonFileName}
+                        className="netlab-btn-download"
+                        style={{ padding: '8px 10px', fontSize: '0.78rem', justifyContent: 'center' }}
+                        title="Unduh Berkas JSON untuk Simulator NetLab"
+                      >
+                        <IconDownload size={14} />
+                        <span>Unduh JSON</span>
+                      </a>
+                    )}
+                    {item.netlabUrl && (
+                      <a
+                        href={item.netlabUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="netlab-btn-open"
+                        style={{ padding: '8px 10px', fontSize: '0.78rem', justifyContent: 'center' }}
+                        title="Buka Website Simulator NetLab"
+                      >
+                        <IconExternal size={14} />
+                        <span>Buka NetLab</span>
+                      </a>
+                    )}
+                    {item.pdfUrl && (
+                      <button
+                        type="button"
+                        onClick={() => openPdfReview(item.pdfUrl, item.pdfTitle || item.title, item.pdfFileName, item.pdfSize, item.previewPages)}
+                        className="netlab-btn-open"
+                        style={{ padding: '8px 10px', fontSize: '0.78rem', justifyContent: 'center', background: 'linear-gradient(135deg, #ef4444, #dc2626)', boxShadow: '0 4px 14px rgba(239, 68, 68, 0.35)', cursor: 'pointer', border: 'none', fontFamily: 'inherit' }}
+                        title="Review Berkas Slide Presentasi PDF (Tanpa Mengunduh)"
+                      >
+                        <IconPdf size={14} />
+                        <span>Review Slide PDF</span>
+                      </button>
+                    )}
+                  </div>
+
+                  <button
+                    className="inovasi-action-btn"
+                    onClick={() => {
+                      setShowJsonPreview(false)
+                      setShowInovasiPdfEmbed(false)
+                      setSelectedInovasi(item)
+                    }}
+                  >
+                    <span>Buka Panduan Simulasi, Topologi & Slide</span>
+                    <IconExternal size={14} />
+                  </button>
+                </div>
               </article>
             ))}
           </div>
@@ -414,34 +544,38 @@ function Seminar() {
                 {selectedLk.pdfUrl && (
                   <div className="modal-pdf-bar">
                     <div className="modal-pdf-bar-left">
-                      <IconPdf size={24} style={{ color: '#e11d48' }} />
+                      <IconPdf size={24} style={{ color: '#fca5a5' }} />
                       <div>
                         <strong>{selectedLk.pdfFileName}</strong>
-                        <span>Ukuran: {selectedLk.pdfSize} • Berkas resmi dari assets</span>
+                        <span>Ukuran: {selectedLk.pdfSize} • Berkas resmi dari assets/seminar</span>
                       </div>
                     </div>
                     <div className="modal-pdf-btns">
                       <button
+                        type="button"
                         className="modal-pdf-btn-embed"
                         onClick={() => setShowPdfEmbed(!showPdfEmbed)}
+                        title="Tampilkan / Sembunyikan Pratinjau Dokumen di Layar"
                       >
                         <IconEye size={15} />
-                        <span>{showPdfEmbed ? 'Tutup Pratinjau' : 'Pratinjau PDF'}</span>
+                        <span>{showPdfEmbed ? 'Tutup Pratinjau' : 'Pratinjau / Review PDF'}</span>
                       </button>
-                      <a
-                        href={selectedLk.pdfUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
+                      <button
+                        type="button"
+                        onClick={() => openPdfReview(selectedLk.pdfUrl, selectedLk.title, selectedLk.pdfFileName, selectedLk.pdfSize, selectedLk.previewPages)}
                         className="modal-pdf-btn-open"
+                        style={{ background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))', border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}
+                        title="Review PDF di Jendela Layar Penuh (Tanpa Mengunduh)"
                       >
                         <IconExternal size={14} />
-                        <span>Buka PDF di Tab Baru</span>
-                      </a>
+                        <span>Review Layar Penuh</span>
+                      </button>
                       <a
                         href={selectedLk.pdfUrl}
                         download={selectedLk.pdfFileName}
                         className="modal-pdf-btn-open"
-                        style={{ background: '#0f2240' }}
+                        style={{ background: 'rgba(255, 255, 255, 0.08)', border: '1px solid rgba(255, 255, 255, 0.15)' }}
+                        title="Unduh Berkas PDF Resmi ke Komputer"
                       >
                         <IconDownload size={14} />
                         <span>Unduh</span>
@@ -450,19 +584,25 @@ function Seminar() {
                   </div>
                 )}
 
-                {/* Embedded PDF iframe */}
+                {/* Embedded PDF Canvas Viewer (In-App Review, No Download) */}
                 {selectedLk.pdfUrl && showPdfEmbed && (
-                  <iframe
-                    src={selectedLk.pdfUrl}
-                    className="modal-embed-frame"
-                    title={`Pratinjau ${selectedLk.title}`}
-                  />
+                  <div style={{ marginBottom: '24px' }}>
+                    <PdfCanvasViewer
+                      pdfUrl={selectedLk.pdfUrl}
+                      pages={selectedLk.previewPages}
+                      title={selectedLk.title}
+                      fileName={selectedLk.pdfFileName}
+                      fileSize={selectedLk.pdfSize}
+                      height="580px"
+                      onExpandFullscreen={() => openPdfReview(selectedLk.pdfUrl, selectedLk.title, selectedLk.pdfFileName, selectedLk.pdfSize, selectedLk.previewPages)}
+                    />
+                  </div>
                 )}
 
                 {/* Summary box */}
-                <div style={{ background: '#f8fafc', padding: '16px 20px', borderRadius: '14px', border: '1px solid #e2e8f0', marginBottom: '24px' }}>
-                  <h4 style={{ margin: '0 0 6px', color: '#0f2240', fontSize: '0.95rem' }}>Deskripsi Ringkas</h4>
-                  <p style={{ margin: 0, color: '#475569', fontSize: '0.9rem', lineHeight: '1.6' }}>{selectedLk.summary}</p>
+                <div className="theme-panel-glass">
+                  <h4>Deskripsi Ringkas</h4>
+                  <p>{selectedLk.summary}</p>
                 </div>
 
                 {/* CASE 1: LK 1 Identifikasi Diri */}
@@ -470,41 +610,41 @@ function Seminar() {
                   <div>
                     {/* Profil */}
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '24px' }}>
-                      <div style={{ background: '#f1f5f9', padding: '12px', borderRadius: '10px' }}>
-                        <span style={{ fontSize: '0.75rem', color: '#64748b', display: 'block' }}>Nama Mahasiswa</span>
-                        <strong style={{ color: '#0f2240' }}>{selectedLk.lk1Sections.identitasDiri.nama}</strong>
+                      <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Nama Mahasiswa</span>
+                        <strong style={{ color: '#ffffff', fontSize: '0.95rem' }}>{selectedLk.lk1Sections.identitasDiri.nama}</strong>
                       </div>
-                      <div style={{ background: '#f1f5f9', padding: '12px', borderRadius: '10px' }}>
-                        <span style={{ fontSize: '0.75rem', color: '#64748b', display: 'block' }}>Nomor Induk Mahasiswa (NIM)</span>
-                        <strong style={{ color: '#0f2240' }}>{selectedLk.lk1Sections.identitasDiri.nim}</strong>
+                      <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Nomor Induk Mahasiswa (NIM)</span>
+                        <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.95rem', fontFamily: 'Geist Mono, monospace' }}>{selectedLk.lk1Sections.identitasDiri.nim}</strong>
                       </div>
-                      <div style={{ background: '#f1f5f9', padding: '12px', borderRadius: '10px' }}>
-                        <span style={{ fontSize: '0.75rem', color: '#64748b', display: 'block' }}>Program Studi & Perguruan Tinggi</span>
-                        <strong style={{ color: '#0f2240' }}>{selectedLk.lk1Sections.identitasDiri.bidangStudi} ({selectedLk.lk1Sections.identitasDiri.perguruanTinggi})</strong>
+                      <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Program Studi & Perguruan Tinggi</span>
+                        <strong style={{ color: '#ffffff', fontSize: '0.95rem' }}>{selectedLk.lk1Sections.identitasDiri.bidangStudi} ({selectedLk.lk1Sections.identitasDiri.perguruanTinggi})</strong>
                       </div>
                     </div>
 
                     {/* Visi Pendidikan */}
-                    <div style={{ marginBottom: '20px', borderLeft: '4px solid #1d6fa5', paddingLeft: '16px' }}>
-                      <h4 style={{ color: '#0f2240', margin: '0 0 6px' }}>{selectedLk.lk1Sections.visiPendidikan.title}</h4>
-                      <p style={{ color: '#334155', lineHeight: '1.65', margin: 0 }}>{selectedLk.lk1Sections.visiPendidikan.content}</p>
+                    <div style={{ marginBottom: '20px', borderLeft: '4px solid var(--accent-cyan)', background: 'rgba(0, 217, 255, 0.06)', borderRadius: '0 12px 12px 0', padding: '16px 20px' }}>
+                      <h4 style={{ color: 'var(--accent-cyan)', margin: '0 0 6px', fontSize: '1rem', fontWeight: '700' }}>{selectedLk.lk1Sections.visiPendidikan.title}</h4>
+                      <p style={{ color: 'rgba(255, 255, 255, 0.85)', lineHeight: '1.65', margin: 0, fontSize: '0.92rem' }}>{selectedLk.lk1Sections.visiPendidikan.content}</p>
                     </div>
 
                     {/* Visi Calon Guru */}
-                    <div style={{ marginBottom: '24px', borderLeft: '4px solid #00b4d8', paddingLeft: '16px' }}>
-                      <h4 style={{ color: '#0f2240', margin: '0 0 6px' }}>{selectedLk.lk1Sections.visiCalonGuru.title}</h4>
-                      <p style={{ color: '#334155', lineHeight: '1.65', margin: 0 }}>{selectedLk.lk1Sections.visiCalonGuru.content}</p>
+                    <div style={{ marginBottom: '26px', borderLeft: '4px solid #a855f7', background: 'rgba(168, 85, 247, 0.06)', borderRadius: '0 12px 12px 0', padding: '16px 20px' }}>
+                      <h4 style={{ color: '#c084fc', margin: '0 0 6px', fontSize: '1rem', fontWeight: '700' }}>{selectedLk.lk1Sections.visiCalonGuru.title}</h4>
+                      <p style={{ color: 'rgba(255, 255, 255, 0.85)', lineHeight: '1.65', margin: 0, fontSize: '0.92rem' }}>{selectedLk.lk1Sections.visiCalonGuru.content}</p>
                     </div>
 
                     {/* 5 Langkah Strategis */}
-                    <h4 style={{ color: '#0f2240', margin: '0 0 14px' }}>5 Langkah Strategis Konkret Menjadi Guru Profesional</h4>
+                    <h4 style={{ color: '#ffffff', margin: '0 0 16px', fontSize: '1.05rem', fontWeight: '700' }}>5 Langkah Strategis Konkret Menjadi Guru Profesional</h4>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                       {selectedLk.lk1Sections.langkahStrategis.map((ls) => (
-                        <div key={ls.no} style={{ background: '#ffffff', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '14px 18px' }}>
-                          <strong style={{ color: '#1d6fa5', display: 'block', marginBottom: '4px' }}>
+                        <div key={ls.no} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '14px', padding: '16px 20px' }}>
+                          <strong style={{ color: 'var(--accent-cyan)', display: 'block', marginBottom: '6px', fontSize: '0.95rem' }}>
                             {ls.no}. {ls.judul}
                           </strong>
-                          <p style={{ margin: 0, color: '#475569', fontSize: '0.9rem', lineHeight: '1.55' }}>{ls.uraian}</p>
+                          <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.9rem', lineHeight: '1.6' }}>{ls.uraian}</p>
                         </div>
                       ))}
                     </div>
@@ -515,7 +655,7 @@ function Seminar() {
                 {selectedLk.topics && (
                   <div>
                     {/* Topic selector tabs */}
-                    <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '12px', marginBottom: '20px' }}>
+                    <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '12px', marginBottom: '22px' }}>
                       {selectedLk.topics.map((t, idx) => (
                         <button
                           key={t.id}
@@ -524,13 +664,15 @@ function Seminar() {
                             padding: '8px 16px',
                             borderRadius: '10px',
                             border: '1px solid',
-                            borderColor: activeTopicIndex === idx ? '#1d6fa5' : '#cbd5e1',
-                            background: activeTopicIndex === idx ? '#1d6fa5' : '#ffffff',
-                            color: activeTopicIndex === idx ? '#ffffff' : '#334155',
+                            borderColor: activeTopicIndex === idx ? 'var(--accent-cyan)' : 'rgba(255, 255, 255, 0.15)',
+                            background: activeTopicIndex === idx ? 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))' : 'rgba(255, 255, 255, 0.06)',
+                            color: '#ffffff',
                             fontWeight: '700',
-                            fontSize: '0.85rem',
+                            fontSize: '0.82rem',
                             cursor: 'pointer',
-                            whiteSpace: 'nowrap'
+                            whiteSpace: 'nowrap',
+                            transition: 'all 0.2s ease',
+                            fontFamily: 'inherit'
                           }}
                         >
                           {t.topicNumber}
@@ -544,67 +686,67 @@ function Seminar() {
 
                       return (
                         <div>
-                          <div style={{ background: '#f1f5f9', padding: '16px 20px', borderRadius: '12px', marginBottom: '20px' }}>
-                            <span style={{ background: '#0f2240', color: '#ffffff', padding: '2px 8px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '700' }}>
+                          <div style={{ background: 'linear-gradient(135deg, rgba(29, 111, 165, 0.25), rgba(0, 217, 255, 0.15))', border: '1px solid rgba(0, 217, 255, 0.3)', padding: '18px 22px', borderRadius: '16px', marginBottom: '22px' }}>
+                            <span style={{ background: 'rgba(0, 217, 255, 0.2)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 217, 255, 0.4)', padding: '3px 10px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '800' }}>
                               {topic.topicNumber}
                             </span>
-                            <h3 style={{ margin: '8px 0 4px', color: '#0f2240', fontSize: '1.2rem' }}>{topic.title}</h3>
+                            <h3 style={{ margin: '10px 0 6px', color: '#ffffff', fontSize: '1.25rem' }}>{topic.title}</h3>
                             {topic.descriptionMeta && (
-                              <p style={{ margin: 0, color: '#64748b', fontSize: '0.85rem' }}>{topic.descriptionMeta}</p>
+                              <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.85rem' }}>{topic.descriptionMeta}</p>
                             )}
                           </div>
 
                           {/* 4C Cards */}
                           {topic.reflection4C && (
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px', marginBottom: '24px' }}>
+                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px', marginBottom: '26px' }}>
                               {/* Connection */}
-                              <div style={{ background: '#ffffff', border: '1px solid #bfdbfe', borderRadius: '14px', padding: '16px' }}>
-                                <span style={{ background: '#dbeafe', color: '#1e40af', padding: '3px 8px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '800' }}>
+                              <div style={{ background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.35)', borderRadius: '16px', padding: '18px' }}>
+                                <span style={{ background: 'rgba(56, 189, 248, 0.2)', color: '#38bdf8', padding: '4px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px' }}>
                                   CONNECTION (Keterkaitan)
                                 </span>
-                                <p style={{ fontSize: '0.82rem', color: '#64748b', margin: '8px 0 6px', fontStyle: 'italic' }}>
+                                <p style={{ fontSize: '0.82rem', color: '#bae6fd', margin: '10px 0 6px', fontStyle: 'italic' }}>
                                   {topic.reflection4C.connection?.question}
                                 </p>
-                                <p style={{ fontSize: '0.9rem', color: '#1e293b', lineHeight: '1.6', margin: 0 }}>
+                                <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.65', margin: 0 }}>
                                   {topic.reflection4C.connection?.answer}
                                 </p>
                               </div>
 
                               {/* Challenge */}
-                              <div style={{ background: '#ffffff', border: '1px solid #fecdd3', borderRadius: '14px', padding: '16px' }}>
-                                <span style={{ background: '#ffe4e6', color: '#9f1239', padding: '3px 8px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '800' }}>
+                              <div style={{ background: 'rgba(251, 146, 60, 0.08)', border: '1px solid rgba(251, 146, 60, 0.35)', borderRadius: '16px', padding: '18px' }}>
+                                <span style={{ background: 'rgba(251, 146, 60, 0.2)', color: '#fbbf24', padding: '4px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px' }}>
                                   CHALLENGE (Tantangan)
                                 </span>
-                                <p style={{ fontSize: '0.82rem', color: '#64748b', margin: '8px 0 6px', fontStyle: 'italic' }}>
+                                <p style={{ fontSize: '0.82rem', color: '#fed7aa', margin: '10px 0 6px', fontStyle: 'italic' }}>
                                   {topic.reflection4C.challenge?.question}
                                 </p>
-                                <p style={{ fontSize: '0.9rem', color: '#1e293b', lineHeight: '1.6', margin: 0 }}>
+                                <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.65', margin: 0 }}>
                                   {topic.reflection4C.challenge?.answer}
                                 </p>
                               </div>
 
                               {/* Concept */}
-                              <div style={{ background: '#ffffff', border: '1px solid #bbf7d0', borderRadius: '14px', padding: '16px' }}>
-                                <span style={{ background: '#dcfce7', color: '#166534', padding: '3px 8px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '800' }}>
+                              <div style={{ background: 'rgba(168, 85, 247, 0.08)', border: '1px solid rgba(168, 85, 247, 0.35)', borderRadius: '16px', padding: '18px' }}>
+                                <span style={{ background: 'rgba(168, 85, 247, 0.2)', color: '#c084fc', padding: '4px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px' }}>
                                   CONCEPT (Konsep Utama)
                                 </span>
-                                <p style={{ fontSize: '0.82rem', color: '#64748b', margin: '8px 0 6px', fontStyle: 'italic' }}>
+                                <p style={{ fontSize: '0.82rem', color: '#e9d5ff', margin: '10px 0 6px', fontStyle: 'italic' }}>
                                   {topic.reflection4C.concept?.question}
                                 </p>
-                                <p style={{ fontSize: '0.9rem', color: '#1e293b', lineHeight: '1.6', margin: 0, whiteSpace: 'pre-line' }}>
+                                <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.65', margin: 0, whiteSpace: 'pre-line' }}>
                                   {topic.reflection4C.concept?.answer}
                                 </p>
                               </div>
 
                               {/* Change */}
-                              <div style={{ background: '#ffffff', border: '1px solid #fed7aa', borderRadius: '14px', padding: '16px' }}>
-                                <span style={{ background: '#ffedd5', color: '#9a3412', padding: '3px 8px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '800' }}>
+                              <div style={{ background: 'rgba(52, 211, 153, 0.08)', border: '1px solid rgba(52, 211, 153, 0.35)', borderRadius: '16px', padding: '18px' }}>
+                                <span style={{ background: 'rgba(52, 211, 153, 0.2)', color: '#34d399', padding: '4px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px' }}>
                                   CHANGE (Perubahan & Tindakan)
                                 </span>
-                                <p style={{ fontSize: '0.82rem', color: '#64748b', margin: '8px 0 6px', fontStyle: 'italic' }}>
+                                <p style={{ fontSize: '0.82rem', color: '#a7f3d0', margin: '10px 0 6px', fontStyle: 'italic' }}>
                                   {topic.reflection4C.change?.question}
                                 </p>
-                                <p style={{ fontSize: '0.9rem', color: '#1e293b', lineHeight: '1.6', margin: 0, whiteSpace: 'pre-line' }}>
+                                <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.65', margin: 0, whiteSpace: 'pre-line' }}>
                                   {topic.reflection4C.change?.answer}
                                 </p>
                               </div>
@@ -613,16 +755,16 @@ function Seminar() {
 
                           {/* Artifact Analysis */}
                           {topic.artifactAnalysis && (
-                            <div style={{ marginTop: '20px' }}>
-                              <h4 style={{ color: '#0f2240', marginBottom: '12px' }}>Analisis Artefak Pembelajaran (Bukti Dukung Refleksi)</h4>
+                            <div style={{ marginTop: '24px' }}>
+                              <h4 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '1.05rem', fontWeight: '700' }}>Analisis Artefak Pembelajaran (Bukti Dukung Refleksi)</h4>
                               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
                                 {topic.artifactAnalysis.map((art, aIdx) => (
-                                  <div key={aIdx} style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '14px' }}>
-                                    <span style={{ background: '#1d6fa5', color: '#ffffff', padding: '2px 8px', borderRadius: '4px', fontSize: '0.72rem', fontWeight: '700' }}>
+                                  <div key={aIdx} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '14px', padding: '16px' }}>
+                                    <span style={{ background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))', color: '#ffffff', padding: '3px 9px', borderRadius: '6px', fontSize: '0.72rem', fontWeight: '700' }}>
                                       {art.label}
                                     </span>
-                                    <p style={{ fontSize: '0.8rem', color: '#64748b', margin: '6px 0 4px', fontStyle: 'italic' }}>{art.question}</p>
-                                    <p style={{ fontSize: '0.88rem', color: '#334155', lineHeight: '1.5', margin: 0, whiteSpace: 'pre-line' }}>{art.answer}</p>
+                                    <p style={{ fontSize: '0.82rem', color: 'var(--accent-cyan)', margin: '8px 0 4px', fontStyle: 'italic' }}>{art.question}</p>
+                                    <p style={{ fontSize: '0.88rem', color: 'rgba(255, 255, 255, 0.85)', lineHeight: '1.55', margin: 0, whiteSpace: 'pre-line' }}>{art.answer}</p>
                                   </div>
                                 ))}
                               </div>
@@ -638,28 +780,28 @@ function Seminar() {
                 {selectedLk.lk3Sections && (
                   <div>
                     {/* Section 1 */}
-                    <div style={{ marginBottom: '24px' }}>
-                      <h4 style={{ color: '#0f2240', fontSize: '1.1rem', marginBottom: '12px' }}>
+                    <div style={{ marginBottom: '26px' }}>
+                      <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '12px', fontWeight: '700' }}>
                         {selectedLk.lk3Sections.section1.title}
                       </h4>
                       {selectedLk.lk3Sections.section1.paragraphs.map((p, pIdx) => (
-                        <p key={pIdx} style={{ fontSize: '0.92rem', color: '#334155', lineHeight: '1.65', marginBottom: '12px' }}>{p}</p>
+                        <p key={pIdx} style={{ fontSize: '0.92rem', color: 'rgba(255, 255, 255, 0.85)', lineHeight: '1.7', marginBottom: '14px' }}>{p}</p>
                       ))}
                     </div>
 
                     {/* Section 2 */}
-                    <div style={{ marginBottom: '24px' }}>
-                      <h4 style={{ color: '#0f2240', fontSize: '1.1rem', marginBottom: '6px' }}>
+                    <div style={{ marginBottom: '26px' }}>
+                      <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '6px', fontWeight: '700' }}>
                         {selectedLk.lk3Sections.section2.title}
                       </h4>
-                      <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '14px' }}>{selectedLk.lk3Sections.section2.lead}</p>
+                      <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem', marginBottom: '16px' }}>{selectedLk.lk3Sections.section2.lead}</p>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                         {selectedLk.lk3Sections.section2.steps.map((st, stIdx) => (
-                          <div key={stIdx} style={{ background: '#f8fafc', border: '1px solid #e2e8f0', borderRadius: '12px', padding: '14px 18px' }}>
-                            <strong style={{ color: '#1d6fa5', display: 'block', marginBottom: '4px' }}>
+                          <div key={stIdx} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '14px', padding: '16px 20px' }}>
+                            <strong style={{ color: 'var(--accent-cyan)', display: 'block', marginBottom: '4px', fontSize: '0.95rem' }}>
                               {stIdx + 1}. {st.title}
                             </strong>
-                            <p style={{ margin: 0, color: '#475569', fontSize: '0.9rem', lineHeight: '1.55' }}>{st.description}</p>
+                            <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.82)', fontSize: '0.9rem', lineHeight: '1.6' }}>{st.description}</p>
                           </div>
                         ))}
                       </div>
@@ -667,27 +809,27 @@ function Seminar() {
 
                     {/* Section 3: Action Table */}
                     <div>
-                      <h4 style={{ color: '#0f2240', fontSize: '1.1rem', marginBottom: '6px' }}>
+                      <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '6px', fontWeight: '700' }}>
                         {selectedLk.lk3Sections.section3.title}
                       </h4>
-                      <p style={{ color: '#64748b', fontSize: '0.9rem', marginBottom: '14px' }}>{selectedLk.lk3Sections.section3.lead}</p>
-                      <div style={{ overflowX: 'auto' }}>
+                      <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.9rem', marginBottom: '16px' }}>{selectedLk.lk3Sections.section3.lead}</p>
+                      <div style={{ overflowX: 'auto', background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(255, 255, 255, 0.12)', borderRadius: '14px' }}>
                         <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.88rem' }}>
                           <thead>
-                            <tr style={{ background: '#0f2240', color: '#ffffff' }}>
-                              <th style={{ padding: '10px 12px', textAlign: 'center', width: '40px' }}>No</th>
-                              <th style={{ padding: '10px 12px', textAlign: 'left', width: '35%' }}>Program Aksi Karier</th>
-                              <th style={{ padding: '10px 12px', textAlign: 'left' }}>Deskripsi & Indikator</th>
+                            <tr style={{ background: 'rgba(29, 111, 165, 0.4)', color: '#ffffff' }}>
+                              <th style={{ padding: '12px 14px', textAlign: 'center', width: '40px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>No</th>
+                              <th style={{ padding: '12px 14px', textAlign: 'left', width: '35%', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>Program Aksi Karier</th>
+                              <th style={{ padding: '12px 14px', textAlign: 'left', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>Deskripsi & Indikator</th>
                             </tr>
                           </thead>
                           <tbody>
                             {selectedLk.lk3Sections.section3.actionTable.map((row) => (
-                              <tr key={row.no} style={{ borderBottom: '1px solid #e2e8f0' }}>
-                                <td style={{ padding: '12px', textAlign: 'center', fontWeight: 'bold' }}>{row.no}</td>
-                                <td style={{ padding: '12px', fontWeight: '700', color: '#0f2240' }}>{row.program}</td>
-                                <td style={{ padding: '12px' }}>
-                                  <p style={{ margin: '0 0 6px 0', color: '#475569' }}>{row.description}</p>
-                                  <span style={{ color: '#059669', fontWeight: '700' }}>Indikator: {row.indicator}</span>
+                              <tr key={row.no} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                                <td style={{ padding: '14px', textAlign: 'center', fontWeight: 'bold', color: 'var(--accent-cyan)' }}>{row.no}</td>
+                                <td style={{ padding: '14px', fontWeight: '700', color: '#ffffff' }}>{row.program}</td>
+                                <td style={{ padding: '14px' }}>
+                                  <p style={{ margin: '0 0 6px 0', color: 'rgba(255, 255, 255, 0.82)' }}>{row.description}</p>
+                                  <span style={{ color: '#34d399', fontWeight: '700', display: 'block' }}>Indikator: {row.indicator}</span>
                                 </td>
                               </tr>
                             ))}
@@ -706,14 +848,16 @@ function Seminar() {
                     display: 'inline-flex',
                     alignItems: 'center',
                     gap: '6px',
-                    padding: '8px 16px',
-                    background: '#f1f5f9',
-                    border: '1px solid #cbd5e1',
-                    borderRadius: '8px',
+                    padding: '9px 18px',
+                    background: 'rgba(255, 255, 255, 0.08)',
+                    border: '1px solid rgba(255, 255, 255, 0.18)',
+                    borderRadius: '10px',
                     cursor: 'pointer',
                     fontSize: '0.85rem',
                     fontWeight: '700',
-                    color: '#0f2240'
+                    color: '#ffffff',
+                    fontFamily: 'inherit',
+                    transition: 'all 0.2s ease'
                   }}
                 >
                   <IconCopy size={15} />
@@ -723,14 +867,15 @@ function Seminar() {
                 <button
                   onClick={() => setSelectedLk(null)}
                   style={{
-                    padding: '8px 20px',
-                    background: '#0f2240',
+                    padding: '9px 22px',
+                    background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
                     color: '#ffffff',
                     border: 'none',
-                    borderRadius: '8px',
+                    borderRadius: '10px',
                     cursor: 'pointer',
                     fontWeight: '700',
-                    fontSize: '0.85rem'
+                    fontSize: '0.85rem',
+                    fontFamily: 'inherit'
                   }}
                 >
                   Tutup
@@ -759,50 +904,377 @@ function Seminar() {
 
               <div className="seminar-modal-body">
                 {/* Meta info */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '20px' }}>
-                  <div style={{ background: '#f8fafc', padding: '12px', borderRadius: '10px' }}>
-                    <span style={{ fontSize: '0.75rem', color: '#64748b', display: 'block' }}>Pengembang / Tim</span>
-                    <strong style={{ color: '#0f2240' }}>{selectedInovasi.collaborators}</strong>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '22px' }}>
+                  <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                    <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', marginBottom: '4px' }}>Pengembang / Tim</span>
+                    <strong style={{ color: '#ffffff' }}>{selectedInovasi.collaborators}</strong>
                   </div>
-                  <div style={{ background: '#f8fafc', padding: '12px', borderRadius: '10px' }}>
-                    <span style={{ fontSize: '0.75rem', color: '#64748b', display: 'block' }}>LPTK / Instansi</span>
-                    <strong style={{ color: '#0f2240' }}>{selectedInovasi.institution}</strong>
+                  <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                    <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', marginBottom: '4px' }}>LPTK / Instansi</span>
+                    <strong style={{ color: 'var(--accent-cyan)' }}>{selectedInovasi.institution}</strong>
                   </div>
-                  <div style={{ background: '#f8fafc', padding: '12px', borderRadius: '10px' }}>
-                    <span style={{ fontSize: '0.75rem', color: '#64748b', display: 'block' }}>Status Implementasi</span>
-                    <strong style={{ color: '#059669' }}>{selectedInovasi.status}</strong>
+                  <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                    <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', marginBottom: '4px' }}>Status Implementasi</span>
+                    <strong style={{ color: '#34d399' }}>{selectedInovasi.status}</strong>
                   </div>
                 </div>
 
                 {/* Metrics */}
                 <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(180px, 1fr))', gap: '12px', marginBottom: '24px' }}>
                   {selectedInovasi.impactMetrics?.map((m, idx) => (
-                    <div key={idx} style={{ background: 'linear-gradient(135deg, #f0fdf4, #dcfce7)', border: '1px solid #bbf7d0', padding: '14px', borderRadius: '12px' }}>
-                      <span style={{ fontSize: '1.25rem', fontWeight: '800', color: '#166534', display: 'block' }}>{m.value}</span>
-                      <span style={{ fontSize: '0.78rem', color: '#15803d' }}>{m.label}</span>
+                    <div key={idx} style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.15), rgba(13, 148, 136, 0.15))', border: '1px solid rgba(16, 185, 129, 0.35)', padding: '16px', borderRadius: '14px' }}>
+                      <span style={{ fontSize: '1.35rem', fontWeight: '800', color: '#34d399', display: 'block' }}>{m.value}</span>
+                      <span style={{ fontSize: '0.8rem', color: 'rgba(255, 255, 255, 0.75)' }}>{m.label}</span>
                     </div>
                   ))}
                 </div>
 
-                {/* Problem & Solution */}
-                <div style={{ marginBottom: '20px', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
-                  <div style={{ background: '#fff1f2', border: '1px solid #fecdd3', padding: '16px', borderRadius: '12px' }}>
-                    <strong style={{ color: '#9f1239', display: 'block', marginBottom: '6px' }}>Latar Belakang Permasalahan</strong>
-                    <p style={{ margin: 0, color: '#475569', fontSize: '0.88rem', lineHeight: '1.55' }}>{selectedInovasi.problem}</p>
+                {/* Slide Presentasi PDF Karya Inovasi (If PDF exists) */}
+                {selectedInovasi.pdfUrl && (
+                  <div
+                    className="modal-pdf-bar"
+                    style={{
+                      marginBottom: '22px',
+                      background: 'linear-gradient(135deg, rgba(239, 68, 68, 0.12), rgba(220, 38, 38, 0.05))',
+                      border: '1px solid rgba(239, 68, 68, 0.35)',
+                      borderRadius: '16px',
+                      padding: '16px 20px'
+                    }}
+                  >
+                    <div className="modal-pdf-bar-left">
+                      <div
+                        style={{
+                          width: '42px',
+                          height: '42px',
+                          borderRadius: '10px',
+                          background: 'rgba(239, 68, 68, 0.2)',
+                          display: 'flex',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          color: '#f87171',
+                          flexShrink: 0
+                        }}
+                      >
+                        <IconPdf size={24} />
+                      </div>
+                      <div>
+                        <strong style={{ color: '#ffffff', display: 'block', fontSize: '0.98rem' }}>
+                          {selectedInovasi.pdfTitle || 'Slide Presentasi Karya Inovasi Pembelajaran'}
+                        </strong>
+                        <span style={{ color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.8rem', display: 'block', marginTop: '2px' }}>
+                          Berkas: <strong style={{ color: '#fca5a5' }}>{selectedInovasi.pdfFileName}</strong> • Ukuran: <strong>{selectedInovasi.pdfSize}</strong> • Dokumen Presentasi Seminar PPG
+                        </span>
+                      </div>
+                    </div>
+                    <div className="modal-pdf-btns">
+                      <button
+                        type="button"
+                        className="modal-pdf-btn-embed"
+                        onClick={() => setShowInovasiPdfEmbed(!showInovasiPdfEmbed)}
+                        title="Tampilkan / Sembunyikan Review Slide di Layar"
+                        style={{
+                          borderColor: showInovasiPdfEmbed ? '#f87171' : undefined,
+                          color: showInovasiPdfEmbed ? '#fca5a5' : undefined
+                        }}
+                      >
+                        <IconEye size={15} />
+                        <span>{showInovasiPdfEmbed ? 'Tutup Review Slide' : 'Review Slide PDF'}</span>
+                      </button>
+                      <button
+                        type="button"
+                        onClick={() => openPdfReview(selectedInovasi.pdfUrl, selectedInovasi.pdfTitle || selectedInovasi.title, selectedInovasi.pdfFileName, selectedInovasi.pdfSize, selectedInovasi.previewPages)}
+                        className="modal-pdf-btn-open"
+                        style={{
+                          background: 'linear-gradient(135deg, #ef4444, #dc2626)',
+                          color: '#ffffff',
+                          boxShadow: '0 4px 14px rgba(239, 68, 68, 0.35)',
+                          border: 'none',
+                          cursor: 'pointer',
+                          fontFamily: 'inherit'
+                        }}
+                        title="Review Slide Presentasi di Jendela Layar Penuh (Tanpa Mengunduh)"
+                      >
+                        <IconExternal size={14} />
+                        <span>Review Layar Penuh</span>
+                      </button>
+                      <a
+                        href={selectedInovasi.pdfUrl}
+                        download={selectedInovasi.pdfFileName}
+                        className="modal-pdf-btn-open"
+                        style={{
+                          background: 'rgba(255, 255, 255, 0.08)',
+                          color: '#ffffff',
+                          border: '1px solid rgba(255, 255, 255, 0.15)'
+                        }}
+                        title="Unduh Berkas karya inovasi.pdf ke Komputer"
+                      >
+                        <IconDownload size={14} />
+                        <span>Unduh Slide PDF</span>
+                      </a>
+                    </div>
                   </div>
-                  <div style={{ background: '#eff6ff', border: '1px solid #bfdbfe', padding: '16px', borderRadius: '12px' }}>
-                    <strong style={{ color: '#1e40af', display: 'block', marginBottom: '6px' }}>Solusi Inovasi yang Dihasilkan</strong>
-                    <p style={{ margin: 0, color: '#475569', fontSize: '0.88rem', lineHeight: '1.55' }}>{selectedInovasi.solution}</p>
+                )}
+
+                {/* In-App Interactive Canvas Slide Viewer (Zero download, pure in-app render) */}
+                {selectedInovasi.pdfUrl && showInovasiPdfEmbed && (
+                  <div style={{ marginBottom: '24px' }}>
+                    <PdfCanvasViewer
+                      pdfUrl={selectedInovasi.pdfUrl}
+                      pages={selectedInovasi.previewPages}
+                      title={selectedInovasi.pdfTitle || selectedInovasi.title}
+                      fileName={selectedInovasi.pdfFileName}
+                      fileSize={selectedInovasi.pdfSize}
+                      height="600px"
+                      onExpandFullscreen={() => openPdfReview(selectedInovasi.pdfUrl, selectedInovasi.pdfTitle || selectedInovasi.title, selectedInovasi.pdfFileName, selectedInovasi.pdfSize, selectedInovasi.previewPages)}
+                    />
+                  </div>
+                )}
+
+                {/* NetLab Simulator Interactive Guide (If JSON Product) */}
+                {selectedInovasi.jsonUrl && (
+                  <div className="netlab-guide-banner">
+                    <div className="netlab-banner-head">
+                      <div className="netlab-banner-title">
+                        <div className="netlab-icon-circle">
+                          <IconRouter size={24} />
+                        </div>
+                        <div>
+                          <h3 style={{ margin: 0, fontSize: '1.15rem', color: '#ffffff', fontWeight: '800' }}>
+                            Panduan Simulasi Topologi Jaringan di NetLab
+                          </h3>
+                          <p style={{ margin: '4px 0 0', fontSize: '0.84rem', color: '#7dd3fc', wordBreak: 'break-word', overflowWrap: 'anywhere' }}>
+                            Platform Simulator: <strong style={{ wordBreak: 'break-all' }}>https://netlab.thecybersecguru.com</strong> • Berkas: <strong>{selectedInovasi.jsonFileName}</strong> ({selectedInovasi.jsonSize})
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className="netlab-banner-actions">
+                        <a
+                          href={selectedInovasi.jsonUrl}
+                          download={selectedInovasi.jsonFileName}
+                          className="netlab-btn-download"
+                          title="Unduh Berkas produk-karya-inovasi.json"
+                        >
+                          <IconDownload size={15} />
+                          <span>Unduh File JSON</span>
+                        </a>
+
+                        <a
+                          href={selectedInovasi.netlabUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="netlab-btn-open"
+                          title="Kunjungi Website Simulator NetLab"
+                        >
+                          <IconExternal size={15} />
+                          <span>Buka Simulator NetLab</span>
+                        </a>
+                      </div>
+                    </div>
+
+                    <div style={{ marginBottom: '14px' }}>
+                      <span style={{ fontSize: '0.8rem', color: 'rgba(255, 255, 255, 0.75)', textTransform: 'uppercase', letterSpacing: '0.8px', fontWeight: '700' }}>
+                        Langkah demi Langkah Menjalankan Simulasi:
+                      </span>
+                    </div>
+
+                    <div className="netlab-steps-grid">
+                      {selectedInovasi.howToTest?.map((st) => (
+                        <div key={st.step} className="netlab-step-card">
+                          <div className="netlab-step-num">{st.step}</div>
+                          <div className="netlab-step-title">{st.title}</div>
+                          <p className="netlab-step-desc" style={{ wordBreak: 'break-word', overflowWrap: 'anywhere' }}>
+                            {st.desc}
+                          </p>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                {/* Topology Schematic Diagram (If JSON Product) */}
+                {selectedInovasi.devices && (
+                  <div className="topology-schematic-wrap">
+                    <div className="topology-schematic-head">
+                      <div>
+                        <h4 style={{ margin: 0, color: '#ffffff', fontSize: '1.05rem', fontWeight: '800' }}>
+                          Arsitektur & Skema Topologi Jaringan Minimarket Berkah
+                        </h4>
+                        <p style={{ margin: '4px 0 0', fontSize: '0.8rem', color: 'rgba(255, 255, 255, 0.7)' }}>
+                          Simulasi Ritel: Server Database Kasir terpusat, Terminal POS Kasir, dan Terminal Logistik Gudang
+                        </p>
+                      </div>
+                      <span className="topology-port-chip" style={{ background: 'rgba(14, 165, 233, 0.2)', borderColor: 'rgba(14, 165, 233, 0.4)', color: '#38bdf8' }}>
+                        Topologi Star Terkelola
+                      </span>
+                    </div>
+
+                    <div className="topology-grid-layout">
+                      {/* Central Switch */}
+                      <div className="topology-switch-box">
+                        <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '4px' }}>
+                          <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#34d399', boxShadow: '0 0 8px #34d399' }}></span>
+                          <strong style={{ color: '#ffffff', fontSize: '1rem' }}>Cisco Catalyst 2960-24TT Switch</strong>
+                        </div>
+                        <span style={{ fontSize: '0.78rem', color: 'var(--accent-cyan)', fontFamily: 'Geist Mono, monospace' }}>
+                          Hostname: 2960-24TT3 • STP PVST (Priority 32768)
+                        </span>
+                        <div className="topology-switch-ports">
+                          <span className="topology-port-chip">fa0/1 ⇄ Server Kasir</span>
+                          <span className="topology-port-chip">fa0/2 ⇄ PC Kasir</span>
+                          <span className="topology-port-chip">fa0/3 ⇄ PC Gudang</span>
+                          <span className="topology-port-chip" style={{ opacity: 0.6 }}>fa0/4-24 & gi0/1-2 (Idle)</span>
+                        </div>
+                      </div>
+
+                      {/* Endpoints Row */}
+                      <div className="topology-endpoints-row">
+                        {selectedInovasi.devices?.slice(1).map((dev, idx) => (
+                          <div key={idx} className="topology-endpoint-card">
+                            <span className="topology-endpoint-badge" title="Status Online"></span>
+                            <div style={{ fontSize: '0.72rem', color: 'var(--accent-cyan)', textTransform: 'uppercase', fontWeight: '800', marginBottom: '2px' }}>
+                              {dev.model}
+                            </div>
+                            <h5 style={{ margin: '0 0 6px 0', color: '#ffffff', fontSize: '0.98rem', fontWeight: '700' }}>
+                              {dev.name}
+                            </h5>
+                            <p style={{ margin: '0 0 10px 0', fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.72)' }}>
+                              {dev.role}
+                            </p>
+                            <div style={{ background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '8px', padding: '8px', fontSize: '0.78rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                              <div><span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>IP Address: </span><strong style={{ color: '#38bdf8' }}>{dev.ip}</strong></div>
+                              <div><span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>Subnet: </span><span style={{ color: 'rgba(255, 255, 255, 0.85)' }}>{dev.subnet}</span></div>
+                              <div><span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>Gateway: </span><span style={{ color: 'rgba(255, 255, 255, 0.85)' }}>{dev.gateway}</span></div>
+                              <div><span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>Port: </span><span style={{ color: '#34d399' }}>{dev.ports}</span></div>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Device Table (If JSON Product) */}
+                {selectedInovasi.devices && (
+                  <div style={{ marginBottom: '24px' }}>
+                    <h4 style={{ color: '#ffffff', marginBottom: '12px', fontSize: '1.05rem', fontWeight: '700' }}>
+                      Rincian Pengalamatan & Parameter Perangkat Topologi
+                    </h4>
+                    <div className="topology-table-wrap">
+                      <table className="topology-table">
+                        <thead>
+                          <tr>
+                            <th>Perangkat</th>
+                            <th>Hostname</th>
+                            <th>Model</th>
+                            <th>Alamat IP</th>
+                            <th>Subnet Mask</th>
+                            <th>Gateway</th>
+                            <th>Port Koneksi</th>
+                          </tr>
+                        </thead>
+                        <tbody>
+                          {selectedInovasi.devices.map((d, idx) => (
+                            <tr key={idx}>
+                              <td style={{ fontWeight: '700', color: '#ffffff' }}>{d.name}</td>
+                              <td style={{ fontFamily: 'Geist Mono, monospace', color: 'var(--accent-cyan)' }}>{d.hostname}</td>
+                              <td style={{ color: 'rgba(255, 255, 255, 0.75)' }}>{d.model}</td>
+                              <td style={{ fontWeight: '700', color: '#38bdf8', fontFamily: 'Geist Mono, monospace' }}>{d.ip}</td>
+                              <td style={{ fontFamily: 'Geist Mono, monospace' }}>{d.subnet}</td>
+                              <td style={{ fontFamily: 'Geist Mono, monospace', color: 'rgba(255, 255, 255, 0.75)' }}>{d.gateway || '-'}</td>
+                              <td style={{ color: '#34d399', fontSize: '0.78rem' }}>{d.ports}</td>
+                            </tr>
+                          ))}
+                        </tbody>
+                      </table>
+                    </div>
+                  </div>
+                )}
+
+                {/* JSON Code Inspector (If JSON Product) */}
+                {selectedInovasi.jsonUrl && (
+                  <div style={{ marginBottom: '24px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                      <h4 style={{ color: '#ffffff', margin: 0, fontSize: '1.05rem', fontWeight: '700' }}>
+                        Berkas Konfigurasi JSON NetLab
+                      </h4>
+                      <button
+                        onClick={() => setShowJsonPreview(!showJsonPreview)}
+                        style={{
+                          background: 'rgba(255, 255, 255, 0.08)',
+                          border: '1px solid rgba(255, 255, 255, 0.18)',
+                          color: 'var(--accent-cyan)',
+                          padding: '6px 14px',
+                          borderRadius: '8px',
+                          fontSize: '0.8rem',
+                          fontWeight: '700',
+                          cursor: 'pointer',
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '6px',
+                          fontFamily: 'inherit'
+                        }}
+                      >
+                        <IconEye size={14} />
+                        <span>{showJsonPreview ? 'Tutup Pratinjau Kode' : 'Pratinjau Kode JSON'}</span>
+                      </button>
+                    </div>
+
+                    {showJsonPreview && (
+                      <div className="json-preview-wrap">
+                        <div className="json-preview-bar">
+                          <span>berkas: produk-karya-inovasi.json (Skema NetLab v1.0)</span>
+                          <button
+                            onClick={() => {
+                              navigator.clipboard?.writeText(netlabJsonPreview).then(() => {
+                                setJsonCopied(true)
+                                setTimeout(() => setJsonCopied(false), 2500)
+                              })
+                            }}
+                            style={{
+                              background: 'rgba(56, 189, 248, 0.2)',
+                              border: '1px solid rgba(56, 189, 248, 0.35)',
+                              color: '#ffffff',
+                              padding: '4px 10px',
+                              borderRadius: '6px',
+                              cursor: 'pointer',
+                              fontSize: '0.75rem',
+                              fontWeight: '700',
+                              display: 'inline-flex',
+                              alignItems: 'center',
+                              gap: '4px',
+                              fontFamily: 'inherit'
+                            }}
+                          >
+                            <IconCopy size={13} />
+                            <span>{jsonCopied ? 'Tersalin!' : 'Salin JSON'}</span>
+                          </button>
+                        </div>
+                        <pre className="json-preview-code">{netlabJsonPreview}</pre>
+                      </div>
+                    )}
+                  </div>
+                )}
+
+                {/* Problem & Solution */}
+                <div style={{ marginBottom: '24px', display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
+                  <div style={{ background: 'rgba(244, 63, 94, 0.08)', border: '1px solid rgba(244, 63, 94, 0.3)', padding: '18px', borderRadius: '14px' }}>
+                    <strong style={{ color: '#fda4af', display: 'block', marginBottom: '6px', fontSize: '0.95rem' }}>Latar Belakang Permasalahan</strong>
+                    <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.82)', fontSize: '0.88rem', lineHeight: '1.6' }}>{selectedInovasi.problem}</p>
+                  </div>
+                  <div style={{ background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '18px', borderRadius: '14px' }}>
+                    <strong style={{ color: '#7dd3fc', display: 'block', marginBottom: '6px', fontSize: '0.95rem' }}>Solusi Inovasi yang Dihasilkan</strong>
+                    <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.82)', fontSize: '0.88rem', lineHeight: '1.6' }}>{selectedInovasi.solution}</p>
                   </div>
                 </div>
 
                 {/* Key Features */}
-                <div style={{ marginBottom: '20px' }}>
-                  <h4 style={{ color: '#0f2240', marginBottom: '10px' }}>Fitur & Keunggulan Utama Inovasi</h4>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ marginBottom: '24px' }}>
+                  <h4 style={{ color: '#ffffff', marginBottom: '12px', fontSize: '1.05rem', fontWeight: '700' }}>Fitur & Keunggulan Utama Inovasi</h4>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     {selectedInovasi.keyFeatures?.map((f, idx) => (
-                      <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.9rem', color: '#334155' }}>
-                        <span style={{ color: '#059669', marginTop: '2px' }}><IconCheck size={14} /></span>
+                      <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.85)' }}>
+                        <span style={{ color: '#34d399', marginTop: '2px' }}><IconCheck size={14} /></span>
                         <span>{f}</span>
                       </li>
                     ))}
@@ -812,34 +1284,152 @@ function Seminar() {
                 {/* Evidence links */}
                 {selectedInovasi.evidenceLinks && (
                   <div>
-                    <h4 style={{ color: '#0f2240', marginBottom: '10px' }}>Tautan Bukti & Dokumen Pendukung</h4>
+                    <h4 style={{ color: '#ffffff', marginBottom: '12px', fontSize: '1.05rem', fontWeight: '700' }}>Tautan Bukti & Dokumen Pendukung</h4>
                     <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                      {selectedInovasi.evidenceLinks.map((ev, idx) => (
-                        <div key={idx} style={{ background: '#f1f5f9', padding: '8px 14px', borderRadius: '8px', fontSize: '0.82rem' }}>
-                          <strong style={{ color: '#0f2240' }}>{ev.label}</strong>
-                          <span style={{ color: '#64748b', marginLeft: '6px' }}>({ev.note})</span>
-                        </div>
-                      ))}
+                      {selectedInovasi.evidenceLinks.map((ev, idx) => {
+                        if (ev.url) {
+                          const isPdf = ev.url.endsWith('.pdf') || ev.label.includes('PDF')
+                          if (isPdf) {
+                            return (
+                              <button
+                                key={idx}
+                                type="button"
+                                onClick={() => openPdfReview(ev.url, selectedInovasi.pdfTitle || ev.label, selectedInovasi.pdfFileName, selectedInovasi.pdfSize, selectedInovasi.previewPages)}
+                                style={{
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  gap: '8px',
+                                  background: 'rgba(239, 68, 68, 0.12)',
+                                  border: '1px solid rgba(239, 68, 68, 0.35)',
+                                  padding: '8px 14px',
+                                  borderRadius: '10px',
+                                  fontSize: '0.82rem',
+                                  color: '#ffffff',
+                                  cursor: 'pointer',
+                                  transition: 'all 0.2s ease',
+                                  fontFamily: 'inherit'
+                                }}
+                                className="evidence-link-pill"
+                                title="Klik untuk Review Dokumen PDF di Layar"
+                              >
+                                <IconPdf size={15} style={{ color: '#f87171' }} />
+                                <strong style={{ color: '#fca5a5' }}>{ev.label}</strong>
+                                <span style={{ color: 'rgba(255, 255, 255, 0.65)' }}>({ev.note})</span>
+                              </button>
+                            )
+                          }
+                          return (
+                            <a
+                              key={idx}
+                              href={ev.url}
+                              target={ev.download ? undefined : '_blank'}
+                              rel="noopener noreferrer"
+                              download={ev.download}
+                              style={{
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '8px',
+                                background: 'rgba(255, 255, 255, 0.06)',
+                                border: '1px solid rgba(255, 255, 255, 0.15)',
+                                padding: '8px 14px',
+                                borderRadius: '10px',
+                                fontSize: '0.82rem',
+                                color: '#ffffff',
+                                textDecoration: 'none',
+                                transition: 'all 0.2s ease'
+                              }}
+                              className="evidence-link-pill"
+                            >
+                              {ev.download ? (
+                                <IconDownload size={14} style={{ color: 'var(--accent-cyan)' }} />
+                              ) : (
+                                <IconExternal size={14} style={{ color: 'var(--accent-cyan)' }} />
+                              )}
+                              <strong style={{ color: 'var(--accent-cyan)' }}>{ev.label}</strong>
+                              <span style={{ color: 'rgba(255, 255, 255, 0.65)' }}>({ev.note})</span>
+                            </a>
+                          )
+                        }
+                        return (
+                          <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.12)', padding: '8px 14px', borderRadius: '10px', fontSize: '0.82rem' }}>
+                            <strong style={{ color: 'var(--accent-cyan)' }}>{ev.label}</strong>
+                            <span style={{ color: 'rgba(255, 255, 255, 0.65)', marginLeft: '6px' }}>({ev.note})</span>
+                          </div>
+                        )
+                      })}
                     </div>
                   </div>
                 )}
               </div>
 
               <div className="seminar-modal-foot">
-                <span style={{ fontSize: '0.82rem', color: '#64748b' }}>
-                  Karya Inovasi Seminar PPG Informatika • Universitas Negeri Yogyakarta
-                </span>
+                <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+                  {selectedInovasi.pdfUrl && (
+                    <button
+                      type="button"
+                      onClick={() => openPdfReview(selectedInovasi.pdfUrl, selectedInovasi.pdfTitle || selectedInovasi.title, selectedInovasi.pdfFileName, selectedInovasi.pdfSize, selectedInovasi.previewPages)}
+                      className="netlab-btn-open"
+                      style={{
+                        padding: '8px 16px',
+                        fontSize: '0.82rem',
+                        background: 'linear-gradient(135deg, #ef4444, #dc2626)',
+                        boxShadow: '0 4px 14px rgba(239, 68, 68, 0.35)',
+                        color: '#ffffff',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        borderRadius: '8px',
+                        fontWeight: '700',
+                        border: 'none',
+                        cursor: 'pointer',
+                        fontFamily: 'inherit'
+                      }}
+                      title="Review Berkas Slide Presentasi PDF (Tanpa Mengunduh)"
+                    >
+                      <IconPdf size={14} />
+                      <span>Review Slide PDF ({selectedInovasi.pdfSize})</span>
+                    </button>
+                  )}
+                  {selectedInovasi.jsonUrl && (
+                    <>
+                      <a
+                        href={selectedInovasi.jsonUrl}
+                        download={selectedInovasi.jsonFileName}
+                        className="netlab-btn-download"
+                        style={{ padding: '8px 16px', fontSize: '0.82rem' }}
+                      >
+                        <IconDownload size={14} />
+                        <span>Unduh JSON ({selectedInovasi.jsonSize || '41 KB'})</span>
+                      </a>
+                      <a
+                        href={selectedInovasi.netlabUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="netlab-btn-open"
+                        style={{ padding: '8px 16px', fontSize: '0.82rem' }}
+                      >
+                        <IconExternal size={14} />
+                        <span>Buka NetLab Simulator</span>
+                      </a>
+                    </>
+                  )}
+                  <span style={{ fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.65)' }}>
+                    Karya Inovasi Seminar PPG Informatika • Universitas Negeri Yogyakarta
+                  </span>
+                </div>
+
                 <button
                   onClick={() => setSelectedInovasi(null)}
                   style={{
-                    padding: '8px 20px',
-                    background: '#0f2240',
+                    padding: '9px 22px',
+                    background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
                     color: '#ffffff',
                     border: 'none',
-                    borderRadius: '8px',
+                    borderRadius: '10px',
                     cursor: 'pointer',
                     fontWeight: '700',
-                    fontSize: '0.85rem'
+                    fontSize: '0.85rem',
+                    fontFamily: 'inherit'
                   }}
                 >
                   Tutup
@@ -849,6 +1439,16 @@ function Seminar() {
           </div>,
           document.body
         )}
+
+      {/* Standalone Fullscreen PDF Review Modal */}
+      <PdfReviewModal
+        isOpen={!!activeReviewPdf}
+        onClose={() => setActiveReviewPdf(null)}
+        pdfUrl={activeReviewPdf?.pdfUrl}
+        title={activeReviewPdf?.title}
+        fileName={activeReviewPdf?.fileName}
+        fileSize={activeReviewPdf?.fileSize}
+      />
     </section>
   )
 }

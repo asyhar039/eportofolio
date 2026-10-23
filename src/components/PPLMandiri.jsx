@@ -88,6 +88,8 @@ function PPLMandiri() {
 
   return (
     <section id="ppl-mandiri" className="ppl-section">
+      <span className="ppl-section-eyebrow">06 · PPL MANDIRI SMAN 11 YOGYAKARTA</span>
+
       {/* Hero Banner */}
       <div className="ppl-hero-banner">
         <div className="ppl-badge-top">
@@ -133,7 +135,7 @@ function PPLMandiri() {
             <h2>Kemitraan Praktik Persekolahan Berkualitas</h2>
             <p>{pplSchoolProfile.motto}</p>
           </div>
-          <span style={{ background: '#f0fdf4', color: '#166534', border: '1px solid #bbf7d0', padding: '6px 14px', borderRadius: '8px', fontWeight: '700', fontSize: '0.85rem' }}>
+          <span style={{ background: 'rgba(16, 185, 129, 0.18)', color: '#34d399', border: '1px solid rgba(16, 185, 129, 0.35)', padding: '6px 16px', borderRadius: '10px', fontWeight: '700', fontSize: '0.84rem' }}>
             {pplSchoolProfile.period}
           </span>
         </div>
@@ -203,7 +205,7 @@ function PPLMandiri() {
               <h3 className="ppl-phase-title">{phase.title}</h3>
               <p className="ppl-phase-desc">{phase.description}</p>
 
-              <strong style={{ fontSize: '0.85rem', color: '#0b1e36', display: 'block', marginBottom: '8px' }}>
+              <strong style={{ fontSize: '0.88rem', color: '#34d399', display: 'block', marginBottom: '10px' }}>
                 Hasil Capaian & Artefak Terwujud:
               </strong>
               <ul className="ppl-outcomes-list">
@@ -235,15 +237,15 @@ function PPLMandiri() {
               <ul className="ppl-art-highlights">
                 {art.highlights.map((h, idx) => (
                   <li key={idx}>
-                    <span style={{ color: '#059669', marginTop: '2px' }}><IconCheck size={13} /></span>
+                    <span style={{ color: '#34d399', marginTop: '2px' }}><IconCheck size={13} /></span>
                     <span>{h}</span>
                   </li>
                 ))}
               </ul>
 
               <button
-                className="btn btn-secondary"
-                style={{ marginTop: 'auto', width: '100%', justifyContent: 'center' }}
+                className="ppl-open-scenario-btn"
+                style={{ marginTop: 'auto' }}
                 onClick={() => setSelectedArtifact(art)}
               >
                 <span>Lihat Uraian Skenario Perangkat</span>
@@ -268,25 +270,25 @@ function PPLMandiri() {
           </div>
 
           <div className="ppl-ref-cards-grid">
-            <div className="ppl-ref-card" style={{ borderColor: '#bbf7d0', background: '#f0fdf4' }}>
+            <div className="ppl-ref-card" style={{ borderColor: 'rgba(16, 185, 129, 0.35)', background: 'rgba(16, 185, 129, 0.08)' }}>
               <span className="ppl-ref-badge success">KEBERHASILAN UTAMA (A.1)</span>
               <h4>{pplReflectionLK3.sections[0].title}</h4>
               <p>{pplReflectionLK3.sections[0].content}</p>
             </div>
 
-            <div className="ppl-ref-card" style={{ borderColor: '#fecdd3', background: '#fff1f2' }}>
+            <div className="ppl-ref-card" style={{ borderColor: 'rgba(244, 63, 94, 0.35)', background: 'rgba(244, 63, 94, 0.08)' }}>
               <span className="ppl-ref-badge challenge">KENDALA KELAS & TANTANGAN (A.2)</span>
               <h4>{pplReflectionLK3.sections[1].title}</h4>
               <p>{pplReflectionLK3.sections[1].content}</p>
             </div>
 
-            <div className="ppl-ref-card" style={{ borderColor: '#bfdbfe', background: '#eff6ff' }}>
+            <div className="ppl-ref-card" style={{ borderColor: 'rgba(56, 189, 248, 0.35)', background: 'rgba(56, 189, 248, 0.08)' }}>
               <span className="ppl-ref-badge feedback">ARAHAN PAMONG & DPL (B.1)</span>
               <h4>{pplReflectionLK3.sections[2].title}</h4>
               <p>{pplReflectionLK3.sections[2].content}</p>
             </div>
 
-            <div className="ppl-ref-card" style={{ borderColor: '#fed7aa', background: '#fff7ed' }}>
+            <div className="ppl-ref-card" style={{ borderColor: 'rgba(251, 146, 60, 0.35)', background: 'rgba(251, 146, 60, 0.08)' }}>
               <span className="ppl-ref-badge action">RENCANA AKSI PERBAIKAN (B.2)</span>
               <h4>{pplReflectionLK3.sections[3].title}</h4>
               <p>{pplReflectionLK3.sections[3].content}</p>
@@ -298,52 +300,52 @@ function PPLMandiri() {
       {/* TAB 4: INOVASI PRESENSI QR CODE DI SMAN 11 */}
       {activeTab === 'inovasi' && (
         <div className="ppl-school-card">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '24px' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '28px' }}>
             <div>
-              <span style={{ background: '#e0f2fe', color: '#0369a1', padding: '4px 12px', borderRadius: '8px', fontSize: '0.8rem', fontWeight: '800' }}>
+              <span style={{ background: 'rgba(0, 217, 255, 0.15)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 217, 255, 0.35)', padding: '4px 14px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.8px' }}>
                 Projek Kepemimpinan Mahasiswa PPG Tim A2
               </span>
-              <h2 style={{ fontSize: '1.6rem', color: '#0b1e36', margin: '12px 0 8px' }}>
+              <h2 style={{ fontSize: '1.6rem', color: '#ffffff', margin: '14px 0 10px', fontWeight: '800', lineHeight: '1.3' }}>
                 Transformasi Presensi Digital Berbasis QR Code di SMAN 11 Yogyakarta
               </h2>
-              <p style={{ color: '#475569', fontSize: '0.95rem', lineHeight: '1.65' }}>
+              <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.95rem', lineHeight: '1.7' }}>
                 Inisiatif nyata calon guru Informatika dalam mengatasi bottleneck kehadiran konvensional di SMA Kebangsaan 11 Yogyakarta. Melalui pemindaian kartu tanda pelajar ber-QR Code secara instan, data langsung tercatat di server sekolah tanpa kertas.
               </p>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px', margin: '20px 0' }}>
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', margin: '22px 0' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <span style={{ color: '#059669' }}><IconCheck size={16} /></span>
-                  <span style={{ fontSize: '0.9rem', color: '#334155' }}>Pemindaian instan &lt;2 detik per siswa menggunakan web camera</span>
+                  <span style={{ color: 'var(--accent-cyan, #00D9FF)' }}><IconCheck size={16} /></span>
+                  <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.85)' }}>Pemindaian instan &lt;2 detik per siswa menggunakan web camera</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <span style={{ color: '#059669' }}><IconCheck size={16} /></span>
-                  <span style={{ fontSize: '0.9rem', color: '#334155' }}>Rekapitulasi otomatis tersimpan ke spreadsheet sekolah</span>
+                  <span style={{ color: 'var(--accent-cyan, #00D9FF)' }}><IconCheck size={16} /></span>
+                  <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.85)' }}>Rekapitulasi otomatis tersimpan ke spreadsheet sekolah</span>
                 </div>
                 <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <span style={{ color: '#059669' }}><IconCheck size={16} /></span>
-                  <span style={{ fontSize: '0.9rem', color: '#334155' }}>Diujicobakan sukses pada 6 kelas di SMAN 11 Yogyakarta</span>
+                  <span style={{ color: 'var(--accent-cyan, #00D9FF)' }}><IconCheck size={16} /></span>
+                  <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.85)' }}>Diujicobakan sukses pada 6 kelas di SMAN 11 Yogyakarta</span>
                 </div>
               </div>
             </div>
 
-            <div style={{ background: '#f8fafc', padding: '24px', borderRadius: '16px', border: '1px solid #e2e8f0' }}>
-              <h4 style={{ color: '#0b1e36', margin: '0 0 14px' }}>Matriks Keberhasilan Projek di SMAN 11</h4>
+            <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '24px', borderRadius: '20px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+              <h4 style={{ color: '#ffffff', margin: '0 0 16px', fontSize: '1.05rem', fontWeight: '700' }}>Matriks Keberhasilan Projek di SMAN 11</h4>
               <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
-                <div style={{ background: '#ffffff', padding: '14px', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
-                  <span style={{ fontSize: '1.4rem', fontWeight: '800', color: '#1d6fa5', display: 'block' }}>60%</span>
-                  <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Waktu Presensi Lebih Hemat</span>
+                <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                  <span style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--accent-cyan, #00D9FF)', display: 'block' }}>60%</span>
+                  <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)' }}>Waktu Presensi Lebih Hemat</span>
                 </div>
-                <div style={{ background: '#ffffff', padding: '14px', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
-                  <span style={{ fontSize: '1.4rem', fontWeight: '800', color: '#059669', display: 'block' }}>100%</span>
-                  <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Data Real-Time Akurat</span>
+                <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                  <span style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--accent-cyan, #00D9FF)', display: 'block' }}>100%</span>
+                  <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)' }}>Data Real-Time Akurat</span>
                 </div>
-                <div style={{ background: '#ffffff', padding: '14px', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
-                  <span style={{ fontSize: '1.4rem', fontWeight: '800', color: '#d97706', display: 'block' }}>0 Lembar</span>
-                  <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Kertas Absensi Terbuang</span>
+                <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                  <span style={{ fontSize: '1.5rem', fontWeight: '800', color: '#fbbf24', display: 'block' }}>0 Lembar</span>
+                  <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)' }}>Kertas Absensi Terbuang</span>
                 </div>
-                <div style={{ background: '#ffffff', padding: '14px', borderRadius: '10px', border: '1px solid #e2e8f0' }}>
-                  <span style={{ fontSize: '1.4rem', fontWeight: '800', color: '#0b1e36', display: 'block' }}>6 Kelas</span>
-                  <span style={{ fontSize: '0.78rem', color: '#64748b' }}>Target Uji Coba Lapangan</span>
+                <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                  <span style={{ fontSize: '1.5rem', fontWeight: '800', color: '#ffffff', display: 'block' }}>6 Kelas</span>
+                  <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)' }}>Target Uji Coba Lapangan</span>
                 </div>
               </div>
             </div>
@@ -381,17 +383,17 @@ function PPLMandiri() {
               </div>
 
               <div className="seminar-modal-body">
-                <div style={{ background: '#f8fafc', padding: '16px', borderRadius: '12px', border: '1px solid #e2e8f0', marginBottom: '20px' }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: '800', color: '#1d6fa5' }}>KODE PERANGKAT: {selectedArtifact.code}</span>
-                  <p style={{ margin: '6px 0 0', color: '#334155', fontSize: '0.92rem', lineHeight: '1.6' }}>{selectedArtifact.summary}</p>
+                <div style={{ background: 'rgba(255, 255, 255, 0.05)', padding: '18px 22px', borderRadius: '14px', border: '1px solid rgba(255, 255, 255, 0.1)', marginBottom: '24px' }}>
+                  <span style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--accent-cyan, #00D9FF)', letterSpacing: '0.6px' }}>KODE PERANGKAT: {selectedArtifact.code}</span>
+                  <p style={{ margin: '8px 0 0', color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.92rem', lineHeight: '1.65' }}>{selectedArtifact.summary}</p>
                 </div>
 
-                <div style={{ marginBottom: '20px' }}>
-                  <h4 style={{ color: '#0b1e36', margin: '0 0 10px' }}>Sorotan Fitur & Metodologi Perangkat</h4>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                <div style={{ marginBottom: '24px' }}>
+                  <h4 style={{ color: '#ffffff', margin: '0 0 12px', fontSize: '1.05rem', fontWeight: '700' }}>Sorotan Fitur & Metodologi Perangkat</h4>
+                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
                     {selectedArtifact.highlights.map((h, idx) => (
-                      <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.9rem', color: '#334155' }}>
-                        <span style={{ color: '#059669', marginTop: '2px' }}><IconCheck size={14} /></span>
+                      <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.85)' }}>
+                        <span style={{ color: 'var(--accent-cyan, #00D9FF)', marginTop: '2px' }}><IconCheck size={14} /></span>
                         <span>{h}</span>
                       </li>
                     ))}
@@ -400,12 +402,12 @@ function PPLMandiri() {
 
                 {selectedArtifact.sections && (
                   <div>
-                    <h4 style={{ color: '#0b1e36', margin: '0 0 12px' }}>Uraian Komponen Modul Ajar</h4>
+                    <h4 style={{ color: '#ffffff', margin: '0 0 14px', fontSize: '1.05rem', fontWeight: '700' }}>Uraian Komponen Modul Ajar</h4>
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                       {selectedArtifact.sections.map((sec, idx) => (
-                        <div key={idx} style={{ background: '#f1f5f9', padding: '14px 18px', borderRadius: '10px' }}>
-                          <strong style={{ color: '#0b1e36', display: 'block', marginBottom: '4px' }}>{sec.heading}</strong>
-                          <p style={{ margin: 0, color: '#475569', fontSize: '0.9rem', lineHeight: '1.55' }}>{sec.content}</p>
+                        <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '16px 20px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
+                          <strong style={{ color: 'var(--accent-cyan, #00D9FF)', display: 'block', marginBottom: '6px', fontSize: '0.95rem' }}>{sec.heading}</strong>
+                          <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.82)', fontSize: '0.9rem', lineHeight: '1.6' }}>{sec.content}</p>
                         </div>
                       ))}
                     </div>
@@ -414,20 +416,22 @@ function PPLMandiri() {
               </div>
 
               <div className="seminar-modal-foot">
-                <span style={{ fontSize: '0.82rem', color: '#64748b' }}>
+                <span style={{ fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.65)' }}>
                   Perangkat Ajar Resmi PPL SMAN 11 Yogyakarta • Asyhar Qowiim
                 </span>
                 <button
                   onClick={() => setSelectedArtifact(null)}
                   style={{
-                    padding: '8px 20px',
-                    background: '#0b1e36',
+                    padding: '9px 22px',
+                    background: 'linear-gradient(135deg, var(--accent-blue, #1D6FA5), #0284c7)',
                     color: '#ffffff',
                     border: 'none',
-                    borderRadius: '8px',
+                    borderRadius: '10px',
                     cursor: 'pointer',
                     fontWeight: '700',
-                    fontSize: '0.85rem'
+                    fontSize: '0.85rem',
+                    fontFamily: 'inherit',
+                    boxShadow: '0 4px 14px rgba(29, 111, 165, 0.4)'
                   }}
                 >
                   Tutup

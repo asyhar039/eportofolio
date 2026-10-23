@@ -80,9 +80,19 @@ export const seminarWorksheets = [
     date: 'Semester I',
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
-    pdfUrl: '/assets/LK_2_Refleksi_Pembelajaran%20semester%201.pdf',
+    pdfUrl: '/assets/seminar/LK_2_Refleksi_Pembelajaran%20semester%201.pdf',
     pdfFileName: 'LK_2_Refleksi_Pembelajaran semester 1.pdf',
     pdfSize: '77 KB',
+    previewPages: [
+      '/assets/seminar/lk2-sem1/page-1.png',
+      '/assets/seminar/lk2-sem1/page-2.png',
+      '/assets/seminar/lk2-sem1/page-3.png',
+      '/assets/seminar/lk2-sem1/page-4.png',
+      '/assets/seminar/lk2-sem1/page-5.png',
+      '/assets/seminar/lk2-sem1/page-6.png',
+      '/assets/seminar/lk2-sem1/page-7.png',
+      '/assets/seminar/lk2-sem1/page-8.png'
+    ],
     summary: 'Refleksi komprehensif alur 4C (Connection, Challenge, Concept, Change) dan analisis bukti dukung artefak pembelajaran untuk 6 mata kuliah inti Semester I: Filosofi Pendidikan & Nilai, Pemahaman Peserta Didik, Growth Mindset, Pembelajaran Kreatif & Inovatif, PMA Dasar, dan PPL Terbimbing di SMA N 11 Yogyakarta.',
     highlights: [
       'Tersedia Berkas PDF Asli: LK_2_Refleksi_Pembelajaran semester 1.pdf',
@@ -347,9 +357,10 @@ export const seminarWorksheets = [
     date: 'Semester II',
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
-    pdfUrl: '/assets/lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar%20Qowiim.pdf',
+    pdfUrl: '/assets/seminar/lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar%20Qowiim.pdf',
     pdfFileName: 'lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar Qowiim.pdf',
     pdfSize: '178 KB',
+    previewPages: Array.from({ length: 22 }, (_, i) => `/assets/seminar/lk2-sem2/page-${i + 1}.png`),
     summary: 'Refleksi mendalam 4C (Connection, Challenge, Concept, Change) dan bukti artefak LMS untuk 6 mata kuliah Semester II: Pembelajaran Sosial Emosional (PSE), Pengembangan Keprofesian Berkelanjutan (PKB), PPL Mandiri SMAN 11 Yogyakarta, PMA Lanjut SMK, Seminar PPG, dan Projek Kepemimpinan.',
     highlights: [
       'Tersedia Berkas PDF Asli: lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar Qowiim.pdf',
@@ -680,9 +691,14 @@ export const seminarWorksheets = [
     date: '2026',
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
-    pdfUrl: '/assets/lk-3-refleksi-pengalaman-belajar-ppg-asyhar-qowiim.pdf',
+    pdfUrl: '/assets/seminar/lk-3-refleksi-pengalaman-belajar-ppg-asyhar-qowiim.pdf',
     pdfFileName: 'lk-3-refleksi-pengalaman-belajar-ppg-asyhar-qowiim.pdf',
     pdfSize: '26 KB',
+    previewPages: [
+      '/assets/seminar/lk3/page-1.png',
+      '/assets/seminar/lk3/page-2.png',
+      '/assets/seminar/lk3/page-3.png'
+    ],
     summary: 'Refleksi komprehensif seluruh pengalaman belajar selama mengikuti PPG, mencakup transformasi paradigma pendidikan nasional berbasis Ki Hadjar Dewantara & Kurikulum Merdeka, 5 langkah aksi strategis guru profesional, serta komitmen aksi nyata untuk memulai karier guru profesional.',
     highlights: [
       'Tersedia Berkas PDF Asli: lk-3-refleksi-pengalaman-belajar-ppg-asyhar-qowiim.pdf',
@@ -756,193 +772,120 @@ export const seminarWorksheets = [
 
 export const karyaInovasiList = [
   {
-    id: 'inovasi-qr-presensi',
-    number: 'INOVASI-01',
-    category: 'Inovasi Manajerial & Teknologi Sekolah',
-    title: 'Sistem Presensi Digital Siswa Berbasis QR Code',
-    subtitle: 'Rancang Bangun Otomasi Kehadiran Siswa Real-Time untuk Peningkatan Disiplin dan Efisiensi Administrasi Sekolah',
-    collaborators: 'Asyhar Qowiim & Tim Mahasiswa PPG Kelompok A2',
-    institution: 'PPG Universitas Negeri Yogyakarta',
-    year: '2026',
-    status: 'Telah Diuji Coba & Diimplementasikan di 6 Kelas',
-    tag: 'Projek Kepemimpinan Unggulan',
-    summary: 'Inovasi manajerial dan teknologi informasi yang mentransformasi pencatatan kehadiran manual (kertas absensi/panggilan satu per satu) menjadi sistem pemindaian QR Code real-time yang terintegrasi dengan database sekolah.',
-    problem: 'Pencatatan presensi konvensional memakan waktu 10-15 menit di awal jam pelajaran, rawan titip absen/kecurangan, rekapitulasi data kehadiran ke wali kelas sering terlambat, serta arsip presensi kertas rentan hilang atau rusak.',
-    solution: 'Membangun aplikasi presensi berbasis web responsif yang menghasilkan kode QR dinamis/kartu pelajar QR. Guru piket atau wali kelas cukup memindai kartu siswa menggunakan kamera ponsel/laptop. Rekapitulasi kehadiran langsung tercatat di spreadsheet sekolah secara instan.',
-    keyFeatures: [
-      'Pemindaian Cepat Real-Time (<2 detik per siswa)',
-      'Dashboard Monitoring Kehadiran Otomatis untuk Wali Kelas & Guru Piket',
-      'Peringatan Keterlambatan dan Notifikasi Absensi Berkelanjutan',
-      'Ekspor Laporan Bulanan Format Excel/Spreadsheet Sekali Klik',
-      'Panduan Operasional & Pelatihan Staf Tata Usaha Sekolah'
-    ],
-    impactMetrics: [
-      { label: 'Efisiensi Waktu Presensi', value: '60% Lebih Cepat' },
-      { label: 'Akurasi Data Kehadiran', value: '100% Real-Time' },
-      { label: 'Uji Coba Lapangan', value: '6 Kelas SMAN 11' },
-      { label: 'Tingkat Kepuasan Guru', value: '94% Sangat Membantu' }
-    ],
-    techStack: ['Web App Responsive', 'QR Scanner Library', 'Google Sheets API Database', 'Tailwind CSS'],
-    evidenceLinks: [
-      { label: 'Mindmap Projek Kepemimpinan 7 Elemen', note: 'Tugas 5.1 Kelompok A2' },
-      { label: 'Pedoman Operasional Sistem Presensi', note: 'Dokumentasi Sekolah SMAN 11' }
-    ]
-  },
-  {
-    id: 'inovasi-virtual-lab-cisco',
-    number: 'INOVASI-02',
+    id: 'inovasi-topologi-minimarket-berkah',
+    number: 'KARYA INOVASI',
     category: 'Inovasi Media Pembelajaran Interaktif',
-    title: 'Virtual Lab Jaringan Komputer & Troubleshooting Berbasis Cisco Packet Tracer',
-    subtitle: 'Simulasi Topologi Jaringan Interaktif Berbantuan Skenario Kasus Nyata Abad 21',
-    collaborators: 'Asyhar Qowiim',
-    institution: 'PPG Universitas Negeri Yogyakarta',
-    year: '2026',
-    status: 'Diterapkan pada Pembelajaran Jaringan Informatika Fase E',
-    tag: 'Media Ajar Interaktif',
-    summary: 'Pengembangan bundel simulasi laboratorium virtual menggunakan Cisco Packet Tracer yang dilengkapi skenario masalah kontekstual (troubleshooting jaringan kabel dan nirkabel), panduan step-by-step, dan kuis interaktif.',
-    problem: 'Keterbatasan perangkat keras jaringan fisik (router dan switch manageable) di laboratorium sekolah menyebabkan sebagian besar siswa hanya membayangkan teori jaringan tanpa pengalaman langsung merancang topologi.',
-    solution: 'Menyusun paket simulasi topologi jaringan (.pkt) bertahap (Star, Bus, Tree) disertai analogi animasi pengiriman paket data. Siswa melakukan uji konektivitas (Ping & Traceroute) secara langsung dan menyelesaikan kasus galat jaringan.',
-    keyFeatures: [
-      'Topologi Jaringan Virtual Mandiri untuk Setiap Kelompok Siswa',
-      'Analogi Pengiriman Surat untuk Memahami Protokol IP & Packet Delivery',
-      'Skenario Detektif Jaringan: Menemukan dan Memperbaiki Salah Konfigurasi IP',
-      'LKPD Interaktif Berbasis Problem Based Learning (PBL)',
-      'Video Panduan Ringkas Berdurasi 5 Menit untuk Scaffolding Belajar'
-    ],
-    impactMetrics: [
-      { label: 'Ketuntasan Praktik', value: 'Naik dari 62% ke 91%' },
-      { label: 'Keterlibatan Siswa', value: '96% Antusias' },
-      { label: 'Waktu Setup Lab', value: 'Nol Biaya Perangkat' },
-      { label: 'Pemahaman Konsep IP', value: 'Peningkatan 42%' }
-    ],
-    techStack: ['Cisco Packet Tracer', 'Interactive Slide Deck', 'LKPD Terstruktur', 'Simulator Jaringan'],
-    evidenceLinks: [
-      { label: 'Berkas Topologi Jaringan .PKT', note: 'Media Pembelajaran Informatika' },
-      { label: 'Rubrik Penilaian Unjuk Kerja Konfigurasi IP', note: 'Asesmen Autentik' }
-    ]
-  },
-  {
-    id: 'inovasi-modul-pse-casel',
-    number: 'INOVASI-03',
-    category: 'Inovasi Perangkat & Pendekatan Pedagogik',
-    title: 'Modul Ajar Berdiferensiasi Terintegrasi Pembelajaran Sosial Emosional (PSE CASEL)',
-    subtitle: 'Rancangan Instruksional Responsif Emosi untuk Mengatasi Kecemasan Logika Algoritma & Coding',
+    title: 'Produk Karya Inovasi: Simulasi Topologi Jaringan Minimarket Berkah (NetLab Interactive Simulator)',
+    subtitle: 'Studi Kasus Konfigurasi Jaringan Minimarket Berkah Menggunakan Simulator Web NetLab Berbasis File JSON',
     collaborators: 'Asyhar Qowiim',
     institution: 'PPG Informatika Universitas Negeri Yogyakarta',
     year: '2026',
-    status: 'Praktik Baik (Best Practice) Terverifikasi Guru Pamong & DPL',
-    tag: 'Pedagogik Responsif Emosi',
-    summary: 'Inovasi rancangan pembelajaran yang memadukan diferensiasi kesiapan belajar (pemula, menengah, mahir) dengan 5 kompetensi sosial emosional CASEL guna menciptakan ruang belajar yang bebas dari ketakutan coding.',
-    problem: 'Mata pelajaran Informatika pada materi pemrograman dan logika algoritma kerap memicu rasa frustrasi, kecemasan (syntax error anxiety), dan kepasifan peserta didik ketika kode program tidak berjalan semestinya.',
-    solution: 'Menyisipkan sesi mindfulness teknik S-T-O-P (Stop, Take a breath, Observe, Proceed) saat siswa menghadapi galat pemrograman, membuka kelas dengan Check-in Roda Emosi, serta menerapkan budaya umpan balik santun (Apresiasi – Saran – Pertanyaan).',
+    status: 'Produk Digital Siap Simulasikan (NetLab JSON)',
+    tag: 'Karya Inovasi Pembelajaran',
+    summary: 'Produk karya inovasi digital berupa paket studi kasus topologi jaringan Minimarket Berkah dalam format file JSON standar NetLab (produk-karya-inovasi.json). Menghadirkan simulasi interaktif jaringan yang menghubungkan Server Kasir (database POS), PC Kasir front-end, dan PC Gudang melalui Cisco Catalyst 2960-24TT Switch.',
+    problem: 'Pembelajaran materi Jaringan Komputer di sekolah sering terkendala keterbatasan perangkat fisik (switch manageable dan workstation server retail) serta ketergantungan pada aplikasi simulator desktop berbayar atau berat yang memerlukan instalasi rumit.',
+    solution: 'Menghadirkan media praktikum interaktif berbasis web simulator NetLab (https://netlab.thecybersecguru.com) menggunakan berkas studi kasus JSON siap impor. Siswa dapat memahami konfigurasi IP, subnetting (/24 dan /27), port switch FastEthernet, STP (Spanning Tree Protocol), dan alur transaksi Minimarket Berkah secara langsung tanpa instalasi aplikasi.',
+    jsonUrl: '/assets/seminar/produk-karya-inovasi.json',
+    jsonFileName: 'produk-karya-inovasi.json',
+    jsonSize: '41 KB',
+    netlabUrl: 'https://netlab.thecybersecguru.com',
+    pdfUrl: '/assets/seminar/karya%20inovasi.pdf',
+    pdfFileName: 'karya inovasi.pdf',
+    pdfSize: '26 MB',
+    pdfTitle: 'Slide Presentasi Karya Inovasi Pembelajaran',
+    previewPages: Array.from({ length: 13 }, (_, i) => `/assets/seminar/slides/slide-${i + 1}.png`),
+    howToTest: [
+      {
+        step: 1,
+        title: 'Unduh File JSON Produk Inovasi',
+        desc: 'Unduh berkas produk-karya-inovasi.json melalui tombol "Unduh File JSON" pada aplikasi ini.'
+      },
+      {
+        step: 2,
+        title: 'Buka Website Simulator NetLab',
+        desc: 'Kunjungi laman web simulator topologi jaringan NetLab di https://netlab.thecybersecguru.com.'
+      },
+      {
+        step: 3,
+        title: 'Klik "Open Individual Workplace"',
+        desc: 'Pada antarmuka awal NetLab, klik tombol "Open Individual Workplace" untuk membuka ruang kerja simulasi jaringan mandiri.'
+      },
+      {
+        step: 4,
+        title: 'Upload File JSON & Simulasikan',
+        desc: 'Unggah file produk-karya-inovasi.json yang telah diunduh. Topologi jaringan Minimarket Berkah langsung termuat lengkap dengan switch dan seluruh PC untuk diuji coba.'
+      }
+    ],
+    devices: [
+      {
+        name: 'Cisco Catalyst 2960-24TT Switch',
+        hostname: '2960-24TT3',
+        model: '2960-24TT (Catalyst 2960)',
+        role: 'Pusat Switch Distribusi LAN Toko & Kasir',
+        ip: 'Layer 2 Switch',
+        subnet: 'VLAN 1 Default',
+        mac: 'C9:57:53:30:E6:17',
+        ports: '24 FastEthernet + 2 GigabitEthernet (PVST Enabled)'
+      },
+      {
+        name: 'Server Kasir',
+        hostname: 'server-kasir',
+        model: 'PC-PT (Host Server)',
+        role: 'Server Database & Transaksi Point of Sales (POS)',
+        ip: '192.168.1.1',
+        subnet: '255.255.255.0 (/24)',
+        gateway: '192.168.1.254',
+        mac: '72:AA:27:9C:6B:49',
+        ports: 'FastEthernet0 terhubung ke Switch Port fa0/1'
+      },
+      {
+        name: 'PC Kasir',
+        hostname: 'PC kasir',
+        model: 'PC Workstation',
+        role: 'Terminal Transaksi Kasir Front-Office',
+        ip: '192.168.1.10',
+        subnet: '255.255.255.0 (/24)',
+        gateway: '192.168.1.1',
+        mac: '6E:75:73:67:90:F5',
+        ports: 'FastEthernet0 terhubung ke Switch Port fa0/2'
+      },
+      {
+        name: 'PC Gudang',
+        hostname: 'PC Gudang',
+        model: 'PC Workstation',
+        role: 'Terminal Inventaris & Logistik Gudang',
+        ip: '192.168.1.50',
+        subnet: '255.255.255.224 (/27)',
+        gateway: '192.168.1.1',
+        mac: 'C3:88:87:7E:05:45',
+        ports: 'FastEthernet0 terhubung ke Switch Port fa0/3'
+      }
+    ],
+    connections: [
+      { from: 'Switch 2960 (fa0/1)', to: 'Server Kasir (fa0)', type: 'Kabel Straight-Through (100 Mbps)', latency: '0.18 ms' },
+      { from: 'Switch 2960 (fa0/2)', to: 'PC Kasir (fa0)', type: 'Kabel Straight-Through (100 Mbps)', latency: '0.18 ms' },
+      { from: 'Switch 2960 (fa0/3)', to: 'PC Gudang (fa0)', type: 'Kabel Straight-Through (100 Mbps)', latency: '0.18 ms' }
+    ],
     keyFeatures: [
-      'Pemanasan Mindfulness 2 Menit (Teknik S-T-O-P) Sebelum Praktikum',
-      'Check-in Roda Emosi Digital untuk Memetakan Suasana Hati Siswa',
-      'Scaffolding Tugas: LKPD Visual untuk Pemula s.d. Tantangan Mandiri untuk Mahir',
-      'Kerangka Umpan Balik Positif Antar-Teman Sebaya (Peer Review)',
-      'Jurnal Refleksi Diri Emosional Murid di Akhir Pelajaran'
+      'Studi Kasus Kontekstual Jaringan Minimarket Berkah (POS Server, Kasir, Gudang)',
+      'Dukungan Penuh Format JSON NetLab Simulator (https://netlab.thecybersecguru.com)',
+      'Konfigurasi Pengalamatan IPv4 Realistis dengan Diferensiasi Subnetting (/24 dan /27)',
+      'Model Perangkat Cisco Catalyst 2960-24TT Switch dengan Spanning Tree PVST Aktif',
+      'Integrasi Langsung Tombol Unduh File JSON & Akses Langsung ke Simulator NetLab',
+      'Panduan 4 Langkah Praktis untuk Siswa dan Guru Menguji Konektivitas dan Transmisi Paket'
     ],
     impactMetrics: [
-      { label: 'Keaktifan Siswa Pasif', value: 'Meningkat hingga 85%' },
-      { label: 'Reduksi Kecemasan Error', value: 'Turun Drastis' },
-      { label: 'Kelengkapan Modul', value: '100% Terintegrasi CASEL' },
-      { label: 'Respon Siswa', value: 'Suasana Belajar Menyenangkan' }
+      { label: 'Kompatibilitas', value: '100% Web NetLab' },
+      { label: 'Format Artefak', value: 'Berkas JSON Siap Pakai' },
+      { label: 'Efisiensi Praktikum', value: 'Akses Instan Tanpa Install' },
+      { label: 'Studi Kasus', value: 'Studi Kasus Minimarket Berkah' }
     ],
-    techStack: ['Framework CASEL 5 Pilar', 'Teknik S-T-O-P', 'Roda Emosi Plutchik', 'Diferensiasi UbD'],
+    techStack: ['NetLab Web Simulator', 'JSON Data Schema', 'Cisco Catalyst 2960', 'IPv4 Subnetting', 'Straight-Through FastEthernet', 'Retail Network'],
     evidenceLinks: [
-      { label: 'Modul Ajar Informatika Kelas X Terintegrasi PSE', note: 'Aksi Nyata Semester II' },
-      { label: 'Rubrik Observasi Sikap 4 Skala CASEL', note: 'Instrumen Formatif' }
-    ]
-  },
-  {
-    id: 'inovasi-rubrik-computational-thinking',
-    number: 'INOVASI-04',
-    category: 'Inovasi Asesmen & Evaluasi Pembelajaran',
-    title: 'Instrumen Asesmen Autentik Berpikir Komputasional (Computational Thinking Rubrics)',
-    subtitle: 'Alat Evaluasi Holistik Mengukur 4 Pilar Abad 21: Dekomposisi, Pola, Abstraksi, dan Desain Algoritma',
-    collaborators: 'Asyhar Qowiim',
-    institution: 'PPG Informatika Universitas Negeri Yogyakarta',
-    year: '2026',
-    status: 'Telah Digunakan dalam Asesmen Formatif & Sumatif',
-    tag: 'Asesmen Autentik',
-    summary: 'Pengembangan rubrik evaluasi autentik yang mengalihkan fokus penilaian dari sekadar hafalan sintaks kode menuju pengukuran nyata kompetensi berpikir komputasional dalam menyelesaikan masalah dunia nyata.',
-    problem: 'Evaluasi konvensional berbasis pilihan ganda tidak mampu mengukur jalan pikiran siswa saat memecahkan masalah komputasi serta mengabaikan proses kolaborasi dan etika digital.',
-    solution: 'Menciptakan matriks rubrik analitis berjenjang (skala 1–4) yang menilai: 1) Dekomposisi masalah, 2) Pengenalan pola, 3) Abstraksi informasi esensial, dan 4) Efisiensi algoritma, dilengkapi lembar penilaian antarteman (peer-assessment).',
-    keyFeatures: [
-      'Matriks Kriteria Deskriptif Jelas untuk Tiap Level Kemampuan Siswa',
-      'Lembar Pengamatan Kolaborasi 4C (Kritis, Komunikatif, Kolaboratif, Kreatif)',
-      'Panduan Tindak Lanjut: Intervensi Khusus bagi Siswa di Bawah Kriteria',
-      'Portofolio Unjuk Kerja Proyek Komputasi Digital'
-    ],
-    impactMetrics: [
-      { label: 'Objektivitas Nilai', value: 'Bebas Bias Subjektif' },
-      { label: 'Feedback Konstruktif', value: 'Diterima Murid Seketika' },
-      { label: 'Cakupan Penilaian', value: '4 Pilar Komputasional' }
-    ],
-    techStack: ['Authentic Assessment Framework', 'Analytic Rubrics', 'Peer Assessment Sheet'],
-    evidenceLinks: [
-      { label: 'Dokumen Rubrik Asesmen Autentik Informatika', note: 'Bukti Pembelajaran Semester 1 & 2' }
-    ]
-  },
-  {
-    id: 'inovasi-lkpd-gamifikasi-algoritma',
-    number: 'INOVASI-05',
-    category: 'Inovasi Bahan Ajar & Aktivitas Kelas',
-    title: 'LKPD Gamifikasi Logika Algoritma: Sorting & Searching Everyday Life',
-    subtitle: 'Lembar Kerja Eksploratif Berbantuan Analogi Tumpukan Buku & Kartu Logika Kontekstual',
-    collaborators: 'Asyhar Qowiim (Bimbingan Dian C.R., S.Si.)',
-    institution: 'PPG Informatika Universitas Negeri Yogyakarta',
-    year: '2026',
-    status: 'Praktik Sukses di Kelas X Informatika SMAN 11',
-    tag: 'Bahan Ajar Gamifikasi',
-    summary: 'Bahan ajar berbasis aktivitas kinestetik dan gamifikasi yang mengajak siswa mensimulasikan algoritma pengurutan (Bubble Sort & Selection Sort) serta pencarian (Linear & Binary Search) menggunakan benda nyata di sekitar mereka.',
-    problem: 'Konsep kompleksitas algoritma dan pertukaran indeks array kerap terasa abstrak dan menakutkan bagi siswa pemula jika langsung diajarkan melalui kode pemrograman di komputer.',
-    solution: 'Merancang lembar aktivitas interaktif di mana siswa secara berkelompok mengurutkan kartu angka dan buku perpustakaan secara fisik dengan aturan langkah Bubble Sort. Setelah memahami logikanya secara kinestetik, siswa baru menuangkannya ke dalam pseudocode.',
-    keyFeatures: [
-      'Alur Tantangan Bertingkat (Level 1: Konsep Riil, Level 2: Pseudocode, Level 3: Kode Python)',
-      'Papan Skor Kecepatan & Ketepatan Logika Antar-Kelompok',
-      'Panduan Analogi Kontekstual Sesuai Kehidupan Keseharian Remaja',
-      'Refleksi Keberhasilan & Catatan Hambatan Berkelanjutan'
-    ],
-    impactMetrics: [
-      { label: 'Partisipasi Kelas', value: '100% Siswa Terlibat Aktif' },
-      { label: 'Retensi Pemahaman', value: 'Meningkat Signifikan' },
-      { label: 'Rasa Percaya Diri', value: 'Mengikis Ketakutan Coding' }
-    ],
-    techStack: ['Gamified Learning', 'Kinesthetic Computing', 'Visual Scaffolding'],
-    evidenceLinks: [
-      { label: 'Lembar LKPD Algoritma Kontekstual Fase E', note: 'PPL Mandiri SMAN 11 Yogyakarta' }
-    ]
-  },
-  {
-    id: 'inovasi-portofolio-digital-ppg',
-    number: 'INOVASI-06',
-    category: 'Inovasi Diseminasi & Portofolio Digital',
-    title: 'Platform Portofolio Digital Reflektif Interaktif Calon Guru Abad 21',
-    subtitle: 'Arsitektur Web Modern Berbasis Bukti Nyata untuk Ujian Kinerja (UKIN) dan Rekam Jejak Karier',
-    collaborators: 'Asyhar Qowiim',
-    institution: 'PPG Universitas Negeri Yogyakarta',
-    year: '2026',
-    status: 'Publikasi Resmi Portofolio Digital',
-    tag: 'Diseminasi Digital',
-    summary: 'Platform portofolio web responsif dan interaktif yang mengorganisasi seluruh perjalanan belajar, perkuliahan, refleksi alur 4C, berkas PDF lembar kerja resmi, dokumentasi praktik sekolah mitra, dan karya inovasi secara estetis.',
-    problem: 'Portofolio fisik atau tumpukan dokumen PDF yang tersebar di Google Drive sering kali sulit dinavigasi oleh penguji, pembimbing, maupun sesama pendidik, sehingga sintesis pembelajaran calon guru kurang tersampaikan optimal.',
-    solution: 'Membangun aplikasi web berperforma tinggi dengan navigasi modular, penampil PDF terintegrasi, fitur salin teks dokumen, penataan tema responsif, dan kurasi bukti dukung yang transparan.',
-    keyFeatures: [
-      'Navigasi Pintar: Beranda, Tentang, Perjalanan, Matkul, Seminar, PPL Mandiri, Artifak, Galeri',
-      'Penampil PDF Terintegrasi Berkas Resmi dari Direktori Assets',
-      'Pemisahan Bersih Lembar Kerja Seminar PPG & Karya Inovasi',
-      'Halaman Khusus Pengalaman PPL Mandiri SMAN 11 Yogyakarta',
-      'Aksesibilitas Cepat dan Performa Ringan Ramah Ponsel'
-    ],
-    impactMetrics: [
-      { label: 'Kecepatan Akses', value: 'Instan & Interaktif' },
-      { label: 'Aksesibilitas Dokumen', value: 'Bisa Dibaca / Diunduh Langsung' },
-      { label: 'Struktur Portofolio', value: 'Standar Uji Kinerja PPG' }
-    ],
-    techStack: ['React', 'Vite', 'Tailwind CSS', 'Modern Web Standards'],
-    evidenceLinks: [
-      { label: 'Dokumen Refleksi LK 3 PPG Informatika', note: 'Portofolio Digital Resmi' }
+      { label: 'Slide Presentasi PDF Karya Inovasi', note: 'karya inovasi.pdf (26 MB)', url: '/assets/seminar/karya%20inovasi.pdf' },
+      { label: 'Berkas produk-karya-inovasi.json', note: 'Direktori /assets/seminar/', url: '/assets/seminar/produk-karya-inovasi.json', download: 'produk-karya-inovasi.json' },
+      { label: 'Web Simulator NetLab', note: 'netlab.thecybersecguru.com', url: 'https://netlab.thecybersecguru.com' }
     ]
   }
 ]
+
