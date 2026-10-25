@@ -23,7 +23,7 @@ function Header({ currentPage, onNavigate }) {
     { id: 'matkul', label: 'Matkul' },
     { id: 'seminar', label: 'Seminar' },
     { id: 'ppl-mandiri', label: 'PPL Mandiri SMAN 11 Yogyakarta' },
-    { id: 'artifak', label: 'Artifak' },
+    { id: 'artifak', label: 'Artefak' },
     { id: 'galeri', label: 'Galeri' }
   ]
 
@@ -33,10 +33,16 @@ function Header({ currentPage, onNavigate }) {
         <button 
           className="brand" 
           onClick={() => navigate('beranda')}
-          aria-label="Beranda"
+          aria-label="Beranda Portofolio PPG Asyhar Qowiim"
         >
-          <span className="brand-mark">AQ.</span>
-          <span className="brand-text">Portfolio.</span>
+          <div className="header-logos" title="Universitas Negeri Yogyakarta • PPG">
+            <img src="/assets/logo-uny.png" alt="Logo UNY" className="header-logo uny-logo" />
+            <img src="/assets/logo-ppg.png" alt="Logo PPG" className="header-logo ppg-logo" />
+          </div>
+          <div className="brand-title-group">
+            <span className="brand-mark">AQ.</span>
+            <span className="brand-text">Portfolio.</span>
+          </div>
         </button>
 
         <button

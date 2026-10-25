@@ -12,7 +12,7 @@ function CourseDetail({ course, onBack }) {
         </button>
 
         <div className="course-detail-header">
-          <span className="detail-eyebrow">MATA KULIAH DETAIL</span>
+          <span className="detail-eyebrow">DETAIL MATA KULIAH</span>
           <h1>{course.detail.fullTitle}</h1>
         </div>
 

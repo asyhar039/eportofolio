@@ -69,6 +69,9 @@ export function resolveDocumentUrl(gdriveUrl, pdfUrl, fileName) {
   // Fallback to official mapping by fileName or keywords
   if (fileName) {
     const fn = fileName.toLowerCase()
+    if (fn.includes('identifikasi') || fn.includes('lk 1') || fn.includes('lk1')) {
+      return OFFICIAL_GDRIVE_DOCS['lk-1-identifikasi-diri'].previewUrl
+    }
     if (fn.includes('semester 1') || fn.includes('sem1') || fn.includes('semester-1')) {
       return OFFICIAL_GDRIVE_DOCS['lk-2-semester-1'].previewUrl
     }
@@ -393,63 +396,50 @@ export function PdfCanvasViewer({
         }}
       >
         <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-          <span
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              padding: '4px 10px',
-              borderRadius: '6px',
-              fontSize: '0.72rem',
-              fontWeight: '800',
-              background: isGdrive ? 'rgba(56, 189, 248, 0.18)' : 'rgba(16, 185, 129, 0.16)',
-              color: isGdrive ? '#38bdf8' : '#34d399',
-              border: `1px solid ${isGdrive ? 'rgba(56, 189, 248, 0.4)' : 'rgba(16, 185, 129, 0.4)'}`,
-              letterSpacing: '0.5px'
-            }}
-          >
-            {isGdrive ? <IconGoogleDrive size={14} /> : <IconPdf size={14} />}
-            {isGdrive ? 'GOOGLE DRIVE PREVIEW' : 'PRATINJAU DOKUMEN'}
-          </span>
+
+          <IconPdf size={18} style={{ color: '#38bdf8' }} />
           <span style={{ fontSize: '0.92rem', fontWeight: '700', color: '#ffffff' }}>
             {title}
           </span>
         </div>
 
+        {/* Right Actions: Hanya Preview & Unduh File */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-          <a
-            href={directUrl}
-            target="_blank"
-            rel="noopener noreferrer"
-            style={{
-              background: 'rgba(56, 189, 248, 0.15)',
-              border: '1px solid rgba(56, 189, 248, 0.35)',
-              color: '#38bdf8',
-              padding: '6px 14px',
-              borderRadius: '8px',
-              fontSize: '0.76rem',
-              fontWeight: '700',
-              textDecoration: 'none',
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px'
-            }}
-            title="Buka Dokumen Resmi di Google Drive"
-          >
-            <IconExternal size={14} />
-            <span>Buka di Tab Baru</span>
-          </a>
+          {onExpandFullscreen && (
+            <button
+              type="button"
+              onClick={onExpandFullscreen}
+              style={{
+                background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
+                border: 'none',
+                color: '#ffffff',
+                padding: '6px 14px',
+                borderRadius: '8px',
+                fontSize: '0.78rem',
+                cursor: 'pointer',
+                fontWeight: '700',
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '5px',
+                fontFamily: 'inherit'
+              }}
+              title="Preview Dokumen"
+            >
+              <IconGoogleDrive size={14} />
+              <span>Preview</span>
+            </button>
+          )}
 
           <a
             href={downloadUrl}
             download={fileName}
             style={{
-              background: 'rgba(255, 255, 255, 0.08)',
-              border: '1px solid rgba(255, 255, 255, 0.18)',
+              background: 'rgba(52, 211, 153, 0.15)',
+              border: '1px solid rgba(52, 211, 153, 0.35)',
               color: '#34d399',
               padding: '6px 14px',
               borderRadius: '8px',
-              fontSize: '0.76rem',
+              fontSize: '0.78rem',
               fontWeight: '700',
               textDecoration: 'none',
               display: 'inline-flex',
@@ -461,30 +451,6 @@ export function PdfCanvasViewer({
             <IconDownload size={14} />
             <span>Unduh File</span>
           </a>
-
-          {onExpandFullscreen && (
-            <button
-              type="button"
-              onClick={onExpandFullscreen}
-              style={{
-                background: 'linear-gradient(135deg, #0284c7, #0369a1)',
-                border: 'none',
-                color: '#ffffff',
-                padding: '6px 14px',
-                borderRadius: '8px',
-                fontSize: '0.76rem',
-                cursor: 'pointer',
-                fontWeight: '700',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '5px',
-                fontFamily: 'inherit'
-              }}
-              title="Perbesar ke Layar Penuh"
-            >
-              <span>⤢</span> Layar Penuh
-            </button>
-          )}
         </div>
       </div>
 
@@ -587,26 +553,9 @@ export default function PdfReviewModal({
             gap: '12px'
           }}
         >
-          {/* Left Title and Badges */}
-          <div style={{ display: 'flex', alignItems: 'center', gap: '12px', flexWrap: 'wrap' }}>
-            <span
-              style={{
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px',
-                padding: '5px 12px',
-                borderRadius: '8px',
-                fontSize: '0.74rem',
-                fontWeight: '800',
-                background: isGdrive ? 'rgba(56, 189, 248, 0.18)' : 'rgba(16, 185, 129, 0.16)',
-                color: isGdrive ? '#38bdf8' : '#34d399',
-                border: `1px solid ${isGdrive ? 'rgba(56, 189, 248, 0.4)' : 'rgba(16, 185, 129, 0.4)'}`,
-                letterSpacing: '0.5px'
-              }}
-            >
-              {isGdrive ? <IconGoogleDrive size={15} /> : <IconPdf size={15} />}
-              {isGdrive ? 'GOOGLE DRIVE PREVIEW' : 'DOKUMEN RESMI'}
-            </span>
+          {/* Left Title */}
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <IconPdf size={20} style={{ color: '#38bdf8' }} />
             <div>
               <h2 style={{ margin: 0, fontSize: '1.05rem', fontWeight: '800', color: '#ffffff' }}>
                 {title}
@@ -619,31 +568,8 @@ export default function PdfReviewModal({
             </div>
           </div>
 
-          {/* Right Controls */}
+          {/* Right Controls: Hanya Unduh File & Tutup */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
-            <a
-              href={directUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              style={{
-                background: 'rgba(56, 189, 248, 0.15)',
-                border: '1px solid rgba(56, 189, 248, 0.35)',
-                color: '#38bdf8',
-                padding: '7px 15px',
-                borderRadius: '10px',
-                fontSize: '0.8rem',
-                fontWeight: '700',
-                textDecoration: 'none',
-                display: 'inline-flex',
-                alignItems: 'center',
-                gap: '6px'
-              }}
-              title="Buka Dokumen di Google Drive (Tab Baru)"
-            >
-              <IconExternal size={14} />
-              <span>Buka di Tab Baru</span>
-            </a>
-
             <a
               href={downloadUrl}
               download={fileName}
@@ -651,9 +577,9 @@ export default function PdfReviewModal({
                 background: 'rgba(52, 211, 153, 0.15)',
                 border: '1px solid rgba(52, 211, 153, 0.35)',
                 color: '#34d399',
-                padding: '7px 14px',
+                padding: '7px 16px',
                 borderRadius: '10px',
-                fontSize: '0.8rem',
+                fontSize: '0.82rem',
                 fontWeight: '700',
                 textDecoration: 'none',
                 display: 'inline-flex',

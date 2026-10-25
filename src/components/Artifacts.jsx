@@ -415,7 +415,7 @@ ${selectedArtifact.summary}\n\n`
                   {copiedState && (
                     <span className="copy-toast">
                       <IconCheck size={14} />
-                      <span>Tersalin ke clipboard!</span>
+                      <span>Berhasil disalin!</span>
                     </span>
                   )}
                 </div>

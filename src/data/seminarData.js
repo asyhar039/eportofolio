@@ -16,9 +16,9 @@ export const seminarWorksheets = [
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
     pdfUrl: '/assets/seminar/lk-2-semester-1.pdf',
-    gdriveUrl: '',
+    gdriveUrl: 'https://drive.google.com/file/d/1lQH4cbI22ESDVfIy-8xsX7jAbIM3_ikn/view?usp=sharing',
     pdfFileName: 'LK 1 Identifikasi Diri & Visi Pendidikan Guru.pdf',
-    summary: 'Dokumen pondasional perumusan identitas diri calon guru profesional, mengkristalkan visi pendidikan Indonesia yang inklusif-humanis berbasis pemikiran Ki Hadjar Dewantara, serta perumusan 5 langkah aksi strategis dalam memimpin pembelajaran abad ke-21.',
+    summary: 'Dokumen refleksi identitas diri calon guru, pandangan mengenai pendidikan Indonesia yang ramah anak sesuai pemikiran Ki Hadjar Dewantara, serta 5 langkah nyata dalam mengajar di sekolah.',
     highlights: [
       'Pondasi Identitas Pendidik Masa Depan & Kode Etik Guru',
       'Visi Pendidikan Indonesia: Humanis, Inklusif, dan Berkeadilan Sosial',
@@ -54,8 +54,8 @@ export const seminarWorksheets = [
         },
         {
           no: 3,
-          judul: 'Menjadi Praktisi Reflektif Berbasis Data (Evidence-Based Teaching)',
-          uraian: 'Melakukan evaluasi berkelanjutan melalui Penelitian Tindakan Kelas (PTK) dan analisis artefak pembelajaran untuk memperbaiki kualitas instruksional secara objektif.'
+          judul: 'Menjadi Guru yang Reflektif Berdasarkan Fakta Nyata di Kelas',
+          uraian: 'Melakukan evaluasi berkala melalui catatan refleksi dan hasil belajar siswa untuk terus memperbaiki kualitas pembelajaran di kelas.'
         },
         {
           no: 4,
@@ -352,7 +352,7 @@ export const seminarWorksheets = [
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
     pdfUrl: '/assets/seminar/lk-2-semester-2.pdf',
     gdriveUrl: 'https://drive.google.com/file/d/11QWeW1gmomgI1-q0Z_ex32Y56v2KGOEL/preview',
-    pdfFileName: 'lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar Qowiim.pdf',
+    pdfFileName: 'LK 2 Refleksi Pembelajaran Semester 2.pdf',
     summary: 'Refleksi mendalam 4C (Connection, Challenge, Concept, Change) dan bukti artefak LMS untuk 6 mata kuliah Semester II: Pembelajaran Sosial Emosional (PSE), Pengembangan Keprofesian Berkelanjutan (PKB), PPL Mandiri SMAN 11 Yogyakarta, PMA Lanjut SMK, Seminar PPG, dan Projek Kepemimpinan.',
     highlights: [
       'Dokumen Resmi PDF LK 2 Semester II',
@@ -423,7 +423,7 @@ export const seminarWorksheets = [
         reflection4C: {
           connection: {
             question: '1. Apa keterkaitan materi perkuliahan dengan peran saya sebagai calon guru?',
-            answer: 'Materi Pengembangan Keprofesian Berkelanjutan (PKB) menuntut guru untuk tidak hanya bertindak sebagai pengajar di ruang kelas, tetapi juga memosisikan diri sebagai praktisi reflektif dan ilmuwan pendidik yang adaptif terhadap dinamika pembelajaran. Sebagai calon guru, kemampuan menyusun dan menganalisis laporan Best Practice serta Karya Tulis Ilmiah (KTI) menjadi pilar utama peningkatan kompetensi pedagogik dan profesional secara berkelanjutan. Landasan filsafat ilmu—yang membedah aspek ontologi (fakta masalah kelas), epistemologi (metodologi ilmiah berbasis data), dan aksiologi (kemanfaatan bagi kebudayaan dan peradaban)—menjadi kompas berpikir kritis dalam memecahkan masalah instruksional. Dengan menguasai logika berpikir ilmiah, guru mampu merancang tindakan perbaikan kelas yang teruji dan dapat dipertanggungjawabkan secara akademik.'
+            answer: 'Materi Pengembangan Keprofesian Berkelanjutan (PKB) menuntut guru untuk tidak hanya bertindak sebagai pengajar di ruang kelas, tetapi juga memosisikan diri sebagai praktisi reflektif dan ilmuwan pendidik yang adaptif terhadap dinamika pembelajaran. Sebagai calon guru, kemampuan menyusun dan menganalisis laporan Best Practice serta Karya Tulis Ilmiah (KTI) menjadi pilar utama peningkatan kompetensi pedagogik dan profesional secara berkelanjutan. Landasan filsafat ilmu—yang membedah aspek ontologi (fakta masalah kelas), epistemologi (metodologi ilmiah berbasis data), dan aksiologi (kemanfaatan bagi kebudayaan dan peradaban)—menjadi kompas berpikir kritis dalam memecahkan masalah pembelajaran. Dengan menguasai logika berpikir ilmiah, guru mampu merancang tindakan perbaikan kelas yang teruji dan dapat dipertanggungjawabkan secara akademik.'
           },
           challenge: {
             question: '2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?',
@@ -480,7 +480,7 @@ export const seminarWorksheets = [
           },
           challenge: {
             question: '2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?',
-            answer: 'Tantangan utama selama pelaksanaan praktik mengajar adalah alokasi manajemen waktu yang ketat sehingga kegiatan diskusi kelompok dan presentasi siswa belum sepenuhnya terfasilitasi secara optimal. Selain itu, tingkat partisipasi murid di ruang kelas belum merata; sebagian siswa cenderung pasif, kurang percaya diri mengutarakan gagasan di depan umum, atau terdistraksi saat melakukan sesi praktik mandiri di laboratorium. Dari sisi perancangan instruksional, tantangan nyata adalah menyelaraskan antara alur tujuan pembelajaran, tingkat kesulitan tugas dalam LKPD, dan instrumen evaluasi agar sejalan dengan karakteristik kesiapan belajar siswa SMA Fase E yang beragam.'
+            answer: 'Tantangan utama selama pelaksanaan praktik mengajar adalah alokasi manajemen waktu yang ketat sehingga kegiatan diskusi kelompok dan presentasi siswa belum sepenuhnya terfasilitasi secara optimal. Selain itu, tingkat partisipasi murid di ruang kelas belum merata; sebagian siswa cenderung pasif, kurang percaya diri mengutarakan gagasan di depan umum, atau terdistraksi saat melakukan sesi praktik mandiri di laboratorium. Dari sisi perancangan pembelajaran, tantangan nyata adalah menyelaraskan antara alur tujuan pembelajaran, tingkat kesulitan tugas dalam LKPD, dan instrumen evaluasi agar sejalan dengan karakteristik kesiapan belajar siswa SMA Fase E yang beragam.'
           },
           concept: {
             question: '3. Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?',
@@ -574,18 +574,18 @@ export const seminarWorksheets = [
         reflection4C: {
           connection: {
             question: '1. Apa keterkaitan materi perkuliahan dengan peran saya sebagai calon guru?',
-            answer: 'Mata kuliah Seminar Pendidikan Profesi Guru (Seminar PPG) membekali calon guru dengan kemampuan melakukan refleksi pembelajaran berbasis data terukur (data-driven reflection) serta menerapkan komunikasi ilmiah yang efektif dalam menyampaikan gagasan dan karya inovasi pendidikan. Refleksi ini berakar secara mendalam pada dokumen LEMBAR KERJA 1 (LK 1) IDENTIFIKASI DIRI, di mana saya mengartikulasikan visi pendidikan Indonesia yang inklusif, humanis, adaptif, dan berkeadilan sosial berbasis filosofi Ki Hadjar Dewantara—menuntun peserta didik sesuai kodrat alam dan kodrat zaman. Melalui Seminar PPG, peran calon guru dikuatkan tidak hanya sebagai pengajar di kelas, melainkan sebagai pamong, fasilitator, dan agen perubahan (agent of change) yang mampu mengurasi perjalanan transformatifnya ke dalam portofolio digital yang sistematis dan dapat dipertanggungjawabkan.'
+            answer: 'Mata kuliah Seminar Pendidikan Profesi Guru (Seminar PPG) membekali calon guru dengan kemampuan melakukan refleksi pengalaman belajar berdasarkan fakta di kelas serta menyampaikan ide pembelajaran secara jelas. Refleksi ini berakar pada LEMBAR KERJA 1 (LK 1) IDENTIFIKASI DIRI, di mana saya merumuskan pandangan tentang pendidikan Indonesia yang ramah, menghargai keberagaman, dan berkeadilan sesuai pemikiran Ki Hadjar Dewantara—yaitu menuntun murid sesuai potensi dan zamannya. Melalui Seminar PPG, calon guru dilatih untuk tidak sekadar mengajar di kelas, tetapi juga membimbing murid dengan sabar serta merangkum perjalanan belajarnya ke dalam portofolio digital yang rapi dan dapat dipertanggungjawabkan.'
           },
           challenge: {
             question: '2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?',
-            answer: 'Tantangan utama dalam mata kuliah Seminar PPG adalah mendisrupsi kebiasaan refleksi kualitatif yang sekadar bersifat naratif-subjektif menuju refleksi ilmiah berbasis bukti fisik (evidence-based reflection) menggunakan artefak pembelajaran nyata (seperti LKPD, instrumen asesmen, dan jurnal emosi). Selain itu, tantangan teknis dan metodologis muncul saat menyeleksi, menganalisis, dan menyusun kurasi artefak unggulan lintas mata kuliah ke dalam media portofolio digital agar mampu mengomunikasikan alur perkembangan kompetensi secara terstruktur, estetik, dan persuasif di depan forum seminar.'
+            answer: 'Tantangan utama dalam mata kuliah Seminar PPG adalah membiasakan refleksi yang disertai bukti nyata hasil belajar siswa (seperti lembar kerja siswa, rubrik penilaian, dan catatan kelas), bukan sekadar cerita umum. Selain itu, ada tantangan saat memilih dan menata karya terbaik dari setiap mata kuliah ke dalam portofolio digital agar dapat dipresentasikan dengan jelas dan menarik di hadapan dosen dan rekan mahasiswa.'
           },
           concept: {
             question: '3. Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?',
-            answer: `1. Konstruksi Identifikasi Diri & Visi Pendidikan (LK 1): Perumusan ekosistem sekolah inklusif-humanis, komitmen terhadap Profil Pelajar Pancasila, dan penegasan peran guru sebagai pendorong student well-being.
-2. Empat Pilar Praktis Seminar PPG: (a) Identifikasi Diri, (b) Refleksi Pengalaman Belajar Terstruktur (Model 4C), (c) Penyusunan Karya Inovasi Pendidikan, dan (d) Diseminasi via Seminar & Portofolio Digital.
-3. Komunikasi Efektif & Advokasi Inovasi: Strategi penyampaian argumen ilmiah yang koheren, runtut, dan persuasif dalam mempresentasikan karya inovasi instruksional.
-4. Trias Penilaian Autentik Seminar PPG: Integrasi rekam jejak Portofolio Digital, Partisipasi Aktif dalam diskusi reflektif, dan Performa Presentasi Seminar.`
+            answer: `1. Penyusunan Identifikasi Diri & Visi Pendidikan (LK 1): Pemikiran tentang sekolah yang ramah, pembentukan karakter Profil Pelajar Pancasila, dan peran guru dalam menciptakan suasana belajar yang nyaman.
+2. Empat Bagian Utama Seminar PPG: (a) Identifikasi Diri, (b) Refleksi Pengalaman Belajar (Model 4C), (c) Pembuatan Karya Inovasi Pembelajaran, dan (d) Berbagi Karya lewat Seminar & Portofolio Digital.
+3. Komunikasi Efektif & Penyampaian Inovasi: Cara menyampaikan gagasan pembelajaran secara jelas, runtut, dan mudah dipahami saat mempresentasikan karya inovasi.
+4. Tiga Penilaian Utama Seminar PPG: Kelengkapan Portofolio Digital, Keaktifan dalam Diskusi, dan Penampilan Saat Presentasi Seminar.`
           },
           change: {
             question: '4. Apa saja perubahan yang ingin saya lakukan setelah mendapatkan materi perkuliahan ini?',
@@ -603,7 +603,7 @@ export const seminarWorksheets = [
           {
             label: 'Artefak 2',
             question: '2. Mengapa artefak tersebut yang saya pilih?',
-            answer: 'Artefak LK 1 Identifikasi Diri dipilih karena merupakan dokumen pondasional yang menjadi kompas arah refleksi dan pengembangan keprofesian calon guru. Dokumen ini memuat peta filosofis Ki Hadjar Dewantara, perumusan visi pendidikan Indonesia yang berkeadilan sosial, serta 5 rencana aksi strategis yang menjadi bukti autentik kesiapan calon guru dalam memimpin pembelajaran di sekolah.'
+            answer: 'Artefak LK 1 Identifikasi Diri dipilih karena merupakan dokumen awal yang menjadi pegangan arah refleksi calon guru. Dokumen ini memuat pemikiran Ki Hadjar Dewantara, cita-cita tentang pendidikan yang adil dan merata, serta 5 langkah nyata kesiapan calon guru dalam mengajar di sekolah.'
           },
           {
             label: 'Artefak 3',
@@ -626,7 +626,7 @@ export const seminarWorksheets = [
           },
           challenge: {
             question: '2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?',
-            answer: 'Tantangan terbesar adalah mendisrupsi pandangan konvensional bahwa kepemimpinan merupakan bakat bawaan (innate talent), serta mengubah kebiasaan kerja mandiri menjadi kolaborasi tim yang fleksibel dan terstruktur (agile execution). Dalam pelaksanaan projek sistem presensi QR Code di SMAN 11 Yogyakarta, tantangan nyata meliputi penyelarasan 8 anggota tim dengan latar belakang pemikiran berbeda, pengelolaan dinamika konflik pendapat secara bijaksana, penyesuaian alokasi sumber daya dan jadwal (milestones) pengujian sistem, serta pembentukan sikap pantang menyerah saat menghadapi kendala teknis perangkat lunak maupun adaptasi awal pengguna di sekolah.'
+            answer: 'Tantangan terbesar adalah mengubah anggapan bahwa kepemimpinan hanyalah bakat sejak lahir, melainkan kemampuan yang dapat dipelajari dan dilatih melalui kerja sama tim yang kompak. Dalam pelaksanaan projek sistem presensi QR Code di SMAN 11 Yogyakarta, tantangan nyata meliputi menyelaraskan 8 anggota tim dengan latar belakang berbeda, menyelesaikan perbedaan pendapat secara dewasa, mengatur pembagian tugas dan jadwal uji coba sistem, serta pantang menyerah saat menghadapi kendala teknis di lapangan.'
           },
           concept: {
             question: '3. Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?',
@@ -685,7 +685,7 @@ export const seminarWorksheets = [
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
     pdfUrl: '/assets/seminar/lk-3-refleksi-ppg.pdf',
     gdriveUrl: '',
-    pdfFileName: 'lk-3-refleksi-pengalaman-belajar-ppg-asyhar-qowiim.pdf',
+    pdfFileName: 'LK 3 Refleksi Pengalaman Belajar PPG.pdf',
     summary: 'Refleksi komprehensif seluruh pengalaman belajar selama mengikuti PPG, mencakup transformasi paradigma pendidikan nasional berbasis Ki Hadjar Dewantara & Kurikulum Merdeka, 5 langkah aksi strategis guru profesional, serta komitmen aksi nyata untuk memulai karier guru profesional.',
     highlights: [
       'Dokumen Resmi PDF LK 3 PPG',
@@ -771,7 +771,7 @@ export const seminarWorksheets = [
     pdfUrl: '/assets/seminar/lk-4-desain-karya-inovatif.pdf',
     gdriveUrl: 'https://drive.google.com/file/d/1EjkEvU1eC4Dtq8HSL7I8bRgPLhIS55Ys/preview',
     pdfFileName: 'LK 4 Desain Karya Inovatif Asyhar Qowiim NIM 25105260081.pdf',
-    summary: 'Dokumen komprehensif perancangan karya inovasi instruksional pembelajaran jaringan komputer Fase E (Kelas X SMA). Menghadirkan solusi atas kendala spesifikasi gawai, lisensi berbayar, dan kerumitan instalasi desktop Cisco Packet Tracer melalui migrasi ke platform simulator web NetLab berbasis file JSON portabel dengan studi kasus kontekstual Minimarket Berkah.',
+    summary: 'Rancangan karya inovasi pembelajaran jaringan komputer Fase E (Kelas X SMA). Memberikan solusi praktis atas kendala laptop berat dan instalasi rumit Cisco Packet Tracer dengan beralih ke simulator web NetLab yang ringan menggunakan studi kasus nyata Minimarket Berkah.',
     highlights: [
       'Dokumen Resmi PDF Desain Karya Inovatif LK 4',
       'Rasional Kritis: Efisiensi Web NetLab vs Cisco Packet Tracer Desktop',
@@ -794,7 +794,7 @@ export const seminarWorksheets = [
       gagasanInovasi: {
         latarBelakang: 'Dalam pelaksanaan kurikulum Informatika Fase E, elemen Jaringan Komputer dan Internet (JKI) menuntut peserta didik tidak hanya menghafal konsep lapisan protokol atau topologi, melainkan mampu merancang, mengonfigurasi, dan memecahkan kendala konektivitas (troubleshooting). Namun di lapangan, guru sering kali terkendala ketiadaan perangkat keras switch/router manageable di laboratorium sekolah. Sebagai alternatif konvensional, sekolah kerap menggunakan perangkat lunak desktop Cisco Packet Tracer. Sayangnya, pendekatan ini menimbulkan hambatan baru: aplikasi membutuhkan instalasi lokal yang berat, spesifikasi memori/laptop yang relatif tinggi, keharusan registrasi akun Cisco NetAcad yang sering terkendala verifikasi email murid, serta antarmuka yang terlalu kompleks bagi pemula kelas X.',
         rumusanMasalah: 'Bagaimana merancang inovasi pembelajaran jaringan komputer kelas X yang inklusif, ringan, tanpa hambatan instalasi, dan berbasis masalah nyata (PBL) menggunakan simulator web NetLab dengan studi kasus jaringan ritel lokal?',
-        gagasanSolutif: 'Menghadirkan inovasi instruksional berupa transisi dari simulator desktop berat ke platform simulator jaringan berbasis web modern: NetLab (https://netlab.thecybersecguru.com). Inovasi ini memadukan model Problem-Based Learning (PBL) dengan artefak studi kasus portabel berupa berkas JSON (produk-karya-inovasi.json). Siswa cukup mengakses peramban web (browser) tanpa instalasi apa pun, mengimpor skenario topologi, dan langsung melakukan investigasi pemecahan masalah (troubleshooting) koneksi server kasir toko ritel.',
+        gagasanSolutif: 'Menghadirkan inovasi pembelajaran berupa peralihan dari simulator desktop yang berat ke simulator jaringan berbasis web yang ringan: NetLab (https://netlab.thecybersecguru.com). Inovasi ini memadukan model Problem-Based Learning (PBL) dengan berkas studi kasus berupa file JSON (produk-karya-inovasi.json). Siswa cukup membuka browser tanpa perlu install aplikasi apa pun, memasukkan skenario topologi, dan langsung berlatih menyelesaikan masalah koneksi jaringan kasir toko ritel.',
         keunggulanNetLab: [
           'Zero Installation (100% Berbasis Web): Dapat dijalankan di laptop spesifikasi standar, chromebook, maupun PC laboratorium sekolah.',
           'Portabilitas Berkas JSON: Guru dan murid dapat menyimpan, membagikan, dan mengimpor topologi secara instan via file JSON ringan (~41 KB).',
@@ -1001,11 +1001,11 @@ export const karyaInovasiList = [
     ],
     modulAjarPdfUrl: '/assets/seminar/modul-ajar-netlab.pdf',
     modulAjarGdriveUrl: 'https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/preview',
-    modulAjarFileName: 'Modul_Ajar_Informatika_NetLab.pdf',
+    modulAjarFileName: 'Modul Ajar Informatika NetLab.pdf',
     modulAjarTitle: 'Modul Ajar Informatika: Topologi Jaringan NetLab',
     evidenceLinks: [
-      { id: 'slide', label: 'Slide Presentasi Karya Inovasi', note: 'Pratinjau Slide Dek Google Drive', gdriveKey: 'slide' },
-      { id: 'modul', label: 'Modul Ajar Informatika NetLab', note: 'Pratinjau Dokumen Google Drive', gdriveKey: 'modul' },
+      { id: 'slide', label: 'Slide Presentasi Karya Inovasi', note: 'Preview Slide Dek Resmi', gdriveKey: 'slide' },
+      { id: 'modul', label: 'Modul Ajar Informatika NetLab', note: 'Preview Dokumen Resmi', gdriveKey: 'modul' },
       { id: 'json', label: 'Berkas produk-karya-inovasi.json', note: 'Unduh Berkas JSON NetLab', url: '/assets/seminar/produk-karya-inovasi.json', download: 'produk-karya-inovasi.json' },
       { id: 'netlab', label: 'Web Simulator NetLab', note: 'netlab.thecybersecguru.com', url: 'https://netlab.thecybersecguru.com' }
     ]
@@ -1287,7 +1287,7 @@ export const slidePresentasiData = {
   slidesCount: 13,
   pdfUrl: '/assets/seminar/karya-inovasi.pdf',
   gdriveUrl: 'https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/preview',
-  pdfFileName: 'karya inovasi.pdf',
+  pdfFileName: 'Slide Presentasi Karya Inovasi.pdf',
   summary: 'Paket slide presentasi resmi 13 halaman yang dipaparkan dalam forum Seminar Pendidikan Profesi Guru (Seminar PPG). Menyajikan perjalanan komprehensif mulai dari latar belakang masalah di kelas X, analisis kebutuhan web-first, arsitektur file JSON topologi Minimarket Berkah, perancangan 5 sintaks PBL, asesmen autentik, hasil uji coba, hingga evaluasi 3K (Kebaruan, Kreativitas, Kebermanfaatan).',
   slides: [
     {
@@ -1298,7 +1298,7 @@ export const slidePresentasiData = {
       presenter: 'Asyhar Qowiim (NIM: 25105260081)',
       institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Bidang Studi Informatika UNY',
       keyPoints: [
-        'Karya Inovasi Instruksional Pembelajaran Abad 21',
+        'Karya Inovasi Pembelajaran Abad 21',
         'Model Pembelajaran: Problem-Based Learning (PBL)',
         'Media Pembelajaran: NetLab Interactive Web Simulator & JSON Schema',
         'Studi Kasus Kontekstual: Jaringan Ritel Retail Modern "Minimarket Berkah"'
@@ -1365,7 +1365,7 @@ export const slidePresentasiData = {
     {
       slideNumber: 6,
       title: 'Rancangan 5 Sintaks Problem-Based Learning (PBL)',
-      subtitle: 'Alur Instruksional 2 JP (90 Menit) Terstruktur',
+      subtitle: 'Alur Pembelajaran 2 JP (90 Menit) Terstruktur',
       category: 'Pedagogical Framework',
       keyPoints: [
         'Sintaks 1 (10 m): Orientasi Masalah — Menayangkan kasus antrean kasir lumpuh akibat database offline.',
@@ -1443,7 +1443,7 @@ export const slidePresentasiData = {
         'Kreativitas (Creativity): Pemaduan studi kasus ritel modern Minimarket Berkah dengan tantangan subnetting diferensiasi.',
         'Kebermanfaatan (Usefulness): Menghapus kesenjangan infrastruktur sekolah, hemat biaya lisensi, dan relevan dengan dunia kerja.'
       ],
-      content: 'Karya inovasi ini memenuhi parameter evaluasi LK 4 secara utuh. Tidak sekadar mengganti perangkat lunak, melainkan mereformasi ekosistem instruksional menjadi lebih adil, menyenangkan, dan berdaya guna.',
+      content: 'Karya inovasi ini dirancang agar pembelajaran jaringan menjadi lebih adil, mudah diakses, menyenangkan, dan relevan dengan kebutuhan murid.',
       visualNotes: 'Bagan segitiga emas 3K: Novelty, Creativity, dan Usefulness dengan ikon pendukung.'
     },
     {
@@ -1461,12 +1461,12 @@ export const slidePresentasiData = {
     },
     {
       slideNumber: 13,
-      title: 'Kesimpulan & Rencana Diseminasi',
+      title: 'Kesimpulan & Rencana Penerapan',
       subtitle: 'Membagikan Praktik Baik ke Komunitas Belajar & MGMP',
       category: 'Conclusion & Next Steps',
       keyPoints: [
-        'Kesimpulan: Transisi dari Cisco Packet Tracer ke NetLab terbukti meningkatkan efisiensi, inklusivitas, dan pemahaman jaringan komputer kelas X.',
-        'Diseminasi MGMP: Berencana membagikan paket berkas JSON dan Modul Ajar di forum MGMP Informatika SMA/SMK.',
+        'Kesimpulan: Peralihan dari Cisco Packet Tracer ke NetLab terbukti mempermudah praktikum, lebih ringan, dan meningkatkan pemahaman jaringan komputer kelas X.',
+        'Berbagi di MGMP: Berencana membagikan modul ajar dan berkas praktik topologi di forum MGMP Informatika SMA/SMK.',
         'Pengembangan Lanjutan: Menambahkan skenario simulasi Wireless LAN (WLAN), keamanan firewall, dan routing antar-VLAN.',
         'Komitmen Pendidik: Terus berinovasi menghadirkan pembelajaran yang humanis, menyenangkan, dan berpusat pada murid.'
       ],

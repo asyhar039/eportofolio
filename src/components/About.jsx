@@ -1,5 +1,7 @@
 import React from 'react'
 import './About.css'
+import fotoProfil from '../assets/foto-profil.jpg'
+import logoCalonGuru from '../assets/logo-ppg-calon-guru-66ee697b34777c640062b4e3.jpeg'
 
 function About() {
   return (
@@ -12,20 +14,34 @@ function About() {
 
       <div className="about-hero-card">
         <div className="about-card-top">
-          <span className="badge-pill badge-primary">PROFIL DIRI</span>
-          <span className="badge-pill badge-secondary">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-              <circle cx="12" cy="10" r="3"></circle>
-            </svg>
-            Kota Yogyakarta, Daerah Istimewa Yogyakarta
-          </span>
+          <div className="about-badges-group">
+            <span className="badge-pill badge-primary">PROFIL DIRI</span>
+            <div className="badge-pill badge-institution">
+              <img src={logoCalonGuru} alt="PPG Calon Guru" className="badge-icon-logo" />
+              <span>PPG Calon Guru • Universitas Negeri Yogyakarta</span>
+            </div>
+            <span className="badge-pill badge-secondary">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              Kota Yogyakarta, Daerah Istimewa Yogyakarta
+            </span>
+          </div>
         </div>
 
         <div className="about-card-body">
           <div className="about-profile-left">
             <div className="avatar-container">
-              <img src="/foto-profil.jpg" alt="Foto Asyhar Qowiim" className="profile-avatar-img" onError={(e) => { e.target.style.display = 'none'; e.target.nextElementSibling.style.display = 'flex'; }} />
+              <img 
+                src={fotoProfil} 
+                alt="Foto Profil Asyhar Qowiim - Calon Guru Informatika" 
+                className="profile-avatar-img" 
+                onError={(e) => { 
+                  e.target.style.display = 'none'; 
+                  if (e.target.nextElementSibling) e.target.nextElementSibling.style.display = 'flex'; 
+                }} 
+              />
               <div className="profile-avatar-fallback">
                 <span>AQ</span>
               </div>
@@ -33,7 +49,13 @@ function About() {
 
             <div className="profile-details">
               <h3 className="profile-name">Asyhar Qowiim</h3>
-              <p className="profile-role">Calon Guru Profesional</p>
+              <p className="profile-role">Calon Guru Profesional • PPG Calon Guru Informatika</p>
+              
+              <div className="profile-meta-pills">
+                <span className="meta-pill"><strong className="meta-label">NIM:</strong> 25105260081</span>
+                <span className="meta-pill"><strong className="meta-label">LPTK:</strong> Universitas Negeri Yogyakarta</span>
+                <span className="meta-pill"><strong className="meta-label">Bidang:</strong> Informatika</span>
+              </div>
               
               <div className="quote-box">
                 <span className="quote-icon">

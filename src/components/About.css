@@ -49,10 +49,59 @@
   border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
+.about-badges-group {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.badge-institution {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.95);
+  color: var(--navy-deep);
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.12);
+}
+
+.badge-icon-logo {
+  height: 20px;
+  width: auto;
+  border-radius: 3px;
+  display: block;
+}
+
 .badge-secondary {
   background: rgba(255, 255, 255, 0.98);
   color: var(--navy-deep);
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.profile-meta-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.meta-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  color: rgba(255, 255, 255, 0.9);
+  padding: 5px 12px;
+  border-radius: var(--radius-pill);
+  font-size: 0.82rem;
+  backdrop-filter: blur(8px);
+}
+
+.meta-label {
+  color: var(--accent-cyan);
+  font-weight: 700;
 }
 
 .about-card-body {
@@ -100,6 +149,7 @@
   height: 100%;
   border-radius: 50%;
   object-fit: cover;
+  object-position: center 20%;
   background: var(--white);
 }
 

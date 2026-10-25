@@ -53,6 +53,60 @@
   }
 }
 
+.hero-program-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  padding: 8px 16px;
+  border-radius: var(--radius-pill);
+  backdrop-filter: blur(12px);
+  margin-bottom: 24px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.hero-program-badge:hover {
+  transform: translateY(-2px);
+  border-color: rgba(0, 217, 255, 0.4);
+}
+
+.program-badge-img {
+  height: 28px;
+  width: auto;
+  border-radius: 4px;
+  display: block;
+}
+
+.program-badge-info {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.program-badge-title {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: var(--white);
+  letter-spacing: 0.2px;
+}
+
+.program-badge-sub {
+  font-size: 0.72rem;
+  color: var(--accent-cyan);
+  font-weight: 500;
+}
+
+.card-badge-logo {
+  height: 16px;
+  width: auto;
+  border-radius: 2px;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 6px;
+}
+
 .hero-title {
   font-size: clamp(2.2rem, 5vw, 3.4rem);
   line-height: 1.15;

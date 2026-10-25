@@ -6,12 +6,12 @@ function ReflectionDetail({ reflection, course, onBack }) {
 
     const isSemester2 = course.semester === 2
     const pdfUrl = isSemester2
-        ? '/assets/lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar%20Qowiim.pdf'
-        : '/assets/LK_2_Refleksi_Pembelajaran%20semester%201.pdf'
+        ? '/assets/seminar/lk-2-semester-2.pdf'
+        : '/assets/seminar/lk-2-semester-1.pdf'
     const pdfName = isSemester2
-        ? 'lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar Qowiim.pdf'
-        : 'LK_2_Refleksi_Pembelajaran semester 1.pdf'
-    const pdfSize = isSemester2 ? '178 KB' : '77 KB'
+        ? 'LK 2 Refleksi Pembelajaran Semester 2.pdf'
+        : 'LK 2 Refleksi Pembelajaran Semester 1.pdf'
+    const pdfSize = isSemester2 ? '178 KB' : '78 KB'
 
     const courseCode = course.semester === 2
         ? `MATKUL-S2-${(parseInt(course.number, 10) - 6).toString().padStart(2, '0')}`
@@ -92,7 +92,7 @@ function ReflectionDetail({ reflection, course, onBack }) {
                                         textDecoration: 'none'
                                     }}
                                 >
-                                    Buka PDF ↗
+                                    Preview
                                 </a>
                                 <a
                                     href={pdfUrl}
@@ -110,7 +110,7 @@ function ReflectionDetail({ reflection, course, onBack }) {
                                         textDecoration: 'none'
                                     }}
                                 >
-                                    Unduh PDF ↓
+                                    Unduh File
                                 </a>
                             </div>
                         </div>

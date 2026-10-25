@@ -168,18 +168,18 @@ const semesterData = {
     {
       number: '05',
       title: 'Seminar Pendidikan Profesi Guru',
-      summary: 'Refleksi pengalaman belajar berbasis data, kurasi portofolio digital komprehensif, dan diseminasi karya inovasi calon guru profesional.',
+      summary: 'Refleksi pengalaman belajar, penyusunan portofolio digital, dan berbagi karya inovasi pembelajaran sebagai calon guru.',
       learnings: [
-        'Konstruksi Identifikasi Diri & Visi Pendidikan Ki Hadjar Dewantara (LK 1)',
-        'Sintesis Refleksi 4C & Kurasi Artefak Fisik Lintas Mata Kuliah',
-        'Strategi Komunikasi Ilmiah & Presentasi Karya Inovasi Pendidikan'
+        'Penyusunan Identifikasi Diri & Visi Pendidikan Guru (LK 1)',
+        'Refleksi Pengalaman Belajar (Model 4C) & Pemilihan Karya Terbaik',
+        'Penyampaian Ide Pembelajaran & Presentasi Karya Inovasi'
       ],
       competencies: [
-        'Refleksi Berbasis Bukti Nyata (Evidence-Based Practitioner)',
-        'Pengelolaan Portofolio Digital Berkelanjutan',
-        'Advokasi & Komunikasi Gagasan Inovasi Pendidikan'
+        'Refleksi Berdasarkan Fakta Nyata di Kelas',
+        'Pengelolaan Portofolio Digital',
+        'Penyampaian Ide dan Praktik Baik Inovasi Pembelajaran'
       ],
-      reflection: 'Seminar PPG menguatkan jati diri calon pendidik sebagai pamong, fasilitator, dan agen perubahan yang memiliki visi inklusif-humanis serta membiasakan refleksi berbasis data yang dapat dipertanggungjawabkan.'
+      reflection: 'Seminar PPG menguatkan jati diri calon pendidik untuk terus belajar, mendampingi murid dengan penuh kepedulian, serta membiasakan diri mengevaluasi proses pembelajaran secara jujur dan terbuka.'
     },
     {
       number: '06',

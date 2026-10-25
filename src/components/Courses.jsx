@@ -89,7 +89,7 @@ const coursesData = [
         {
           name: 'Pembelajaran Berpusat Pada Peserta Didik',
           learningObjectives: [
-            'Mahasiswa mampu mengelaborasi konsep ragam teori belajar yang mendasari pembelajaran berpusat pada peserta didik dan menjadikannya dasar dalam merancang pembelajaran yang memuliakan peserta didik.'
+            'Mahasiswa mampu memahami dan menerapkan konsep ragam teori belajar yang mendasari pembelajaran berpusat pada peserta didik dan menjadikannya dasar dalam merancang pembelajaran yang memuliakan peserta didik.'
           ],
           cpmk: [
             'CPMK 14: Menguasai konsep dan prinsip pembelajaran konstruktif, humanistik, dan berdiferensiasi serta penerapannya dalam merancang pengalaman belajar yang adaptif dan inklusif.'
@@ -109,7 +109,7 @@ const coursesData = [
           ],
           subCpmk: [
             'Mahasiswa mampu merancang asesmen awal untuk memetakan karakteristik dan kebutuhan belajar peserta didik.',
-            'Mahasiswa mampu mengelaborasi ragam jenis hambatan dalam belajar, baik untuk peserta didik normal maupun peserta didik berkebutuhan khusus.'
+            'Mahasiswa mampu memahami dan menguraikan ragam jenis hambatan dalam belajar, baik untuk peserta didik pada umumnya maupun peserta didik berkebutuhan khusus.'
           ]
         }
       ]
@@ -230,7 +230,7 @@ const coursesData = [
   { number: '08', semester: 2, category: 'Pedagogik', title: 'Pengembangan Keprofesian Berkelanjutan', description: 'Penguatan kompetensi pendidik sebagai praktisi reflektif dan ilmuwan melalui filsafat ilmu, Best Practice, dan KTI.' },
   { number: '09', semester: 2, category: 'PPL', title: 'Yogyakarta_Praktik Pengalaman Lapangan (PPL) Mandiri', description: 'Pelaksanaan praktik mengajar mandiri di SMAN 11 Yogyakarta pada materi logika algoritma sorting dan searching.' },
   { number: '10', semester: 2, category: 'Pedagogik', title: 'Pembelajaran Mendalam dan Asesmen Lanjut SMK', description: 'Perancangan pembelajaran mendalam dan asesmen autentik berorientasi DUDI lintas disiplin kejuruan di SMK.' },
-  { number: '11', semester: 2, category: 'Seminar', title: 'Seminar Pendidikan Profesi Guru', description: 'Refleksi pembelajaran berbasis data terukur, kurasi portofolio digital, dan diseminasi hasil inovasi pembelajaran PPG.' },
+  { number: '11', semester: 2, category: 'Seminar', title: 'Seminar Pendidikan Profesi Guru', description: 'Refleksi pengalaman belajar, penyusunan portofolio digital, dan berbagi hasil karya inovasi pembelajaran selama PPG.' },
   { number: '12', semester: 2, category: 'Kepemimpinan', title: 'Projek Kepemimpinan', description: 'Pengembangan kepemimpinan personal, growth mindset, dan inovasi sistem presensi digital QR Code di SMAN 11 Yogyakarta.' }
 ]
 
@@ -324,7 +324,7 @@ const reflectionData = {
     connection: 'Materi PKB menuntut guru untuk tidak hanya bertindak sebagai pengajar di ruang kelas, tetapi juga memosisikan diri sebagai praktisi reflektif dan ilmuwan pendidik. Kemampuan menyusun dan menganalisis laporan Best Practice serta Karya Tulis Ilmiah (KTI) menjadi pilar utama peningkatan kompetensi profesional. Landasan filsafat ilmu (ontologi fakta masalah kelas, epistemologi metode ilmiah berbasis data, dan aksiologi kemanfaatan ilmu) memandu guru merancang perbaikan kelas yang teruji dan dapat dipertanggungjawabkan secara akademik.',
     challenge: 'Tantangan paling mendasar adalah mengubah orientasi penyusunan laporan pembelajaran yang selama ini cenderung deskriptif-administratif atau sekadar klaim subjektif menuju tradisi riset ilmiah yang ketat. Selain itu, menguasai penerapan logika penalaran Deduktif-Nomologikal (DN) dan Induktif-Statistik (IS) berbasis instrumen yang teruji validitas dan reliabilitasnya.',
     concept: '1. Struktur Fundamental Filosofis Best Practice: Ontologi (fakta masalah kelas), Epistemologi (metode ilmiah sistematis), dan Aksiologi (nilai guna ilmu bagi kebudayaan).\n2. Model Penalaran KTI: Deduktif-Nomologikal (DN) dan Induktif-Statistik (IS).\n3. Triad Sarana Berpikir Ilmiah: Bahasa, Matematika, dan Statistika.\n4. Triad Kebenaran Ilmiah: Rasional, Empirik, dan Transendental.\n5. Parameter Kualitas Instrumen & Tanggung Jawab Moral Ilmuwan.',
-    change: '1. Membudayakan pembelajaran berbasis bukti (evidence-based teaching) berdasarkan data empiris terukur.\n2. Mendokumentasikan inovasi ke dalam laporan Best Practice berstandar metodologi ilmiah secara berkala.\n3. Menyusun instrumen penilaian autentik yang objektif, teruji validitas dan reliabilitasnya.\n4. Melatih presisi logika serta kaidah bahasa penulisan ilmiah dan menjunjung integritas etika riset.',
+    change: '1. Membiasakan mengajar berdasarkan data dan kebutuhan nyata siswa di kelas.\n2. Mendokumentasikan inovasi ke dalam laporan Best Practice berstandar metodologi ilmiah secara berkala.\n3. Menyusun instrumen penilaian autentik yang objektif, teruji validitas dan reliabilitasnya.\n4. Melatih presisi logika serta kaidah bahasa penulisan ilmiah dan menjunjung integritas etika riset.',
     artifacts: [
       'Artefak 1: Dokumen Tugas LMS "Analisis Best Practice dan Tes Formatif KTI" (Asyhar Qowiim) dan studi kasus Best Practice PBL berorientasi HOTS karya Moch. Basuni (SMKN 3 Tuban).',
       'Artefak 2: Dipilih karena memuat bukti penguasaan kerangka filsafat ilmu, logika penalaran KTI, parameter instrumen, dan kode etik moral ilmuwan.',
@@ -357,20 +357,20 @@ const reflectionData = {
   },
   '11': {
     topic: 'MATKUL-S2-05: Seminar Pendidikan Profesi Guru (Seminar PPG)',
-    connection: 'Seminar PPG membekali calon guru dengan kemampuan melakukan refleksi pembelajaran berbasis data terukur (data-driven reflection) serta menerapkan komunikasi ilmiah yang efektif. Refleksi ini berakar pada LK 1 Identifikasi Diri dan filosofi Ki Hadjar Dewantara (menuntun sesuai kodrat alam dan zaman). Peran calon guru dikuatkan sebagai pamong, fasilitator, dan agen perubahan (agent of change) yang mampu mengurasi perjalanan transformatifnya ke dalam portofolio digital yang sistematis.',
-    challenge: 'Tantangan utama dalam Seminar PPG adalah mendisrupsi kebiasaan refleksi kualitatif yang sekadar naratif-subjektif menuju refleksi ilmiah berbasis bukti fisik (evidence-based reflection) menggunakan artefak pembelajaran nyata (LKPD, instrumen asesmen, jurnal emosi), serta menyeleksi dan mengurasi artefak unggulan lintas mata kuliah secara terstruktur.',
-    concept: '1. Fondasi Filosofis Ki Hadjar Dewantara: Menuntun kodrat peserta didik dan mewujudkan student well-being.\n2. Empat Pilar Seminar PPG: Identifikasi Diri (LK 1), Refleksi 4C, Karya Inovasi Pendidikan, dan Diseminasi via Portofolio Digital.\n3. Komunikasi Efektif & Advokasi Inovasi: Penyampaian argumen ilmiah yang runtut dan persuasif.\n4. Trias Penilaian Autentik: Portofolio Digital, Partisipasi Aktif, dan Performa Presentasi.',
-    change: '1. Menjadikan portofolio digital sebagai wadah rekam jejak profesionalisme (showcase of growth) yang diperbarui secara konsisten.\n2. Membiasakan budaya refleksi berbasis data fisik dan Penelitian Tindakan Kelas (PTK) pada setiap siklus pembelajaran.\n3. Mengeksekusi 5 langkah strategis LK 1 (pembelajaran berdiferensiasi, integrasi PSE, riset aksi mandiri, teknologi digital, dan Komunitas Belajar).',
+    connection: 'Seminar PPG membekali calon guru dengan kemampuan melakukan refleksi pengalaman belajar berdasarkan fakta di kelas serta menyampaikan ide secara jelas. Refleksi ini berakar pada LK 1 Identifikasi Diri dan filosofi Ki Hadjar Dewantara (menuntun sesuai kodrat alam dan zaman). Calon guru berlatih menjadi pendidik yang reflektif dan merangkum perjalanan belajarnya ke dalam portofolio digital yang rapi dan terstruktur.',
+    challenge: 'Tantangan utama dalam Seminar PPG adalah membiasakan refleksi yang disertai bukti nyata hasil belajar siswa (seperti lembar kerja siswa, rubrik penilaian, dan catatan kelas), serta memilih karya terbaik dari setiap mata kuliah untuk ditampilkan dalam portofolio.',
+    concept: '1. Pemikiran Ki Hadjar Dewantara: Menuntun potensi peserta didik dan menciptakan suasana belajar yang membahagiakan.\n2. Empat Bagian Utama Seminar PPG: Identifikasi Diri (LK 1), Refleksi 4C, Karya Inovasi Pembelajaran, dan Berbagi Karya lewat Portofolio Digital.\n3. Komunikasi Efektif & Penyampaian Inovasi: Menyampaikan gagasan pembelajaran secara jelas, runtut, dan mudah dipahami.\n4. Tiga Penilaian Utama: Portofolio Digital, Keaktifan di Kelas, dan Penampilan Saat Presentasi.',
+    change: '1. Menjadikan portofolio digital sebagai wadah rekam jejak perkembangan diri yang diperbarui secara konsisten.\n2. Membiasakan refleksi pembelajaran yang jujur dan perbaikan kelas berkelanjutan pada setiap siklus pembelajaran.\n3. Menerapkan 5 langkah nyata LK 1 (pembelajaran berdiferensiasi, pembiasaan sosial emosional, perbaikan kelas mandiri, pemanfaatan teknologi, dan aktif di komunitas belajar).',
     artifacts: [
       'Artefak 1: Dokumen Utama LK 1 Identifikasi Diri - Seminar Pendidikan Guru (Asyhar Qowiim) dan Produk Portofolio Digital Refleksi LK 2 Semester II.',
-      'Artefak 2: Dipilih karena merupakan dokumen pondasional kompas arah filosofis Ki Hadjar Dewantara dan memuat 5 rencana aksi strategis kesiapan guru profesional.',
-      'Artefak 3: Bagian Visi Pendidikan Indonesia (inklusif-humanis), Visi Calon Guru (pamong & agen perubahan), serta rincian 5 Langkah Strategis Aksi Nyata.'
+      'Artefak 2: Dipilih karena merupakan dokumen awal yang memuat arah pemikiran Ki Hadjar Dewantara dan memuat 5 rencana aksi nyata kesiapan guru profesional.',
+      'Artefak 3: Bagian Visi Pendidikan Indonesia (inklusif dan berkeadilan), Visi Calon Guru, serta rincian 5 Langkah Nyata Menjadi Guru Profesional.'
     ]
   },
   '12': {
     topic: 'MATKUL-S2-06: Projek Kepemimpinan',
     connection: 'Materi Projek Kepemimpinan mengaitkan konsep personal leadership, growth mindset (pola pikir bertumbuh), dan pemberdayaan masyarakat sekolah dengan peran strategis calon guru Informatika di SMAN 11 Yogyakarta. Melalui eksekusi perancangan sistem presensi digital berbasis QR Code, kepemimpinan guru diwujudkan dalam inisiatif nyata pemecahan masalah sekolah (menggantikan presensi manual dan meminimalisir kecurangan presensi/titip absen).',
-    challenge: 'Tantangan terbesar adalah mendisrupsi pandangan konvensional bahwa kepemimpinan merupakan bakat bawaan, serta mengubah kebiasaan kerja mandiri menjadi kolaborasi tim yang fleksibel dan terstruktur (agile execution). Dalam pelaksanaan proyek presensi QR Code di SMAN 11 Yogyakarta, tantangan meliputi penyelarasan 8 anggota tim, pengelolaan konflik pendapat secara bijaksana, penyesuaian milestones pengujian sistem, dan sikap pantang menyerah saat kendala teknis.',
+    challenge: 'Tantangan terbesar adalah mengubah anggapan bahwa kepemimpinan hanyalah bakat sejak lahir, melainkan kemampuan yang dapat dipelajari dan dilatih melalui kerja sama tim yang kompak. Dalam pelaksanaan proyek presensi QR Code di SMAN 11 Yogyakarta, tantangannya adalah menyelaraskan 8 anggota tim, menyelesaikan perbedaan pendapat secara bijaksana, mengatur jadwal uji coba sistem, dan pantang menyerah saat menghadapi kendala teknis.',
     concept: '1. Growth Mindset & Personal Leadership: Kapasitas memimpin berkembang melalui latihan, inisiatif, eksperimen solusi, dan belajar dari kesalahan.\n2. Tujuh Elemen Perancangan Projek: Riset pengguna, tujuan terukur, alokasi sumber daya, strategi agile, dan milestones sukses.\n3. Komunikasi Efektif & Pengelolaan Konflik Konstruktif.\n4. Transformasi Digital & Pemberdayaan Sekolah: Penerapan presensi digital QR Code untuk efisiensi, transparansi data, dan peningkatan kedisiplinan murid.',
     change: '1. Terus berani mengambil inisiatif dan menghadirkan solusi teknologi kontekstual bagi permasalahan ekosistem sekolah.\n2. Mengedepankan komunikasi terbuka, empati, dan manajemen konflik yang bijaksana dalam memimpin kelompok maupun Komunitas Belajar.\n3. Membiasakan evaluasi agile dan resiliensi menghadapi tantangan teknis atau perubahan dinamika lapangan.',
     artifacts: [
@@ -428,9 +428,9 @@ function Courses({ onViewCourse, onViewReflection }) {
               <h3 className="course-item-title">{course.title}</h3>
               <p className="course-item-description">{course.description}</p>
               <div className="course-actions">
-                <button className="course-item-link" onClick={() => onViewCourse && onViewCourse(detailCourse)}>Detail mata kuliah <span>↗</span></button>
+                <button className="course-item-link" onClick={() => onViewCourse && onViewCourse(detailCourse)}>Detail Mata Kuliah <span>↗</span></button>
                 {reflection && (
-                  <button className="course-item-link" onClick={() => onViewReflection && onViewReflection({ course, reflection })}>Lihat refleksi <span>↗</span></button>
+                  <button className="course-item-link" onClick={() => onViewReflection && onViewReflection({ course, reflection })}>Lihat Refleksi <span>↗</span></button>
                 )}
               </div>
             </article>

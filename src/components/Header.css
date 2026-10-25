@@ -32,13 +32,54 @@
 .brand {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 12px;
   font-weight: 700;
   background: none;
   border: none;
   cursor: pointer;
   padding: 0;
   flex-shrink: 0;
+  text-align: left;
+}
+
+.header-logos {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-right: 12px;
+  border-right: 1.5px solid rgba(11, 31, 51, 0.12);
+}
+
+.header-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  transition: transform 0.2s ease, filter 0.2s ease;
+  display: block;
+}
+
+.header-logo.uny-logo {
+  height: 34px;
+}
+
+.header-logo.ppg-logo {
+  height: 30px;
+}
+
+.header-logo.calon-guru-logo {
+  height: 28px;
+  border-radius: 4px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+}
+
+.header-logo:hover {
+  transform: scale(1.08);
+}
+
+.brand-title-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .brand-mark {
@@ -162,5 +203,28 @@
     text-align: left;
     padding: 11px 16px;
     font-size: 0.92rem;
+  }
+}
+
+@media (max-width: 640px) {
+  .header-logos {
+    gap: 6px;
+    padding-right: 8px;
+  }
+
+  .header-logo.uny-logo {
+    height: 26px;
+  }
+
+  .header-logo.ppg-logo {
+    height: 24px;
+  }
+
+  .header-logo.calon-guru-logo {
+    height: 22px;
+  }
+
+  .brand-text {
+    display: none;
   }
 }

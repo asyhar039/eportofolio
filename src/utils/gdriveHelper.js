@@ -5,6 +5,17 @@
  */
 
 export const OFFICIAL_GDRIVE_DOCS = {
+  // 0. LK 1: Identifikasi Diri & Visi Pendidikan Guru - Asyhar Qowiim
+  'lk-1-identifikasi-diri': {
+    id: '1lQH4cbI22ESDVfIy-8xsX7jAbIM3_ikn',
+    viewUrl: 'https://drive.google.com/file/d/1lQH4cbI22ESDVfIy-8xsX7jAbIM3_ikn/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/1lQH4cbI22ESDVfIy-8xsX7jAbIM3_ikn/preview'
+  },
+  'lk-1': {
+    id: '1lQH4cbI22ESDVfIy-8xsX7jAbIM3_ikn',
+    viewUrl: 'https://drive.google.com/file/d/1lQH4cbI22ESDVfIy-8xsX7jAbIM3_ikn/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/1lQH4cbI22ESDVfIy-8xsX7jAbIM3_ikn/preview'
+  },
   // 1. LK 4: Desain Karya Inovatif - Asyhar Qowiim
   'lk-4-desain-karya-inovatif': {
     id: '1EjkEvU1eC4Dtq8HSL7I8bRgPLhIS55Ys',
@@ -25,12 +36,12 @@ export const OFFICIAL_GDRIVE_DOCS = {
   },
   // 4. Karya Inovasi / Slide Presentasi
   'karya-inovasi-slide': {
-    id: 'Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g',
+    id: '1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g',
     viewUrl: 'https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/view?usp=sharing',
     previewUrl: 'https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/preview'
   },
   'slide-presentasi': {
-    id: 'Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g',
+    id: '1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g',
     viewUrl: 'https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/view?usp=sharing',
     previewUrl: 'https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/preview'
   },

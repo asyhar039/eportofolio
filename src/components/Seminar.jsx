@@ -2,7 +2,7 @@ import React, { useState, useMemo, useEffect } from 'react'
 import { createPortal } from 'react-dom'
 import './Seminar.css'
 import { seminarWorksheets, karyaInovasiList, modulAjarData, slidePresentasiData } from '../data/seminarData'
-import PdfReviewModal, { PdfCanvasViewer, IconGoogleDrive } from './PdfReviewModal'
+import PdfReviewModal, { IconGoogleDrive } from './PdfReviewModal'
 import { OFFICIAL_GDRIVE_DOCS } from '../utils/gdriveHelper'
 
 // Modern Minimalist SVG Icons
@@ -171,27 +171,13 @@ function Seminar() {
   const [selectedLk, setSelectedLk] = useState(null)
   const [selectedInovasi, setSelectedInovasi] = useState(null)
   const [activeTopicIndex, setActiveTopicIndex] = useState(0)
-  const [showPdfEmbed, setShowPdfEmbed] = useState(false)
-  const [showInovasiPdfEmbed, setShowInovasiPdfEmbed] = useState(false)
   const [copiedState, setCopiedState] = useState(false)
   const [showJsonPreview, setShowJsonPreview] = useState(false)
   const [jsonCopied, setJsonCopied] = useState(false)
   const [activeReviewPdf, setActiveReviewPdf] = useState(null)
 
-  // Modul Ajar & Slide Presentasi dedicated state
+  // Sub-section filter for Karya Inovasi
   const [inovasiSection, setInovasiSection] = useState('semua') // 'semua' | 'simulator' | 'modul-ajar' | 'slide-presentasi'
-  const [currentSlideIndex, setCurrentSlideIndex] = useState(0)
-  const [activeModulSection, setActiveModulSection] = useState('overview')
-  const [revealedQuizAnswers, setRevealedQuizAnswers] = useState({})
-  const [showModulPdfEmbed, setShowModulPdfEmbed] = useState(false)
-  const [showSlidePdfEmbed, setShowSlidePdfEmbed] = useState(false)
-
-  const toggleAnswer = (idx) => {
-    setRevealedQuizAnswers((prev) => ({
-      ...prev,
-      [idx]: !prev[idx]
-    }))
-  }
 
   const openGdriveReview = (key, url, title, fileName, pdfUrl) => {
     const effectiveUrl = url || (key && OFFICIAL_GDRIVE_DOCS[key]?.previewUrl) || ''
@@ -247,7 +233,6 @@ function Seminar() {
 
   const handleOpenLk = (lk) => {
     setActiveTopicIndex(0)
-    setShowPdfEmbed(false)
     setSelectedLk(lk)
   }
 
@@ -317,7 +302,7 @@ function Seminar() {
         </div>
         <h1>Seminar Pendidikan Profesi Guru</h1>
         <p>
-          Ruang diseminasi refleksi diri berbasis bukti data (evidence-based reflection), kurasi artefak pembelajaran unggulan, seluruh dokumen lembar kerja seminar resmi (LK 1, LK 2 Semester I & II, LK 3, LK 4 Desain Inovasi), Modul Ajar Praktik JKI Fase E, serta Slide Presentasi Karya Inovasi yang siap diadvokasikan ke dalam ekosistem persekolahan.
+          Ruang berbagi refleksi pengalaman belajar, kumpulan dokumen lembar kerja seminar (LK 1, LK 2 Semester 1 & 2, LK 3, LK 4 Desain Inovasi), Modul Ajar Praktik JKI Fase E, serta Slide Presentasi Karya Inovasi yang siap diterapkan di sekolah.
         </p>
 
         <div className="seminar-stats-row">
@@ -327,7 +312,7 @@ function Seminar() {
           </div>
           <div className="seminar-stat-card">
             <span className="seminar-stat-val">Dokumen PDF</span>
-            <span className="seminar-stat-lbl">Pratinjau Langsung Seluruh LK & Slide</span>
+            <span className="seminar-stat-lbl">Preview Seluruh Dokumen LK & Inovasi</span>
           </div>
           <div className="seminar-stat-card">
             <span className="seminar-stat-val">Karya Inovasi</span>
@@ -344,7 +329,7 @@ function Seminar() {
         </div>
       </div>
 
-      {/* Main Sub-Menu Nav Tabs */}
+      {/* Main Nav Tabs: Hanya 2 Menu Utama (Lembar Kerja & Karya Inovasi) */}
       <div className="seminar-tabs-nav" role="tablist">
         <button
           className={`seminar-tab-btn ${activeTab === 'lembar-kerja' ? 'active' : ''}`}
@@ -370,36 +355,8 @@ function Seminar() {
           aria-selected={activeTab === 'karya-inovasi'}
         >
           <IconRouter size={19} />
-          <span>Karya Inovasi (NetLab)</span>
-          <span className="tab-count-badge">Simulator Topologi</span>
-        </button>
-
-        <button
-          className={`seminar-tab-btn ${activeTab === 'modul-ajar' ? 'active' : ''}`}
-          onClick={() => {
-            setActiveTab('modul-ajar')
-            setSearchQuery('')
-          }}
-          role="tab"
-          aria-selected={activeTab === 'modul-ajar'}
-        >
-          <IconBook size={19} />
-          <span>Modul Ajar Praktik</span>
-          <span className="tab-count-badge">Fase E JKI (2 JP)</span>
-        </button>
-
-        <button
-          className={`seminar-tab-btn ${activeTab === 'slide-presentasi' ? 'active' : ''}`}
-          onClick={() => {
-            setActiveTab('slide-presentasi')
-            setSearchQuery('')
-          }}
-          role="tab"
-          aria-selected={activeTab === 'slide-presentasi'}
-        >
-          <IconSlides size={19} />
-          <span>Slide Presentasi</span>
-          <span className="tab-count-badge">13 Slide Dek</span>
+          <span>Karya Inovasi</span>
+          <span className="tab-count-badge">NetLab, Modul Ajar & Slide</span>
         </button>
       </div>
 
@@ -444,10 +401,10 @@ function Seminar() {
                         background: 'rgba(56, 189, 248, 0.16)',
                         color: '#38bdf8'
                       }}
-                      title="Pratinjau Dokumen Google Drive"
+                      title="Preview Dokumen"
                     >
                       <IconGoogleDrive size={14} />
-                      <span>Pratinjau Drive</span>
+                      <span>Preview</span>
                     </button>
                   </div>
 
@@ -475,7 +432,7 @@ function Seminar() {
                       type="button"
                       onClick={() => openGdriveReview(lk.id, lk.gdriveUrl, lk.title, lk.pdfFileName, lk.pdfUrl)}
                       className="lk-btn-pdf"
-                      title="Pratinjau Dokumen Google Drive"
+                      title="Preview Dokumen"
                       style={{
                         cursor: 'pointer',
                         border: 'none',
@@ -581,79 +538,75 @@ function Seminar() {
                   onClick={() => openGdriveReview('karya-slide', item.gdriveUrl, item.pdfTitle || item.title, item.pdfFileName, item.pdfUrl)}
                   className="netlab-btn-open"
                   style={{ background: 'linear-gradient(135deg, #0284c7, #0369a1)', cursor: 'pointer', border: 'none', fontFamily: 'inherit' }}
-                  title="Pratinjau Slide Presentasi di Google Drive"
+                  title="Preview Slide"
                 >
                   <IconGoogleDrive size={16} />
-                  <span>Pratinjau Slide Drive</span>
+                  <span>Preview Slide</span>
                 </button>
                 <button
                   type="button"
                   onClick={() => openGdriveReview('karya-modul', item.modulAjarGdriveUrl, item.modulAjarTitle, item.modulAjarFileName, item.modulAjarPdfUrl)}
                   className="netlab-btn-open"
                   style={{ background: 'linear-gradient(135deg, #6366f1, #4f46e5)', cursor: 'pointer', border: 'none', fontFamily: 'inherit' }}
-                  title="Pratinjau Modul Ajar di Google Drive"
+                  title="Preview Modul"
                 >
                   <IconGoogleDrive size={16} />
-                  <span>Pratinjau Modul Drive</span>
+                  <span>Preview Modul</span>
                 </button>
               </div>
 
-              {/* Metrics Row */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px' }}>
-                {item.impactMetrics?.map((m, idx) => (
-                  <div key={idx} style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(13, 148, 136, 0.14))', border: '1px solid rgba(16, 185, 129, 0.35)', padding: '18px', borderRadius: '16px' }}>
-                    <span style={{ fontSize: '1.4rem', fontWeight: '800', color: '#34d399', display: 'block' }}>{m.value}</span>
-                    <span style={{ fontSize: '0.84rem', color: 'rgba(255, 255, 255, 0.8)', marginTop: '4px', display: 'block' }}>{m.label}</span>
-                  </div>
-                ))}
-              </div>
-
-              {/* In-Page Presentation Slide Deck Viewer */}
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px' }}>
-                  <div>
-                    <h3 style={{ margin: 0, color: '#ffffff', fontSize: '1.2rem', fontWeight: '800', display: 'flex', alignItems: 'center', gap: '8px' }}>
-                      <IconGoogleDrive size={20} />
-                      Slide Presentasi Karya Inovasi Pembelajaran
-                    </h3>
-                    <p style={{ margin: '4px 0 0', fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.7)' }}>
-                      Pratinjau langsung slide presentasi resmi seminar (13 Slide) via Google Drive
-                    </p>
-                  </div>
-                  <div style={{ display: 'flex', gap: '8px' }}>
+              {/* Sub-Nav Pill Selector: Navigasi 3 Bagian Inovasi Terpadu */}
+              <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', padding: '12px 0 16px', borderBottom: '1px solid rgba(255, 255, 255, 0.12)', flexWrap: 'wrap' }}>
+                {[
+                  { id: 'semua', label: '⚡ Seluruh Paket Inovasi (Semua)', icon: IconSparkles },
+                  { id: 'simulator', label: '🌐 1. Simulator Topologi NetLab & JSON', icon: IconRouter },
+                  { id: 'modul-ajar', label: '📖 2. Preview Modul Ajar', icon: IconBook },
+                  { id: 'slide-presentasi', label: '📑 3. Preview Slide Presentasi', icon: IconSlides }
+                ].map((sec) => {
+                  const IconCmp = sec.icon
+                  const isActive = inovasiSection === sec.id
+                  return (
                     <button
+                      key={sec.id}
                       type="button"
-                      onClick={() => openGdriveReview('karya-slide', item.gdriveUrl, item.pdfTitle || item.title, item.pdfFileName, item.pdfUrl)}
+                      onClick={() => setInovasiSection(sec.id)}
                       style={{
-                        background: 'linear-gradient(135deg, #0284c7, #0369a1)',
-                        color: '#ffffff',
-                        border: 'none',
-                        padding: '7px 14px',
-                        borderRadius: '8px',
-                        fontSize: '0.8rem',
-                        fontWeight: '700',
-                        cursor: 'pointer',
                         display: 'inline-flex',
                         alignItems: 'center',
-                        gap: '6px',
+                        gap: '8px',
+                        padding: '9px 18px',
+                        borderRadius: '12px',
+                        border: '1px solid',
+                        borderColor: isActive ? 'var(--accent-cyan)' : 'rgba(255, 255, 255, 0.14)',
+                        background: isActive ? 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))' : 'rgba(255, 255, 255, 0.05)',
+                        color: '#ffffff',
+                        fontWeight: '700',
+                        fontSize: '0.84rem',
+                        cursor: 'pointer',
+                        whiteSpace: 'nowrap',
+                        transition: 'all 0.2s ease',
                         fontFamily: 'inherit'
                       }}
                     >
-                      <IconExternal size={14} />
-                      <span>Buka Layar Penuh</span>
+                      <IconCmp size={16} />
+                      <span>{sec.label}</span>
                     </button>
-                  </div>
-                </div>
-
-                <PdfCanvasViewer
-                  gdriveUrl={item.gdriveUrl}
-                  pdfUrl={item.pdfUrl}
-                  title={item.pdfTitle || item.title}
-                  fileName={item.pdfFileName}
-                  height="580px"
-                  onExpandFullscreen={() => openGdriveReview('karya-slide', item.gdriveUrl, item.pdfTitle || item.title, item.pdfFileName, item.pdfUrl)}
-                />
+                  )
+                })}
               </div>
+
+              {/* BAGIAN 1: SIMULATOR TOPOLOGI NETLAB & FILE JSON */}
+              {(inovasiSection === 'semua' || inovasiSection === 'simulator') && (
+                <div style={{ display: 'flex', flexDirection: 'column', gap: '28px', marginTop: '16px' }}>
+                  {/* Metrics Row */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '14px' }}>
+                    {item.impactMetrics?.map((m, idx) => (
+                      <div key={idx} style={{ background: 'linear-gradient(135deg, rgba(16, 185, 129, 0.14), rgba(13, 148, 136, 0.14))', border: '1px solid rgba(16, 185, 129, 0.35)', padding: '18px', borderRadius: '16px' }}>
+                        <span style={{ fontSize: '1.4rem', fontWeight: '800', color: '#34d399', display: 'block' }}>{m.value}</span>
+                        <span style={{ fontSize: '0.84rem', color: 'rgba(255, 255, 255, 0.8)', marginTop: '4px', display: 'block' }}>{m.label}</span>
+                      </div>
+                    ))}
+                  </div>
 
               {/* NetLab Simulator Interactive Guide */}
               {item.jsonUrl && (
@@ -842,7 +795,7 @@ function Seminar() {
                       }}
                     >
                       <IconEye size={14} />
-                      <span>{showJsonPreview ? 'Tutup Pratinjau Kode' : 'Pratinjau Kode JSON'}</span>
+                      <span>{showJsonPreview ? 'Tutup Preview Kode' : 'Preview Kode JSON'}</span>
                     </button>
                   </div>
 
@@ -935,7 +888,7 @@ function Seminar() {
                               fontFamily: 'inherit'
                             }}
                             className="evidence-link-pill"
-                            title="Pratinjau Slide Presentasi di Google Drive"
+                            title="Preview Slide"
                           >
                             <IconGoogleDrive size={16} />
                             <strong style={{ color: '#7dd3fc' }}>{ev.label}</strong>
@@ -963,7 +916,7 @@ function Seminar() {
                               fontFamily: 'inherit'
                             }}
                             className="evidence-link-pill"
-                            title="Pratinjau Modul Ajar di Google Drive"
+                            title="Preview Modul"
                           >
                             <IconGoogleDrive size={16} />
                             <strong style={{ color: '#a5b4fc' }}>{ev.label}</strong>
@@ -1007,29 +960,18 @@ function Seminar() {
                   </div>
                 </div>
               )}
-            </article>
-          </div>
-        )
-      })()}
+            </div>
+          )}
 
-      {/* TAB 3: MODUL AJAR PRAKTIK INFORMATIKA (FASE E JKI) */}
-      {activeTab === 'modul-ajar' && (() => {
-        const toggleAnswer = (idx) => {
-          setRevealedQuizAnswers((prev) => ({
-            ...prev,
-            [idx]: !prev[idx]
-          }))
-        }
-
-        return (
-          <div className="inovasi-showcase-container" style={{ width: '100%' }}>
-            <article className="inovasi-showcase-card">
+          {/* BAGIAN 2: MODUL AJAR PRAKTIK INFORMATIKA (FASE E JKI) */}
+          {(inovasiSection === 'semua' || inovasiSection === 'modul-ajar') && (
+            <div style={{ marginTop: '36px', paddingTop: '32px', borderTop: '1px solid rgba(255, 255, 255, 0.12)' }}>
               {/* Header Modul Ajar */}
               <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.12)', paddingBottom: '24px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px', marginBottom: '14px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                     <span className="inovasi-tag" style={{ fontSize: '0.82rem', padding: '5px 14px' }}>
-                      PERANGKAT AJAR INFORMATIKA
+                      2. PERANGKAT AJAR INFORMATIKA (MODUL AJAR)
                     </span>
                     <span style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
                       Fase E · Kelas X SMA/SMK
@@ -1050,10 +992,10 @@ function Seminar() {
                       background: 'rgba(56, 189, 248, 0.18)',
                       color: '#38bdf8'
                     }}
-                    title="Buka Dokumen Modul Ajar di Google Drive"
+                    title="Preview Modul Ajar"
                   >
                     <IconGoogleDrive size={15} />
-                    <span>Pratinjau Drive</span>
+                    <span>Preview</span>
                   </button>
                 </div>
 
@@ -1082,12 +1024,12 @@ function Seminar() {
                     <strong style={{ color: '#ffffff', fontSize: '0.92rem' }}>JKI · Problem Based Learning (PBL)</strong>
                   </div>
                   <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
-                    <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Media Pembelajaran</span>
+                    <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Media Praktik</span>
                     <strong style={{ color: '#38bdf8', fontSize: '0.92rem' }}>Web Simulator NetLab (JSON)</strong>
                   </div>
                 </div>
 
-                {/* Action buttons */}
+                {/* Action buttons: Hanya Preview & Unduh File */}
                 <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                   <button
                     type="button"
@@ -1100,7 +1042,7 @@ function Seminar() {
                       color: '#ffffff',
                       border: 'none',
                       borderRadius: '12px',
-                      padding: '12px 22px',
+                      padding: '12px 24px',
                       fontSize: '0.9rem',
                       fontWeight: '700',
                       cursor: 'pointer',
@@ -1108,517 +1050,105 @@ function Seminar() {
                     }}
                   >
                     <IconGoogleDrive size={18} />
-                    <span>Pratinjau Modul Google Drive</span>
-                  </button>
-
-                  <button
-                    type="button"
-                    onClick={() => setShowModulPdfEmbed(!showModulPdfEmbed)}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(255, 255, 255, 0.08)',
-                      border: '1px solid rgba(255, 255, 255, 0.18)',
-                      color: '#ffffff',
-                      borderRadius: '12px',
-                      padding: '12px 20px',
-                      fontSize: '0.9rem',
-                      fontWeight: '700',
-                      cursor: 'pointer',
-                      fontFamily: 'inherit'
-                    }}
-                  >
-                    <IconEye size={16} />
-                    <span>{showModulPdfEmbed ? 'Tutup Pratinjau Dokumen' : 'Pratinjau Dokumen di Layar'}</span>
+                    <span>Preview</span>
                   </button>
 
                   <a
-                    href="https://netlab.thecybersecguru.com"
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={modulAjarData.pdfUrl || '/assets/seminar/modul-ajar-netlab.pdf'}
+                    download={modulAjarData.pdfFileName || 'Modul Ajar Praktik Informatika NetLab.pdf'}
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '8px',
-                      background: 'rgba(255, 255, 255, 0.06)',
-                      border: '1px solid rgba(255, 255, 255, 0.15)',
-                      color: 'var(--accent-cyan)',
-                      borderRadius: '12px',
-                      padding: '12px 20px',
-                      fontSize: '0.9rem',
-                      fontWeight: '700',
-                      textDecoration: 'none'
-                    }}
-                  >
-                    <IconExternal size={15} />
-                    <span>Buka Web NetLab</span>
-                  </a>
-
-                  <a
-                    href="/assets/seminar/produk-karya-inovasi.json"
-                    download="produk-karya-inovasi.json"
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(255, 255, 255, 0.06)',
-                      border: '1px solid rgba(255, 255, 255, 0.15)',
+                      background: 'rgba(52, 211, 153, 0.15)',
+                      border: '1px solid rgba(52, 211, 153, 0.35)',
                       color: '#34d399',
                       borderRadius: '12px',
-                      padding: '12px 20px',
+                      padding: '12px 24px',
                       fontSize: '0.9rem',
                       fontWeight: '700',
                       textDecoration: 'none'
                     }}
                   >
-                    <IconDownload size={15} />
-                    <span>Unduh Berkas JSON</span>
+                    <IconDownload size={16} />
+                    <span>Unduh File</span>
                   </a>
                 </div>
               </div>
 
-              {/* Embedded PDF Canvas Viewer */}
-              {showModulPdfEmbed && (
-                <div style={{ marginTop: '24px', marginBottom: '24px' }}>
-                  <PdfCanvasViewer
-                    gdriveUrl={modulAjarData.gdriveUrl}
-                    pdfUrl={modulAjarData.pdfUrl}
-                    title={modulAjarData.title}
-                    fileName={modulAjarData.pdfFileName}
-                    height="600px"
-                    onExpandFullscreen={() => openGdriveReview(modulAjarData.id, modulAjarData.gdriveUrl, modulAjarData.title, modulAjarData.pdfFileName, modulAjarData.pdfUrl)}
-                  />
-                </div>
-              )}
-
-              {/* Sub-Tabs Selector for Modul Ajar */}
-              <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', padding: '24px 0 16px', borderBottom: '1px solid rgba(255, 255, 255, 0.1)' }}>
-                {[
-                  { id: 'overview', label: '1. Informasi Umum & TP' },
-                  { id: 'scenario', label: '2. Skenario 5 Sintaks PBL' },
-                  { id: 'rubrics', label: '3. Rubrik Sikap & Keterampilan' },
-                  { id: 'quiz', label: '4. Soal Pilihan Ganda (HOTS)' },
-                  { id: 'lkpd', label: '5. Lampiran LKPD Digital' }
-                ].map((st) => (
-                  <button
-                    key={st.id}
-                    onClick={() => setActiveModulSection(st.id)}
-                    style={{
-                      padding: '9px 18px',
-                      borderRadius: '10px',
-                      border: '1px solid',
-                      borderColor: activeModulSection === st.id ? 'var(--accent-cyan)' : 'rgba(255, 255, 255, 0.15)',
-                      background: activeModulSection === st.id ? 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))' : 'rgba(255, 255, 255, 0.06)',
-                      color: '#ffffff',
-                      fontWeight: '700',
-                      fontSize: '0.84rem',
-                      cursor: 'pointer',
-                      whiteSpace: 'nowrap',
-                      transition: 'all 0.2s ease',
-                      fontFamily: 'inherit'
-                    }}
-                  >
-                    {st.label}
-                  </button>
-                ))}
-              </div>
-
-              {/* SUB-SECTION 1: Informasi Umum & TP */}
-              {activeModulSection === 'overview' && (
-                <div style={{ paddingTop: '24px' }}>
-                  {/* Capaian Pembelajaran */}
-                  <div style={{ marginBottom: '22px', borderLeft: '4px solid var(--accent-cyan)', background: 'rgba(0, 217, 255, 0.06)', borderRadius: '0 14px 14px 0', padding: '18px 22px' }}>
-                    <h4 style={{ color: 'var(--accent-cyan)', margin: '0 0 6px', fontSize: '1.02rem', fontWeight: '800' }}>Capaian Pembelajaran (CP) Elemen JKI</h4>
-                    <p style={{ color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.7', margin: 0, fontSize: '0.92rem' }}>
-                      {modulAjarData.komponenInti.capaianPembelajaran}
-                    </p>
+              {/* Direct Document Preview Frame */}
+              <div style={{ marginTop: '24px', background: 'rgba(15, 23, 42, 0.75)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.12)', boxShadow: '0 12px 30px rgba(0,0,0,0.35)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px', background: 'rgba(255, 255, 255, 0.04)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)', flexWrap: 'wrap', gap: '10px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <IconPdf size={18} style={{ color: '#38bdf8' }} />
+                    <span style={{ color: '#ffffff', fontWeight: '700', fontSize: '0.92rem' }}>{modulAjarData.pdfFileName || 'Modul Ajar Praktik Informatika NetLab.pdf'}</span>
                   </div>
-
-                  {/* Tujuan Pembelajaran */}
-                  <h4 style={{ color: '#ffffff', fontSize: '1.08rem', margin: '0 0 14px', fontWeight: '700' }}>Tujuan Pembelajaran (TP) & Taksonomi Bloom</h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', marginBottom: '26px' }}>
-                    {modulAjarData.komponenInti.tujuanPembelajaran.map((tp, idx) => (
-                      <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '14px', padding: '16px 20px', display: 'flex', alignItems: 'flex-start', gap: '14px' }}>
-                        <span style={{ background: 'rgba(56, 189, 248, 0.2)', color: 'var(--accent-cyan)', border: '1px solid rgba(56, 189, 248, 0.4)', padding: '4px 10px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '800', whiteSpace: 'nowrap' }}>
-                          {tp.kode} · {tp.taksonomi}
-                        </span>
-                        <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.88)', fontSize: '0.92rem', lineHeight: '1.6' }}>{tp.deskripsi}</p>
-                      </div>
-                    ))}
-                  </div>
-
-                  {/* Pemahaman Bermakna & Pertanyaan Pemantik */}
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px', marginBottom: '26px' }}>
-                    <div style={{ background: 'rgba(168, 85, 247, 0.08)', border: '1px solid rgba(168, 85, 247, 0.35)', borderRadius: '16px', padding: '20px' }}>
-                      <span style={{ color: '#c084fc', fontSize: '0.78rem', fontWeight: '800', letterSpacing: '0.6px', textTransform: 'uppercase' }}>Pemahaman Bermakna</span>
-                      <p style={{ color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.92rem', lineHeight: '1.65', margin: '10px 0 0' }}>
-                        {modulAjarData.komponenInti.pemahamanBermakna}
-                      </p>
-                    </div>
-
-                    <div style={{ background: 'rgba(251, 146, 60, 0.08)', border: '1px solid rgba(251, 146, 60, 0.35)', borderRadius: '16px', padding: '20px' }}>
-                      <span style={{ color: '#fbbf24', fontSize: '0.78rem', fontWeight: '800', letterSpacing: '0.6px', textTransform: 'uppercase' }}>Pertanyaan Pemantik Kontekstual</span>
-                      <p style={{ color: '#fed7aa', fontSize: '0.92rem', lineHeight: '1.65', margin: '10px 0 0', fontStyle: 'italic' }}>
-                        "{modulAjarData.komponenInti.pertanyaanPemantik}"
-                      </p>
-                    </div>
-                  </div>
-
-                  {/* Profil Pelajar Pancasila & Sarana */}
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
-                    <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '16px', padding: '20px' }}>
-                      <h4 style={{ color: '#ffffff', margin: '0 0 12px', fontSize: '0.98rem', fontWeight: '700' }}>Dimensi Profil Pelajar Pancasila:</h4>
-                      <ul style={{ margin: 0, paddingLeft: '18px', color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.88rem', lineHeight: '1.7' }}>
-                        {modulAjarData.informasiUmum.profilPelajarPancasila.map((pp, idx) => (
-                          <li key={idx} style={{ marginBottom: '8px' }}>
-                            <strong style={{ color: 'var(--accent-cyan)' }}>{pp.dimensi}:</strong> {pp.indikator}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-
-                    <div style={{ background: 'rgba(255, 255, 255, 0.03)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '16px', padding: '20px' }}>
-                      <h4 style={{ color: '#ffffff', margin: '0 0 12px', fontSize: '0.98rem', fontWeight: '700' }}>Sarana & Prasarana Praktikum:</h4>
-                      <ul style={{ margin: 0, paddingLeft: '18px', color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.88rem', lineHeight: '1.7' }}>
-                        {modulAjarData.informasiUmum.saranaPrasarana.map((sp, idx) => (
-                          <li key={idx} style={{ marginBottom: '6px' }}>{sp}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* SUB-SECTION 2: Skenario 5 Sintaks PBL */}
-              {activeModulSection === 'scenario' && (
-                <div style={{ paddingTop: '24px' }}>
-                  {/* Pendahuluan */}
-                  <div style={{ background: 'rgba(56, 189, 248, 0.05)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '16px', padding: '20px', marginBottom: '20px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                      <h4 style={{ color: '#38bdf8', margin: 0, fontSize: '1.05rem', fontWeight: '800' }}>I. Kegiatan Pendahuluan</h4>
-                      <span style={{ background: 'rgba(56, 189, 248, 0.2)', color: '#38bdf8', padding: '3px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
-                        {modulAjarData.kegiatanPembelajaran.pendahuluan.durasi}
-                      </span>
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {modulAjarData.kegiatanPembelajaran.pendahuluan.langkah.map((l, idx) => (
-                        <div key={idx} style={{ display: 'flex', gap: '12px', fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.85)' }}>
-                          <span style={{ color: 'var(--accent-cyan)', fontWeight: '700', minWidth: '60px' }}>{l.waktu}</span>
-                          <span>{l.kegiatan}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Inti (5 Sintaks PBL) */}
-                  <div style={{ marginBottom: '20px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px' }}>
-                      <h4 style={{ color: '#ffffff', margin: 0, fontSize: '1.08rem', fontWeight: '800' }}>II. Kegiatan Inti — 5 Sintaks Problem-Based Learning</h4>
-                      <span style={{ background: 'rgba(0, 217, 255, 0.2)', color: 'var(--accent-cyan)', padding: '3px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
-                        {modulAjarData.kegiatanPembelajaran.inti.durasi}
-                      </span>
-                    </div>
-
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '14px' }}>
-                      {modulAjarData.kegiatanPembelajaran.inti.sintaksPBL.map((syn, idx) => (
-                        <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.12)', borderRadius: '16px', padding: '18px 22px' }}>
-                          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px', flexWrap: 'wrap', gap: '8px' }}>
-                            <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.98rem' }}>{syn.sintaks}</strong>
-                            <span style={{ background: 'rgba(0, 217, 255, 0.15)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 217, 255, 0.3)', padding: '3px 10px', borderRadius: '6px', fontSize: '0.76rem', fontWeight: '700' }}>
-                              {syn.alokasi}
-                            </span>
-                          </div>
-                          <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.92rem', lineHeight: '1.65' }}>
-                            {syn.aktivitas}
-                          </p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Penutup */}
-                  <div style={{ background: 'rgba(52, 211, 153, 0.05)', border: '1px solid rgba(52, 211, 153, 0.25)', borderRadius: '16px', padding: '20px' }}>
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '12px' }}>
-                      <h4 style={{ color: '#34d399', margin: 0, fontSize: '1.05rem', fontWeight: '800' }}>III. Kegiatan Penutup</h4>
-                      <span style={{ background: 'rgba(52, 211, 153, 0.2)', color: '#34d399', padding: '3px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
-                        {modulAjarData.kegiatanPembelajaran.penutup.durasi}
-                      </span>
-                    </div>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {modulAjarData.kegiatanPembelajaran.penutup.langkah.map((l, idx) => (
-                        <div key={idx} style={{ display: 'flex', gap: '12px', fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.85)' }}>
-                          <span style={{ color: '#34d399', fontWeight: '700', minWidth: '60px' }}>{l.waktu}</span>
-                          <span>{l.kegiatan}</span>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* SUB-SECTION 3: Rubrik Asesmen */}
-              {activeModulSection === 'rubrics' && (
-                <div style={{ paddingTop: '24px' }}>
-                  {/* Rubrik Sikap Profil Pelajar Pancasila */}
-                  <div style={{ marginBottom: '28px' }}>
-                    <h4 style={{ color: '#ffffff', fontSize: '1.1rem', margin: '0 0 14px', fontWeight: '800' }}>
-                      A. {modulAjarData.asesmenPembelajaran.formatifSikap.judul}
-                    </h4>
-                    <div style={{ overflowX: 'auto', background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(255, 255, 255, 0.12)', borderRadius: '16px' }}>
-                      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.86rem' }}>
-                        <thead>
-                          <tr style={{ background: 'rgba(29, 111, 165, 0.4)', color: '#ffffff' }}>
-                            <th style={{ padding: '12px 14px', textAlign: 'left', width: '22%' }}>Dimensi Sikap</th>
-                            <th style={{ padding: '12px 14px', textAlign: 'left', width: '20%' }}>Skor 4 (Sangat Baik)</th>
-                            <th style={{ padding: '12px 14px', textAlign: 'left', width: '20%' }}>Skor 3 (Baik)</th>
-                            <th style={{ padding: '12px 14px', textAlign: 'left', width: '20%' }}>Skor 2 (Cukup)</th>
-                            <th style={{ padding: '12px 14px', textAlign: 'left', width: '18%' }}>Skor 1 (Perlu Bimbingan)</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {modulAjarData.asesmenPembelajaran.formatifSikap.kriteria.map((k, idx) => (
-                            <tr key={idx} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                              <td style={{ padding: '14px', fontWeight: '700', color: 'var(--accent-cyan)' }}>{k.dimensi}</td>
-                              <td style={{ padding: '14px', color: '#a7f3d0' }}>{k.skor4}</td>
-                              <td style={{ padding: '14px', color: 'rgba(255, 255, 255, 0.85)' }}>{k.skor3}</td>
-                              <td style={{ padding: '14px', color: '#fed7aa' }}>{k.skor2}</td>
-                              <td style={{ padding: '14px', color: '#fca5a5' }}>{k.skor1}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-
-                  {/* Rubrik Keterampilan Praktik NetLab */}
-                  <div>
-                    <h4 style={{ color: '#ffffff', fontSize: '1.1rem', margin: '0 0 14px', fontWeight: '800' }}>
-                      B. {modulAjarData.asesmenPembelajaran.formatifKeterampilan.judul}
-                    </h4>
-                    <div style={{ overflowX: 'auto', background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(255, 255, 255, 0.12)', borderRadius: '16px' }}>
-                      <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.86rem' }}>
-                        <thead>
-                          <tr style={{ background: 'rgba(29, 111, 165, 0.4)', color: '#ffffff' }}>
-                            <th style={{ padding: '12px 14px', textAlign: 'left', width: '22%' }}>Aspek Kinerja</th>
-                            <th style={{ padding: '12px 14px', textAlign: 'left', width: '20%' }}>Skor 4 (Mahir)</th>
-                            <th style={{ padding: '12px 14px', textAlign: 'left', width: '20%' }}>Skor 3 (Cakap)</th>
-                            <th style={{ padding: '12px 14px', textAlign: 'left', width: '20%' }}>Skor 2 (Layak)</th>
-                            <th style={{ padding: '12px 14px', textAlign: 'left', width: '18%' }}>Skor 1 (Baru Mulai)</th>
-                          </tr>
-                        </thead>
-                        <tbody>
-                          {modulAjarData.asesmenPembelajaran.formatifKeterampilan.kriteria.map((k, idx) => (
-                            <tr key={idx} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                              <td style={{ padding: '14px', fontWeight: '700', color: 'var(--accent-cyan)' }}>{k.aspek}</td>
-                              <td style={{ padding: '14px', color: '#a7f3d0' }}>{k.skor4}</td>
-                              <td style={{ padding: '14px', color: 'rgba(255, 255, 255, 0.85)' }}>{k.skor3}</td>
-                              <td style={{ padding: '14px', color: '#fed7aa' }}>{k.skor2}</td>
-                              <td style={{ padding: '14px', color: '#fca5a5' }}>{k.skor1}</td>
-                            </tr>
-                          ))}
-                        </tbody>
-                      </table>
-                    </div>
-                  </div>
-                </div>
-              )}
-
-              {/* SUB-SECTION 4: Soal Pilihan Ganda Interaktif */}
-              {activeModulSection === 'quiz' && (
-                <div style={{ paddingTop: '24px' }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px', flexWrap: 'wrap', gap: '10px' }}>
-                    <div>
-                      <h4 style={{ color: '#ffffff', fontSize: '1.15rem', margin: 0, fontWeight: '800' }}>
-                        {modulAjarData.asesmenPembelajaran.sumatifPengetahuan.judul}
-                      </h4>
-                      <p style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.85rem', margin: '4px 0 0' }}>
-                        5 Butir Soal Pengujian Pengetahuan JKI Berbobot HOTS (Kunci: C, C, B, B, B)
-                      </p>
-                    </div>
-
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <button
                       type="button"
-                      onClick={() => {
-                        const allOpen = {}
-                        modulAjarData.asesmenPembelajaran.sumatifPengetahuan.soalList.forEach((_, idx) => {
-                          allOpen[idx] = true
-                        })
-                        setRevealedQuizAnswers(allOpen)
-                      }}
+                      onClick={() => openGdriveReview(modulAjarData.id, modulAjarData.gdriveUrl, modulAjarData.title, modulAjarData.pdfFileName, modulAjarData.pdfUrl)}
                       style={{
+                        background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
+                        border: 'none',
+                        color: '#ffffff',
                         padding: '6px 14px',
-                        background: 'rgba(255, 255, 255, 0.08)',
-                        border: '1px solid rgba(255, 255, 255, 0.2)',
                         borderRadius: '8px',
-                        color: 'var(--accent-cyan)',
                         fontSize: '0.8rem',
                         fontWeight: '700',
                         cursor: 'pointer',
-                        fontFamily: 'inherit'
+                        fontFamily: 'inherit',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px'
                       }}
                     >
-                      Buka Semua Kunci & Pembahasan
+                      <IconGoogleDrive size={14} />
+                      <span>Preview</span>
                     </button>
-                  </div>
-
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
-                    {modulAjarData.asesmenPembelajaran.sumatifPengetahuan.soalList.map((q, idx) => {
-                      const isRevealed = !!revealedQuizAnswers[idx]
-                      return (
-                        <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.12)', borderRadius: '16px', padding: '20px 24px' }}>
-                          <div style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', marginBottom: '14px' }}>
-                            <span style={{ background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))', color: '#ffffff', minWidth: '32px', height: '32px', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', fontWeight: '800', fontSize: '0.88rem' }}>
-                              {q.nomor}
-                            </span>
-                            <p style={{ margin: 0, color: '#ffffff', fontSize: '0.94rem', lineHeight: '1.65', fontWeight: '600' }}>
-                              {q.soal}
-                            </p>
-                          </div>
-
-                          {/* Pilihan Jawaban */}
-                          <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', paddingLeft: '44px', marginBottom: '14px' }}>
-                            {q.pilihan.map((opt, oIdx) => {
-                              const isKey = opt.startsWith(q.kunci)
-                              return (
-                                <div
-                                  key={oIdx}
-                                  style={{
-                                    background: isRevealed && isKey ? 'rgba(52, 211, 153, 0.15)' : 'rgba(255, 255, 255, 0.03)',
-                                    border: isRevealed && isKey ? '1px solid rgba(52, 211, 153, 0.4)' : '1px solid rgba(255, 255, 255, 0.08)',
-                                    borderRadius: '10px',
-                                    padding: '10px 14px',
-                                    fontSize: '0.88rem',
-                                    color: isRevealed && isKey ? '#a7f3d0' : 'rgba(255, 255, 255, 0.85)',
-                                    fontWeight: isRevealed && isKey ? '700' : '400'
-                                  }}
-                                >
-                                  {opt}
-                                </div>
-                              )
-                            })}
-                          </div>
-
-                          {/* Tombol Kunci & Pembahasan */}
-                          <div style={{ paddingLeft: '44px' }}>
-                            <button
-                              type="button"
-                              onClick={() => toggleAnswer(idx)}
-                              style={{
-                                background: 'transparent',
-                                border: 'none',
-                                color: isRevealed ? '#fbbf24' : 'var(--accent-cyan)',
-                                cursor: 'pointer',
-                                fontSize: '0.84rem',
-                                fontWeight: '700',
-                                padding: 0,
-                                display: 'inline-flex',
-                                alignItems: 'center',
-                                gap: '6px',
-                                fontFamily: 'inherit'
-                              }}
-                            >
-                              <span>{isRevealed ? '▲ Sembunyikan Kunci & Pembahasan' : '▼ Lihat Kunci Jawaban & Pembahasan Ilmiah'}</span>
-                            </button>
-
-                            {isRevealed && (
-                              <div style={{ marginTop: '12px', background: 'rgba(52, 211, 153, 0.08)', border: '1px solid rgba(52, 211, 153, 0.3)', borderRadius: '12px', padding: '14px 18px' }}>
-                                <div style={{ display: 'flex', alignItems: 'center', gap: '8px', marginBottom: '6px' }}>
-                                  <span style={{ background: '#34d399', color: '#0f172a', fontWeight: '900', padding: '2px 8px', borderRadius: '6px', fontSize: '0.78rem' }}>
-                                    Kunci: {q.kunci}
-                                  </span>
-                                  <strong style={{ color: '#34d399', fontSize: '0.86rem' }}>Pembahasan Ilmiah:</strong>
-                                </div>
-                                <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.88rem', lineHeight: '1.6' }}>
-                                  {q.pembahasan}
-                                </p>
-                              </div>
-                            )}
-                          </div>
-                        </div>
-                      )
-                    })}
+                    <a
+                      href={modulAjarData.pdfUrl || '/assets/seminar/modul-ajar-netlab.pdf'}
+                      download={modulAjarData.pdfFileName || 'Modul Ajar Praktik Informatika NetLab.pdf'}
+                      style={{
+                        background: 'rgba(52, 211, 153, 0.15)',
+                        border: '1px solid rgba(52, 211, 153, 0.35)',
+                        color: '#34d399',
+                        padding: '6px 14px',
+                        borderRadius: '8px',
+                        fontSize: '0.8rem',
+                        fontWeight: '700',
+                        textDecoration: 'none',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px'
+                      }}
+                    >
+                      <IconDownload size={14} />
+                      <span>Unduh File</span>
+                    </a>
                   </div>
                 </div>
-              )}
+                <iframe
+                  src="https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/preview"
+                  style={{ width: '100%', height: '640px', border: 'none', display: 'block' }}
+                  title="Preview Modul Ajar"
+                  allow="autoplay"
+                />
+              </div>
+            </div>
+          )}
 
-              {/* SUB-SECTION 5: Lampiran LKPD Digital */}
-              {activeModulSection === 'lkpd' && (
-                <div style={{ paddingTop: '24px' }}>
-                  <div style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid rgba(0, 217, 255, 0.3)', borderRadius: '16px', padding: '22px', marginBottom: '22px' }}>
-                    <span style={{ color: 'var(--accent-cyan)', fontSize: '0.8rem', fontWeight: '800', letterSpacing: '0.5px' }}>LEMBAR KERJA PESERTA DIDIK (LKPD) DIGITAL</span>
-                    <h3 style={{ color: '#ffffff', fontSize: '1.2rem', margin: '8px 0 12px' }}>{modulAjarData.lampiranLKPD.judul}</h3>
-
-                    <h4 style={{ color: '#ffffff', fontSize: '0.94rem', margin: '14px 0 8px', fontWeight: '700' }}>Petunjuk Pengerjaan Praktik:</h4>
-                    <ol style={{ margin: 0, paddingLeft: '20px', color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.88rem', lineHeight: '1.7' }}>
-                      {modulAjarData.lampiranLKPD.petunjukPengerjaan.map((pt, idx) => (
-                        <li key={idx} style={{ marginBottom: '6px' }}>{pt}</li>
-                      ))}
-                    </ol>
-                  </div>
-
-                  {/* Tabel Investigasi */}
-                  <h4 style={{ color: '#ffffff', fontSize: '1.05rem', margin: '0 0 12px', fontWeight: '700' }}>Tabel Investigasi Pengalamatan & Troubleshooting Node:</h4>
-                  <div style={{ overflowX: 'auto', background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(255, 255, 255, 0.12)', borderRadius: '16px', marginBottom: '24px' }}>
-                    <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.86rem' }}>
-                      <thead>
-                        <tr style={{ background: 'rgba(29, 111, 165, 0.4)', color: '#ffffff' }}>
-                          <th style={{ padding: '12px 14px', textAlign: 'left' }}>Perangkat Node</th>
-                          <th style={{ padding: '12px 14px', textAlign: 'left' }}>Target IP & Subnet</th>
-                          <th style={{ padding: '12px 14px', textAlign: 'left' }}>Status Pengujian</th>
-                          <th style={{ padding: '12px 14px', textAlign: 'left' }}>Catatan Analisis Siswa</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {modulAjarData.lampiranLKPD.tabelInvestigasi.map((t, idx) => (
-                          <tr key={idx} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                            <td style={{ padding: '12px 14px', fontWeight: '700', color: 'var(--accent-cyan)' }}>{t.perangkat}</td>
-                            <td style={{ padding: '12px 14px', fontFamily: 'Geist Mono, monospace', color: '#fef08a' }}>
-                              {t.ipTarget}<br />
-                              <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.65)' }}>{t.netmask}</span>
-                            </td>
-                            <td style={{ padding: '12px 14px', color: '#ffffff' }}>{t.statusUji}</td>
-                            <td style={{ padding: '12px 14px', color: 'rgba(255, 255, 255, 0.85)' }}>{t.catatan}</td>
-                          </tr>
-                        ))}
-                      </tbody>
-                    </table>
-                  </div>
-
-                  {/* Pertanyaan Refleksi */}
-                  <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.12)', borderRadius: '16px', padding: '20px' }}>
-                    <h4 style={{ color: '#ffffff', margin: '0 0 12px', fontSize: '0.98rem', fontWeight: '700' }}>Pertanyaan Refleksi & Pemecahan Masalah Siswa:</h4>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', color: 'rgba(255, 255, 255, 0.88)', fontSize: '0.9rem', lineHeight: '1.6' }}>
-                      {modulAjarData.lampiranLKPD.pertanyaanRefleksiSiswa.map((rf, idx) => (
-                        <div key={idx} style={{ padding: '8px 12px', background: 'rgba(0, 0, 0, 0.2)', borderRadius: '8px' }}>
-                          {rf}
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
-            </article>
-          </div>
-        )
-      })()}
-
-      {/* TAB 4: SLIDE PRESENTASI (13 SLIDE LENGKAP) */}
-      {activeTab === 'slide-presentasi' && (() => {
-        const currentSlide = slidePresentasiData.slides[currentSlideIndex] || slidePresentasiData.slides[0]
-
-        return (
-          <div className="inovasi-showcase-container" style={{ width: '100%' }}>
-            <article className="inovasi-showcase-card">
+          {/* BAGIAN 3: SLIDE PRESENTASI RESMI SEMINAR PPG */}
+          {(inovasiSection === 'semua' || inovasiSection === 'slide-presentasi') && (
+            <div style={{ marginTop: '36px', paddingTop: '32px', borderTop: '1px solid rgba(255, 255, 255, 0.12)' }}>
               {/* Header Slide Presentasi */}
               <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.12)', paddingBottom: '24px' }}>
                 <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px', marginBottom: '14px' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                     <span className="inovasi-tag" style={{ fontSize: '0.82rem', padding: '5px 14px' }}>
-                      DEK PRESENTASI SEMINAR
+                      3. SLIDE PRESENTASI SEMINAR
                     </span>
                     <span style={{ background: 'rgba(168, 85, 247, 0.15)', color: '#c084fc', border: '1px solid rgba(168, 85, 247, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
-                      13 Slide Komprehensif
+                      13 Slide Dek Resmi
                     </span>
                     <span style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
                       PPG Informatika UNY
@@ -1636,10 +1166,10 @@ function Seminar() {
                       background: 'rgba(56, 189, 248, 0.18)',
                       color: '#38bdf8'
                     }}
-                    title="Buka Slide Presentasi di Google Drive"
+                    title="Preview Slide Presentasi"
                   >
                     <IconGoogleDrive size={15} />
-                    <span>Pratinjau Drive</span>
+                    <span>Preview</span>
                   </button>
                 </div>
 
@@ -1653,7 +1183,7 @@ function Seminar() {
                   {slidePresentasiData.summary}
                 </p>
 
-                {/* Actions */}
+                {/* Actions: Hanya Preview & Unduh File */}
                 <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                   <button
                     type="button"
@@ -1666,7 +1196,7 @@ function Seminar() {
                       color: '#ffffff',
                       border: 'none',
                       borderRadius: '12px',
-                      padding: '12px 22px',
+                      padding: '12px 24px',
                       fontSize: '0.9rem',
                       fontWeight: '700',
                       cursor: 'pointer',
@@ -1674,225 +1204,96 @@ function Seminar() {
                     }}
                   >
                     <IconGoogleDrive size={18} />
-                    <span>Pratinjau Slide Google Drive</span>
+                    <span>Preview</span>
                   </button>
 
-                  <button
-                    type="button"
-                    onClick={() => setShowSlidePdfEmbed(!showSlidePdfEmbed)}
+                  <a
+                    href={slidePresentasiData.pdfUrl || '/assets/seminar/karya-inovasi.pdf'}
+                    download={slidePresentasiData.pdfFileName || 'Slide Presentasi Karya Inovasi.pdf'}
                     style={{
                       display: 'inline-flex',
                       alignItems: 'center',
                       gap: '8px',
-                      background: 'rgba(255, 255, 255, 0.08)',
-                      border: '1px solid rgba(255, 255, 255, 0.18)',
-                      color: '#ffffff',
+                      background: 'rgba(52, 211, 153, 0.15)',
+                      border: '1px solid rgba(52, 211, 153, 0.35)',
+                      color: '#34d399',
                       borderRadius: '12px',
-                      padding: '12px 20px',
+                      padding: '12px 24px',
                       fontSize: '0.9rem',
                       fontWeight: '700',
-                      cursor: 'pointer',
-                      fontFamily: 'inherit'
+                      textDecoration: 'none'
                     }}
                   >
-                    <IconEye size={16} />
-                    <span>{showSlidePdfEmbed ? 'Tutup Pratinjau Slide' : 'Pratinjau Slide di Layar'}</span>
-                  </button>
+                    <IconDownload size={16} />
+                    <span>Unduh File</span>
+                  </a>
                 </div>
               </div>
 
-              {/* Embedded PDF Canvas Viewer for Slides */}
-              {showSlidePdfEmbed && (
-                <div style={{ marginTop: '24px', marginBottom: '24px' }}>
-                  <PdfCanvasViewer
-                    gdriveUrl={slidePresentasiData.gdriveUrl}
-                    pdfUrl={slidePresentasiData.pdfUrl}
-                    title={slidePresentasiData.title}
-                    fileName={slidePresentasiData.pdfFileName}
-                    height="600px"
-                    onExpandFullscreen={() => openGdriveReview(slidePresentasiData.id, slidePresentasiData.gdriveUrl, slidePresentasiData.title, slidePresentasiData.pdfFileName, slidePresentasiData.pdfUrl)}
-                  />
-                </div>
-              )}
-
-              {/* Interactive Slide Viewer Showcase */}
-              <div style={{ marginTop: '28px' }}>
-                {/* Slide Number Carousel / Selector */}
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', gap: '8px', marginBottom: '20px', flexWrap: 'wrap' }}>
-                  <span style={{ color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.85rem', fontWeight: '700' }}>
-                    Pilih Slide untuk Dilihat:
-                  </span>
-                  <div style={{ display: 'flex', gap: '6px', overflowX: 'auto', paddingBottom: '6px' }}>
-                    {slidePresentasiData.slides.map((s, idx) => (
-                      <button
-                        key={idx}
-                        onClick={() => setCurrentSlideIndex(idx)}
-                        style={{
-                          width: '36px',
-                          height: '36px',
-                          borderRadius: '8px',
-                          border: '1px solid',
-                          borderColor: currentSlideIndex === idx ? 'var(--accent-cyan)' : 'rgba(255, 255, 255, 0.15)',
-                          background: currentSlideIndex === idx ? 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))' : 'rgba(255, 255, 255, 0.06)',
-                          color: '#ffffff',
-                          fontWeight: '800',
-                          fontSize: '0.84rem',
-                          cursor: 'pointer',
-                          display: 'flex',
-                          alignItems: 'center',
-                          justifyContent: 'center',
-                          fontFamily: 'inherit',
-                          transition: 'all 0.2s ease'
-                        }}
-                        title={`Slide ${idx + 1}: ${s.title}`}
-                      >
-                        {idx + 1}
-                      </button>
-                    ))}
+              {/* Direct Slide Document Preview Frame */}
+              <div style={{ marginTop: '24px', background: 'rgba(15, 23, 42, 0.75)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.12)', boxShadow: '0 12px 30px rgba(0,0,0,0.35)' }}>
+                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px', background: 'rgba(255, 255, 255, 0.04)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)', flexWrap: 'wrap', gap: '10px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                    <IconPdf size={18} style={{ color: '#38bdf8' }} />
+                    <span style={{ color: '#ffffff', fontWeight: '700', fontSize: '0.92rem' }}>{slidePresentasiData.pdfFileName || 'Slide Presentasi Karya Inovasi.pdf'}</span>
                   </div>
-                </div>
-
-                {/* Current Slide Display Stage */}
-                <div style={{ background: 'linear-gradient(145deg, rgba(15, 23, 42, 0.95), rgba(30, 41, 59, 0.85))', border: '1px solid rgba(0, 217, 255, 0.35)', borderRadius: '20px', padding: '32px', position: 'relative', overflow: 'hidden', boxShadow: '0 16px 40px rgba(0, 0, 0, 0.4)' }}>
-                  {/* Slide header tag */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '18px', flexWrap: 'wrap', gap: '10px' }}>
-                    <span style={{ background: 'rgba(0, 217, 255, 0.2)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 217, 255, 0.4)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '800' }}>
-                      SLIDE {currentSlide.slideNumber} DARI 13 · {currentSlide.category}
-                    </span>
-
-                    <span style={{ color: 'rgba(255, 255, 255, 0.55)', fontSize: '0.82rem', fontFamily: 'Geist Mono, monospace' }}>
-                      Asyhar Qowiim · NIM 25105260081
-                    </span>
-                  </div>
-
-                  <h3 style={{ color: '#ffffff', fontSize: '1.45rem', margin: '0 0 6px', fontWeight: '800', lineHeight: '1.3' }}>
-                    {currentSlide.title}
-                  </h3>
-                  {currentSlide.subtitle && (
-                    <p style={{ color: 'var(--accent-cyan)', fontSize: '1rem', margin: '0 0 20px', fontWeight: '600' }}>
-                      {currentSlide.subtitle}
-                    </p>
-                  )}
-
-                  {/* Key Points */}
-                  <div style={{ background: 'rgba(0, 0, 0, 0.3)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '14px', padding: '20px', marginBottom: '22px' }}>
-                    <span style={{ color: '#38bdf8', fontSize: '0.8rem', fontWeight: '800', letterSpacing: '0.6px', textTransform: 'uppercase', display: 'block', marginBottom: '10px' }}>
-                      Poin-Poin Utama Slide:
-                    </span>
-                    <ul style={{ margin: 0, paddingLeft: '18px', color: 'rgba(255, 255, 255, 0.9)', fontSize: '0.92rem', lineHeight: '1.7' }}>
-                      {currentSlide.keyPoints.map((kp, kpIdx) => (
-                        <li key={kpIdx} style={{ marginBottom: '6px' }}>{kp}</li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Narrative Pemaparan */}
-                  <div style={{ marginBottom: '22px' }}>
-                    <span style={{ color: '#a5b4fc', fontSize: '0.8rem', fontWeight: '800', letterSpacing: '0.6px', textTransform: 'uppercase', display: 'block', marginBottom: '6px' }}>
-                      Narasi / Penjelasan Presentasi:
-                    </span>
-                    <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.93rem', lineHeight: '1.7', margin: 0 }}>
-                      {currentSlide.content}
-                    </p>
-                  </div>
-
-                  {/* Visual Notes */}
-                  {currentSlide.visualNotes && (
-                    <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px dashed rgba(255, 255, 255, 0.18)', borderRadius: '12px', padding: '12px 18px', fontSize: '0.85rem', color: 'rgba(255, 255, 255, 0.7)' }}>
-                      <strong style={{ color: '#34d399' }}>Catatan Visual & Tata Letak:</strong> {currentSlide.visualNotes}
-                    </div>
-                  )}
-
-                  {/* Next / Prev Controls */}
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: '26px', paddingTop: '20px', borderTop: '1px solid rgba(255, 255, 255, 0.1)', flexWrap: 'wrap', gap: '10px' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                     <button
                       type="button"
-                      disabled={currentSlideIndex === 0}
-                      onClick={() => setCurrentSlideIndex((prev) => Math.max(0, prev - 1))}
+                      onClick={() => openGdriveReview(slidePresentasiData.id, slidePresentasiData.gdriveUrl, slidePresentasiData.title, slidePresentasiData.pdfFileName, slidePresentasiData.pdfUrl)}
                       style={{
-                        padding: '10px 18px',
-                        background: currentSlideIndex === 0 ? 'rgba(255, 255, 255, 0.04)' : 'rgba(255, 255, 255, 0.1)',
-                        border: '1px solid rgba(255, 255, 255, 0.15)',
-                        borderRadius: '10px',
-                        color: currentSlideIndex === 0 ? 'rgba(255, 255, 255, 0.3)' : '#ffffff',
-                        cursor: currentSlideIndex === 0 ? 'not-allowed' : 'pointer',
-                        fontWeight: '700',
-                        fontSize: '0.85rem',
-                        fontFamily: 'inherit'
-                      }}
-                    >
-                      ← Slide Sebelumnya
-                    </button>
-
-                    <span style={{ color: 'var(--accent-cyan)', fontWeight: '700', fontSize: '0.88rem' }}>
-                      Slide {currentSlideIndex + 1} dari {slidePresentasiData.slides.length}
-                    </span>
-
-                    <button
-                      type="button"
-                      disabled={currentSlideIndex === slidePresentasiData.slides.length - 1}
-                      onClick={() => setCurrentSlideIndex((prev) => Math.min(slidePresentasiData.slides.length - 1, prev + 1))}
-                      style={{
-                        padding: '10px 20px',
-                        background: currentSlideIndex === slidePresentasiData.slides.length - 1 ? 'rgba(255, 255, 255, 0.04)' : 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
+                        background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
                         border: 'none',
-                        borderRadius: '10px',
-                        color: currentSlideIndex === slidePresentasiData.slides.length - 1 ? 'rgba(255, 255, 255, 0.3)' : '#ffffff',
-                        cursor: currentSlideIndex === slidePresentasiData.slides.length - 1 ? 'not-allowed' : 'pointer',
+                        color: '#ffffff',
+                        padding: '6px 14px',
+                        borderRadius: '8px',
+                        fontSize: '0.8rem',
                         fontWeight: '700',
-                        fontSize: '0.85rem',
-                        fontFamily: 'inherit'
+                        cursor: 'pointer',
+                        fontFamily: 'inherit',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px'
                       }}
                     >
-                      Slide Selanjutnya →
+                      <IconGoogleDrive size={14} />
+                      <span>Preview</span>
                     </button>
+                    <a
+                      href={slidePresentasiData.pdfUrl || '/assets/seminar/karya-inovasi.pdf'}
+                      download={slidePresentasiData.pdfFileName || 'Slide Presentasi Karya Inovasi.pdf'}
+                      style={{
+                        background: 'rgba(52, 211, 153, 0.15)',
+                        border: '1px solid rgba(52, 211, 153, 0.35)',
+                        color: '#34d399',
+                        padding: '6px 14px',
+                        borderRadius: '8px',
+                        fontSize: '0.8rem',
+                        fontWeight: '700',
+                        textDecoration: 'none',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px'
+                      }}
+                    >
+                      <IconDownload size={14} />
+                      <span>Unduh File</span>
+                    </a>
                   </div>
                 </div>
-
-                {/* Grid of All 13 Slide Cards */}
-                <div style={{ marginTop: '36px' }}>
-                  <h4 style={{ color: '#ffffff', fontSize: '1.08rem', margin: '0 0 16px', fontWeight: '800' }}>
-                    Daftar Seluruh Slide Presentasi (13 Slide):
-                  </h4>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
-                    {slidePresentasiData.slides.map((s, idx) => (
-                      <div
-                        key={idx}
-                        onClick={() => {
-                          setCurrentSlideIndex(idx)
-                          window.scrollTo({ top: 400, behavior: 'smooth' })
-                        }}
-                        style={{
-                          background: currentSlideIndex === idx ? 'rgba(0, 217, 255, 0.12)' : 'rgba(255, 255, 255, 0.04)',
-                          border: '1px solid',
-                          borderColor: currentSlideIndex === idx ? 'var(--accent-cyan)' : 'rgba(255, 255, 255, 0.1)',
-                          borderRadius: '14px',
-                          padding: '16px',
-                          cursor: 'pointer',
-                          transition: 'all 0.2s ease'
-                        }}
-                      >
-                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px' }}>
-                          <span style={{ background: currentSlideIndex === idx ? 'var(--accent-cyan)' : 'rgba(255, 255, 255, 0.15)', color: currentSlideIndex === idx ? '#0f172a' : '#ffffff', fontWeight: '900', padding: '2px 8px', borderRadius: '6px', fontSize: '0.74rem' }}>
-                            Slide {s.slideNumber}
-                          </span>
-                          <span style={{ color: 'rgba(255, 255, 255, 0.55)', fontSize: '0.74rem' }}>{s.category}</span>
-                        </div>
-                        <strong style={{ color: '#ffffff', fontSize: '0.92rem', display: 'block', lineHeight: '1.4', marginBottom: '4px' }}>
-                          {s.title}
-                        </strong>
-                        <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.7)', fontSize: '0.82rem', lineHeight: '1.5', display: '-webkit-box', WebkitLineClamp: 2, WebkitBoxOrient: 'vertical', overflow: 'hidden' }}>
-                          {s.content}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
+                <iframe
+                  src="https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/preview"
+                  style={{ width: '100%', height: '640px', border: 'none', display: 'block' }}
+                  title="Preview Slide Presentasi"
+                  allow="autoplay"
+                />
               </div>
-            </article>
-          </div>
-        )
-      })()}
+            </div>
+          )}
+        </article>
+      </div>
+    )
+  })()}
 
       {/* MODAL VIEW: Lembar Kerja Seminar Detail */}
       {selectedLk &&
@@ -1925,39 +1326,50 @@ function Seminar() {
                   <div className="modal-pdf-btns">
                     <button
                       type="button"
-                      className="modal-pdf-btn-embed"
-                      onClick={() => setShowPdfEmbed(!showPdfEmbed)}
-                      title="Tampilkan / Sembunyikan Pratinjau Dokumen di Layar"
-                    >
-                      <IconEye size={15} />
-                      <span>{showPdfEmbed ? 'Tutup Pratinjau' : 'Pratinjau Dokumen'}</span>
-                    </button>
-                    <button
-                      type="button"
                       onClick={() => openGdriveReview(selectedLk.id, selectedLk.gdriveUrl, selectedLk.title, selectedLk.pdfFileName, selectedLk.pdfUrl)}
-                      className="modal-pdf-btn-open"
-                      style={{ background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))', border: 'none', cursor: 'pointer', fontFamily: 'inherit' }}
-                      title="Buka Dokumen PDF Layar Penuh"
+                      style={{
+                        background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
+                        border: 'none',
+                        color: '#ffffff',
+                        padding: '8px 16px',
+                        borderRadius: '10px',
+                        fontSize: '0.82rem',
+                        fontWeight: '700',
+                        cursor: 'pointer',
+                        fontFamily: 'inherit',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px'
+                      }}
+                      title="Preview Dokumen"
                     >
-                      <IconExternal size={14} />
-                      <span>Review Layar Penuh</span>
+                      <IconGoogleDrive size={15} />
+                      <span>Preview</span>
                     </button>
+                    <a
+                      href={selectedLk.pdfUrl}
+                      download={selectedLk.pdfFileName || `${selectedLk.title}.pdf`}
+                      style={{
+                        background: 'rgba(52, 211, 153, 0.15)',
+                        border: '1px solid rgba(52, 211, 153, 0.35)',
+                        color: '#34d399',
+                        padding: '8px 16px',
+                        borderRadius: '10px',
+                        fontSize: '0.82rem',
+                        fontWeight: '700',
+                        textDecoration: 'none',
+                        display: 'inline-flex',
+                        alignItems: 'center',
+                        gap: '6px',
+                        fontFamily: 'inherit'
+                      }}
+                      title="Unduh Berkas Dokumen"
+                    >
+                      <IconDownload size={15} />
+                      <span>Unduh File</span>
+                    </a>
                   </div>
                 </div>
-
-                {/* Embedded PDF Canvas Viewer */}
-                {showPdfEmbed && (
-                  <div style={{ marginBottom: '24px' }}>
-                    <PdfCanvasViewer
-                      gdriveUrl={selectedLk.gdriveUrl}
-                      pdfUrl={selectedLk.pdfUrl}
-                      title={selectedLk.title}
-                      fileName={selectedLk.pdfFileName}
-                      height="580px"
-                      onExpandFullscreen={() => openGdriveReview(selectedLk.id, selectedLk.gdriveUrl, selectedLk.title, selectedLk.pdfFileName, selectedLk.pdfUrl)}
-                    />
-                  </div>
-                )}
 
                 {/* Summary box */}
                 <div className="theme-panel-glass">
@@ -2420,7 +1832,7 @@ function Seminar() {
                   }}
                 >
                   <IconCopy size={15} />
-                  <span>{copiedState ? 'Tersalin ke Clipboard!' : 'Salin Teks Lembar Kerja'}</span>
+                  <span>{copiedState ? 'Berhasil Disalin!' : 'Salin Teks Lembar Kerja'}</span>
                 </button>
 
                 <button

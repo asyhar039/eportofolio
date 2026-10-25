@@ -75,12 +75,12 @@ export const pplPhases = [
   },
   {
     phase: 'Fase 05',
-    title: 'Refleksi Evaluatif, Asesmen Pamong/DPL, & Diseminasi',
+    title: 'Refleksi Pengalaman, Penilaian Pamong/DPL, & Berbagi Praktik Baik',
     period: 'Akhir Masa PPL',
-    description: 'Penyusunan dokumen resmi LK 3 Refleksi Praktik Mengajar Terbimbing/Mandiri, penelaahan catatan kritis Guru Pamong & DPL, penyusunan laporan Best Practice, serta penyerahan kembali mahasiswa ke kampus UNY.',
+    description: 'Penyusunan dokumen resmi LK 3 Refleksi Praktik Mengajar Terbimbing/Mandiri, penelaahan catatan Guru Pamong & DPL, penyusunan laporan Best Practice, serta penyerahan kembali mahasiswa ke kampus UNY.',
     outcomes: [
       'Pengesahan Dokumen LK 3 PPLM oleh Dian C.R., S.Si. & Ir. Bekti Wulandari, S.Pd.T., M.Pd.',
-      'Penyusunan Portofolio Digital Reflektif berbasis bukti riil lapangan',
+      'Penyusunan Portofolio Digital berdasarkan pengalaman nyata di sekolah',
       'Rekomendasi tindak lanjut pengembangan profesi guru berkelanjutan'
     ]
   }

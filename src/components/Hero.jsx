@@ -10,7 +10,7 @@ function Hero({ onNavigate }) {
     { id: 'matkul', label: 'Matkul' },
     { id: 'seminar', label: 'Seminar' },
     { id: 'ppl-mandiri', label: 'PPL Mandiri SMAN 11 Yogyakarta' },
-    { id: 'artifak', label: 'Artifak' },
+    { id: 'artifak', label: 'Artefak' },
     { id: 'galeri', label: 'Galeri' }
   ]
 
@@ -22,6 +22,14 @@ function Hero({ onNavigate }) {
     <section id="beranda" className="hero">
       <div className="hero-container">
         <div className="hero-copy">
+          <div className="hero-program-badge">
+            <img src="/assets/logo-ppg-calon-guru.jpeg" alt="Logo PPG Calon Guru" className="program-badge-img" />
+            <div className="program-badge-info">
+              <span className="program-badge-title">PPG Calon Guru • Gelombang 2 Tahun 2026</span>
+              <span className="program-badge-sub">Universitas Negeri Yogyakarta • Bidang Studi Informatika</span>
+            </div>
+          </div>
+
            <h1 className="hero-title">
             Belajar.<br />
             <span className="gradient-text">Berkembang.</span><br />
@@ -59,8 +67,11 @@ function Hero({ onNavigate }) {
           <article className="profile-card">
             <div className="card-glow"></div>
             <div className="card-topline">
-              <span className="badge">PPG • INFORMATIKA</span>
-              <span className="tech-icon">⌘</span>
+              <span className="badge">
+                <img src="/assets/logo-ppg-calon-guru.jpeg" alt="PPG Calon Guru" className="card-badge-logo" />
+                PPG CALON GURU • INFORMATIKA
+              </span>
+              <span className="tech-icon">UNY</span>
             </div>
             <p className="card-label">PROFIL PROFESIONAL</p>
             <h2>

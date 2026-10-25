@@ -41,6 +41,32 @@
   font-weight: 400;
 }
 
+.footer-logos {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  margin-bottom: 18px;
+}
+
+.footer-logo {
+  height: 32px;
+  width: auto;
+  object-fit: contain;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+}
+
+.footer-logo.footer-logo-badge {
+  height: 28px;
+  border-radius: 4px;
+}
+
+.footer-logo:hover {
+  opacity: 1;
+  transform: scale(1.08);
+}
+
 .copyright {
   padding-top: 18px;
   border-top: 1px solid rgba(255, 255, 255, 0.08);

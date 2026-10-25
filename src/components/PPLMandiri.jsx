@@ -355,14 +355,41 @@ function PPLMandiri() {
 
       {/* TAB 5: DOKUMENTASI & CATATAN LAPANGAN */}
       {activeTab === 'galeri' && (
-        <div className="ppl-gallery-grid">
-          {pplGalleryActivities.map((act, idx) => (
-            <div key={idx} className="ppl-gallery-card">
-              <span className="ppl-gal-tag">{act.category}</span>
-              <h4>{act.title}</h4>
-              <p>{act.description}</p>
+        <div>
+          <div className="ppl-media-showcase" style={{ marginBottom: '28px' }}>
+            <h3 style={{ color: '#ffffff', marginBottom: '16px', fontSize: '1.15rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
+              <IconCamera size={20} style={{ color: 'var(--accent-cyan, #00D9FF)' }} />
+              <span>Dokumentasi Foto Praktik Mengajar Terbimbing SMAN 11 Yogyakarta</span>
+            </h3>
+            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.12)' }}>
+                <img src="/assets/mengajar-1.jpg" alt="Foto Praktik Mengajar Terbimbing 1" style={{ width: '100%', height: '190px', objectFit: 'cover' }} />
+                <div style={{ padding: '16px 18px' }}>
+                  <span style={{ fontSize: '0.74rem', color: 'var(--accent-cyan, #00D9FF)', fontWeight: '700', textTransform: 'uppercase' }}>FOTO PRAKTIK KELAS</span>
+                  <h4 style={{ color: '#ffffff', margin: '6px 0 8px', fontSize: '1rem' }}>Praktik Pembelajaran Terbimbing di Kelas</h4>
+                  <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.85rem', lineHeight: '1.5' }}>Penyampaian materi algoritma komputasi dan dialog interaktif dengan peserta didik SMA Negeri 11 Yogyakarta.</p>
+                </div>
+              </div>
+              <div style={{ background: 'rgba(255, 255, 255, 0.05)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.12)' }}>
+                <img src="/assets/mengajar-2.jpg" alt="Foto Praktik Mengajar Terbimbing 2" style={{ width: '100%', height: '190px', objectFit: 'cover' }} />
+                <div style={{ padding: '16px 18px' }}>
+                  <span style={{ fontSize: '0.74rem', color: 'var(--accent-cyan, #00D9FF)', fontWeight: '700', textTransform: 'uppercase' }}>FOTO PRAKTIK LABORATORIUM</span>
+                  <h4 style={{ color: '#ffffff', margin: '6px 0 8px', fontSize: '1rem' }}>Pendampingan Praktikum Laboratorium Komputer</h4>
+                  <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.85rem', lineHeight: '1.5' }}>Membimbing siswa menyelesaikan latihan pemrograman Python dan lembar kerja komputasi secara kolaboratif.</p>
+                </div>
+              </div>
             </div>
-          ))}
+          </div>
+
+          <div className="ppl-gallery-grid">
+            {pplGalleryActivities.map((act, idx) => (
+              <div key={idx} className="ppl-gallery-card">
+                <span className="ppl-gal-tag">{act.category}</span>
+                <h4>{act.title}</h4>
+                <p>{act.description}</p>
+              </div>
+            ))}
+          </div>
         </div>
       )}
 

@@ -16,10 +16,10 @@ export const seminarWorksheets = [
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
     gdriveUrl: '',
-    pdfFileName: 'LK_2_Refleksi_Pembelajaran semester 1.pdf',
+    pdfFileName: 'LK 2 Refleksi Pembelajaran Semester 1.pdf',
     summary: 'Refleksi komprehensif alur 4C (Connection, Challenge, Concept, Change) dan analisis bukti dukung artefak pembelajaran untuk 6 mata kuliah inti Semester I: Filosofi Pendidikan & Nilai, Pemahaman Peserta Didik, Growth Mindset, Pembelajaran Kreatif & Inovatif, PMA Dasar, dan PPL Terbimbing.',
     highlights: [
-      'Tersedia Berkas PDF Asli: LK_2_Refleksi_Pembelajaran semester 1.pdf',
+      'Tersedia Berkas PDF LK 2 Semester 1',
       '6 Topik Refleksi Mata Kuliah Inti Semester I',
       'Refleksi Mendalam Model 4C (Connection, Challenge, Concept, Change)',
       'Analisis Bukti Dukung Artefak 1, Artefak 2, dan Artefak 3',
@@ -282,10 +282,10 @@ export const seminarWorksheets = [
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
     gdriveUrl: '',
-    pdfFileName: 'lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar Qowiim.pdf',
+    pdfFileName: 'LK 2 Refleksi Pembelajaran Semester 2.pdf',
     summary: 'Refleksi mendalam 4C (Connection, Challenge, Concept, Change) dan bukti artefak LMS untuk 6 mata kuliah Semester II: Pembelajaran Sosial Emosional (PSE), Pengembangan Keprofesian Berkelanjutan (PKB), PPL Mandiri SMAN 11 Yogyakarta, PMA Lanjut SMK, Seminar PPG, dan Projek Kepemimpinan.',
     highlights: [
-      'Tersedia Berkas PDF Asli: lk-2-refleksi-pengalaman-belajar-semester-2-Asyhar Qowiim.pdf',
+      'Tersedia Berkas PDF LK 2 Semester 2',
       '6 Topik Refleksi Mata Kuliah Inti Semester II',
       'Refleksi Berbasis Sintesis Nyata 4C & Bukti Artefak LMS',
       'Dokumentasi Teruji PPL Mandiri & Projek Presensi QR Code SMAN 11',
@@ -353,7 +353,7 @@ export const seminarWorksheets = [
         reflection4C: {
           connection: {
             question: '1. Apa keterkaitan materi perkuliahan dengan peran saya sebagai calon guru?',
-            answer: 'Materi Pengembangan Keprofesian Berkelanjutan (PKB) menuntut guru untuk tidak hanya bertindak sebagai pengajar di ruang kelas, tetapi juga memosisikan diri sebagai praktisi reflektif dan ilmuwan pendidik yang adaptif terhadap dinamika pembelajaran. Sebagai calon guru, kemampuan menyusun dan menganalisis laporan Best Practice serta Karya Tulis Ilmiah (KTI) menjadi pilar utama peningkatan kompetensi pedagogik dan profesional secara berkelanjutan. Landasan filsafat ilmu—yang membedah aspek ontologi (fakta masalah kelas), epistemologi (metodologi ilmiah berbasis data), dan aksiologi (kemanfaatan bagi kebudayaan dan peradaban)—menjadi kompas berpikir kritis dalam memecahkan masalah instruksional. Dengan menguasai logika berpikir ilmiah, guru mampu merancang tindakan perbaikan kelas yang teruji dan dapat dipertanggungjawabkan secara akademik.'
+            answer: 'Materi Pengembangan Keprofesian Berkelanjutan (PKB) menuntut guru untuk tidak hanya bertindak sebagai pengajar di ruang kelas, tetapi juga memosisikan diri sebagai praktisi reflektif dan ilmuwan pendidik yang adaptif terhadap dinamika pembelajaran. Sebagai calon guru, kemampuan menyusun dan menganalisis laporan Best Practice serta Karya Tulis Ilmiah (KTI) menjadi pilar utama peningkatan kompetensi pedagogik dan profesional secara berkelanjutan. Landasan filsafat ilmu—yang membedah aspek ontologi (fakta masalah kelas), epistemologi (metodologi ilmiah berbasis data), dan aksiologi (kemanfaatan bagi kebudayaan dan peradaban)—menjadi kompas berpikir kritis dalam memecahkan masalah pembelajaran. Dengan menguasai logika berpikir ilmiah, guru mampu merancang tindakan perbaikan kelas yang teruji dan dapat dipertanggungjawabkan secara akademik.'
           },
           challenge: {
             question: '2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?',
@@ -410,7 +410,7 @@ export const seminarWorksheets = [
           },
           challenge: {
             question: '2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?',
-            answer: 'Tantangan utama selama pelaksanaan praktik mengajar adalah alokasi manajemen waktu yang ketat sehingga kegiatan diskusi kelompok dan presentasi siswa belum sepenuhnya terfasilitasi secara optimal. Selain itu, tingkat partisipasi murid di ruang kelas belum merata; sebagian siswa cenderung pasif, kurang percaya diri mengutarakan gagasan di depan umum, atau terdistraksi saat melakukan sesi praktik mandiri di laboratorium. Dari sisi perancangan instruksional, tantangan nyata adalah menyelaraskan antara alur tujuan pembelajaran, tingkat kesulitan tugas dalam LKPD, dan instrumen evaluasi agar sejalan dengan karakteristik kesiapan belajar siswa SMA Fase E yang beragam.'
+            answer: 'Tantangan utama selama pelaksanaan praktik mengajar adalah alokasi manajemen waktu yang ketat sehingga kegiatan diskusi kelompok dan presentasi siswa belum sepenuhnya terfasilitasi secara optimal. Selain itu, tingkat partisipasi murid di ruang kelas belum merata; sebagian siswa cenderung pasif, kurang percaya diri mengutarakan gagasan di depan umum, atau terdistraksi saat melakukan sesi praktik mandiri di laboratorium. Dari sisi perancangan pembelajaran, tantangan nyata adalah menyelaraskan antara alur tujuan pembelajaran, tingkat kesulitan tugas dalam LKPD, dan instrumen evaluasi agar sejalan dengan karakteristik kesiapan belajar siswa SMA Fase E yang beragam.'
           },
           concept: {
             question: '3. Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?',
@@ -504,18 +504,18 @@ export const seminarWorksheets = [
         reflection4C: {
           connection: {
             question: '1. Apa keterkaitan materi perkuliahan dengan peran saya sebagai calon guru?',
-            answer: 'Mata kuliah Seminar Pendidikan Profesi Guru (Seminar PPG) membekali calon guru dengan kemampuan melakukan refleksi pembelajaran berbasis data terukur (data-driven reflection) serta menerapkan komunikasi ilmiah yang efektif dalam menyampaikan gagasan dan karya inovasi pendidikan. Refleksi ini berakar secara mendalam pada dokumen LEMBAR KERJA 1 (LK 1) IDENTIFIKASI DIRI, di mana saya mengartikulasikan visi pendidikan Indonesia yang inklusif, humanis, adaptif, dan berkeadilan sosial berbasis filosofi Ki Hadjar Dewantara—menuntun peserta didik sesuai kodrat alam dan kodrat zaman. Melalui Seminar PPG, peran calon guru dikuatkan tidak hanya sebagai pengajar di kelas, melainkan sebagai pamong, fasilitator, dan agen perubahan (agent of change) yang mampu mengurasi perjalanan transformatifnya ke dalam portofolio digital yang sistematis dan dapat dipertanggungjawabkan.'
+            answer: 'Mata kuliah Seminar Pendidikan Profesi Guru (Seminar PPG) membekali calon guru dengan kemampuan melakukan refleksi pengalaman belajar berdasarkan fakta di kelas serta menyampaikan ide pembelajaran secara jelas. Refleksi ini berakar pada LEMBAR KERJA 1 (LK 1) IDENTIFIKASI DIRI, di mana saya merumuskan pandangan tentang pendidikan Indonesia yang ramah, menghargai keberagaman, dan berkeadilan sesuai pemikiran Ki Hadjar Dewantara—yaitu menuntun murid sesuai potensi dan zamannya. Melalui Seminar PPG, calon guru dilatih untuk tidak sekadar mengajar di kelas, tetapi juga membimbing murid dengan sabar serta merangkum perjalanan belajarnya ke dalam portofolio digital yang rapi dan dapat dipertanggungjawabkan.'
           },
           challenge: {
             question: '2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?',
-            answer: 'Tantangan utama dalam mata kuliah Seminar PPG adalah mendisrupsi kebiasaan refleksi kualitatif yang sekadar bersifat naratif-subjektif menuju refleksi ilmiah berbasis bukti fisik (evidence-based reflection) menggunakan artefak pembelajaran nyata (seperti LKPD, instrumen asesmen, dan jurnal emosi). Selain itu, tantangan teknis dan metodologis muncul saat menyeleksi, menganalisis, dan menyusun kurasi artefak unggulan lintas mata kuliah ke dalam media portofolio digital agar mampu mengomunikasikan alur perkembangan kompetensi secara terstruktur, estetik, dan persuasif di depan forum seminar.'
+            answer: 'Tantangan utama dalam mata kuliah Seminar PPG adalah membiasakan refleksi yang disertai bukti nyata hasil belajar siswa (seperti lembar kerja siswa, rubrik penilaian, dan catatan kelas), bukan sekadar cerita umum. Selain itu, ada tantangan saat memilih dan menata karya terbaik dari setiap mata kuliah ke dalam portofolio digital agar dapat dipresentasikan dengan jelas dan menarik di hadapan dosen dan rekan mahasiswa.'
           },
           concept: {
             question: '3. Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?',
-            answer: `1. Konstruksi Identifikasi Diri & Visi Pendidikan (LK 1): Perumusan ekosistem sekolah inklusif-humanis, komitmen terhadap Profil Pelajar Pancasila, dan penegasan peran guru sebagai pendorong student well-being.
-2. Empat Pilar Praktis Seminar PPG: (a) Identifikasi Diri, (b) Refleksi Pengalaman Belajar Terstruktur (Model 4C), (c) Penyusunan Karya Inovasi Pendidikan, dan (d) Diseminasi via Seminar & Portofolio Digital.
-3. Komunikasi Efektif & Advokasi Inovasi: Strategi penyampaian argumen ilmiah yang koheren, runtut, dan persuasif dalam mempresentasikan karya inovasi instruksional.
-4. Trias Penilaian Autentik Seminar PPG: Integrasi rekam jejak Portofolio Digital, Partisipasi Aktif dalam diskusi reflektif, dan Performa Presentasi Seminar.`
+            answer: `1. Penyusunan Identifikasi Diri & Visi Pendidikan (LK 1): Pemikiran tentang sekolah yang ramah, pembentukan karakter Profil Pelajar Pancasila, dan peran guru dalam menciptakan suasana belajar yang nyaman.
+2. Empat Bagian Utama Seminar PPG: (a) Identifikasi Diri, (b) Refleksi Pengalaman Belajar (Model 4C), (c) Pembuatan Karya Inovasi Pembelajaran, dan (d) Berbagi Karya lewat Seminar & Portofolio Digital.
+3. Komunikasi Efektif & Penyampaian Inovasi: Cara menyampaikan gagasan pembelajaran secara jelas, runtut, dan mudah dipahami saat mempresentasikan karya inovasi.
+4. Tiga Penilaian Utama Seminar PPG: Kelengkapan Portofolio Digital, Keaktifan dalam Diskusi, dan Penampilan Saat Presentasi Seminar.`
           },
           change: {
             question: '4. Apa saja perubahan yang ingin saya lakukan setelah mendapatkan materi perkuliahan ini?',
@@ -533,7 +533,7 @@ export const seminarWorksheets = [
           {
             label: 'Artefak 2',
             question: '2. Mengapa artefak tersebut yang saya pilih?',
-            answer: 'Artefak LK 1 Identifikasi Diri dipilih karena merupakan dokumen pondasional yang menjadi kompas arah refleksi dan pengembangan keprofesian calon guru. Dokumen ini memuat peta filosofis Ki Hadjar Dewantara, perumusan visi pendidikan Indonesia yang berkeadilan sosial, serta 5 rencana aksi strategis yang menjadi bukti autentik kesiapan calon guru dalam memimpin pembelajaran di sekolah.'
+            answer: 'Artefak LK 1 Identifikasi Diri dipilih karena merupakan dokumen awal yang menjadi pegangan arah refleksi calon guru. Dokumen ini memuat pemikiran Ki Hadjar Dewantara, cita-cita tentang pendidikan yang adil dan merata, serta 5 langkah nyata kesiapan calon guru dalam mengajar di sekolah.'
           },
           {
             label: 'Artefak 3',
@@ -556,7 +556,7 @@ export const seminarWorksheets = [
           },
           challenge: {
             question: '2. Apa saja materi perkuliahan yang berbeda dari praktik yang saya lakukan selama ini?',
-            answer: 'Tantangan terbesar adalah mendisrupsi pandangan konvensional bahwa kepemimpinan merupakan bakat bawaan (innate talent), serta mengubah kebiasaan kerja mandiri menjadi kolaborasi tim yang fleksibel dan terstruktur (agile execution). Dalam pelaksanaan projek sistem presensi QR Code di SMAN 11 Yogyakarta, tantangan nyata meliputi penyelarasan 8 anggota tim dengan latar belakang pemikiran berbeda, pengelolaan dinamika konflik pendapat secara bijaksana, penyesuaian alokasi sumber daya dan jadwal (milestones) pengujian sistem, serta pembentukan sikap pantang menyerah saat menghadapi kendala teknis perangkat lunak maupun adaptasi awal pengguna di sekolah.'
+            answer: 'Tantangan terbesar adalah mengubah anggapan bahwa kepemimpinan hanyalah bakat sejak lahir, melainkan kemampuan yang dapat dipelajari dan dilatih melalui kerja sama tim yang kompak. Dalam pelaksanaan projek sistem presensi QR Code di SMAN 11 Yogyakarta, tantangan nyata meliputi menyelaraskan 8 anggota tim dengan latar belakang berbeda, menyelesaikan perbedaan pendapat secara dewasa, mengatur pembagian tugas dan jadwal uji coba sistem, serta pantang menyerah saat menghadapi kendala teknis di lapangan.'
           },
           concept: {
             question: '3. Apa saja konsep utama dan penting yang telah saya pelajari sebagai calon guru?',
@@ -614,10 +614,10 @@ export const seminarWorksheets = [
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
     gdriveUrl: '',
-    pdfFileName: 'lk-3-refleksi-pengalaman-belajar-ppg-asyhar-qowiim.pdf',
+    pdfFileName: 'LK 3 Refleksi Pengalaman Belajar PPG.pdf',
     summary: 'Refleksi komprehensif seluruh pengalaman belajar selama mengikuti PPG, mencakup transformasi paradigma pendidikan nasional berbasis Ki Hadjar Dewantara & Kurikulum Merdeka, 5 langkah aksi strategis guru profesional, serta komitmen aksi nyata untuk memulai karier guru profesional.',
     highlights: [
-      'Tersedia Berkas PDF Asli: lk-3-refleksi-pengalaman-belajar-ppg-asyhar-qowiim.pdf',
+      'Tersedia Berkas PDF LK 3 Refleksi PPG',
       'Pandangan Mengenai Pendidikan di Indonesia Pasca Mengikuti PPG',
       'Filosofi Ki Hadjar Dewantara, Student Well-Being, & Computational Thinking',
       '5 Upaya dan Langkah Strategis Menjadi Guru Profesional',
@@ -645,8 +645,8 @@ export const seminarWorksheets = [
             description: 'Membudayakan 5 kompetensi sosial emosional (Kesadaran Diri, Pengelolaan Diri, Kesadaran Sosial, Keterampilan Berelasi, dan Pengambilan Keputusan Bertanggung Jawab) ke dalam skenario kelas. Menggunakan teknik S-T-O-P (Stop, Take a breath, Observe, Proceed) dan Check-in Roda Emosi untuk melatih regulasi emosi murid saat menghadapi kendala komputasional.'
           },
           {
-            title: 'Menjadi Praktisi Reflektif (Reflective Practitioner) Berbasis Data',
-            description: 'Membiasakan evaluasi diri berkesinambungan melalui analisis artefak pembelajaran, masukan dari Guru Pamong/DPL, serta pelaksanaan Penelitian Tindakan Kelas (PTK) berbasis bukti empiris (evidence-based teaching) untuk memecahkan permasalahan nyata di kelas secara obyektif.'
+            title: 'Menjadi Guru yang Reflektif Berdasarkan Fakta Nyata di Kelas',
+            description: 'Membiasakan evaluasi diri secara berkala melalui catatan refleksi pembelajaran, masukan dari Guru Pamong dan Dosen Pembimbing, serta perbaikan kelas mandiri untuk memecahkan masalah belajar siswa secara nyata.'
           },
           {
             title: 'Pemanfaatan Teknologi Digital & Inovasi Pembelajaran Abad 21',
