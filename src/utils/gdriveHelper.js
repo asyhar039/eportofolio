@@ -24,9 +24,9 @@ export const OFFICIAL_GDRIVE_DOCS = {
   },
   // 2. LK 2 (Sem. II) - Refleksi Pengalaman Belajar Semester 2
   'lk-2-semester-2': {
-    id: '11QWeW1gmomgI1-q0Z_ex32Y56v2KGOEL',
-    viewUrl: 'https://drive.google.com/file/d/11QWeW1gmomgI1-q0Z_ex32Y56v2KGOEL/view?usp=sharing',
-    previewUrl: 'https://drive.google.com/file/d/11QWeW1gmomgI1-q0Z_ex32Y56v2KGOEL/preview'
+    id: '19fXGAUR8FuEzM4kwokmsW_Jbf1LSuhEw',
+    viewUrl: 'https://drive.google.com/file/d/19fXGAUR8FuEzM4kwokmsW_Jbf1LSuhEw/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/19fXGAUR8FuEzM4kwokmsW_Jbf1LSuhEw/preview'
   },
   // 3. LK 2 (Sem. I) - Refleksi Pembelajaran Semester 1
   'lk-2-semester-1': {

@@ -686,7 +686,10 @@ export const seminarWorksheets = [
   }
 ]
 
-export const generalArtifacts = [
+export const generalArtifacts = []
+
+/* Seed data lama, dinonaktifkan sementara.
+export const unusedArtifactSeed = [
   {
     id: 'art-modul-ajar',
     number: 'ART-01',
@@ -850,3 +853,4 @@ export const generalArtifacts = [
     ]
   }
 ]
+*/

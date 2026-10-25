@@ -5,13 +5,26 @@ function ReflectionDetail({ reflection, course, onBack }) {
     if (!reflection || !course) return null
 
     const isSemester2 = course.semester === 2
-    const pdfUrl = isSemester2
-        ? '/assets/seminar/lk-2-semester-2.pdf'
-        : '/assets/seminar/lk-2-semester-1.pdf'
-    const pdfName = isSemester2
-        ? 'LK 2 Refleksi Pembelajaran Semester 2.pdf'
-        : 'LK 2 Refleksi Pembelajaran Semester 1.pdf'
-    const pdfSize = isSemester2 ? '178 KB' : '78 KB'
+    const hasArtifactPdf = reflection.artifactPdfUrl
+    const pdfUrl = hasArtifactPdf
+        ? reflection.artifactPdfUrl
+        : (isSemester2
+            ? 'https://drive.google.com/file/d/19fXGAUR8FuEzM4kwokmsW_Jbf1LSuhEw/view?usp=sharing'
+            : '/assets/seminar/lk-2-semester-1.pdf')
+    const pdfName = hasArtifactPdf
+        ? `${reflection.topic.split(': ')[1] || course.title} - Artefak.pdf`
+        : (isSemester2
+            ? 'LK 2 Refleksi Pembelajaran Semester 2.pdf'
+            : 'LK 2 Refleksi Pembelajaran Semester 1.pdf')
+    const previewUrl = pdfUrl?.includes('drive.google.com/file/d/')
+        ? pdfUrl.replace(/\/view\?[^/]*$/, '/preview').replace(/\/view$/, '/preview')
+        : pdfUrl
+    const driveFileId = pdfUrl?.includes('drive.google.com/file/d/')
+        ? pdfUrl.match(/\/d\/([^/]+)/)?.[1]
+        : null
+    const downloadUrl = driveFileId
+        ? `https://drive.google.com/uc?export=download&id=${driveFileId}`
+        : pdfUrl
 
     const courseCode = course.semester === 2
         ? `MATKUL-S2-${(parseInt(course.number, 10) - 6).toString().padStart(2, '0')}`
@@ -70,12 +83,12 @@ function ReflectionDetail({ reflection, course, onBack }) {
                                 <span style={{ fontSize: '1.4rem' }}>📄</span>
                                 <div>
                                     <strong style={{ display: 'block', color: '#fff', fontSize: '0.95rem' }}>{pdfName}</strong>
-                                    <span style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.7)' }}>Dokumen Resmi LK 2 ({pdfSize}) • Sesuai Berkas Asli</span>
+                                    <span style={{ fontSize: '0.8rem', color: 'rgba(255,255,255,0.7)' }}>{hasArtifactPdf ? 'Artefak PDF Mata Kuliah' : 'Dokumen LK 2'}</span>
                                 </div>
                             </div>
                             <div style={{ display: 'flex', gap: '10px' }}>
                                 <a
-                                    href={pdfUrl}
+                                    href={previewUrl}
                                     target="_blank"
                                     rel="noopener noreferrer"
                                     style={{
@@ -95,7 +108,7 @@ function ReflectionDetail({ reflection, course, onBack }) {
                                     Preview
                                 </a>
                                 <a
-                                    href={pdfUrl}
+                                    href={downloadUrl}
                                     download={pdfName}
                                     style={{
                                         display: 'inline-flex',

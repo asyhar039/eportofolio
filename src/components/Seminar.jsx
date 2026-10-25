@@ -184,7 +184,7 @@ function Seminar() {
     setActiveReviewPdf({
       key,
       gdriveUrl: effectiveUrl,
-      title: title || 'Dokumen Resmi',
+      title: title || 'Dokumen',
       fileName: fileName || 'dokumen.pdf',
       pdfUrl: pdfUrl || ''
     })
@@ -308,7 +308,7 @@ function Seminar() {
         <div className="seminar-stats-row">
           <div className="seminar-stat-card">
             <span className="seminar-stat-val">5 Dokumen</span>
-            <span className="seminar-stat-lbl">Lembar Kerja Resmi (LK 1, LK 2, LK 3, LK 4)</span>
+            <span className="seminar-stat-lbl">Lembar Kerja (LK 1, LK 2, LK 3, LK 4)</span>
           </div>
           <div className="seminar-stat-card">
             <span className="seminar-stat-val">Dokumen PDF</span>
@@ -608,692 +608,692 @@ function Seminar() {
                     ))}
                   </div>
 
-              {/* NetLab Simulator Interactive Guide */}
-              {item.jsonUrl && (
-                <div className="netlab-guide-banner" style={{ margin: 0 }}>
-                  <div className="netlab-banner-head">
-                    <div className="netlab-banner-title">
-                      <div className="netlab-icon-circle">
-                        <IconRouter size={24} />
-                      </div>
-                      <div>
-                        <h3 style={{ margin: 0, fontSize: '1.2rem', color: '#ffffff', fontWeight: '800' }}>
-                          Panduan Simulasi Topologi Jaringan di NetLab
-                        </h3>
-                        <p style={{ margin: '4px 0 0', fontSize: '0.84rem', color: '#7dd3fc', wordBreak: 'break-word', overflowWrap: 'anywhere' }}>
-                          Platform Simulator: <strong style={{ wordBreak: 'break-all' }}>https://netlab.thecybersecguru.com</strong> • Berkas: <strong>{item.jsonFileName}</strong> ({item.jsonSize})
-                        </p>
-                      </div>
-                    </div>
-
-                    <div className="netlab-banner-actions">
-                      <a
-                        href={item.jsonUrl}
-                        download={item.jsonFileName}
-                        className="netlab-btn-download"
-                        title="Unduh Berkas produk-karya-inovasi.json"
-                      >
-                        <IconDownload size={15} />
-                        <span>Unduh File JSON</span>
-                      </a>
-
-                      <a
-                        href={item.netlabUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="netlab-btn-open"
-                        title="Kunjungi Website Simulator NetLab"
-                      >
-                        <IconExternal size={15} />
-                        <span>Buka Simulator NetLab</span>
-                      </a>
-                    </div>
-                  </div>
-
-                  <div style={{ marginBottom: '14px' }}>
-                    <span style={{ fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.8)', textTransform: 'uppercase', letterSpacing: '0.8px', fontWeight: '700' }}>
-                      Langkah demi Langkah Menjalankan Simulasi:
-                    </span>
-                  </div>
-
-                  <div className="netlab-steps-grid">
-                    {item.howToTest?.map((st) => (
-                      <div key={st.step} className="netlab-step-card">
-                        <div className="netlab-step-num">{st.step}</div>
-                        <div className="netlab-step-title">{st.title}</div>
-                        <p className="netlab-step-desc" style={{ wordBreak: 'break-word', overflowWrap: 'anywhere' }}>
-                          {st.desc}
-                        </p>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* Topology Schematic Diagram */}
-              {item.devices && (
-                <div className="topology-schematic-wrap">
-                  <div className="topology-schematic-head">
-                    <div>
-                      <h4 style={{ margin: 0, color: '#ffffff', fontSize: '1.1rem', fontWeight: '800' }}>
-                        Arsitektur & Skema Topologi Jaringan Minimarket Berkah
-                      </h4>
-                      <p style={{ margin: '4px 0 0', fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.72)' }}>
-                        Simulasi Ritel: Server Database Kasir terpusat, Terminal POS Kasir, dan Terminal Logistik Gudang
-                      </p>
-                    </div>
-                    <span className="topology-port-chip" style={{ background: 'rgba(14, 165, 233, 0.2)', borderColor: 'rgba(14, 165, 233, 0.4)', color: '#38bdf8' }}>
-                      Topologi Star Terkelola
-                    </span>
-                  </div>
-
-                  <div className="topology-grid-layout">
-                    {/* Central Switch */}
-                    <div className="topology-switch-box">
-                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '4px' }}>
-                        <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#34d399', boxShadow: '0 0 8px #34d399' }}></span>
-                        <strong style={{ color: '#ffffff', fontSize: '1rem' }}>Cisco Catalyst 2960-24TT Switch</strong>
-                      </div>
-                      <span style={{ fontSize: '0.78rem', color: 'var(--accent-cyan)', fontFamily: 'Geist Mono, monospace' }}>
-                        Hostname: 2960-24TT3 • STP PVST (Priority 32768)
-                      </span>
-                      <div className="topology-switch-ports">
-                        <span className="topology-port-chip">fa0/1 ⇄ Server Kasir</span>
-                        <span className="topology-port-chip">fa0/2 ⇄ PC Kasir</span>
-                        <span className="topology-port-chip">fa0/3 ⇄ PC Gudang</span>
-                        <span className="topology-port-chip" style={{ opacity: 0.6 }}>fa0/4-24 & gi0/1-2 (Idle)</span>
-                      </div>
-                    </div>
-
-                    {/* Endpoints Row */}
-                    <div className="topology-endpoints-row">
-                      {item.devices?.slice(1).map((dev, idx) => (
-                        <div key={idx} className="topology-endpoint-card">
-                          <span className="topology-endpoint-badge" title="Status Online"></span>
-                          <div style={{ fontSize: '0.72rem', color: 'var(--accent-cyan)', textTransform: 'uppercase', fontWeight: '800', marginBottom: '2px' }}>
-                            {dev.model}
+                  {/* NetLab Simulator Interactive Guide */}
+                  {item.jsonUrl && (
+                    <div className="netlab-guide-banner" style={{ margin: 0 }}>
+                      <div className="netlab-banner-head">
+                        <div className="netlab-banner-title">
+                          <div className="netlab-icon-circle">
+                            <IconRouter size={24} />
                           </div>
-                          <h5 style={{ margin: '0 0 6px 0', color: '#ffffff', fontSize: '1rem', fontWeight: '700' }}>
-                            {dev.name}
-                          </h5>
-                          <p style={{ margin: '0 0 10px 0', fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.72)' }}>
-                            {dev.role}
-                          </p>
-                          <div style={{ background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '8px', padding: '8px', fontSize: '0.78rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
-                            <div><span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>IP Address: </span><strong style={{ color: '#38bdf8' }}>{dev.ip}</strong></div>
-                            <div><span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>Subnet: </span><span style={{ color: 'rgba(255, 255, 255, 0.85)' }}>{dev.subnet}</span></div>
-                            <div><span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>Gateway: </span><span style={{ color: 'rgba(255, 255, 255, 0.85)' }}>{dev.gateway}</span></div>
-                            <div><span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>Port: </span><span style={{ color: '#34d399' }}>{dev.ports}</span></div>
+                          <div>
+                            <h3 style={{ margin: 0, fontSize: '1.2rem', color: '#ffffff', fontWeight: '800' }}>
+                              Panduan Simulasi Topologi Jaringan di NetLab
+                            </h3>
+                            <p style={{ margin: '4px 0 0', fontSize: '0.84rem', color: '#7dd3fc', wordBreak: 'break-word', overflowWrap: 'anywhere' }}>
+                              Platform Simulator: <strong style={{ wordBreak: 'break-all' }}>https://netlab.thecybersecguru.com</strong> • Berkas: <strong>{item.jsonFileName}</strong> ({item.jsonSize})
+                            </p>
                           </div>
                         </div>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-              )}
 
-              {/* Device Table */}
-              {item.devices && (
-                <div>
-                  <h4 style={{ color: '#ffffff', marginBottom: '12px', fontSize: '1.1rem', fontWeight: '700' }}>
-                    Rincian Pengalamatan & Parameter Perangkat Topologi
-                  </h4>
-                  <div className="topology-table-wrap">
-                    <table className="topology-table">
-                      <thead>
-                        <tr>
-                          <th>Perangkat</th>
-                          <th>Hostname</th>
-                          <th>Model</th>
-                          <th>Alamat IP</th>
-                          <th>Subnet Mask</th>
-                          <th>Gateway</th>
-                          <th>Port Koneksi</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        {item.devices.map((d, idx) => (
-                          <tr key={idx}>
-                            <td style={{ fontWeight: '700', color: '#ffffff' }}>{d.name}</td>
-                            <td style={{ fontFamily: 'Geist Mono, monospace', color: 'var(--accent-cyan)' }}>{d.hostname}</td>
-                            <td style={{ color: 'rgba(255, 255, 255, 0.75)' }}>{d.model}</td>
-                            <td style={{ fontWeight: '700', color: '#38bdf8', fontFamily: 'Geist Mono, monospace' }}>{d.ip}</td>
-                            <td style={{ fontFamily: 'Geist Mono, monospace' }}>{d.subnet}</td>
-                            <td style={{ fontFamily: 'Geist Mono, monospace', color: 'rgba(255, 255, 255, 0.75)' }}>{d.gateway || '-'}</td>
-                            <td style={{ color: '#34d399', fontSize: '0.78rem' }}>{d.ports}</td>
-                          </tr>
+                        <div className="netlab-banner-actions">
+                          <a
+                            href={item.jsonUrl}
+                            download={item.jsonFileName}
+                            className="netlab-btn-download"
+                            title="Unduh Berkas produk-karya-inovasi.json"
+                          >
+                            <IconDownload size={15} />
+                            <span>Unduh File JSON</span>
+                          </a>
+
+                          <a
+                            href={item.netlabUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="netlab-btn-open"
+                            title="Kunjungi Website Simulator NetLab"
+                          >
+                            <IconExternal size={15} />
+                            <span>Buka Simulator NetLab</span>
+                          </a>
+                        </div>
+                      </div>
+
+                      <div style={{ marginBottom: '14px' }}>
+                        <span style={{ fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.8)', textTransform: 'uppercase', letterSpacing: '0.8px', fontWeight: '700' }}>
+                          Langkah demi Langkah Menjalankan Simulasi:
+                        </span>
+                      </div>
+
+                      <div className="netlab-steps-grid">
+                        {item.howToTest?.map((st) => (
+                          <div key={st.step} className="netlab-step-card">
+                            <div className="netlab-step-num">{st.step}</div>
+                            <div className="netlab-step-title">{st.title}</div>
+                            <p className="netlab-step-desc" style={{ wordBreak: 'break-word', overflowWrap: 'anywhere' }}>
+                              {st.desc}
+                            </p>
+                          </div>
                         ))}
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              )}
+                      </div>
+                    </div>
+                  )}
 
-              {/* JSON Code Inspector */}
-              {item.jsonUrl && (
-                <div>
-                  <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
-                    <h4 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: '700' }}>
-                      Berkas Konfigurasi JSON NetLab
-                    </h4>
-                    <button
-                      type="button"
-                      onClick={() => setShowJsonPreview(!showJsonPreview)}
-                      style={{
-                        background: 'rgba(255, 255, 255, 0.08)',
-                        border: '1px solid rgba(255, 255, 255, 0.18)',
-                        color: 'var(--accent-cyan)',
-                        padding: '6px 14px',
-                        borderRadius: '8px',
-                        fontSize: '0.8rem',
-                        fontWeight: '700',
-                        cursor: 'pointer',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '6px',
-                        fontFamily: 'inherit'
-                      }}
-                    >
-                      <IconEye size={14} />
-                      <span>{showJsonPreview ? 'Tutup Preview Kode' : 'Preview Kode JSON'}</span>
-                    </button>
-                  </div>
+                  {/* Topology Schematic Diagram */}
+                  {item.devices && (
+                    <div className="topology-schematic-wrap">
+                      <div className="topology-schematic-head">
+                        <div>
+                          <h4 style={{ margin: 0, color: '#ffffff', fontSize: '1.1rem', fontWeight: '800' }}>
+                            Arsitektur & Skema Topologi Jaringan Minimarket Berkah
+                          </h4>
+                          <p style={{ margin: '4px 0 0', fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.72)' }}>
+                            Simulasi Ritel: Server Database Kasir terpusat, Terminal POS Kasir, dan Terminal Logistik Gudang
+                          </p>
+                        </div>
+                        <span className="topology-port-chip" style={{ background: 'rgba(14, 165, 233, 0.2)', borderColor: 'rgba(14, 165, 233, 0.4)', color: '#38bdf8' }}>
+                          Topologi Star Terkelola
+                        </span>
+                      </div>
 
-                  {showJsonPreview && (
-                    <div className="json-preview-wrap">
-                      <div className="json-preview-bar">
-                        <span>berkas: produk-karya-inovasi.json (Skema NetLab v1.0)</span>
+                      <div className="topology-grid-layout">
+                        {/* Central Switch */}
+                        <div className="topology-switch-box">
+                          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: '8px', marginBottom: '4px' }}>
+                            <span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#34d399', boxShadow: '0 0 8px #34d399' }}></span>
+                            <strong style={{ color: '#ffffff', fontSize: '1rem' }}>Cisco Catalyst 2960-24TT Switch</strong>
+                          </div>
+                          <span style={{ fontSize: '0.78rem', color: 'var(--accent-cyan)', fontFamily: 'Geist Mono, monospace' }}>
+                            Hostname: 2960-24TT3 • STP PVST (Priority 32768)
+                          </span>
+                          <div className="topology-switch-ports">
+                            <span className="topology-port-chip">fa0/1 ⇄ Server Kasir</span>
+                            <span className="topology-port-chip">fa0/2 ⇄ PC Kasir</span>
+                            <span className="topology-port-chip">fa0/3 ⇄ PC Gudang</span>
+                            <span className="topology-port-chip" style={{ opacity: 0.6 }}>fa0/4-24 & gi0/1-2 (Idle)</span>
+                          </div>
+                        </div>
+
+                        {/* Endpoints Row */}
+                        <div className="topology-endpoints-row">
+                          {item.devices?.slice(1).map((dev, idx) => (
+                            <div key={idx} className="topology-endpoint-card">
+                              <span className="topology-endpoint-badge" title="Status Online"></span>
+                              <div style={{ fontSize: '0.72rem', color: 'var(--accent-cyan)', textTransform: 'uppercase', fontWeight: '800', marginBottom: '2px' }}>
+                                {dev.model}
+                              </div>
+                              <h5 style={{ margin: '0 0 6px 0', color: '#ffffff', fontSize: '1rem', fontWeight: '700' }}>
+                                {dev.name}
+                              </h5>
+                              <p style={{ margin: '0 0 10px 0', fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.72)' }}>
+                                {dev.role}
+                              </p>
+                              <div style={{ background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '8px', padding: '8px', fontSize: '0.78rem', display: 'flex', flexDirection: 'column', gap: '4px' }}>
+                                <div><span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>IP Address: </span><strong style={{ color: '#38bdf8' }}>{dev.ip}</strong></div>
+                                <div><span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>Subnet: </span><span style={{ color: 'rgba(255, 255, 255, 0.85)' }}>{dev.subnet}</span></div>
+                                <div><span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>Gateway: </span><span style={{ color: 'rgba(255, 255, 255, 0.85)' }}>{dev.gateway}</span></div>
+                                <div><span style={{ color: 'rgba(255, 255, 255, 0.5)' }}>Port: </span><span style={{ color: '#34d399' }}>{dev.ports}</span></div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* Device Table */}
+                  {item.devices && (
+                    <div>
+                      <h4 style={{ color: '#ffffff', marginBottom: '12px', fontSize: '1.1rem', fontWeight: '700' }}>
+                        Rincian Pengalamatan & Parameter Perangkat Topologi
+                      </h4>
+                      <div className="topology-table-wrap">
+                        <table className="topology-table">
+                          <thead>
+                            <tr>
+                              <th>Perangkat</th>
+                              <th>Hostname</th>
+                              <th>Model</th>
+                              <th>Alamat IP</th>
+                              <th>Subnet Mask</th>
+                              <th>Gateway</th>
+                              <th>Port Koneksi</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {item.devices.map((d, idx) => (
+                              <tr key={idx}>
+                                <td style={{ fontWeight: '700', color: '#ffffff' }}>{d.name}</td>
+                                <td style={{ fontFamily: 'Geist Mono, monospace', color: 'var(--accent-cyan)' }}>{d.hostname}</td>
+                                <td style={{ color: 'rgba(255, 255, 255, 0.75)' }}>{d.model}</td>
+                                <td style={{ fontWeight: '700', color: '#38bdf8', fontFamily: 'Geist Mono, monospace' }}>{d.ip}</td>
+                                <td style={{ fontFamily: 'Geist Mono, monospace' }}>{d.subnet}</td>
+                                <td style={{ fontFamily: 'Geist Mono, monospace', color: 'rgba(255, 255, 255, 0.75)' }}>{d.gateway || '-'}</td>
+                                <td style={{ color: '#34d399', fontSize: '0.78rem' }}>{d.ports}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* JSON Code Inspector */}
+                  {item.jsonUrl && (
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '10px' }}>
+                        <h4 style={{ color: '#ffffff', margin: 0, fontSize: '1.1rem', fontWeight: '700' }}>
+                          Berkas Konfigurasi JSON NetLab
+                        </h4>
                         <button
                           type="button"
-                          onClick={() => {
-                            navigator.clipboard?.writeText(netlabJsonPreview).then(() => {
-                              setJsonCopied(true)
-                              setTimeout(() => setJsonCopied(false), 2500)
-                            })
-                          }}
+                          onClick={() => setShowJsonPreview(!showJsonPreview)}
                           style={{
-                            background: 'rgba(56, 189, 248, 0.2)',
-                            border: '1px solid rgba(56, 189, 248, 0.35)',
-                            color: '#ffffff',
-                            padding: '4px 10px',
-                            borderRadius: '6px',
-                            cursor: 'pointer',
-                            fontSize: '0.75rem',
+                            background: 'rgba(255, 255, 255, 0.08)',
+                            border: '1px solid rgba(255, 255, 255, 0.18)',
+                            color: 'var(--accent-cyan)',
+                            padding: '6px 14px',
+                            borderRadius: '8px',
+                            fontSize: '0.8rem',
                             fontWeight: '700',
+                            cursor: 'pointer',
                             display: 'inline-flex',
                             alignItems: 'center',
-                            gap: '4px',
+                            gap: '6px',
                             fontFamily: 'inherit'
                           }}
                         >
-                          <IconCopy size={13} />
-                          <span>{jsonCopied ? 'Tersalin!' : 'Salin JSON'}</span>
+                          <IconEye size={14} />
+                          <span>{showJsonPreview ? 'Tutup Preview Kode' : 'Preview Kode JSON'}</span>
                         </button>
                       </div>
-                      <pre className="json-preview-code">{netlabJsonPreview}</pre>
+
+                      {showJsonPreview && (
+                        <div className="json-preview-wrap">
+                          <div className="json-preview-bar">
+                            <span>berkas: produk-karya-inovasi.json (Skema NetLab v1.0)</span>
+                            <button
+                              type="button"
+                              onClick={() => {
+                                navigator.clipboard?.writeText(netlabJsonPreview).then(() => {
+                                  setJsonCopied(true)
+                                  setTimeout(() => setJsonCopied(false), 2500)
+                                })
+                              }}
+                              style={{
+                                background: 'rgba(56, 189, 248, 0.2)',
+                                border: '1px solid rgba(56, 189, 248, 0.35)',
+                                color: '#ffffff',
+                                padding: '4px 10px',
+                                borderRadius: '6px',
+                                cursor: 'pointer',
+                                fontSize: '0.75rem',
+                                fontWeight: '700',
+                                display: 'inline-flex',
+                                alignItems: 'center',
+                                gap: '4px',
+                                fontFamily: 'inherit'
+                              }}
+                            >
+                              <IconCopy size={13} />
+                              <span>{jsonCopied ? 'Tersalin!' : 'Salin JSON'}</span>
+                            </button>
+                          </div>
+                          <pre className="json-preview-code">{netlabJsonPreview}</pre>
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* Problem & Solution */}
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
+                    <div style={{ background: 'rgba(244, 63, 94, 0.08)', border: '1px solid rgba(244, 63, 94, 0.3)', padding: '20px', borderRadius: '16px' }}>
+                      <strong style={{ color: '#fda4af', display: 'block', marginBottom: '8px', fontSize: '1rem' }}>Latar Belakang Permasalahan</strong>
+                      <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.9rem', lineHeight: '1.65' }}>{item.problem}</p>
+                    </div>
+                    <div style={{ background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '20px', borderRadius: '16px' }}>
+                      <strong style={{ color: '#7dd3fc', display: 'block', marginBottom: '8px', fontSize: '1rem' }}>Solusi Inovasi yang Dihasilkan</strong>
+                      <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.9rem', lineHeight: '1.65' }}>{item.solution}</p>
+                    </div>
+                  </div>
+
+                  {/* Key Features */}
+                  <div>
+                    <h4 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '1.1rem', fontWeight: '700' }}>Fitur & Keunggulan Utama Inovasi</h4>
+                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                      {item.keyFeatures?.map((f, idx) => (
+                        <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '0.92rem', color: 'rgba(255, 255, 255, 0.88)' }}>
+                          <span style={{ color: '#34d399', marginTop: '2px' }}><IconCheck size={16} /></span>
+                          <span>{f}</span>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+
+                  {/* Evidence Links */}
+                  {item.evidenceLinks && (
+                    <div>
+                      <h4 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '1.1rem', fontWeight: '700' }}>Tautan Bukti & Dokumen Pendukung</h4>
+                      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
+                        {item.evidenceLinks.map((ev, idx) => {
+                          if (ev.gdriveKey === 'slide') {
+                            return (
+                              <button
+                                key={idx}
+                                type="button"
+                                onClick={() => openGdriveReview('karya-slide', item.gdriveUrl, item.pdfTitle || item.title, item.pdfFileName)}
+                                style={{
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  gap: '8px',
+                                  background: 'rgba(56, 189, 248, 0.12)',
+                                  border: '1px solid rgba(56, 189, 248, 0.35)',
+                                  padding: '10px 18px',
+                                  borderRadius: '12px',
+                                  fontSize: '0.85rem',
+                                  color: '#ffffff',
+                                  cursor: 'pointer',
+                                  transition: 'all 0.2s ease',
+                                  fontFamily: 'inherit'
+                                }}
+                                className="evidence-link-pill"
+                                title="Preview Slide"
+                              >
+                                <IconGoogleDrive size={16} />
+                                <strong style={{ color: '#7dd3fc' }}>{ev.label}</strong>
+                              </button>
+                            )
+                          }
+                          if (ev.gdriveKey === 'modul') {
+                            return (
+                              <button
+                                key={idx}
+                                type="button"
+                                onClick={() => openGdriveReview('karya-modul', item.modulAjarGdriveUrl, item.modulAjarTitle, item.modulAjarFileName)}
+                                style={{
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  gap: '8px',
+                                  background: 'rgba(99, 102, 241, 0.12)',
+                                  border: '1px solid rgba(99, 102, 241, 0.35)',
+                                  padding: '10px 18px',
+                                  borderRadius: '12px',
+                                  fontSize: '0.85rem',
+                                  color: '#ffffff',
+                                  cursor: 'pointer',
+                                  transition: 'all 0.2s ease',
+                                  fontFamily: 'inherit'
+                                }}
+                                className="evidence-link-pill"
+                                title="Preview Modul"
+                              >
+                                <IconGoogleDrive size={16} />
+                                <strong style={{ color: '#a5b4fc' }}>{ev.label}</strong>
+                              </button>
+                            )
+                          }
+                          if (ev.url) {
+                            return (
+                              <a
+                                key={idx}
+                                href={ev.url}
+                                target={ev.download ? undefined : '_blank'}
+                                rel="noopener noreferrer"
+                                download={ev.download}
+                                style={{
+                                  display: 'inline-flex',
+                                  alignItems: 'center',
+                                  gap: '8px',
+                                  background: 'rgba(255, 255, 255, 0.06)',
+                                  border: '1px solid rgba(255, 255, 255, 0.15)',
+                                  padding: '10px 18px',
+                                  borderRadius: '12px',
+                                  fontSize: '0.85rem',
+                                  color: '#ffffff',
+                                  textDecoration: 'none',
+                                  transition: 'all 0.2s ease'
+                                }}
+                                className="evidence-link-pill"
+                              >
+                                {ev.download ? (
+                                  <IconDownload size={15} style={{ color: 'var(--accent-cyan)' }} />
+                                ) : (
+                                  <IconExternal size={15} style={{ color: 'var(--accent-cyan)' }} />
+                                )}
+                                <strong style={{ color: 'var(--accent-cyan)' }}>{ev.label}</strong>
+                              </a>
+                            )
+                          }
+                          return null
+                        })}
+                      </div>
                     </div>
                   )}
                 </div>
               )}
 
-              {/* Problem & Solution */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))', gap: '16px' }}>
-                <div style={{ background: 'rgba(244, 63, 94, 0.08)', border: '1px solid rgba(244, 63, 94, 0.3)', padding: '20px', borderRadius: '16px' }}>
-                  <strong style={{ color: '#fda4af', display: 'block', marginBottom: '8px', fontSize: '1rem' }}>Latar Belakang Permasalahan</strong>
-                  <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.9rem', lineHeight: '1.65' }}>{item.problem}</p>
-                </div>
-                <div style={{ background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '20px', borderRadius: '16px' }}>
-                  <strong style={{ color: '#7dd3fc', display: 'block', marginBottom: '8px', fontSize: '1rem' }}>Solusi Inovasi yang Dihasilkan</strong>
-                  <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.9rem', lineHeight: '1.65' }}>{item.solution}</p>
-                </div>
-              </div>
+              {/* BAGIAN 2: MODUL AJAR PRAKTIK INFORMATIKA (FASE E JKI) */}
+              {(inovasiSection === 'semua' || inovasiSection === 'modul-ajar') && (
+                <div style={{ marginTop: '36px', paddingTop: '32px', borderTop: '1px solid rgba(255, 255, 255, 0.12)' }}>
+                  {/* Header Modul Ajar */}
+                  <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.12)', paddingBottom: '24px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px', marginBottom: '14px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                        <span className="inovasi-tag" style={{ fontSize: '0.82rem', padding: '5px 14px' }}>
+                          2. PERANGKAT AJAR INFORMATIKA (MODUL AJAR)
+                        </span>
+                        <span style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
+                          Fase E · Kelas X SMA/SMK
+                        </span>
+                        <span style={{ background: 'rgba(52, 211, 153, 0.15)', color: '#34d399', border: '1px solid rgba(52, 211, 153, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
+                          2 JP (90 Menit) PBL
+                        </span>
+                      </div>
 
-              {/* Key Features */}
-              <div>
-                <h4 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '1.1rem', fontWeight: '700' }}>Fitur & Keunggulan Utama Inovasi</h4>
-                <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                  {item.keyFeatures?.map((f, idx) => (
-                    <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '12px', fontSize: '0.92rem', color: 'rgba(255, 255, 255, 0.88)' }}>
-                      <span style={{ color: '#34d399', marginTop: '2px' }}><IconCheck size={16} /></span>
-                      <span>{f}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
+                      <button
+                        type="button"
+                        onClick={() => openGdriveReview(modulAjarData.id, modulAjarData.gdriveUrl, modulAjarData.title, modulAjarData.pdfFileName, modulAjarData.pdfUrl)}
+                        className="lk-pdf-tag"
+                        style={{
+                          cursor: 'pointer',
+                          border: 'none',
+                          fontFamily: 'inherit',
+                          background: 'rgba(56, 189, 248, 0.18)',
+                          color: '#38bdf8'
+                        }}
+                        title="Preview Modul Ajar"
+                      >
+                        <IconGoogleDrive size={15} />
+                        <span>Preview</span>
+                      </button>
+                    </div>
 
-              {/* Evidence Links */}
-              {item.evidenceLinks && (
-                <div>
-                  <h4 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '1.1rem', fontWeight: '700' }}>Tautan Bukti & Dokumen Pendukung</h4>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px' }}>
-                    {item.evidenceLinks.map((ev, idx) => {
-                      if (ev.gdriveKey === 'slide') {
-                        return (
-                          <button
-                            key={idx}
-                            type="button"
-                            onClick={() => openGdriveReview('karya-slide', item.gdriveUrl, item.pdfTitle || item.title, item.pdfFileName)}
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '8px',
-                              background: 'rgba(56, 189, 248, 0.12)',
-                              border: '1px solid rgba(56, 189, 248, 0.35)',
-                              padding: '10px 18px',
-                              borderRadius: '12px',
-                              fontSize: '0.85rem',
-                              color: '#ffffff',
-                              cursor: 'pointer',
-                              transition: 'all 0.2s ease',
-                              fontFamily: 'inherit'
-                            }}
-                            className="evidence-link-pill"
-                            title="Preview Slide"
-                          >
-                            <IconGoogleDrive size={16} />
-                            <strong style={{ color: '#7dd3fc' }}>{ev.label}</strong>
-                          </button>
-                        )
-                      }
-                      if (ev.gdriveKey === 'modul') {
-                        return (
-                          <button
-                            key={idx}
-                            type="button"
-                            onClick={() => openGdriveReview('karya-modul', item.modulAjarGdriveUrl, item.modulAjarTitle, item.modulAjarFileName)}
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '8px',
-                              background: 'rgba(99, 102, 241, 0.12)',
-                              border: '1px solid rgba(99, 102, 241, 0.35)',
-                              padding: '10px 18px',
-                              borderRadius: '12px',
-                              fontSize: '0.85rem',
-                              color: '#ffffff',
-                              cursor: 'pointer',
-                              transition: 'all 0.2s ease',
-                              fontFamily: 'inherit'
-                            }}
-                            className="evidence-link-pill"
-                            title="Preview Modul"
-                          >
-                            <IconGoogleDrive size={16} />
-                            <strong style={{ color: '#a5b4fc' }}>{ev.label}</strong>
-                          </button>
-                        )
-                      }
-                      if (ev.url) {
-                        return (
-                          <a
-                            key={idx}
-                            href={ev.url}
-                            target={ev.download ? undefined : '_blank'}
-                            rel="noopener noreferrer"
-                            download={ev.download}
-                            style={{
-                              display: 'inline-flex',
-                              alignItems: 'center',
-                              gap: '8px',
-                              background: 'rgba(255, 255, 255, 0.06)',
-                              border: '1px solid rgba(255, 255, 255, 0.15)',
-                              padding: '10px 18px',
-                              borderRadius: '12px',
-                              fontSize: '0.85rem',
-                              color: '#ffffff',
-                              textDecoration: 'none',
-                              transition: 'all 0.2s ease'
-                            }}
-                            className="evidence-link-pill"
-                          >
-                            {ev.download ? (
-                              <IconDownload size={15} style={{ color: 'var(--accent-cyan)' }} />
-                            ) : (
-                              <IconExternal size={15} style={{ color: 'var(--accent-cyan)' }} />
-                            )}
-                            <strong style={{ color: 'var(--accent-cyan)' }}>{ev.label}</strong>
-                          </a>
-                        )
-                      }
-                      return null
-                    })}
+                    <h2 style={{ fontSize: '1.65rem', fontWeight: '800', color: '#ffffff', margin: '0 0 10px', lineHeight: '1.3' }}>
+                      {modulAjarData.title}
+                    </h2>
+                    <p style={{ fontSize: '1.02rem', color: 'var(--accent-cyan)', margin: '0 0 16px', fontWeight: '600', lineHeight: '1.5' }}>
+                      {modulAjarData.subtitle}
+                    </p>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.94rem', lineHeight: '1.7', margin: '0 0 22px' }}>
+                      {modulAjarData.summary}
+                    </p>
+
+                    {/* Meta details bar */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '22px' }}>
+                      <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Penyusun</span>
+                        <strong style={{ color: '#ffffff', fontSize: '0.92rem' }}>{modulAjarData.informasiUmum.penyusun}</strong>
+                      </div>
+                      <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>NIM Calon Guru</span>
+                        <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.92rem', fontFamily: 'Geist Mono, monospace' }}>{modulAjarData.informasiUmum.nim}</strong>
+                      </div>
+                      <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Elemen & Model</span>
+                        <strong style={{ color: '#ffffff', fontSize: '0.92rem' }}>JKI · Problem Based Learning (PBL)</strong>
+                      </div>
+                      <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Media Praktik</span>
+                        <strong style={{ color: '#38bdf8', fontSize: '0.92rem' }}>Web Simulator NetLab (JSON)</strong>
+                      </div>
+                    </div>
+
+                    {/* Action buttons: Hanya Preview & Unduh File */}
+                    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                      <button
+                        type="button"
+                        onClick={() => openGdriveReview(modulAjarData.id, modulAjarData.gdriveUrl, modulAjarData.title, modulAjarData.pdfFileName, modulAjarData.pdfUrl)}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
+                          color: '#ffffff',
+                          border: 'none',
+                          borderRadius: '12px',
+                          padding: '12px 24px',
+                          fontSize: '0.9rem',
+                          fontWeight: '700',
+                          cursor: 'pointer',
+                          fontFamily: 'inherit'
+                        }}
+                      >
+                        <IconGoogleDrive size={18} />
+                        <span>Preview</span>
+                      </button>
+
+                      <a
+                        href={modulAjarData.pdfUrl || '/assets/seminar/modul-ajar-netlab.pdf'}
+                        download={modulAjarData.pdfFileName || 'Modul Ajar Praktik Informatika NetLab.pdf'}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          background: 'rgba(52, 211, 153, 0.15)',
+                          border: '1px solid rgba(52, 211, 153, 0.35)',
+                          color: '#34d399',
+                          borderRadius: '12px',
+                          padding: '12px 24px',
+                          fontSize: '0.9rem',
+                          fontWeight: '700',
+                          textDecoration: 'none'
+                        }}
+                      >
+                        <IconDownload size={16} />
+                        <span>Unduh File</span>
+                      </a>
+                    </div>
+                  </div>
+
+                  {/* Direct Document Preview Frame */}
+                  <div style={{ marginTop: '24px', background: 'rgba(15, 23, 42, 0.75)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.12)', boxShadow: '0 12px 30px rgba(0,0,0,0.35)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px', background: 'rgba(255, 255, 255, 0.04)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)', flexWrap: 'wrap', gap: '10px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <IconPdf size={18} style={{ color: '#38bdf8' }} />
+                        <span style={{ color: '#ffffff', fontWeight: '700', fontSize: '0.92rem' }}>{modulAjarData.pdfFileName || 'Modul Ajar Praktik Informatika NetLab.pdf'}</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <button
+                          type="button"
+                          onClick={() => openGdriveReview(modulAjarData.id, modulAjarData.gdriveUrl, modulAjarData.title, modulAjarData.pdfFileName, modulAjarData.pdfUrl)}
+                          style={{
+                            background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
+                            border: 'none',
+                            color: '#ffffff',
+                            padding: '6px 14px',
+                            borderRadius: '8px',
+                            fontSize: '0.8rem',
+                            fontWeight: '700',
+                            cursor: 'pointer',
+                            fontFamily: 'inherit',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px'
+                          }}
+                        >
+                          <IconGoogleDrive size={14} />
+                          <span>Preview</span>
+                        </button>
+                        <a
+                          href={modulAjarData.pdfUrl || '/assets/seminar/modul-ajar-netlab.pdf'}
+                          download={modulAjarData.pdfFileName || 'Modul Ajar Praktik Informatika NetLab.pdf'}
+                          style={{
+                            background: 'rgba(52, 211, 153, 0.15)',
+                            border: '1px solid rgba(52, 211, 153, 0.35)',
+                            color: '#34d399',
+                            padding: '6px 14px',
+                            borderRadius: '8px',
+                            fontSize: '0.8rem',
+                            fontWeight: '700',
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px'
+                          }}
+                        >
+                          <IconDownload size={14} />
+                          <span>Unduh File</span>
+                        </a>
+                      </div>
+                    </div>
+                    <iframe
+                      src="https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/preview"
+                      style={{ width: '100%', height: '640px', border: 'none', display: 'block' }}
+                      title="Preview Modul Ajar"
+                      allow="autoplay"
+                    />
                   </div>
                 </div>
               )}
-            </div>
-          )}
 
-          {/* BAGIAN 2: MODUL AJAR PRAKTIK INFORMATIKA (FASE E JKI) */}
-          {(inovasiSection === 'semua' || inovasiSection === 'modul-ajar') && (
-            <div style={{ marginTop: '36px', paddingTop: '32px', borderTop: '1px solid rgba(255, 255, 255, 0.12)' }}>
-              {/* Header Modul Ajar */}
-              <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.12)', paddingBottom: '24px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px', marginBottom: '14px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                    <span className="inovasi-tag" style={{ fontSize: '0.82rem', padding: '5px 14px' }}>
-                      2. PERANGKAT AJAR INFORMATIKA (MODUL AJAR)
-                    </span>
-                    <span style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
-                      Fase E · Kelas X SMA/SMK
-                    </span>
-                    <span style={{ background: 'rgba(52, 211, 153, 0.15)', color: '#34d399', border: '1px solid rgba(52, 211, 153, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
-                      2 JP (90 Menit) PBL
-                    </span>
+              {/* BAGIAN 3: SLIDE PRESENTASI SEMINAR PPG */}
+              {(inovasiSection === 'semua' || inovasiSection === 'slide-presentasi') && (
+                <div style={{ marginTop: '36px', paddingTop: '32px', borderTop: '1px solid rgba(255, 255, 255, 0.12)' }}>
+                  {/* Header Slide Presentasi */}
+                  <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.12)', paddingBottom: '24px' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px', marginBottom: '14px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
+                        <span className="inovasi-tag" style={{ fontSize: '0.82rem', padding: '5px 14px' }}>
+                          3. SLIDE PRESENTASI SEMINAR
+                        </span>
+                        <span style={{ background: 'rgba(168, 85, 247, 0.15)', color: '#c084fc', border: '1px solid rgba(168, 85, 247, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
+                          13 Slide Presentasi
+                        </span>
+                        <span style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
+                          PPG Informatika UNY
+                        </span>
+                      </div>
+
+                      <button
+                        type="button"
+                        onClick={() => openGdriveReview(slidePresentasiData.id, slidePresentasiData.gdriveUrl, slidePresentasiData.title, slidePresentasiData.pdfFileName, slidePresentasiData.pdfUrl)}
+                        className="lk-pdf-tag"
+                        style={{
+                          cursor: 'pointer',
+                          border: 'none',
+                          fontFamily: 'inherit',
+                          background: 'rgba(56, 189, 248, 0.18)',
+                          color: '#38bdf8'
+                        }}
+                        title="Preview Slide Presentasi"
+                      >
+                        <IconGoogleDrive size={15} />
+                        <span>Preview</span>
+                      </button>
+                    </div>
+
+                    <h2 style={{ fontSize: '1.65rem', fontWeight: '800', color: '#ffffff', margin: '0 0 10px', lineHeight: '1.3' }}>
+                      {slidePresentasiData.title}
+                    </h2>
+                    <p style={{ fontSize: '1.02rem', color: 'var(--accent-cyan)', margin: '0 0 14px', fontWeight: '600', lineHeight: '1.5' }}>
+                      {slidePresentasiData.subtitle}
+                    </p>
+                    <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.94rem', lineHeight: '1.7', margin: '0 0 20px' }}>
+                      {slidePresentasiData.summary}
+                    </p>
+
+                    {/* Actions: Hanya Preview & Unduh File */}
+                    <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                      <button
+                        type="button"
+                        onClick={() => openGdriveReview(slidePresentasiData.id, slidePresentasiData.gdriveUrl, slidePresentasiData.title, slidePresentasiData.pdfFileName, slidePresentasiData.pdfUrl)}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
+                          color: '#ffffff',
+                          border: 'none',
+                          borderRadius: '12px',
+                          padding: '12px 24px',
+                          fontSize: '0.9rem',
+                          fontWeight: '700',
+                          cursor: 'pointer',
+                          fontFamily: 'inherit'
+                        }}
+                      >
+                        <IconGoogleDrive size={18} />
+                        <span>Preview</span>
+                      </button>
+
+                      <a
+                        href={slidePresentasiData.pdfUrl || '/assets/seminar/karya-inovasi.pdf'}
+                        download={slidePresentasiData.pdfFileName || 'Slide Presentasi Karya Inovasi.pdf'}
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          background: 'rgba(52, 211, 153, 0.15)',
+                          border: '1px solid rgba(52, 211, 153, 0.35)',
+                          color: '#34d399',
+                          borderRadius: '12px',
+                          padding: '12px 24px',
+                          fontSize: '0.9rem',
+                          fontWeight: '700',
+                          textDecoration: 'none'
+                        }}
+                      >
+                        <IconDownload size={16} />
+                        <span>Unduh File</span>
+                      </a>
+                    </div>
                   </div>
 
-                  <button
-                    type="button"
-                    onClick={() => openGdriveReview(modulAjarData.id, modulAjarData.gdriveUrl, modulAjarData.title, modulAjarData.pdfFileName, modulAjarData.pdfUrl)}
-                    className="lk-pdf-tag"
-                    style={{
-                      cursor: 'pointer',
-                      border: 'none',
-                      fontFamily: 'inherit',
-                      background: 'rgba(56, 189, 248, 0.18)',
-                      color: '#38bdf8'
-                    }}
-                    title="Preview Modul Ajar"
-                  >
-                    <IconGoogleDrive size={15} />
-                    <span>Preview</span>
-                  </button>
-                </div>
-
-                <h2 style={{ fontSize: '1.65rem', fontWeight: '800', color: '#ffffff', margin: '0 0 10px', lineHeight: '1.3' }}>
-                  {modulAjarData.title}
-                </h2>
-                <p style={{ fontSize: '1.02rem', color: 'var(--accent-cyan)', margin: '0 0 16px', fontWeight: '600', lineHeight: '1.5' }}>
-                  {modulAjarData.subtitle}
-                </p>
-                <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.94rem', lineHeight: '1.7', margin: '0 0 22px' }}>
-                  {modulAjarData.summary}
-                </p>
-
-                {/* Meta details bar */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '22px' }}>
-                  <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
-                    <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Penyusun</span>
-                    <strong style={{ color: '#ffffff', fontSize: '0.92rem' }}>{modulAjarData.informasiUmum.penyusun}</strong>
-                  </div>
-                  <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
-                    <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>NIM Calon Guru</span>
-                    <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.92rem', fontFamily: 'Geist Mono, monospace' }}>{modulAjarData.informasiUmum.nim}</strong>
-                  </div>
-                  <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
-                    <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Elemen & Model</span>
-                    <strong style={{ color: '#ffffff', fontSize: '0.92rem' }}>JKI · Problem Based Learning (PBL)</strong>
-                  </div>
-                  <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
-                    <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Media Praktik</span>
-                    <strong style={{ color: '#38bdf8', fontSize: '0.92rem' }}>Web Simulator NetLab (JSON)</strong>
-                  </div>
-                </div>
-
-                {/* Action buttons: Hanya Preview & Unduh File */}
-                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                  <button
-                    type="button"
-                    onClick={() => openGdriveReview(modulAjarData.id, modulAjarData.gdriveUrl, modulAjarData.title, modulAjarData.pdfFileName, modulAjarData.pdfUrl)}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
-                      color: '#ffffff',
-                      border: 'none',
-                      borderRadius: '12px',
-                      padding: '12px 24px',
-                      fontSize: '0.9rem',
-                      fontWeight: '700',
-                      cursor: 'pointer',
-                      fontFamily: 'inherit'
-                    }}
-                  >
-                    <IconGoogleDrive size={18} />
-                    <span>Preview</span>
-                  </button>
-
-                  <a
-                    href={modulAjarData.pdfUrl || '/assets/seminar/modul-ajar-netlab.pdf'}
-                    download={modulAjarData.pdfFileName || 'Modul Ajar Praktik Informatika NetLab.pdf'}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(52, 211, 153, 0.15)',
-                      border: '1px solid rgba(52, 211, 153, 0.35)',
-                      color: '#34d399',
-                      borderRadius: '12px',
-                      padding: '12px 24px',
-                      fontSize: '0.9rem',
-                      fontWeight: '700',
-                      textDecoration: 'none'
-                    }}
-                  >
-                    <IconDownload size={16} />
-                    <span>Unduh File</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Direct Document Preview Frame */}
-              <div style={{ marginTop: '24px', background: 'rgba(15, 23, 42, 0.75)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.12)', boxShadow: '0 12px 30px rgba(0,0,0,0.35)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px', background: 'rgba(255, 255, 255, 0.04)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)', flexWrap: 'wrap', gap: '10px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <IconPdf size={18} style={{ color: '#38bdf8' }} />
-                    <span style={{ color: '#ffffff', fontWeight: '700', fontSize: '0.92rem' }}>{modulAjarData.pdfFileName || 'Modul Ajar Praktik Informatika NetLab.pdf'}</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <button
-                      type="button"
-                      onClick={() => openGdriveReview(modulAjarData.id, modulAjarData.gdriveUrl, modulAjarData.title, modulAjarData.pdfFileName, modulAjarData.pdfUrl)}
-                      style={{
-                        background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
-                        border: 'none',
-                        color: '#ffffff',
-                        padding: '6px 14px',
-                        borderRadius: '8px',
-                        fontSize: '0.8rem',
-                        fontWeight: '700',
-                        cursor: 'pointer',
-                        fontFamily: 'inherit',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '6px'
-                      }}
-                    >
-                      <IconGoogleDrive size={14} />
-                      <span>Preview</span>
-                    </button>
-                    <a
-                      href={modulAjarData.pdfUrl || '/assets/seminar/modul-ajar-netlab.pdf'}
-                      download={modulAjarData.pdfFileName || 'Modul Ajar Praktik Informatika NetLab.pdf'}
-                      style={{
-                        background: 'rgba(52, 211, 153, 0.15)',
-                        border: '1px solid rgba(52, 211, 153, 0.35)',
-                        color: '#34d399',
-                        padding: '6px 14px',
-                        borderRadius: '8px',
-                        fontSize: '0.8rem',
-                        fontWeight: '700',
-                        textDecoration: 'none',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '6px'
-                      }}
-                    >
-                      <IconDownload size={14} />
-                      <span>Unduh File</span>
-                    </a>
+                  {/* Direct Slide Document Preview Frame */}
+                  <div style={{ marginTop: '24px', background: 'rgba(15, 23, 42, 0.75)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.12)', boxShadow: '0 12px 30px rgba(0,0,0,0.35)' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px', background: 'rgba(255, 255, 255, 0.04)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)', flexWrap: 'wrap', gap: '10px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <IconPdf size={18} style={{ color: '#38bdf8' }} />
+                        <span style={{ color: '#ffffff', fontWeight: '700', fontSize: '0.92rem' }}>{slidePresentasiData.pdfFileName || 'Slide Presentasi Karya Inovasi.pdf'}</span>
+                      </div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                        <button
+                          type="button"
+                          onClick={() => openGdriveReview(slidePresentasiData.id, slidePresentasiData.gdriveUrl, slidePresentasiData.title, slidePresentasiData.pdfFileName, slidePresentasiData.pdfUrl)}
+                          style={{
+                            background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
+                            border: 'none',
+                            color: '#ffffff',
+                            padding: '6px 14px',
+                            borderRadius: '8px',
+                            fontSize: '0.8rem',
+                            fontWeight: '700',
+                            cursor: 'pointer',
+                            fontFamily: 'inherit',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px'
+                          }}
+                        >
+                          <IconGoogleDrive size={14} />
+                          <span>Preview</span>
+                        </button>
+                        <a
+                          href={slidePresentasiData.pdfUrl || '/assets/seminar/karya-inovasi.pdf'}
+                          download={slidePresentasiData.pdfFileName || 'Slide Presentasi Karya Inovasi.pdf'}
+                          style={{
+                            background: 'rgba(52, 211, 153, 0.15)',
+                            border: '1px solid rgba(52, 211, 153, 0.35)',
+                            color: '#34d399',
+                            padding: '6px 14px',
+                            borderRadius: '8px',
+                            fontSize: '0.8rem',
+                            fontWeight: '700',
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px'
+                          }}
+                        >
+                          <IconDownload size={14} />
+                          <span>Unduh File</span>
+                        </a>
+                      </div>
+                    </div>
+                    <iframe
+                      src="https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/preview"
+                      style={{ width: '100%', height: '640px', border: 'none', display: 'block' }}
+                      title="Preview Slide Presentasi"
+                      allow="autoplay"
+                    />
                   </div>
                 </div>
-                <iframe
-                  src="https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/preview"
-                  style={{ width: '100%', height: '640px', border: 'none', display: 'block' }}
-                  title="Preview Modul Ajar"
-                  allow="autoplay"
-                />
-              </div>
-            </div>
-          )}
-
-          {/* BAGIAN 3: SLIDE PRESENTASI RESMI SEMINAR PPG */}
-          {(inovasiSection === 'semua' || inovasiSection === 'slide-presentasi') && (
-            <div style={{ marginTop: '36px', paddingTop: '32px', borderTop: '1px solid rgba(255, 255, 255, 0.12)' }}>
-              {/* Header Slide Presentasi */}
-              <div style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.12)', paddingBottom: '24px' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '10px', marginBottom: '14px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
-                    <span className="inovasi-tag" style={{ fontSize: '0.82rem', padding: '5px 14px' }}>
-                      3. SLIDE PRESENTASI SEMINAR
-                    </span>
-                    <span style={{ background: 'rgba(168, 85, 247, 0.15)', color: '#c084fc', border: '1px solid rgba(168, 85, 247, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
-                      13 Slide Dek Resmi
-                    </span>
-                    <span style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
-                      PPG Informatika UNY
-                    </span>
-                  </div>
-
-                  <button
-                    type="button"
-                    onClick={() => openGdriveReview(slidePresentasiData.id, slidePresentasiData.gdriveUrl, slidePresentasiData.title, slidePresentasiData.pdfFileName, slidePresentasiData.pdfUrl)}
-                    className="lk-pdf-tag"
-                    style={{
-                      cursor: 'pointer',
-                      border: 'none',
-                      fontFamily: 'inherit',
-                      background: 'rgba(56, 189, 248, 0.18)',
-                      color: '#38bdf8'
-                    }}
-                    title="Preview Slide Presentasi"
-                  >
-                    <IconGoogleDrive size={15} />
-                    <span>Preview</span>
-                  </button>
-                </div>
-
-                <h2 style={{ fontSize: '1.65rem', fontWeight: '800', color: '#ffffff', margin: '0 0 10px', lineHeight: '1.3' }}>
-                  {slidePresentasiData.title}
-                </h2>
-                <p style={{ fontSize: '1.02rem', color: 'var(--accent-cyan)', margin: '0 0 14px', fontWeight: '600', lineHeight: '1.5' }}>
-                  {slidePresentasiData.subtitle}
-                </p>
-                <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.94rem', lineHeight: '1.7', margin: '0 0 20px' }}>
-                  {slidePresentasiData.summary}
-                </p>
-
-                {/* Actions: Hanya Preview & Unduh File */}
-                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
-                  <button
-                    type="button"
-                    onClick={() => openGdriveReview(slidePresentasiData.id, slidePresentasiData.gdriveUrl, slidePresentasiData.title, slidePresentasiData.pdfFileName, slidePresentasiData.pdfUrl)}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
-                      color: '#ffffff',
-                      border: 'none',
-                      borderRadius: '12px',
-                      padding: '12px 24px',
-                      fontSize: '0.9rem',
-                      fontWeight: '700',
-                      cursor: 'pointer',
-                      fontFamily: 'inherit'
-                    }}
-                  >
-                    <IconGoogleDrive size={18} />
-                    <span>Preview</span>
-                  </button>
-
-                  <a
-                    href={slidePresentasiData.pdfUrl || '/assets/seminar/karya-inovasi.pdf'}
-                    download={slidePresentasiData.pdfFileName || 'Slide Presentasi Karya Inovasi.pdf'}
-                    style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '8px',
-                      background: 'rgba(52, 211, 153, 0.15)',
-                      border: '1px solid rgba(52, 211, 153, 0.35)',
-                      color: '#34d399',
-                      borderRadius: '12px',
-                      padding: '12px 24px',
-                      fontSize: '0.9rem',
-                      fontWeight: '700',
-                      textDecoration: 'none'
-                    }}
-                  >
-                    <IconDownload size={16} />
-                    <span>Unduh File</span>
-                  </a>
-                </div>
-              </div>
-
-              {/* Direct Slide Document Preview Frame */}
-              <div style={{ marginTop: '24px', background: 'rgba(15, 23, 42, 0.75)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.12)', boxShadow: '0 12px 30px rgba(0,0,0,0.35)' }}>
-                <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px', background: 'rgba(255, 255, 255, 0.04)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)', flexWrap: 'wrap', gap: '10px' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <IconPdf size={18} style={{ color: '#38bdf8' }} />
-                    <span style={{ color: '#ffffff', fontWeight: '700', fontSize: '0.92rem' }}>{slidePresentasiData.pdfFileName || 'Slide Presentasi Karya Inovasi.pdf'}</span>
-                  </div>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-                    <button
-                      type="button"
-                      onClick={() => openGdriveReview(slidePresentasiData.id, slidePresentasiData.gdriveUrl, slidePresentasiData.title, slidePresentasiData.pdfFileName, slidePresentasiData.pdfUrl)}
-                      style={{
-                        background: 'linear-gradient(135deg, var(--accent-blue), var(--accent-cyan))',
-                        border: 'none',
-                        color: '#ffffff',
-                        padding: '6px 14px',
-                        borderRadius: '8px',
-                        fontSize: '0.8rem',
-                        fontWeight: '700',
-                        cursor: 'pointer',
-                        fontFamily: 'inherit',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '6px'
-                      }}
-                    >
-                      <IconGoogleDrive size={14} />
-                      <span>Preview</span>
-                    </button>
-                    <a
-                      href={slidePresentasiData.pdfUrl || '/assets/seminar/karya-inovasi.pdf'}
-                      download={slidePresentasiData.pdfFileName || 'Slide Presentasi Karya Inovasi.pdf'}
-                      style={{
-                        background: 'rgba(52, 211, 153, 0.15)',
-                        border: '1px solid rgba(52, 211, 153, 0.35)',
-                        color: '#34d399',
-                        padding: '6px 14px',
-                        borderRadius: '8px',
-                        fontSize: '0.8rem',
-                        fontWeight: '700',
-                        textDecoration: 'none',
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '6px'
-                      }}
-                    >
-                      <IconDownload size={14} />
-                      <span>Unduh File</span>
-                    </a>
-                  </div>
-                </div>
-                <iframe
-                  src="https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/preview"
-                  style={{ width: '100%', height: '640px', border: 'none', display: 'block' }}
-                  title="Preview Slide Presentasi"
-                  allow="autoplay"
-                />
-              </div>
-            </div>
-          )}
-        </article>
-      </div>
-    )
-  })()}
+              )}
+            </article>
+          </div>
+        )
+      })()}
 
       {/* MODAL VIEW: Lembar Kerja Seminar Detail */}
       {selectedLk &&
@@ -1319,7 +1319,7 @@ function Seminar() {
                     <div>
                       <strong>{selectedLk.pdfFileName || `${selectedLk.title}.pdf`}</strong>
                       <span style={{ color: '#38bdf8' }}>
-                        Dokumen Resmi Terverifikasi · PDF
+                        Dokumen · PDF
                       </span>
                     </div>
                   </div>

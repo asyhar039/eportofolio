@@ -241,6 +241,7 @@ const reflectionData = {
     challenge: 'Membongkar pola pikir bahwa penanaman karakter adalah porsi guru tertentu, serta menerapkan strategi internalisasi nilai secara konsisten di ruang kelas.',
     concept: '1. Guru sebagai teladan dan penuntun karakter murid.\n2. Kerangka pendidikan nasional berbasis nilai luhur Pancasila.\n3. Strategi internalisasi nilai melalui Connect-Extend-Challenge.',
     change: 'Mengintegrasikan penanaman nilai karakter secara eksplisit dalam setiap modul ajar dan menjadi role model keteladanan bagi peserta didik.',
+    artifactPdfUrl: 'https://drive.google.com/file/d/1aVq9F-33Xc4xNg12H_Z_G50gOxIk_GA8/view?usp=sharing',
     artifacts: [
       'Artefak 1: Dokumen Aktivitas Identifikasi Peran Guru dalam Pendidikan Nilai (Modul 3.4.1).',
       'Artefak 2: Pemetaan alur Connect-Extend-Challenge dan komitmen menjalankan pendidikan nilai.',
@@ -253,6 +254,7 @@ const reflectionData = {
     challenge: 'Menghadapi fenomena kepasifan siswa, ketergantungan pada instruksi detail guru, serta kebiasaan copy-paste saat mengerjakan tugas analisis mandiri.',
     concept: '1. Transisi dari teacher-centered ke student-centered.\n2. Teori konstruktivisme dan humanisme untuk kemandirian belajar.\n3. Penciptaan iklim kelas yang aman secara psikologis.',
     change: 'Bertransformasi menjadi fasilitator yang melatih keterampilan berpikir kritis dan membangun keaktifan siswa melalui interaksi kolaboratif.',
+    artifactPdfUrl: 'https://drive.google.com/file/d/18MEm6sOsduEWuqpOckRoTg-j_nyHjNhh/view?usp=sharing',
     artifacts: [
       "Artefak 1: Lembar Penelaahan Studi Kasus 'Dilema Kelas yang Pasif' (Kasus Bu Sinta - XI IPS 2).",
       'Artefak 2: Analisis kritis akar penyebab kepasifan siswa dan teori belajar yang relevan.',
@@ -265,6 +267,7 @@ const reflectionData = {
     challenge: 'Mengatasi kesenjangan antara dominasi ceramah guru dengan kebutuhan industri yang memerlukan lulusan mandiri, kreatif, dan adaptif memecahkan masalah.',
     concept: '1. Problem/Project Based Learning (PBL/PjBL).\n2. Kolaborasi interaktif dan kasus industri otentik.\n3. Refleksi berkala proses belajar siswa.',
     change: 'Merancang tugas pemecahan masalah kontekstual, memfasilitasi kerja kelompok terarah, dan menyelenggarakan refleksi manfaat materi ajar.',
+    artifactPdfUrl: 'https://drive.google.com/file/d/19nWmU4wYa8OkUy3ZnThWTfI5acrLo6q5/view?usp=sharing',
     artifacts: [
       'Artefak 1: Lembar Jawaban Aktivitas 1.1 Kesenjangan Pembelajaran (SMK Multi Karya & SMK Karya Nyata).',
       'Artefak 2: Solusi konkret atas dominasi ceramah melalui perancangan tugas berbasis masalah otentik.',
@@ -277,6 +280,7 @@ const reflectionData = {
     challenge: 'Manajemen alokasi waktu jam pelajaran agar seluruh kelompok dapat presentasi, serta mendorong partisipasi siswa yang masih pasif berpendapat.',
     concept: '1. Apersepsi kontekstual dan studi kasus nyata.\n2. Diskusi kelompok berbantuan LKPD terstruktur.\n3. Penyelarasan modul sesuai masukan pamong.',
     change: 'Memvariasikan media permainan edukatif, mematangkan time management kegiatan, dan merangsang keaktifan siswa yang pendiam.',
+    artifactPdfUrl: 'https://drive.google.com/file/d/1fyuT1TdNkPavfCno4XvPKcnz86WgTljE/view?usp=sharing',
     artifacts: [
       'Artefak 1: Lembar Kerja 3 (LK 3) Refleksi Praktik Asistensi Mengajar Terbimbing SMAN 11 Yogyakarta.',
       'Artefak 2: Bukti evaluasi kendala nyata kelas dan tindak lanjut perbaikan berbasis masukan pamong.',
@@ -289,6 +293,7 @@ const reflectionData = {
     challenge: "Mengikis fixed mindset guru seperti memberi label negatif permanen kepada murid ('sulit diatur') atau terjebak dalam zona nyaman metode mengajar monoton.",
     concept: '1. Pembedaan sikap Fixed vs Growth Mindset guru.\n2. Adaptabilitas strategi belajar yang dinamis.\n3. Penilaian yang menghargai proses dan usaha.',
     change: 'Menjadi pendidik fleksibel yang berorientasi solusi, gigih mencoba pendekatan baru, dan terbuka belajar dari rekan sejawat.',
+    artifactPdfUrl: 'https://drive.google.com/file/d/1fhn9zfktEXgOM3rtyjcuDBO4rbxY_y6Q/view?usp=sharing',
     artifacts: [
       'Artefak 1: Lembar Kerja 4.1 Identifikasi Pola Pikir Guru (Tetap vs Bertumbuh).',
       'Artefak 2: Evaluasi diri menganalisis 10 pernyataan sikap guru beserta alasan rasionalnya.',
@@ -301,6 +306,7 @@ const reflectionData = {
     challenge: 'Mengatasi rasa takut salah murid saat mengemukakan ide serta merancang aktivitas yang menuntut eksplorasi mandiri.',
     concept: '1. Enam ciri kelas kreatif-inovatif (iklim aman, tugas otentik, kolaborasi, teknologi, formatif, fasilitator).\n2. Instrumen analisis situasi Penelitian Tindakan Kelas (PTK).',
     change: 'Menerapkan pembelajaran berbasis proyek, blended learning, design thinking, dan umpan balik yang mengapresiasi proses karya siswa.',
+    artifactPdfUrl: 'https://drive.google.com/file/d/10cQzoYf_cJ3I8HEEKrhOLN545DLHLXNQ/view?usp=sharing',
     artifacts: [
       'Artefak 1: Matriks Debat Pro-Kontra & Instrumen Analisis Video Pembelajaran (Tugas Kelompok 4).',
       'Artefak 2: Bukti analisis teoritis urgensi pembelajaran kreatif serta evaluasi penerapannya dalam video.',
@@ -313,6 +319,7 @@ const reflectionData = {
     challenge: 'Tantangan terbesar adalah mengubah cara mengajar yang hanya berfokus pada materi dan kode python tanpa memperhatikan emosi siswa. Guru perlu membimbing siswa agar tetap tenang saat menghadapi kesalahan, sekaligus mampu mengendalikan emosi dan menjaga kesabaran ketika menghadapi kelas yang pasif atau siswa yang kurang semangat belajar.',
     concept: '1. Lima Kompetensi CASEL: Kesadaran Diri (Roda Emosi), Manajemen Diri (Teknik S-T-O-P 2 menit), Kesadaran Sosial, Keterampilan Berelasi (Apresiasi – Saran – Pertanyaan), dan Pengambilan Keputusan Bertanggung Jawab.\n2. Integrasi PSE dengan Asesmen: Mengintegrasikan PSE dengan hasil asesmen untuk memahami kebutuhan siswa secara menyeluruh dan objektif.',
     change: '1. Mengintegrasikan 5 kompetensi sosial emosional ke dalam Modul Ajar Informatika pada tahap pendahuluan, inti, dan penutup.\n2. Membuka sesi laboratorium dengan identifikasi emosi (Roda Emosi) dan latihan teknik S-T-O-P 2 menit.\n3. Mendampingi regulasi frustrasi murid saat menghadapi kendala teknis atau error kode python.\n4. Menerapkan jurnal refleksi berkala dan ruang resiliensi emosional guru untuk mencegah burnout.',
+    artifactPdfUrl: 'https://drive.google.com/file/d/1qjTxLIVYVq_jU6mrCxuFMTpPC8ZRwDZd/view?usp=sharing',
     artifacts: [
       'Artefak 1: Dokumen Tugas LMS Ruang Kolaborasi 1.D (Kelompok 3) dan Dokumen Aksi Nyata Modul Ajar Informatika Kelas X Terintegrasi PSE.',
       'Artefak 2: Dipilih karena menyajikan kesinambungan antara pemahaman konseptual matriks CASEL dengan eksekusi nyata di kelas (latihan STOP, Roda Emosi, dan rubrik asesmen).',
@@ -325,6 +332,7 @@ const reflectionData = {
     challenge: 'Tantangan paling mendasar adalah mengubah orientasi penyusunan laporan pembelajaran yang selama ini cenderung deskriptif-administratif atau sekadar klaim subjektif menuju tradisi riset ilmiah yang ketat. Selain itu, menguasai penerapan logika penalaran Deduktif-Nomologikal (DN) dan Induktif-Statistik (IS) berbasis instrumen yang teruji validitas dan reliabilitasnya.',
     concept: '1. Struktur Fundamental Filosofis Best Practice: Ontologi (fakta masalah kelas), Epistemologi (metode ilmiah sistematis), dan Aksiologi (nilai guna ilmu bagi kebudayaan).\n2. Model Penalaran KTI: Deduktif-Nomologikal (DN) dan Induktif-Statistik (IS).\n3. Triad Sarana Berpikir Ilmiah: Bahasa, Matematika, dan Statistika.\n4. Triad Kebenaran Ilmiah: Rasional, Empirik, dan Transendental.\n5. Parameter Kualitas Instrumen & Tanggung Jawab Moral Ilmuwan.',
     change: '1. Membiasakan mengajar berdasarkan data dan kebutuhan nyata siswa di kelas.\n2. Mendokumentasikan inovasi ke dalam laporan Best Practice berstandar metodologi ilmiah secara berkala.\n3. Menyusun instrumen penilaian autentik yang objektif, teruji validitas dan reliabilitasnya.\n4. Melatih presisi logika serta kaidah bahasa penulisan ilmiah dan menjunjung integritas etika riset.',
+    artifactPdfUrl: 'https://drive.google.com/file/d/1z7VSZb3Ctd_XYZ8dQ3TMNTkR91jT95cp/view?usp=sharing',
     artifacts: [
       'Artefak 1: Dokumen Tugas LMS "Analisis Best Practice dan Tes Formatif KTI" (Asyhar Qowiim) dan studi kasus Best Practice PBL berorientasi HOTS karya Moch. Basuni (SMKN 3 Tuban).',
       'Artefak 2: Dipilih karena memuat bukti penguasaan kerangka filsafat ilmu, logika penalaran KTI, parameter instrumen, dan kode etik moral ilmuwan.',
@@ -337,6 +345,7 @@ const reflectionData = {
     challenge: 'Tantangan utama selama pelaksanaan praktik mengajar adalah alokasi manajemen waktu yang ketat sehingga kegiatan diskusi kelompok dan presentasi siswa belum sepenuhnya terfasilitasi secara optimal, serta tingkat partisipasi murid yang belum merata (ada siswa pasif atau kurang percaya diri). Selain itu, perlunya menyelaraskan tingkat kesulitan tugas LKPD dengan kesiapan belajar siswa yang beragam.',
     concept: '1. Pembelajaran Kontekstual & Computational Thinking: Menerapkan konsep algoritma secara intuitif melalui LKPD studi kasus nyata sebelum coding.\n2. Pembelajaran Kolaboratif: Mendorong interaksi kelompok sebaya dan keberanian murid pasif.\n3. Penyelarasan Modul Ajar: Menyelaraskan tujuan pembelajaran terukur, materi esensial, dan asesmen berdasarkan masukan Guru Pamong.\n4. Manajemen Waktu & Strategi Pengelolaan Kelas: Pengorganisasian alokasi durasi jam pelajaran yang presisi.',
     change: '1. Menyusun modul ajar dengan estimasi alokasi waktu yang rinci dan terstruktur pada tiap tahapan kegiatan.\n2. Menerapkan media interaktif dan permainan edukatif untuk memicu keterlibatan aktif siswa yang masih pasif.\n3. Menindaklanjuti masukan Guru Pamong (Dian C.R., S.Si.) dan DPL (Ir. Bekti Wulandari, M.Pd.) secara konsisten.\n4. Menjalankan evaluasi mandiri (action-reflection) secara rutin seusai pembelajaran.',
+    artifactPdfUrl: 'https://drive.google.com/file/d/107v_vtWpLEXBvqLe_hwe_7jGOAmPKKPo/view?usp=sharing',
     artifacts: [
       'Artefak 1: Dokumen Resmi LK 3 Refleksi Praktik Mengajar Terbimbing PPLM (disetujui Pamong & DPL, 8 Okt 2026) dan Modul Ajar Informatika Kelas X Algoritma Sorting-Searching beserta LKPD.',
       'Artefak 2: Dipilih karena menyajikan rekaman evaluasi kritis pembelajaran nyata di laboratorium SMAN 11 Yogyakarta beserta masukan konstruktif pamong.',
@@ -349,6 +358,7 @@ const reflectionData = {
     challenge: 'Tantangan terbesar di SMK adalah meruntuhkan sekat pengajaran terisolasi (siloed teaching) di mana Informatika diajarkan terpisah tanpa relevansi langsung dengan keahlian kejuruan siswa, serta merancang asesmen autentik berorientasi real-world problem solving yang sesuai dengan kriteria DUDI (Dunia Usaha dan Dunia Industri) berbasis Standar Operasional Prosedur (SOP).',
     concept: '1. Keterkaitan Pembelajaran Mendalam & Model Vokasi: Integrasi deep learning pada 4 model keahlian SMK (Kewirausahaan, Teaching Factory/TeFa, Kelas Industri, dan PKL).\n2. Alur Pedagogis Berjenjang (Fase X–XII).\n3. Kontekstualisasi Lintas Disiplin (Cross-Curricular Informatics): Penerapan basis data dan pemrograman untuk kebutuhan spesifik jurusan vokasi.\n4. Asesmen Autentik Berorientasi DUDI: Penilaian unjuk kerja nyata berstandar SOP industri.',
     change: '1. Menyusun modul ajar Informatika yang kontekstual dan langsung terintegrasi dengan kebutuhan proyek keahlian siswa di SMK.\n2. Menerapkan rubrik unjuk kerja yang menilai aspek kepatuhan SOP industri, ketepatan solusi teknis, dan kualitas produk komputasi siswa.\n3. Berkolaborasi aktif dengan guru kejuruan dan instruktur industri dalam merancang proyek bersama di Teaching Factory dan Kelas Industri.',
+    artifactPdfUrl: 'https://drive.google.com/file/d/1KuRS5x83kDrbK0Vxcsdaegwixubziavz/view?usp=sharing',
     artifacts: [
       'Artefak 1: Dokumen Tugas LMS Kolaboratif "2.C. Diskusi Pemecahan Kasus: Alternatif Solusi Pembelajaran Mendalam di SMK" (Kelompok 4).',
       'Artefak 2: Dipilih karena menyajikan rancangan alur berjenjang (Fase X–XII), kontekstualisasi lintas keahlian (TKR & Tata Busana), dan model asesmen autentik terintegrasi DUDI.',
@@ -361,6 +371,7 @@ const reflectionData = {
     challenge: 'Tantangan utama dalam Seminar PPG adalah membiasakan refleksi yang disertai bukti nyata hasil belajar siswa (seperti lembar kerja siswa, rubrik penilaian, dan catatan kelas), serta memilih karya terbaik dari setiap mata kuliah untuk ditampilkan dalam portofolio.',
     concept: '1. Pemikiran Ki Hadjar Dewantara: Menuntun potensi peserta didik dan menciptakan suasana belajar yang membahagiakan.\n2. Empat Bagian Utama Seminar PPG: Identifikasi Diri (LK 1), Refleksi 4C, Karya Inovasi Pembelajaran, dan Berbagi Karya lewat Portofolio Digital.\n3. Komunikasi Efektif & Penyampaian Inovasi: Menyampaikan gagasan pembelajaran secara jelas, runtut, dan mudah dipahami.\n4. Tiga Penilaian Utama: Portofolio Digital, Keaktifan di Kelas, dan Penampilan Saat Presentasi.',
     change: '1. Menjadikan portofolio digital sebagai wadah rekam jejak perkembangan diri yang diperbarui secara konsisten.\n2. Membiasakan refleksi pembelajaran yang jujur dan perbaikan kelas berkelanjutan pada setiap siklus pembelajaran.\n3. Menerapkan 5 langkah nyata LK 1 (pembelajaran berdiferensiasi, pembiasaan sosial emosional, perbaikan kelas mandiri, pemanfaatan teknologi, dan aktif di komunitas belajar).',
+    artifactPdfUrl: 'https://drive.google.com/file/d/1lQH4cbI22ESDVfIy-8xsX7jAbIM3_ikn/view?usp=sharing',
     artifacts: [
       'Artefak 1: Dokumen Utama LK 1 Identifikasi Diri - Seminar Pendidikan Guru (Asyhar Qowiim) dan Produk Portofolio Digital Refleksi LK 2 Semester II.',
       'Artefak 2: Dipilih karena merupakan dokumen awal yang memuat arah pemikiran Ki Hadjar Dewantara dan memuat 5 rencana aksi nyata kesiapan guru profesional.',
@@ -373,6 +384,7 @@ const reflectionData = {
     challenge: 'Tantangan terbesar adalah mengubah anggapan bahwa kepemimpinan hanyalah bakat sejak lahir, melainkan kemampuan yang dapat dipelajari dan dilatih melalui kerja sama tim yang kompak. Dalam pelaksanaan proyek presensi QR Code di SMAN 11 Yogyakarta, tantangannya adalah menyelaraskan 8 anggota tim, menyelesaikan perbedaan pendapat secara bijaksana, mengatur jadwal uji coba sistem, dan pantang menyerah saat menghadapi kendala teknis.',
     concept: '1. Growth Mindset & Personal Leadership: Kapasitas memimpin berkembang melalui latihan, inisiatif, eksperimen solusi, dan belajar dari kesalahan.\n2. Tujuh Elemen Perancangan Projek: Riset pengguna, tujuan terukur, alokasi sumber daya, strategi agile, dan milestones sukses.\n3. Komunikasi Efektif & Pengelolaan Konflik Konstruktif.\n4. Transformasi Digital & Pemberdayaan Sekolah: Penerapan presensi digital QR Code untuk efisiensi, transparansi data, dan peningkatan kedisiplinan murid.',
     change: '1. Terus berani mengambil inisiatif dan menghadirkan solusi teknologi kontekstual bagi permasalahan ekosistem sekolah.\n2. Mengedepankan komunikasi terbuka, empati, dan manajemen konflik yang bijaksana dalam memimpin kelompok maupun Komunitas Belajar.\n3. Membiasakan evaluasi agile dan resiliensi menghadapi tantangan teknis atau perubahan dinamika lapangan.',
+    artifactPdfUrl: 'https://drive.google.com/file/d/1KrjIy964mBnBo8qNCK9p--jlR_YIdEtT/view?usp=sharing',
     artifacts: [
       'Artefak 1: Dokumen Tugas LMS "2.3.a. Tugas 5.1. Mindmap Kelompok A2 Fix" (Sistem Presensi Digital QR Code SMAN 11 Yogyakarta) dan Panduan/Modul Projek Kepemimpinan PPG.',
       'Artefak 2: Dipilih karena menyajikan bukti autentik perancangan dan eksekusi projek kepemimpinan kolaboratif berbasis teknologi yang holistik menjawab tata kelola sekolah.',

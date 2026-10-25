@@ -19,6 +19,13 @@ const galleryData = [
     thumbnail: '/assets/thumbnail-video-2.jpg'
   },
   {
+    id: 'vid-3',
+    type: 'video',
+    title: 'Video Mengajar 3',
+    category: 'Video Mengajar',
+    src: '/assets/video-mengajar-3.mp4'
+  },
+  {
     id: 'img-1',
     type: 'photo',
     title: 'Foto Mengajar 1',
@@ -58,8 +65,8 @@ function Gallery() {
 
   const categories = ['Semua', 'Video Mengajar', 'Foto Mengajar']
 
-  const filteredItems = selectedCategory === 'Semua' 
-    ? galleryData 
+  const filteredItems = selectedCategory === 'Semua'
+    ? galleryData
     : galleryData.filter(item => item.category === selectedCategory)
 
   return (
@@ -87,19 +94,19 @@ function Gallery() {
           <article key={item.id} className={`gallery-card type-${item.type}`}>
             {item.type === 'video' ? (
               <div className="gallery-video-wrapper">
-                <video 
-                  controls 
-                  playsInline 
-                  preload="metadata" 
+                <video
+                  controls
+                  playsInline
+                  preload="metadata"
                   poster={item.thumbnail}
                   className="gallery-player"
                 >
-                  <source src={item.src} type="video/mp4" />
+                  <source src={item.src} type={item.mimeType || 'video/mp4'} />
                   Peramban Anda tidak mendukung pemutar video HTML5.
                 </video>
               </div>
             ) : (
-              <div 
+              <div
                 className="gallery-photo-wrapper"
                 onClick={() => setPreviewPhoto(item)}
                 role="button"
@@ -134,18 +141,18 @@ function Gallery() {
       {previewPhoto && (
         <div className="gallery-modal-backdrop" onClick={() => setPreviewPhoto(null)}>
           <div className="gallery-photo-modal-card" onClick={(e) => e.stopPropagation()}>
-            <button 
-              className="gallery-modal-close" 
+            <button
+              className="gallery-modal-close"
               onClick={() => setPreviewPhoto(null)}
               aria-label="Tutup pratinjau foto"
             >
               ✕
             </button>
             <div className="gallery-photo-modal-img-wrap">
-              <img 
-                src={previewPhoto.src} 
-                alt={previewPhoto.title} 
-                className="gallery-modal-full-img" 
+              <img
+                src={previewPhoto.src}
+                alt={previewPhoto.title}
+                className="gallery-modal-full-img"
               />
             </div>
             <div className="gallery-photo-modal-info">

@@ -1,4 +1,4 @@
-// Data resmi Mata Kuliah Seminar Pendidikan Profesi Guru (PPG)
+// Data Mata Kuliah Seminar Pendidikan Profesi Guru (PPG)
 // Penyusun: Asyhar Qowiim (NIM: 25105260081) - Bidang Studi Informatika
 
 export const seminarWorksheets = [
@@ -30,8 +30,8 @@ export const seminarWorksheets = [
       identitasDiri: {
         nama: 'Asyhar Qowiim',
         nim: '25105260081',
-        bidangStudi: 'Pendidikan Informatika',
-        perguruanTinggi: 'Universitas Negeri Yogyakarta (UNY)'
+        bidangStudi: 'Informatika',
+        perguruanTinggi: 'Universitas Negeri Yogyakarta'
       },
       visiPendidikan: {
         title: 'Visi Pendidikan Indonesia Menurut Calon Guru',
@@ -350,16 +350,16 @@ export const seminarWorksheets = [
     date: 'Semester II',
     author: 'Asyhar Qowiim (NIM: 25105260081)',
     institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Informatika',
-    pdfUrl: '/assets/seminar/lk-2-semester-2.pdf',
-    gdriveUrl: 'https://drive.google.com/file/d/11QWeW1gmomgI1-q0Z_ex32Y56v2KGOEL/preview',
+    pdfUrl: 'https://drive.google.com/uc?export=download&id=19fXGAUR8FuEzM4kwokmsW_Jbf1LSuhEw',
+    gdriveUrl: 'https://drive.google.com/file/d/19fXGAUR8FuEzM4kwokmsW_Jbf1LSuhEw/preview',
     pdfFileName: 'LK 2 Refleksi Pembelajaran Semester 2.pdf',
     summary: 'Refleksi mendalam 4C (Connection, Challenge, Concept, Change) dan bukti artefak LMS untuk 6 mata kuliah Semester II: Pembelajaran Sosial Emosional (PSE), Pengembangan Keprofesian Berkelanjutan (PKB), PPL Mandiri SMAN 11 Yogyakarta, PMA Lanjut SMK, Seminar PPG, dan Projek Kepemimpinan.',
     highlights: [
-      'Dokumen Resmi PDF LK 2 Semester II',
+      'PDF LK 2 Semester II',
       '6 Topik Refleksi Mata Kuliah Inti Semester II',
       'Refleksi Berbasis Sintesis Nyata 4C & Bukti Artefak LMS',
       'Dokumentasi Teruji PPL Mandiri & Projek Presensi QR Code SMAN 11',
-      'Pengesahan Resmi Pengampu Seminar PPG & Mahasiswa Calon Guru'
+      'Pengesahan Pengampu Seminar PPG & Mahasiswa Calon Guru'
     ],
     topics: [
       {
@@ -501,7 +501,7 @@ export const seminarWorksheets = [
           {
             label: 'Artefak 1',
             question: '1. Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung?',
-            answer: '1. Dokumen Resmi LK 3: "LK 3 Refleksi Praktik Mengajar Terbimbing PPLM" atas nama Asyhar Qowiim (NIM: 25105260081) yang telah disetujui oleh Guru Pamong Dian C.R., S.Si. dan DPL Ir. Bekti Wulandari, S.Pd.T., M.Pd. pada tanggal 8 Oktober 2026.\n2. Perangkat Pembelajaran Pendukung: Modul Ajar Informatika Kelas X SMA Fase E materi Algoritma Sorting dan Searching beserta Lembar Kerja Peserta Didik (LKPD) dan instrumen penilaiannya.'
+            answer: '1. Dokumen LK 3: "LK 3 Refleksi Praktik Mengajar Terbimbing PPLM" atas nama Asyhar Qowiim (NIM: 25105260081) yang telah disetujui oleh Guru Pamong Dian C.R., S.Si. dan DPL Ir. Bekti Wulandari, S.Pd.T., M.Pd. pada tanggal 8 Oktober 2026.\n2. Perangkat Pembelajaran Pendukung: Modul Ajar Informatika Kelas X SMA Fase E materi Algoritma Sorting dan Searching beserta Lembar Kerja Peserta Didik (LKPD) dan instrumen penilaiannya.'
           },
           {
             label: 'Artefak 2',
@@ -688,7 +688,7 @@ export const seminarWorksheets = [
     pdfFileName: 'LK 3 Refleksi Pengalaman Belajar PPG.pdf',
     summary: 'Refleksi komprehensif seluruh pengalaman belajar selama mengikuti PPG, mencakup transformasi paradigma pendidikan nasional berbasis Ki Hadjar Dewantara & Kurikulum Merdeka, 5 langkah aksi strategis guru profesional, serta komitmen aksi nyata untuk memulai karier guru profesional.',
     highlights: [
-      'Dokumen Resmi PDF LK 3 PPG',
+      'PDF LK 3 PPG',
       'Pandangan Mengenai Pendidikan di Indonesia Pasca Mengikuti PPG',
       'Filosofi Ki Hadjar Dewantara, Student Well-Being, & Computational Thinking',
       '5 Upaya dan Langkah Strategis Menjadi Guru Profesional',
@@ -773,7 +773,7 @@ export const seminarWorksheets = [
     pdfFileName: 'LK 4 Desain Karya Inovatif Asyhar Qowiim NIM 25105260081.pdf',
     summary: 'Rancangan karya inovasi pembelajaran jaringan komputer Fase E (Kelas X SMA). Memberikan solusi praktis atas kendala laptop berat dan instalasi rumit Cisco Packet Tracer dengan beralih ke simulator web NetLab yang ringan menggunakan studi kasus nyata Minimarket Berkah.',
     highlights: [
-      'Dokumen Resmi PDF Desain Karya Inovatif LK 4',
+      'PDF Desain Karya Inovatif LK 4',
       'Rasional Kritis: Efisiensi Web NetLab vs Cisco Packet Tracer Desktop',
       'Studi Kasus Kontekstual Sistem POS & Jaringan "Minimarket Berkah"',
       'Perancangan 5 Sintaks Problem-Based Learning (PBL) 90 Menit Terintegrasi File JSON',
@@ -1004,8 +1004,8 @@ export const karyaInovasiList = [
     modulAjarFileName: 'Modul Ajar Informatika NetLab.pdf',
     modulAjarTitle: 'Modul Ajar Informatika: Topologi Jaringan NetLab',
     evidenceLinks: [
-      { id: 'slide', label: 'Slide Presentasi Karya Inovasi', note: 'Preview Slide Dek Resmi', gdriveKey: 'slide' },
-      { id: 'modul', label: 'Modul Ajar Informatika NetLab', note: 'Preview Dokumen Resmi', gdriveKey: 'modul' },
+      { id: 'slide', label: 'Slide Presentasi Karya Inovasi', note: 'Preview Slide Presentasi', gdriveKey: 'slide' },
+      { id: 'modul', label: 'Modul Ajar Informatika NetLab', note: 'Preview Dokumen', gdriveKey: 'modul' },
       { id: 'json', label: 'Berkas produk-karya-inovasi.json', note: 'Unduh Berkas JSON NetLab', url: '/assets/seminar/produk-karya-inovasi.json', download: 'produk-karya-inovasi.json' },
       { id: 'netlab', label: 'Web Simulator NetLab', note: 'netlab.thecybersecguru.com', url: 'https://netlab.thecybersecguru.com' }
     ]
@@ -1028,7 +1028,7 @@ export const modulAjarData = {
   pdfFileName: 'Modul Ajar Praktik Informatika NetLab.pdf',
   summary: 'Perangkat modul ajar komprehensif 6 bagian berdurasi 2 JP (90 Menit) yang dirancang secara khusus untuk pembelajaran Jaringan Komputer dan Internet (JKI) Fase E SMA/SMK. Mengintegrasikan pendekatan Problem-Based Learning (PBL) dengan simulator web NetLab, rubrik asesmen autentik (sikap & keterampilan), 5 soal tes pengetahuan pilihan ganda dengan kunci/pembahasan ilmiah, dan lampiran lembar kerja peserta didik (LKPD) digital.',
   highlights: [
-    'Dokumen Resmi Google Drive & Modul Ajar Terintegrasi NetLab',
+    'Dokumen Google Drive & Modul Ajar Terintegrasi NetLab',
     'Elemen JKI: Jaringan Komputer dan Internet (Fase E - Kelas X SMA)',
     'Alokasi Waktu: 2 JP (1 Pertemuan @ 90 Menit) Model Problem Based Learning (PBL)',
     'Studi Kasus Nyata: Pemecahan Masalah Sistem Kasir Retail "Minimarket Berkah"',
@@ -1288,7 +1288,7 @@ export const slidePresentasiData = {
   pdfUrl: '/assets/seminar/karya-inovasi.pdf',
   gdriveUrl: 'https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/preview',
   pdfFileName: 'Slide Presentasi Karya Inovasi.pdf',
-  summary: 'Paket slide presentasi resmi 13 halaman yang dipaparkan dalam forum Seminar Pendidikan Profesi Guru (Seminar PPG). Menyajikan perjalanan komprehensif mulai dari latar belakang masalah di kelas X, analisis kebutuhan web-first, arsitektur file JSON topologi Minimarket Berkah, perancangan 5 sintaks PBL, asesmen autentik, hasil uji coba, hingga evaluasi 3K (Kebaruan, Kreativitas, Kebermanfaatan).',
+  summary: 'Paket slide presentasi 13 halaman yang dipaparkan dalam forum Seminar Pendidikan Profesi Guru (Seminar PPG). Menyajikan perjalanan komprehensif mulai dari latar belakang masalah di kelas X, analisis kebutuhan web-first, arsitektur file JSON topologi Minimarket Berkah, perancangan 5 sintaks PBL, asesmen autentik, hasil uji coba, hingga evaluasi 3K (Kebaruan, Kreativitas, Kebermanfaatan).',
   slides: [
     {
       slideNumber: 1,
@@ -1471,7 +1471,7 @@ export const slidePresentasiData = {
         'Komitmen Pendidik: Terus berinovasi menghadirkan pembelajaran yang humanis, menyenangkan, dan berpusat pada murid.'
       ],
       content: 'Terima kasih kepada Dosen Pembimbing, Guru Pamong, Rekan Sejawat Mahasiswa PPG, dan Siswa SMAN 11 Yogyakarta atas dukungan penuh selama perancangan dan pelaksanaan inovasi ini.',
-      visualNotes: 'Lencana penutup, kontak pemateri (Asyhar Qowiim - NIM 25105260081), dan ucapan terima kasih resmi.'
+      visualNotes: 'Lencana penutup, kontak pemateri (Asyhar Qowiim - NIM 25105260081), dan ucapan terima kasih.'
     }
   ]
 }
