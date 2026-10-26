@@ -1,0 +1,3 @@
+link media pembelajaran praktek siklus 2-4
+link google colabs : https://colab.research.google.com/?hl=id
+link materi sorting, searching, list, stack, queue : https://colab.research.google.com/drive/1X87pjBsIfjmCskdOEPqxLXMjSRvS0zw8?usp=sharing

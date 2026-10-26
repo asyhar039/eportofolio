@@ -1,15 +1,37 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import './Header.css'
 
 function Header({ currentPage, onNavigate }) {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [isScrolled, setIsScrolled] = useState(false)
+  const navRef = useRef(null)
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 50)
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
+
+  useEffect(() => {
+    const handleClickOutside = (e) => {
+      if (isMenuOpen && navRef.current && !navRef.current.contains(e.target)) {
+        setIsMenuOpen(false)
+      }
+    }
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setIsMenuOpen(false)
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside)
+    document.addEventListener('touchstart', handleClickOutside)
+    window.addEventListener('keydown', handleKeyDown)
+    return () => {
+      document.removeEventListener('mousedown', handleClickOutside)
+      document.removeEventListener('touchstart', handleClickOutside)
+      window.removeEventListener('keydown', handleKeyDown)
+    }
+  }, [isMenuOpen])
 
   const navigate = (id) => {
     onNavigate(id)
@@ -29,7 +51,7 @@ function Header({ currentPage, onNavigate }) {
 
   return (
     <header className={`site-header ${isScrolled ? 'scrolled' : ''}`}>
-      <nav className="navbar" aria-label="Navigasi utama">
+      <nav ref={navRef} className="navbar" aria-label="Navigasi utama">
         <button 
           className="brand" 
           onClick={() => navigate('beranda')}
@@ -41,14 +63,15 @@ function Header({ currentPage, onNavigate }) {
           </div>
           <div className="brand-title-group">
             <span className="brand-mark">AQ.</span>
-            <span className="brand-text">Portfolio.</span>
+            <span className="brand-text">Portofolio.</span>
           </div>
         </button>
 
         <button
+          type="button"
           className={`menu-toggle ${isMenuOpen ? 'active' : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle menu"
+          aria-label="Toggle menu navigasi"
           aria-expanded={isMenuOpen}
         >
           <span></span>
@@ -60,6 +83,7 @@ function Header({ currentPage, onNavigate }) {
           {menuItems.map(item => (
             <li key={item.id}>
               <button
+                type="button"
                 className={currentPage === item.id ? 'active' : ''}
                 onClick={() => navigate(item.id)}
               >

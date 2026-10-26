@@ -1,14 +1,7 @@
-import React, { useState, useMemo, useEffect } from 'react'
-import { createPortal } from 'react-dom'
+import React, { useState, useMemo } from 'react'
 import './Artifacts.css'
 import { generalArtifacts } from '../data/artifactsData'
-
-const categories = [
-  'Semua Artefak',
-  'Perangkat & Modul Ajar',
-  'Media Pembelajaran & Asesmen',
-  'Praktik & Kepemimpinan'
-]
+import PdfReviewModal, { IconGoogleDrive } from './PdfReviewModal'
 
 // Modern Minimalist SVG Icons
 const IconDoc = ({ size = 20, className = "" }) => (
@@ -20,38 +13,66 @@ const IconDoc = ({ size = 20, className = "" }) => (
   </svg>
 )
 
+const IconBook = ({ size = 20, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H20v20H6.5a2.5 2.5 0 0 1-2.5-2.5Z" />
+    <path d="M6 6h10" />
+    <path d="M6 10h10" />
+  </svg>
+)
+
+const IconSlides = ({ size = 20, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="3" width="20" height="14" rx="2" />
+    <line x1="8" y1="21" x2="16" y2="21" />
+    <line x1="12" y1="17" x2="12" y2="21" />
+    <polygon points="10 7 15 10 10 13 10 7" fill="currentColor" stroke="none" />
+  </svg>
+)
+
+const IconRouter = ({ size = 20, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <rect x="2" y="11" width="20" height="9" rx="2" />
+    <path d="M6 11V5" />
+    <path d="M18 11V5" />
+    <line x1="6" y1="15" x2="6.01" y2="15" strokeWidth="2.5" />
+    <line x1="10" y1="15" x2="10.01" y2="15" strokeWidth="2.5" />
+    <line x1="14" y1="15" x2="14.01" y2="15" strokeWidth="2.5" />
+    <line x1="18" y1="15" x2="18.01" y2="15" strokeWidth="2.5" />
+  </svg>
+)
+
+const IconColab = ({ size = 20, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+    <path
+      d="M7.5 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 3.18-1.32l2.64-2.64a4.5 4.5 0 1 1 3.18 1.32"
+      stroke="#F9AB00"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M16.5 16.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0-3.18 1.32l-2.64 2.64A4.5 4.5 0 0 1 7.5 12.78"
+      stroke="#E8710A"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+  </svg>
+)
+
+const IconCodeNotebook = ({ size = 20, className = "" }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="3" />
+    <polyline points="9 9 6 12 9 15" />
+    <polyline points="15 9 18 12 15 15" />
+    <line x1="13" y1="8" x2="11" y2="16" />
+  </svg>
+)
+
 const IconCheck = ({ size = 14, className = "" }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <polyline points="20 6 9 17 4 12" />
-  </svg>
-)
-
-const IconCopy = ({ size = 16, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <rect x="9" y="9" width="13" height="13" rx="2" ry="2" />
-    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1" />
-  </svg>
-)
-
-const IconClose = ({ size = 18, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <line x1="18" y1="6" x2="6" y2="18" />
-    <line x1="6" y1="6" x2="18" y2="18" />
-  </svg>
-)
-
-const IconArrowRight = ({ size = 14, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <line x1="5" y1="12" x2="19" y2="12" />
-    <polyline points="12 5 19 12 12 19" />
-  </svg>
-)
-
-const IconPrinter = ({ size = 16, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <polyline points="6 9 6 2 18 2 18 9" />
-    <path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2" />
-    <rect x="6" y="14" width="12" height="8" />
   </svg>
 )
 
@@ -71,78 +92,43 @@ const IconExternal = ({ size = 14, className = "" }) => (
   </svg>
 )
 
-function Artifacts({ onNavigate }) {
-  const [activeCategory, setActiveCategory] = useState('Semua Artefak')
-  const [searchQuery, setSearchQuery] = useState('')
-  const [selectedArtifact, setSelectedArtifact] = useState(null)
-  const [copiedState, setCopiedState] = useState(false)
+function renderArtifactIcon(iconType) {
+  switch (iconType) {
+    case 'colab':
+      return <IconColab size={20} />
+    case 'notebook':
+    case 'json':
+      return <IconCodeNotebook size={20} />
+    case 'netlab':
+      return <IconRouter size={20} />
+    case 'slides':
+      return <IconSlides size={20} />
+    case 'book':
+      return <IconBook size={20} />
+    default:
+      return <IconDoc size={20} />
+  }
+}
 
-  // Manage body scroll lock when modal is open
-  useEffect(() => {
-    const handleKeyDown = (e) => {
-      if (e.key === 'Escape') {
-        setSelectedArtifact(null)
-      }
-    }
-    if (selectedArtifact) {
-      window.addEventListener('keydown', handleKeyDown)
-      document.body.classList.add('modal-open')
-      document.body.style.overflow = 'hidden'
-    } else {
-      document.body.classList.remove('modal-open')
-      document.body.style.overflow = ''
-    }
-    return () => {
-      window.removeEventListener('keydown', handleKeyDown)
-      document.body.classList.remove('modal-open')
-      document.body.style.overflow = ''
-    }
-  }, [selectedArtifact])
+function Artifacts() {
+  const [searchQuery, setSearchQuery] = useState('')
+  const [previewDoc, setPreviewDoc] = useState(null)
 
   const filteredArtifacts = useMemo(() => {
+    if (!searchQuery.trim()) return generalArtifacts
+
+    const query = searchQuery.toLowerCase()
     return generalArtifacts.filter((item) => {
-      const matchCategory =
-        activeCategory === 'Semua Artefak' || item.category === activeCategory
-
-      if (!matchCategory) return false
-
-      if (!searchQuery.trim()) return true
-
-      const query = searchQuery.toLowerCase()
       const inTitle = item.title.toLowerCase().includes(query)
-      const inCode = item.code ? item.code.toLowerCase().includes(query) : false
       const inSummary = item.summary.toLowerCase().includes(query)
       const inNumber = item.number.toLowerCase().includes(query)
+      const inCategory = item.category?.toLowerCase().includes(query)
       const inHighlights = item.highlights?.some((h) =>
         h.toLowerCase().includes(query)
       )
-
-      return inTitle || inCode || inSummary || inNumber || inHighlights
+      return inTitle || inSummary || inNumber || inCategory || inHighlights
     })
-  }, [activeCategory, searchQuery])
-
-  const handleCopyText = () => {
-    if (!selectedArtifact) return
-
-    let textToCopy = `${selectedArtifact.title}
-Kode: ${selectedArtifact.code || selectedArtifact.number}
-Mata Kuliah: ${selectedArtifact.course} (${selectedArtifact.semester})
-Penyusun: ${selectedArtifact.author || 'Asyhar Qowiim'}
-
-Ringkasan:
-${selectedArtifact.summary}\n\n`
-
-    if (selectedArtifact.components) {
-      textToCopy += selectedArtifact.components
-        .map((c) => `--- ${c.title} ---\n${c.content}`)
-        .join('\n\n')
-    }
-
-    navigator.clipboard?.writeText(textToCopy).then(() => {
-      setCopiedState(true)
-      setTimeout(() => setCopiedState(false), 2500)
-    })
-  }
+  }, [searchQuery])
 
   return (
     <section id="artifak" className="section artifacts-section">
@@ -151,25 +137,13 @@ ${selectedArtifact.summary}\n\n`
         <span className="section-eyebrow">07 · ARTIFAK DAN BUKTI BELAJAR</span>
         <h2>Arsip Dokumen, Karya, & Bukti Pembelajaran PPG</h2>
         <p>
-          Dokumentasi artefak operasional perkuliahan dan praktik lapangan: Modul Ajar Berdiferensiasi, Perangkat Pembelajaran Sosial Emosional (PSE), Media Simulasi Cisco Packet Tracer, Instrumen Asesmen Autentik, serta Laporan Praktik Terbaik (Best Practice).
+          Kumpulan modul ajar, materi pembelajaran, media praktik Google Colab, serta karya inovasi simulasi jaringan NetLab dari pelaksanaan PPL Mandiri di SMAN 11 Yogyakarta dan Seminar PPG.
         </p>
       </div>
 
-      {/* Controls Bar: Filters & Search */}
-      <div className="artifacts-controls-bar">
-        <div className="artifacts-filter-group" role="tablist" aria-label="Filter kategori artefak">
-          {categories.map((cat) => (
-            <button
-              key={cat}
-              className={`filter-tab ${activeCategory === cat ? 'active' : ''}`}
-              onClick={() => setActiveCategory(cat)}
-            >
-              {cat}
-            </button>
-          ))}
-        </div>
-
-        <div className="artifacts-search-box">
+      {/* Search Bar Only (Tabs Removed) */}
+      <div className="artifacts-controls-bar" style={{ justifyContent: 'flex-end' }}>
+        <div className="artifacts-search-box" style={{ width: '100%', maxWidth: '380px' }}>
           <svg
             className="search-icon-svg"
             width="18"
@@ -186,7 +160,7 @@ ${selectedArtifact.summary}\n\n`
           </svg>
           <input
             type="text"
-            placeholder="Cari modul, media, asesmen..."
+            placeholder="Cari modul ajar, materi, media Colab, NetLab..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             aria-label="Cari artefak"
@@ -201,18 +175,13 @@ ${selectedArtifact.summary}\n\n`
             <article key={artifact.id} className="artifact-card">
               <div className="card-topline">
                 <span className="card-category-badge">{artifact.number}</span>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-                  {artifact.jsonUrl && (
-                    <span style={{ fontSize: '0.72rem', background: '#ecfdf5', color: '#059669', border: '1px solid #a7f3d0', padding: '2px 8px', borderRadius: '6px', fontWeight: '700' }}>
-                      JSON NetLab
-                    </span>
-                  )}
-                  <span style={{ fontSize: '0.75rem', color: '#64748b', fontWeight: '600' }}>{artifact.semester}</span>
-                </div>
+                <span style={{ fontSize: '0.75rem', color: 'rgba(255, 255, 255, 0.65)', fontWeight: '600' }}>
+                  {artifact.semester}
+                </span>
               </div>
 
               <div className="card-icon-wrap">
-                <IconDoc size={22} />
+                {renderArtifactIcon(artifact.iconType)}
               </div>
 
               <h3 className="card-title">{artifact.title}</h3>
@@ -220,7 +189,7 @@ ${selectedArtifact.summary}\n\n`
 
               {artifact.highlights && artifact.highlights.length > 0 && (
                 <ul className="card-highlights-preview">
-                  {artifact.highlights.slice(0, 3).map((item, idx) => (
+                  {artifact.highlights.map((item, idx) => (
                     <li key={idx}>
                       <span className="bullet-check">
                         <IconCheck size={11} />
@@ -231,17 +200,88 @@ ${selectedArtifact.summary}\n\n`
                 </ul>
               )}
 
-              <div className="card-footer-action">
-                <button
-                  className="card-open-btn"
-                  onClick={() => setSelectedArtifact(artifact)}
-                  aria-label={`Buka ${artifact.title}`}
-                >
-                  <span>Buka Detail Dokumen</span>
-                  <span className="arrow-move">
-                    <IconArrowRight size={14} />
-                  </span>
-                </button>
+              <div className="card-footer-action" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
+                {artifact.type === 'document' && (
+                  <div style={{ display: 'flex', gap: '8px', width: '100%' }}>
+                    <button
+                      type="button"
+                      className="card-open-btn"
+                      style={{ flex: 1 }}
+                      onClick={() => setPreviewDoc(artifact)}
+                    >
+                      <IconGoogleDrive size={15} />
+                      <span>Preview Dokumen</span>
+                    </button>
+                    {artifact.downloadUrl && (
+                      <a
+                        href={artifact.downloadUrl}
+                        download={artifact.fileName}
+                        className="card-open-btn"
+                        style={{
+                          width: 'auto',
+                          padding: '10px 14px',
+                          background: 'rgba(52, 211, 153, 0.16)',
+                          borderColor: 'rgba(52, 211, 153, 0.4)',
+                          color: '#34d399',
+                          textDecoration: 'none'
+                        }}
+                        title="Unduh File"
+                      >
+                        <IconDownload size={16} />
+                      </a>
+                    )}
+                  </div>
+                )}
+
+                {artifact.type === 'external' && (
+                  <a
+                    href={artifact.externalUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="card-open-btn"
+                    style={{ textDecoration: 'none' }}
+                  >
+                    {artifact.iconType === 'colab' || artifact.iconType === 'notebook' ? (
+                      <IconColab size={15} />
+                    ) : (
+                      <IconExternal size={14} />
+                    )}
+                    <span>{artifact.buttonLabel || 'Buka Tautan'}</span>
+                    <IconExternal size={13} />
+                  </a>
+                )}
+
+                {artifact.type === 'json' && (
+                  <div style={{ display: 'flex', gap: '8px', width: '100%', flexWrap: 'wrap' }}>
+                    <a
+                      href={artifact.jsonUrl}
+                      download={artifact.jsonFileName || 'produk-karya-inovasi.json'}
+                      className="card-open-btn"
+                      style={{
+                        flex: 1,
+                        textDecoration: 'none',
+                        background: 'rgba(52, 211, 153, 0.2)',
+                        borderColor: 'rgba(52, 211, 153, 0.45)',
+                        color: '#6ee7b7'
+                      }}
+                    >
+                      <IconDownload size={15} />
+                      <span>Unduh File JSON</span>
+                    </a>
+                    {artifact.netlabUrl && (
+                      <a
+                        href={artifact.netlabUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="card-open-btn"
+                        style={{ flex: 1, textDecoration: 'none' }}
+                      >
+                        <IconExternal size={14} />
+                        <span>Buka NetLab</span>
+                      </a>
+                    )}
+                  </div>
+                )}
               </div>
             </article>
           ))}
@@ -252,187 +292,25 @@ ${selectedArtifact.summary}\n\n`
             <IconDoc size={32} />
           </div>
           <h4>Tidak ada artefak yang cocok</h4>
-          <p>Coba kata kunci pencarian lain atau pilih kategori "Semua Artefak".</p>
+          <p>Coba kata kunci pencarian lain.</p>
           <button
             className="btn btn-secondary"
-            onClick={() => {
-              setActiveCategory('Semua Artefak')
-              setSearchQuery('')
-            }}
+            onClick={() => setSearchQuery('')}
           >
-            Reset Filter
+            Reset Pencarian
           </button>
         </div>
       )}
 
-      {/* Modal / Detailed Document Viewer */}
-      {selectedArtifact &&
-        createPortal(
-          <div
-            className="artifact-modal-backdrop"
-            onClick={() => setSelectedArtifact(null)}
-            role="dialog"
-            aria-modal="true"
-          >
-            <div
-              className="artifact-modal-content"
-              onClick={(e) => e.stopPropagation()}
-            >
-              {/* Modal Header */}
-              <div className="modal-header-bar">
-                <div className="modal-header-title-block">
-                  <div className="modal-meta-tags">
-                    <span className="modal-category-tag">{selectedArtifact.category}</span>
-                    {selectedArtifact.number && (
-                      <span className="modal-category-tag modal-number-tag">{selectedArtifact.number}</span>
-                    )}
-                  </div>
-                  <h2>{selectedArtifact.title}</h2>
-                  {selectedArtifact.code && (
-                    <p className="modal-subtitle">Kode Dokumen: {selectedArtifact.code}</p>
-                  )}
-                </div>
-
-                <div className="modal-header-actions">
-                  <button
-                    className="modal-header-copy-btn"
-                    onClick={handleCopyText}
-                    title="Salin isi artefak"
-                  >
-                    <IconCopy size={15} />
-                    <span>Salin</span>
-                  </button>
-                  <button
-                    className="modal-close-btn"
-                    onClick={() => setSelectedArtifact(null)}
-                    aria-label="Tutup jendela dokumen"
-                  >
-                    <IconClose size={18} />
-                    <span className="close-label">Tutup</span>
-                  </button>
-                </div>
-              </div>
-
-              {/* Modal Body */}
-              <div className="modal-scrollable-body">
-                {/* Meta Grid */}
-                <div className="modal-info-grid">
-                  <div className="info-box">
-                    <span className="info-label">Mata Kuliah</span>
-                    <strong>{selectedArtifact.course}</strong>
-                  </div>
-                  <div className="info-box">
-                    <span className="info-label">Semester / Periode</span>
-                    <strong>{selectedArtifact.semester} • {selectedArtifact.date}</strong>
-                  </div>
-                  <div className="info-box">
-                    <span className="info-label">Penyusun</span>
-                    <strong>{selectedArtifact.author || 'Asyhar Qowiim'}</strong>
-                  </div>
-                  {selectedArtifact.status && (
-                    <div className="info-box">
-                      <span className="info-label">Status Validasi</span>
-                      <strong style={{ color: '#059669' }}>{selectedArtifact.status}</strong>
-                    </div>
-                  )}
-                </div>
-
-                {/* Summary */}
-                <div className="modal-summary-box">
-                  <h4>Deskripsi & Ruang Lingkup Dokumen</h4>
-                  <p>{selectedArtifact.summary}</p>
-                </div>
-
-                {/* Highlights */}
-                {selectedArtifact.highlights && (
-                  <div style={{ marginBottom: '24px' }}>
-                    <h4 style={{ color: '#0f2240', marginBottom: '12px', fontSize: '0.95rem' }}>Sorotan Fitur & Keunggulan</h4>
-                    <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '8px' }}>
-                      {selectedArtifact.highlights.map((h, idx) => (
-                        <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '8px', fontSize: '0.9rem', color: '#334155' }}>
-                          <span style={{ color: '#059669', marginTop: '2px' }}><IconCheck size={14} /></span>
-                          <span>{h}</span>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Components */}
-                {selectedArtifact.components && selectedArtifact.components.length > 0 && (
-                  <div>
-                    <h4 style={{ color: '#0f2240', marginBottom: '12px', fontSize: '0.95rem' }}>Uraian Komponen Dokumen</h4>
-                    {selectedArtifact.components.map((comp, idx) => (
-                      <div key={idx} className="component-card">
-                        <h5>
-                          <span>▫</span>
-                          <span>{comp.title}</span>
-                        </h5>
-                        <p>{comp.content}</p>
-                      </div>
-                    ))}
-                  </div>
-                )}
-              </div>
-
-              {/* Modal Actions Footer */}
-              <div className="modal-actions-bar">
-                <div className="modal-action-btn-group">
-                  {selectedArtifact.jsonUrl && (
-                    <>
-                      <a
-                        href={selectedArtifact.jsonUrl}
-                        download={selectedArtifact.jsonFileName || 'produk-karya-inovasi.json'}
-                        className="modal-copy-btn"
-                        style={{ textDecoration: 'none', background: '#059669', color: '#ffffff', borderColor: '#059669', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
-                      >
-                        <IconDownload size={14} />
-                        <span>Unduh File JSON</span>
-                      </a>
-                      <a
-                        href={selectedArtifact.netlabUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="modal-copy-btn"
-                        style={{ textDecoration: 'none', background: '#0284c7', color: '#ffffff', borderColor: '#0284c7', display: 'inline-flex', alignItems: 'center', gap: '6px' }}
-                      >
-                        <IconExternal size={14} />
-                        <span>Buka NetLab Simulator</span>
-                      </a>
-                    </>
-                  )}
-                  <button className="modal-copy-btn" onClick={handleCopyText}>
-                    <IconCopy size={15} />
-                    <span>Salin Ringkasan</span>
-                  </button>
-                  <button
-                    className="modal-print-btn"
-                    onClick={() => window.print()}
-                  >
-                    <IconPrinter size={15} />
-                    <span>Cetak</span>
-                  </button>
-                  {copiedState && (
-                    <span className="copy-toast">
-                      <IconCheck size={14} />
-                      <span>Berhasil disalin!</span>
-                    </span>
-                  )}
-                </div>
-
-                <div className="modal-footer-right-group">
-                  <button
-                    className="modal-done-btn"
-                    onClick={() => setSelectedArtifact(null)}
-                  >
-                    Tutup Dokumen
-                  </button>
-                </div>
-              </div>
-            </div>
-          </div>,
-          document.body
-        )}
+      {/* Fullscreen Document Preview Modal */}
+      <PdfReviewModal
+        isOpen={Boolean(previewDoc)}
+        onClose={() => setPreviewDoc(null)}
+        gdriveUrl={previewDoc?.gdriveUrl || ''}
+        pdfUrl={previewDoc?.downloadUrl || ''}
+        title={previewDoc?.title || 'Dokumen Artefak'}
+        fileName={previewDoc?.fileName || 'dokumen.pdf'}
+      />
     </section>
   )
 }

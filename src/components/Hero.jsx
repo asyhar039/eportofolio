@@ -25,7 +25,7 @@ function Hero({ onNavigate }) {
           <div className="hero-program-badge">
             <img src="/assets/logo-ppg-calon-guru.jpeg" alt="Logo PPG Calon Guru" className="program-badge-img" />
             <div className="program-badge-info">
-              <span className="program-badge-title">PPG Calon Guru • Gelombang 2 Tahun 2026</span>
+              <span className="program-badge-title">PPG Calon Guru • Angkatan 3 Tahun 2025</span>
               <span className="program-badge-sub">Universitas Negeri Yogyakarta • Bidang Studi Informatika</span>
             </div>
           </div>

@@ -242,43 +242,69 @@ function Seminar() {
 
     if (selectedLk.lk1Sections) {
       const lk1 = selectedLk.lk1Sections
-      textToCopy += `=== VISI PENDIDIKAN INDONESIA ===\n${lk1.visiPendidikan.content}\n\n`
-      textToCopy += `=== VISI CALON GURU ===\n${lk1.visiCalonGuru.content}\n\n`
-      textToCopy += `=== 5 LANGKAH STRATEGIS KONKRET ===\n`
+      textToCopy += `=== ${lk1.visiPendidikan.title} ===\n${lk1.visiPendidikan.content}\n\n`
+      textToCopy += `=== ${lk1.visiCalonGuru.title} ===\n${lk1.visiCalonGuru.content}\n\n`
+      textToCopy += `=== Langkah-langkah konkret yang akan dilakukan untuk mencapai visi tersebut ===\n`
       lk1.langkahStrategis.forEach((ls) => {
-        textToCopy += `${ls.no}. ${ls.judul}: ${ls.uraian}\n\n`
+        textToCopy += `• ${ls.judul}: ${ls.uraian}\n\n`
       })
     } else if (selectedLk.topics && selectedLk.topics.length > 0) {
       const activeTopic = selectedLk.topics[activeTopicIndex]
       textToCopy += `=== ${activeTopic.topicNumber}: ${activeTopic.title} ===\n\n`
-      textToCopy += `A. Refleksi 4C:\n`
-      textToCopy += `1. Connection: ${activeTopic.reflection4C?.connection?.answer}\n\n`
-      textToCopy += `2. Challenge: ${activeTopic.reflection4C?.challenge?.answer}\n\n`
-      textToCopy += `3. Concept: ${activeTopic.reflection4C?.concept?.answer}\n\n`
-      textToCopy += `4. Change: ${activeTopic.reflection4C?.change?.answer}\n\n`
+      textToCopy += `A. Refleksi Pengalaman Belajar Dalam Konteks Peran Pendidik (Connection, Challenge, Concept, Change):\n`
+      textToCopy += `1. Connection (Keterkaitan): ${activeTopic.reflection4C?.connection?.answer}\n\n`
+      textToCopy += `2. Challenge (Tantangan): ${activeTopic.reflection4C?.challenge?.answer}\n\n`
+      textToCopy += `3. Concept (Konsep Utama): ${activeTopic.reflection4C?.concept?.answer}\n\n`
+      textToCopy += `4. Change (Perubahan): ${activeTopic.reflection4C?.change?.answer}\n\n`
+      if (activeTopic.artifactAnalysis) {
+        textToCopy += `B. Analisis Artefak Pembelajaran (Bukti Dukung Hasil Refleksi):\n`
+        activeTopic.artifactAnalysis.forEach((art) => {
+          textToCopy += `- ${art.label} (${art.question}):\n${art.answer}\n\n`
+        })
+      }
     } else if (selectedLk.lk3Sections) {
       const s = selectedLk.lk3Sections
-      textToCopy += `=== 1. Pandangan Pendidikan Indonesia ===\n`
+      textToCopy += `=== ${s.section1.title} ===\n`
       textToCopy += s.section1.paragraphs.join('\n\n') + '\n\n'
-      textToCopy += `=== 2. Upaya & Langkah Strategis ===\n`
-      s.section2.steps.forEach((st, idx) => {
-        textToCopy += `${idx + 1}. ${st.title}: ${st.description}\n`
+      textToCopy += `=== ${s.section2.title} ===\n${s.section2.lead}\n`
+      s.section2.steps.forEach((st) => {
+        textToCopy += `• ${st.title}: ${st.description}\n`
       })
-      textToCopy += `\n=== 3. Rencana Aksi Karier Guru ===\n`
+      textToCopy += `\n=== ${s.section3.title} ===\n${s.section3.lead}\n`
       s.section3.actionTable.forEach((row) => {
-        textToCopy += `${row.no}. ${row.program}\n   Aksi: ${row.description}\n   Indikator: ${row.indicator}\n\n`
+        textToCopy += `${row.no}. ${row.program}\n   Deskripsi Aksi: ${row.description}\n   Indikator: ${row.indicator}\n\n`
       })
     } else if (selectedLk.lk4Sections) {
       const lk4 = selectedLk.lk4Sections
-      textToCopy += `=== IDENTITAS KARYA INOVATIF ===\nJudul: ${lk4.identitas.judulKarya}\nSasaran: ${lk4.identitas.targetFase} (${lk4.identitas.elemen})\nAlokasi Waktu: ${lk4.identitas.alokasiWaktu}\n\n`
-      textToCopy += `=== GAGASAN & RISET INOVASI ===\n${lk4.gagasanInovasi.latarBelakang}\n\nSolusi: ${lk4.gagasanInovasi.gagasanSolutif}\n\n`
-      textToCopy += `=== SKENARIO KASUS MINIMARKET BERKAH ===\n${lk4.skenarioKasus.narasi}\n\n`
-      textToCopy += `=== 5 SINTAKS PROBLEM-BASED LEARNING (PBL) ===\n`
-      lk4.sintaksPBL.forEach((s) => {
-        textToCopy += `${s.sintaks} (${s.alokasi}):\n- Guru: ${s.aktivitasGuru}\n- Siswa: ${s.aktivitasSiswa}\n- Peran Teknologi: ${s.peranTeknologi}\n\n`
+      textToCopy += `=== I. IDENTITAS KARYA ===\n`
+      lk4.identitasKarya?.forEach((item) => {
+        textToCopy += `${item.no}. ${item.label}: ${item.isi}\n`
       })
-      textToCopy += `=== EVALUASI 3K ===\nKebaruan: ${lk4.evaluasiInovasi.kebaruan.poin.join('; ')}\nKreativitas: ${lk4.evaluasiInovasi.kreativitas.poin.join('; ')}\nKebermanfaatan: ${lk4.evaluasiInovasi.kebermanfaatan.poin.join('; ')}\n\n`
-      textToCopy += `=== DAFTAR PUSTAKA ===\n`
+      textToCopy += `\n=== II. GAGASAN & RISET INOVASI ===\n1. Uraian Tantangan yang Ditemukan:\n`
+      lk4.gagasanRiset?.tantangan?.forEach((t) => {
+        textToCopy += `- ${t.judul}: ${t.uraian}\n`
+      })
+      textToCopy += `\n2. Gagasan Solusi Inovatif:\n`
+      lk4.gagasanRiset?.solusiInovatif?.forEach((sol) => {
+        textToCopy += `- ${sol.judul}: ${sol.uraian}\n`
+      })
+      textToCopy += `\n3. Hasil Riset Sederhana & Landasan Teori Penguat:\n`
+      lk4.gagasanRiset?.hasilRiset?.forEach((r) => {
+        textToCopy += `- ${r.judul}: ${r.uraian}\n`
+      })
+      textToCopy += `\n=== III. RANCANGAN & IMPLEMENTASI ===\n1. Prototipe Karya Inovasi (Desain Antarmuka NetLab & Skenario):\n`
+      lk4.rancanganImplementasi?.prototipeItems?.forEach((p) => {
+        textToCopy += `• ${p.judul}: ${p.uraian}\n`
+      })
+      textToCopy += `\n2. Rencana Implementasi Kelas (5 Sintaks PBL - 2 JP / 90 Menit):\n`
+      lk4.rancanganImplementasi?.tahapanImplementasi?.forEach((th) => {
+        textToCopy += `${th.bagian}\n`
+        th.faseList.forEach((f) => {
+          textToCopy += `- ${f.fase}: ${f.uraian}\n`
+        })
+      })
+      textToCopy += `\n=== IV. EVALUASI KARYA INOVATIF ===\n${lk4.evaluasiInovasi.kebaruan.title}:\n${lk4.evaluasiInovasi.kebaruan.poin.join('\n')}\n\n${lk4.evaluasiInovasi.kreativitas.title}:\n${lk4.evaluasiInovasi.kreativitas.poin.join('\n')}\n\n${lk4.evaluasiInovasi.kebermanfaatan.title}:\n${lk4.evaluasiInovasi.kebermanfaatan.poin.join('\n')}\n\n`
+      textToCopy += `=== V. DAFTAR PUSTAKA & KUTIPAN JURNAL LENGKAP ===\n`
       lk4.daftarPustaka.forEach((dp) => {
         textToCopy += `- ${dp.sitasi}\n`
       })
@@ -872,7 +898,7 @@ function Seminar() {
                               <button
                                 key={idx}
                                 type="button"
-                                onClick={() => openGdriveReview('karya-slide', item.gdriveUrl, item.pdfTitle || item.title, item.pdfFileName)}
+                                onClick={() => openGdriveReview('karya-slide', item.gdriveUrl, item.pdfTitle || item.title, item.pdfFileName, item.pdfUrl)}
                                 style={{
                                   display: 'inline-flex',
                                   alignItems: 'center',
@@ -900,7 +926,7 @@ function Seminar() {
                               <button
                                 key={idx}
                                 type="button"
-                                onClick={() => openGdriveReview('karya-modul', item.modulAjarGdriveUrl, item.modulAjarTitle, item.modulAjarFileName)}
+                                onClick={() => openGdriveReview('karya-modul', item.modulAjarGdriveUrl, item.modulAjarTitle, item.modulAjarFileName, item.modulAjarPdfUrl)}
                                 style={{
                                   display: 'inline-flex',
                                   alignItems: 'center',
@@ -1183,7 +1209,7 @@ function Seminar() {
                       {slidePresentasiData.summary}
                     </p>
 
-                    {/* Actions: Hanya Preview & Unduh File */}
+                    {/* Actions: Preview, Buka di Google Drive & Unduh File */}
                     <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                       <button
                         type="button"
@@ -1206,6 +1232,28 @@ function Seminar() {
                         <IconGoogleDrive size={18} />
                         <span>Preview</span>
                       </button>
+
+                      <a
+                        href={slidePresentasiData.gdriveUrl || 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing'}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          background: 'rgba(56, 189, 248, 0.14)',
+                          border: '1px solid rgba(56, 189, 248, 0.35)',
+                          color: '#38bdf8',
+                          borderRadius: '12px',
+                          padding: '12px 24px',
+                          fontSize: '0.9rem',
+                          fontWeight: '700',
+                          textDecoration: 'none'
+                        }}
+                      >
+                        <IconExternal size={16} />
+                        <span>Buka di Google Drive</span>
+                      </a>
 
                       <a
                         href={slidePresentasiData.pdfUrl || '/assets/seminar/karya-inovasi.pdf'}
@@ -1237,7 +1285,7 @@ function Seminar() {
                         <IconPdf size={18} style={{ color: '#38bdf8' }} />
                         <span style={{ color: '#ffffff', fontWeight: '700', fontSize: '0.92rem' }}>{slidePresentasiData.pdfFileName || 'Slide Presentasi Karya Inovasi.pdf'}</span>
                       </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                         <button
                           type="button"
                           onClick={() => openGdriveReview(slidePresentasiData.id, slidePresentasiData.gdriveUrl, slidePresentasiData.title, slidePresentasiData.pdfFileName, slidePresentasiData.pdfUrl)}
@@ -1259,6 +1307,27 @@ function Seminar() {
                           <IconGoogleDrive size={14} />
                           <span>Preview</span>
                         </button>
+                        <a
+                          href={slidePresentasiData.gdriveUrl || 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing'}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            background: 'rgba(56, 189, 248, 0.14)',
+                            border: '1px solid rgba(56, 189, 248, 0.35)',
+                            color: '#38bdf8',
+                            padding: '6px 14px',
+                            borderRadius: '8px',
+                            fontSize: '0.8rem',
+                            fontWeight: '700',
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px'
+                          }}
+                        >
+                          <IconExternal size={14} />
+                          <span>Google Drive</span>
+                        </a>
                         <a
                           href={slidePresentasiData.pdfUrl || '/assets/seminar/karya-inovasi.pdf'}
                           download={slidePresentasiData.pdfFileName || 'Slide Presentasi Karya Inovasi.pdf'}
@@ -1282,7 +1351,7 @@ function Seminar() {
                       </div>
                     </div>
                     <iframe
-                      src="https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/preview"
+                      src="https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/preview"
                       style={{ width: '100%', height: '640px', border: 'none', display: 'block' }}
                       title="Preview Slide Presentasi"
                       allow="autoplay"
@@ -1386,13 +1455,13 @@ function Seminar() {
                         <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Nama Mahasiswa</span>
                         <strong style={{ color: '#ffffff', fontSize: '0.95rem' }}>{selectedLk.lk1Sections.identitasDiri.nama}</strong>
                       </div>
-                      <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
-                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Nomor Induk Mahasiswa (NIM)</span>
+                      <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>NIM</span>
                         <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.95rem', fontFamily: 'Geist Mono, monospace' }}>{selectedLk.lk1Sections.identitasDiri.nim}</strong>
                       </div>
                       <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
-                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Program Studi & Perguruan Tinggi</span>
-                        <strong style={{ color: '#ffffff', fontSize: '0.95rem' }}>{selectedLk.lk1Sections.identitasDiri.bidangStudi} ({selectedLk.lk1Sections.identitasDiri.perguruanTinggi})</strong>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Bidang Studi</span>
+                        <strong style={{ color: '#ffffff', fontSize: '0.95rem' }}>{selectedLk.lk1Sections.identitasDiri.bidangStudi}</strong>
                       </div>
                     </div>
 
@@ -1408,13 +1477,18 @@ function Seminar() {
                       <p style={{ color: 'rgba(255, 255, 255, 0.85)', lineHeight: '1.65', margin: 0, fontSize: '0.92rem' }}>{selectedLk.lk1Sections.visiCalonGuru.content}</p>
                     </div>
 
-                    {/* 5 Langkah Strategis */}
-                    <h4 style={{ color: '#ffffff', margin: '0 0 16px', fontSize: '1.05rem', fontWeight: '700' }}>5 Langkah Strategis Konkret Menjadi Guru Profesional</h4>
+                    {/* Langkah-langkah Konkret */}
+                    <h4 style={{ color: '#ffffff', margin: '0 0 8px', fontSize: '1.05rem', fontWeight: '700' }}>Langkah-langkah konkret yang akan dilakukan untuk mencapai visi tersebut</h4>
+                    {selectedLk.lk1Sections.langkahStrategisLead && (
+                      <p style={{ color: 'rgba(255, 255, 255, 0.78)', fontSize: '0.9rem', margin: '0 0 14px', lineHeight: '1.6' }}>
+                        {selectedLk.lk1Sections.langkahStrategisLead}
+                      </p>
+                    )}
                     <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                       {selectedLk.lk1Sections.langkahStrategis.map((ls) => (
                         <div key={ls.no} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '14px', padding: '16px 20px' }}>
                           <strong style={{ color: 'var(--accent-cyan)', display: 'block', marginBottom: '6px', fontSize: '0.95rem' }}>
-                            {ls.no}. {ls.judul}
+                            • {ls.judul}
                           </strong>
                           <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.9rem', lineHeight: '1.6' }}>{ls.uraian}</p>
                         </div>
@@ -1426,6 +1500,20 @@ function Seminar() {
                 {/* CASE 2: LK 2 Topics (Semester 1 & 2) */}
                 {selectedLk.topics && (
                   <div>
+                    {/* Identitas Mahasiswa & Mata Kuliah / Program */}
+                    {selectedLk.identitas && (
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '12px', marginBottom: '20px' }}>
+                        <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                          <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Nama Mahasiswa</span>
+                          <strong style={{ color: '#ffffff', fontSize: '0.95rem' }}>{selectedLk.identitas.namaMahasiswa}</strong>
+                        </div>
+                        <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                          <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Mata Kuliah / Program</span>
+                          <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.95rem' }}>{selectedLk.identitas.mataKuliahProgram}</strong>
+                        </div>
+                      </div>
+                    )}
+
                     {/* Topic selector tabs */}
                     <div style={{ display: 'flex', gap: '8px', overflowX: 'auto', paddingBottom: '12px', marginBottom: '22px' }}>
                       {selectedLk.topics.map((t, idx) => (
@@ -1468,67 +1556,74 @@ function Seminar() {
                             )}
                           </div>
 
-                          {/* 4C Cards */}
+                          {/* A. Refleksi 4C */}
                           {topic.reflection4C && (
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px', marginBottom: '26px' }}>
-                              {/* Connection */}
-                              <div style={{ background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.35)', borderRadius: '16px', padding: '18px' }}>
-                                <span style={{ background: 'rgba(56, 189, 248, 0.2)', color: '#38bdf8', padding: '4px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px' }}>
-                                  CONNECTION (Keterkaitan)
-                                </span>
-                                <p style={{ fontSize: '0.82rem', color: '#bae6fd', margin: '10px 0 6px', fontStyle: 'italic' }}>
-                                  {topic.reflection4C.connection?.question}
-                                </p>
-                                <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.65', margin: 0 }}>
-                                  {topic.reflection4C.connection?.answer}
-                                </p>
-                              </div>
+                            <div style={{ marginBottom: '26px' }}>
+                              <h4 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '1.05rem', fontWeight: '700' }}>
+                                A. Refleksi Pengalaman Belajar Dalam Konteks Peran Pendidik (Connection, Challenge, Concept, Change)
+                              </h4>
+                              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '16px' }}>
+                                {/* Connection */}
+                                <div style={{ background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.35)', borderRadius: '16px', padding: '18px' }}>
+                                  <span style={{ background: 'rgba(56, 189, 248, 0.2)', color: '#38bdf8', padding: '4px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px' }}>
+                                    CONNECTION (Keterkaitan)
+                                  </span>
+                                  <p style={{ fontSize: '0.82rem', color: '#bae6fd', margin: '10px 0 6px', fontStyle: 'italic' }}>
+                                    {topic.reflection4C.connection?.question}
+                                  </p>
+                                  <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.65', margin: 0 }}>
+                                    {topic.reflection4C.connection?.answer}
+                                  </p>
+                                </div>
 
-                              {/* Challenge */}
-                              <div style={{ background: 'rgba(251, 146, 60, 0.08)', border: '1px solid rgba(251, 146, 60, 0.35)', borderRadius: '16px', padding: '18px' }}>
-                                <span style={{ background: 'rgba(251, 146, 60, 0.2)', color: '#fbbf24', padding: '4px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px' }}>
-                                  CHALLENGE (Tantangan)
-                                </span>
-                                <p style={{ fontSize: '0.82rem', color: '#fed7aa', margin: '10px 0 6px', fontStyle: 'italic' }}>
-                                  {topic.reflection4C.challenge?.question}
-                                </p>
-                                <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.65', margin: 0 }}>
-                                  {topic.reflection4C.challenge?.answer}
-                                </p>
-                              </div>
+                                {/* Challenge */}
+                                <div style={{ background: 'rgba(251, 146, 60, 0.08)', border: '1px solid rgba(251, 146, 60, 0.35)', borderRadius: '16px', padding: '18px' }}>
+                                  <span style={{ background: 'rgba(251, 146, 60, 0.2)', color: '#fbbf24', padding: '4px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px' }}>
+                                    CHALLENGE (Tantangan)
+                                  </span>
+                                  <p style={{ fontSize: '0.82rem', color: '#fed7aa', margin: '10px 0 6px', fontStyle: 'italic' }}>
+                                    {topic.reflection4C.challenge?.question}
+                                  </p>
+                                  <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.65', margin: 0 }}>
+                                    {topic.reflection4C.challenge?.answer}
+                                  </p>
+                                </div>
 
-                              {/* Concept */}
-                              <div style={{ background: 'rgba(168, 85, 247, 0.08)', border: '1px solid rgba(168, 85, 247, 0.35)', borderRadius: '16px', padding: '18px' }}>
-                                <span style={{ background: 'rgba(168, 85, 247, 0.2)', color: '#c084fc', padding: '4px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px' }}>
-                                  CONCEPT (Konsep Utama)
-                                </span>
-                                <p style={{ fontSize: '0.82rem', color: '#e9d5ff', margin: '10px 0 6px', fontStyle: 'italic' }}>
-                                  {topic.reflection4C.concept?.question}
-                                </p>
-                                <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.65', margin: 0, whiteSpace: 'pre-line' }}>
-                                  {topic.reflection4C.concept?.answer}
-                                </p>
-                              </div>
+                                {/* Concept */}
+                                <div style={{ background: 'rgba(168, 85, 247, 0.08)', border: '1px solid rgba(168, 85, 247, 0.35)', borderRadius: '16px', padding: '18px' }}>
+                                  <span style={{ background: 'rgba(168, 85, 247, 0.2)', color: '#c084fc', padding: '4px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px' }}>
+                                    CONCEPT (Konsep Utama)
+                                  </span>
+                                  <p style={{ fontSize: '0.82rem', color: '#e9d5ff', margin: '10px 0 6px', fontStyle: 'italic' }}>
+                                    {topic.reflection4C.concept?.question}
+                                  </p>
+                                  <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.65', margin: 0, whiteSpace: 'pre-line' }}>
+                                    {topic.reflection4C.concept?.answer}
+                                  </p>
+                                </div>
 
-                              {/* Change */}
-                              <div style={{ background: 'rgba(52, 211, 153, 0.08)', border: '1px solid rgba(52, 211, 153, 0.35)', borderRadius: '16px', padding: '18px' }}>
-                                <span style={{ background: 'rgba(52, 211, 153, 0.2)', color: '#34d399', padding: '4px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px' }}>
-                                  CHANGE (Perubahan & Tindakan)
-                                </span>
-                                <p style={{ fontSize: '0.82rem', color: '#a7f3d0', margin: '10px 0 6px', fontStyle: 'italic' }}>
-                                  {topic.reflection4C.change?.question}
-                                </p>
-                                <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.65', margin: 0, whiteSpace: 'pre-line' }}>
-                                  {topic.reflection4C.change?.answer}
-                                </p>
+                                {/* Change */}
+                                <div style={{ background: 'rgba(52, 211, 153, 0.08)', border: '1px solid rgba(52, 211, 153, 0.35)', borderRadius: '16px', padding: '18px' }}>
+                                  <span style={{ background: 'rgba(52, 211, 153, 0.2)', color: '#34d399', padding: '4px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800', letterSpacing: '0.5px' }}>
+                                    CHANGE (Perubahan)
+                                  </span>
+                                  <p style={{ fontSize: '0.82rem', color: '#a7f3d0', margin: '10px 0 6px', fontStyle: 'italic' }}>
+                                    {topic.reflection4C.change?.question}
+                                  </p>
+                                  <p style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.9)', lineHeight: '1.65', margin: 0, whiteSpace: 'pre-line' }}>
+                                    {topic.reflection4C.change?.answer}
+                                  </p>
+                                </div>
                               </div>
                             </div>
                           )}
 
-                          {/* Artifact Analysis */}
+                          {/* B. Artifact Analysis */}
                           {topic.artifactAnalysis && (
                             <div style={{ marginTop: '24px' }}>
-                              <h4 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '1.05rem', fontWeight: '700' }}>Analisis Artefak Pembelajaran (Bukti Dukung Refleksi)</h4>
+                              <h4 style={{ color: '#ffffff', marginBottom: '14px', fontSize: '1.05rem', fontWeight: '700' }}>
+                                B. Analisis Artefak Pembelajaran (Bukti Dukung Hasil Refleksi)
+                              </h4>
                               <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px' }}>
                                 {topic.artifactAnalysis.map((art, aIdx) => (
                                   <div key={aIdx} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '14px', padding: '16px' }}>
@@ -1551,6 +1646,24 @@ function Seminar() {
                 {/* CASE 3: LK 3 Sections */}
                 {selectedLk.lk3Sections && (
                   <div>
+                    {/* Identitas Mahasiswa */}
+                    {selectedLk.lk3Sections.identitas && (
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '24px' }}>
+                        <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                          <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Nama Mahasiswa</span>
+                          <strong style={{ color: '#ffffff', fontSize: '0.95rem' }}>{selectedLk.lk3Sections.identitas.namaMahasiswa}</strong>
+                        </div>
+                        <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                          <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>NIM</span>
+                          <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.95rem', fontFamily: 'Geist Mono, monospace' }}>{selectedLk.lk3Sections.identitas.nim}</strong>
+                        </div>
+                        <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                          <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Program Studi / Bidang Studi</span>
+                          <strong style={{ color: '#ffffff', fontSize: '0.95rem' }}>{selectedLk.lk3Sections.identitas.programStudi}</strong>
+                        </div>
+                      </div>
+                    )}
+
                     {/* Section 1 */}
                     <div style={{ marginBottom: '26px' }}>
                       <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '12px', fontWeight: '700' }}>
@@ -1571,7 +1684,7 @@ function Seminar() {
                         {selectedLk.lk3Sections.section2.steps.map((st, stIdx) => (
                           <div key={stIdx} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '14px', padding: '16px 20px' }}>
                             <strong style={{ color: 'var(--accent-cyan)', display: 'block', marginBottom: '4px', fontSize: '0.95rem' }}>
-                              {stIdx + 1}. {st.title}
+                              • {st.title}
                             </strong>
                             <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.82)', fontSize: '0.9rem', lineHeight: '1.6' }}>{st.description}</p>
                           </div>
@@ -1579,7 +1692,7 @@ function Seminar() {
                       </div>
                     </div>
 
-                    {/* Section 3: Action Table */}
+                    {/* Section 3: Rencana Tindak Lanjut (RTL) */}
                     <div>
                       <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '6px', fontWeight: '700' }}>
                         {selectedLk.lk3Sections.section3.title}
@@ -1590,8 +1703,8 @@ function Seminar() {
                           <thead>
                             <tr style={{ background: 'rgba(29, 111, 165, 0.4)', color: '#ffffff' }}>
                               <th style={{ padding: '12px 14px', textAlign: 'center', width: '40px', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>No</th>
-                              <th style={{ padding: '12px 14px', textAlign: 'left', width: '35%', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>Program Aksi Karier</th>
-                              <th style={{ padding: '12px 14px', textAlign: 'left', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>Deskripsi & Indikator</th>
+                              <th style={{ padding: '12px 14px', textAlign: 'left', width: '35%', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>Rencana Tindak Lanjut (RTL)</th>
+                              <th style={{ padding: '12px 14px', textAlign: 'left', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>Deskripsi Aksi & Indikator Keberhasilan</th>
                             </tr>
                           </thead>
                           <tbody>
@@ -1612,157 +1725,164 @@ function Seminar() {
                   </div>
                 )}
 
-                {/* CASE 4: LK 4 Desain Karya Inovatif */}
+                {/* CASE 4: LK 4 Penyusunan Desain Karya Inovatif */}
                 {selectedLk.lk4Sections && (
                   <div>
-                    {/* Identitas Karya */}
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(210px, 1fr))', gap: '12px', marginBottom: '22px' }}>
-                      <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
-                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Penyusun / Mahasiswa</span>
-                        <strong style={{ color: '#ffffff', fontSize: '0.95rem' }}>{selectedLk.lk4Sections.identitas.namaMahasiswa}</strong>
+                    {/* Identitas Mahasiswa */}
+                    {selectedLk.lk4Sections.identitasMahasiswa && (
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '22px' }}>
+                        <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                          <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Nama</span>
+                          <strong style={{ color: '#ffffff', fontSize: '0.95rem' }}>{selectedLk.lk4Sections.identitasMahasiswa.nama}</strong>
+                        </div>
+                        <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                          <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>NIM</span>
+                          <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.95rem', fontFamily: 'Geist Mono, monospace' }}>{selectedLk.lk4Sections.identitasMahasiswa.nim}</strong>
+                        </div>
                       </div>
-                      <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
-                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Nomor Induk Mahasiswa</span>
-                        <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.95rem', fontFamily: 'Geist Mono, monospace' }}>{selectedLk.lk4Sections.identitas.nim}</strong>
-                      </div>
-                      <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
-                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Sasaran & Elemen</span>
-                        <strong style={{ color: '#ffffff', fontSize: '0.95rem' }}>{selectedLk.lk4Sections.identitas.targetFase} · {selectedLk.lk4Sections.identitas.elemen}</strong>
-                      </div>
-                      <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
-                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Alokasi Waktu Pembelajaran</span>
-                        <strong style={{ color: '#34d399', fontSize: '0.95rem' }}>{selectedLk.lk4Sections.identitas.alokasiWaktu}</strong>
-                      </div>
-                    </div>
+                    )}
 
-                    {/* Judul Karya Card */}
-                    <div style={{ background: 'linear-gradient(135deg, rgba(29, 111, 165, 0.3), rgba(0, 217, 255, 0.15))', border: '1px solid rgba(0, 217, 255, 0.35)', borderRadius: '16px', padding: '20px 24px', marginBottom: '24px' }}>
-                      <span style={{ background: 'rgba(0, 217, 255, 0.2)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 217, 255, 0.4)', padding: '4px 12px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '800' }}>
-                        KARYA INOVATIF PEMBELAJARAN
-                      </span>
-                      <h3 style={{ color: '#ffffff', fontSize: '1.25rem', margin: '10px 0 6px', fontWeight: '800' }}>
-                        {selectedLk.lk4Sections.identitas.judulKarya}
-                      </h3>
-                      <p style={{ color: 'rgba(255, 255, 255, 0.82)', margin: 0, fontSize: '0.9rem', lineHeight: '1.6' }}>
-                        {selectedLk.lk4Sections.identitas.bidangStudi} — {selectedLk.lk4Sections.identitas.perguruanTinggi}
-                      </p>
-                    </div>
-
-                    {/* Gagasan & Latar Belakang */}
+                    {/* I. IDENTITAS KARYA */}
                     <div style={{ marginBottom: '26px' }}>
                       <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '12px', fontWeight: '700' }}>
-                        A. Gagasan dan Landasan Riset Inovasi
+                        I. IDENTITAS KARYA
                       </h4>
-                      <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '14px', padding: '18px 20px', marginBottom: '14px' }}>
-                        <span style={{ color: '#f59e0b', fontSize: '0.8rem', fontWeight: '800', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Identifikasi Masalah di Lapangan</span>
-                        <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.9rem', lineHeight: '1.65', margin: '8px 0 0' }}>
-                          {selectedLk.lk4Sections.gagasanInovasi.latarBelakang}
-                        </p>
+                      <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                        {selectedLk.lk4Sections.identitasKarya?.map((item) => (
+                          <div key={item.no} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '12px', padding: '14px 18px' }}>
+                            <strong style={{ color: 'var(--accent-cyan)', display: 'block', marginBottom: '4px', fontSize: '0.92rem' }}>
+                              {item.no}. {item.label}:
+                            </strong>
+                            <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.9rem', lineHeight: '1.6' }}>{item.isi}</p>
+                          </div>
+                        ))}
                       </div>
-                      <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '14px', padding: '18px 20px', marginBottom: '14px' }}>
-                        <span style={{ color: 'var(--accent-cyan)', fontSize: '0.8rem', fontWeight: '800', letterSpacing: '0.5px', textTransform: 'uppercase' }}>Gagasan Solutif: Transisi ke Web NetLab</span>
-                        <p style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.9rem', lineHeight: '1.65', margin: '8px 0 0' }}>
-                          {selectedLk.lk4Sections.gagasanInovasi.gagasanSolutif}
-                        </p>
+                    </div>
+
+                    {/* II. GAGASAN & RISET INOVASI */}
+                    <div style={{ marginBottom: '26px' }}>
+                      <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '12px', fontWeight: '700' }}>
+                        II. GAGASAN & RISET INOVASI
+                      </h4>
+
+                      {/* 1. Uraian Tantangan yang Ditemukan */}
+                      <div style={{ marginBottom: '18px' }}>
+                        <h5 style={{ color: '#fbbf24', fontSize: '0.95rem', marginBottom: '10px', fontWeight: '700' }}>
+                          1. Uraian Tantangan yang Ditemukan
+                        </h5>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                          {selectedLk.lk4Sections.gagasanRiset?.tantangan?.map((t, idx) => (
+                            <div key={idx} style={{ background: 'rgba(251, 146, 60, 0.06)', border: '1px solid rgba(251, 146, 60, 0.25)', borderRadius: '12px', padding: '14px 18px' }}>
+                              <strong style={{ color: '#fde68a', display: 'block', marginBottom: '4px', fontSize: '0.9rem' }}>
+                                {t.judul}
+                              </strong>
+                              <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.88rem', lineHeight: '1.6' }}>{t.uraian}</p>
+                            </div>
+                          ))}
+                        </div>
                       </div>
 
-                      <div style={{ marginTop: '16px' }}>
-                        <span style={{ color: '#ffffff', fontSize: '0.88rem', fontWeight: '700', display: 'block', marginBottom: '10px' }}>4 Keunggulan Operasional NetLab:</span>
-                        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(250px, 1fr))', gap: '10px' }}>
-                          {selectedLk.lk4Sections.gagasanInovasi.keunggulanNetLab.map((adv, aIdx) => (
-                            <div key={aIdx} style={{ background: 'rgba(56, 189, 248, 0.06)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '10px', padding: '12px 14px', fontSize: '0.85rem', color: '#e0f2fe' }}>
-                              <strong style={{ color: 'var(--accent-cyan)', display: 'block', marginBottom: '4px' }}>Keunggulan #{aIdx + 1}</strong>
-                              {adv}
+                      {/* 2. Gagasan Solusi Inovatif */}
+                      <div style={{ marginBottom: '18px' }}>
+                        <h5 style={{ color: '#38bdf8', fontSize: '0.95rem', marginBottom: '10px', fontWeight: '700' }}>
+                          2. Gagasan Solusi Inovatif
+                        </h5>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                          {selectedLk.lk4Sections.gagasanRiset?.solusiInovatif?.map((sol, idx) => (
+                            <div key={idx} style={{ background: 'rgba(56, 189, 248, 0.06)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '12px', padding: '14px 18px' }}>
+                              <strong style={{ color: '#7dd3fc', display: 'block', marginBottom: '4px', fontSize: '0.9rem' }}>
+                                {sol.judul}
+                              </strong>
+                              <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.88rem', lineHeight: '1.6' }}>{sol.uraian}</p>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+
+                      {/* 3. Hasil Riset Sederhana & Landasan Teori Penguat */}
+                      <div>
+                        <h5 style={{ color: '#c084fc', fontSize: '0.95rem', marginBottom: '10px', fontWeight: '700' }}>
+                          3. Hasil Riset Sederhana & Landasan Teori Penguat
+                        </h5>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                          {selectedLk.lk4Sections.gagasanRiset?.hasilRiset?.map((r, idx) => (
+                            <div key={idx} style={{ background: 'rgba(168, 85, 247, 0.06)', border: '1px solid rgba(168, 85, 247, 0.25)', borderRadius: '12px', padding: '14px 18px' }}>
+                              <strong style={{ color: '#e9d5ff', display: 'block', marginBottom: '4px', fontSize: '0.9rem' }}>
+                                {r.judul}
+                              </strong>
+                              <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.88rem', lineHeight: '1.6' }}>{r.uraian}</p>
                             </div>
                           ))}
                         </div>
                       </div>
                     </div>
 
-                    {/* Skenario Kasus Minimarket Berkah */}
+                    {/* III. RANCANGAN & IMPLEMENTASI */}
                     <div style={{ marginBottom: '26px' }}>
                       <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '12px', fontWeight: '700' }}>
-                        B. Skenario Studi Kasus Kontekstual & Topologi Jaringan
+                        III. RANCANGAN & IMPLEMENTASI
                       </h4>
-                      <div style={{ background: 'rgba(15, 23, 42, 0.7)', border: '1px solid rgba(255, 255, 255, 0.12)', borderRadius: '14px', padding: '18px 20px', marginBottom: '16px' }}>
-                        <span style={{ color: '#34d399', fontSize: '0.8rem', fontWeight: '800', letterSpacing: '0.5px' }}>{selectedLk.lk4Sections.skenarioKasus.judulKasus}</span>
-                        <p style={{ color: 'rgba(255, 255, 255, 0.88)', fontSize: '0.9rem', lineHeight: '1.65', margin: '8px 0 0' }}>
-                          {selectedLk.lk4Sections.skenarioKasus.narasi}
+
+                      {/* 1. Prototipe Karya Inovasi */}
+                      <div style={{ marginBottom: '18px' }}>
+                        <h5 style={{ color: '#34d399', fontSize: '0.95rem', marginBottom: '6px', fontWeight: '700' }}>
+                          1. Prototipe Karya Inovasi (Desain Antarmuka NetLab & Skenario)
+                        </h5>
+                        <p style={{ color: 'rgba(255, 255, 255, 0.78)', fontSize: '0.88rem', margin: '0 0 10px' }}>
+                          {selectedLk.lk4Sections.rancanganImplementasi?.prototipeLead}
                         </p>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '14px' }}>
+                          {selectedLk.lk4Sections.rancanganImplementasi?.prototipeItems?.map((p, idx) => (
+                            <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '10px', padding: '12px 16px' }}>
+                              <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.88rem' }}>• {p.judul}: </strong>
+                              <span style={{ color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.88rem', lineHeight: '1.55' }}>{p.uraian}</span>
+                            </div>
+                          ))}
+                        </div>
+                        {selectedLk.lk4Sections.rancanganImplementasi?.prototipeDiagram && (
+                          <pre style={{ background: 'rgba(15, 23, 42, 0.85)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '12px', padding: '14px 16px', fontSize: '0.78rem', color: '#7dd3fc', fontFamily: 'Geist Mono, monospace', overflowX: 'auto', margin: 0, lineHeight: '1.5' }}>
+                            {selectedLk.lk4Sections.rancanganImplementasi.prototipeDiagram}
+                          </pre>
+                        )}
                       </div>
 
-                      <div style={{ overflowX: 'auto', background: 'rgba(15, 23, 42, 0.6)', border: '1px solid rgba(255, 255, 255, 0.12)', borderRadius: '14px' }}>
-                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.86rem' }}>
-                          <thead>
-                            <tr style={{ background: 'rgba(29, 111, 165, 0.4)', color: '#ffffff' }}>
-                              <th style={{ padding: '12px 14px', textAlign: 'left', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>Perangkat Node</th>
-                              <th style={{ padding: '12px 14px', textAlign: 'left', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>Model Perangkat</th>
-                              <th style={{ padding: '12px 14px', textAlign: 'left', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>Alamat IPv4 & Subnet</th>
-                              <th style={{ padding: '12px 14px', textAlign: 'left', borderBottom: '1px solid rgba(255, 255, 255, 0.15)' }}>Port Switch & Peran</th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            {selectedLk.lk4Sections.skenarioKasus.tabelIP.map((row, rIdx) => (
-                              <tr key={rIdx} style={{ borderBottom: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                                <td style={{ padding: '12px 14px', fontWeight: '700', color: 'var(--accent-cyan)' }}>{row.node}</td>
-                                <td style={{ padding: '12px 14px', color: '#ffffff' }}>{row.model}</td>
-                                <td style={{ padding: '12px 14px', fontFamily: 'Geist Mono, monospace', color: '#fef08a' }}>
-                                  {row.ip}<br />
-                                  <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.65)' }}>{row.netmask}</span>
-                                </td>
-                                <td style={{ padding: '12px 14px' }}>
-                                  <span style={{ color: '#a5b4fc', display: 'block', fontSize: '0.8rem' }}>{row.port}</span>
-                                  <span style={{ color: 'rgba(255, 255, 255, 0.8)' }}>{row.fungsi}</span>
-                                </td>
-                              </tr>
-                            ))}
-                          </tbody>
-                        </table>
+                      {/* 2. Rencana Implementasi Kelas (5 Sintaks PBL - 2 JP / 90 Menit) */}
+                      <div>
+                        <h5 style={{ color: '#38bdf8', fontSize: '0.95rem', marginBottom: '10px', fontWeight: '700' }}>
+                          2. Rencana Implementasi Kelas (5 Sintaks PBL - 2 JP / 90 Menit)
+                        </h5>
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                          {selectedLk.lk4Sections.rancanganImplementasi?.tahapanImplementasi?.map((th, idx) => (
+                            <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '14px', padding: '16px 20px' }}>
+                              <strong style={{ color: '#ffffff', display: 'block', marginBottom: '10px', fontSize: '0.95rem' }}>
+                                {th.bagian}
+                              </strong>
+                              <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+                                {th.faseList.map((f, fIdx) => (
+                                  <div key={fIdx} style={{ background: 'rgba(0, 0, 0, 0.25)', borderRadius: '10px', padding: '12px 14px' }}>
+                                    <strong style={{ color: 'var(--accent-cyan)', display: 'block', marginBottom: '4px', fontSize: '0.88rem' }}>
+                                      {f.fase}
+                                    </strong>
+                                    <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.88rem', lineHeight: '1.6' }}>{f.uraian}</p>
+                                  </div>
+                                ))}
+                              </div>
+                            </div>
+                          ))}
+                        </div>
                       </div>
                     </div>
 
-                    {/* 5 Sintaks PBL */}
+                    {/* IV. EVALUASI KARYA INOVATIF */}
                     <div style={{ marginBottom: '26px' }}>
                       <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '14px', fontWeight: '700' }}>
-                        C. Rancangan Alur 5 Sintaks Problem-Based Learning (90 Menit)
-                      </h4>
-                      <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                        {selectedLk.lk4Sections.sintaksPBL.map((syn, sIdx) => (
-                          <div key={sIdx} style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '14px', padding: '16px 20px' }}>
-                            <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '8px', flexWrap: 'wrap', gap: '6px' }}>
-                              <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.95rem' }}>{syn.sintaks}</strong>
-                              <span style={{ background: 'rgba(0, 217, 255, 0.15)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 217, 255, 0.3)', padding: '2px 10px', borderRadius: '6px', fontSize: '0.75rem', fontWeight: '700' }}>
-                                {syn.alokasi}
-                              </span>
-                            </div>
-                            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '10px', marginTop: '10px' }}>
-                              <div style={{ background: 'rgba(0, 0, 0, 0.25)', padding: '10px 12px', borderRadius: '8px', fontSize: '0.86rem' }}>
-                                <span style={{ color: '#38bdf8', fontWeight: '700', display: 'block', marginBottom: '4px' }}>Aktivitas Guru:</span>
-                                <span style={{ color: 'rgba(255, 255, 255, 0.85)', lineHeight: '1.55' }}>{syn.aktivitasGuru}</span>
-                              </div>
-                              <div style={{ background: 'rgba(0, 0, 0, 0.25)', padding: '10px 12px', borderRadius: '8px', fontSize: '0.86rem' }}>
-                                <span style={{ color: '#34d399', fontWeight: '700', display: 'block', marginBottom: '4px' }}>Aktivitas Peserta Didik:</span>
-                                <span style={{ color: 'rgba(255, 255, 255, 0.85)', lineHeight: '1.55' }}>{syn.aktivitasSiswa}</span>
-                              </div>
-                            </div>
-                            <div style={{ marginTop: '8px', fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.7)' }}>
-                              <strong style={{ color: '#c084fc' }}>Peran Teknologi:</strong> {syn.peranTeknologi}
-                            </div>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-
-                    {/* Evaluasi Inovasi 3K */}
-                    <div style={{ marginBottom: '26px' }}>
-                      <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '14px', fontWeight: '700' }}>
-                        D. Evaluasi Karya Inovasi: Nilai 3K (Kebaruan, Kreativitas, Kebermanfaatan)
+                        IV. EVALUASI KARYA INOVATIF
                       </h4>
                       <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
                         {/* Kebaruan */}
                         <div style={{ background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.35)', borderRadius: '16px', padding: '18px' }}>
                           <span style={{ background: 'rgba(56, 189, 248, 0.2)', color: '#38bdf8', padding: '3px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800' }}>
-                            1. KEBARUAN (NOVELTY)
+                            {selectedLk.lk4Sections.evaluasiInovasi.kebaruan.title}
                           </span>
                           <ul style={{ margin: '12px 0 0', paddingLeft: '18px', color: 'rgba(255, 255, 255, 0.88)', fontSize: '0.88rem', lineHeight: '1.6' }}>
                             {selectedLk.lk4Sections.evaluasiInovasi.kebaruan.poin.map((p, idx) => (
@@ -1774,7 +1894,7 @@ function Seminar() {
                         {/* Kreativitas */}
                         <div style={{ background: 'rgba(168, 85, 247, 0.08)', border: '1px solid rgba(168, 85, 247, 0.35)', borderRadius: '16px', padding: '18px' }}>
                           <span style={{ background: 'rgba(168, 85, 247, 0.2)', color: '#c084fc', padding: '3px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800' }}>
-                            2. KREATIVITAS (CREATIVITY)
+                            {selectedLk.lk4Sections.evaluasiInovasi.kreativitas.title}
                           </span>
                           <ul style={{ margin: '12px 0 0', paddingLeft: '18px', color: 'rgba(255, 255, 255, 0.88)', fontSize: '0.88rem', lineHeight: '1.6' }}>
                             {selectedLk.lk4Sections.evaluasiInovasi.kreativitas.poin.map((p, idx) => (
@@ -1786,7 +1906,7 @@ function Seminar() {
                         {/* Kebermanfaatan */}
                         <div style={{ background: 'rgba(52, 211, 153, 0.08)', border: '1px solid rgba(52, 211, 153, 0.35)', borderRadius: '16px', padding: '18px' }}>
                           <span style={{ background: 'rgba(52, 211, 153, 0.2)', color: '#34d399', padding: '3px 10px', borderRadius: '6px', fontSize: '0.74rem', fontWeight: '800' }}>
-                            3. KEBERMANFAATAN (USEFULNESS)
+                            {selectedLk.lk4Sections.evaluasiInovasi.kebermanfaatan.title}
                           </span>
                           <ul style={{ margin: '12px 0 0', paddingLeft: '18px', color: 'rgba(255, 255, 255, 0.88)', fontSize: '0.88rem', lineHeight: '1.6' }}>
                             {selectedLk.lk4Sections.evaluasiInovasi.kebermanfaatan.poin.map((p, idx) => (
@@ -1797,10 +1917,10 @@ function Seminar() {
                       </div>
                     </div>
 
-                    {/* Daftar Pustaka */}
+                    {/* V. DAFTAR PUSTAKA & KUTIPAN JURNAL LENGKAP */}
                     <div>
                       <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '10px', fontWeight: '700' }}>
-                        E. Daftar Pustaka Rujukan Ilmiah
+                        V. DAFTAR PUSTAKA & KUTIPAN JURNAL LENGKAP
                       </h4>
                       <ul style={{ margin: 0, paddingLeft: '20px', color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.86rem', lineHeight: '1.7' }}>
                         {selectedLk.lk4Sections.daftarPustaka.map((dp, dIdx) => (

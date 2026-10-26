@@ -1,5 +1,5 @@
-// Data resmi Lembar Kerja (LK) Seminar Pendidikan Profesi Guru (PPG)
-// Sesuai dokumen resmi Asyhar Qowiim (NIM: 25105260081)
+// Data Lembar Kerja (LK) Seminar Pendidikan Profesi Guru (PPG)
+// Sesuai dokumen Asyhar Qowiim (NIM: 25105260081)
 
 export const seminarWorksheets = [
   {
@@ -288,8 +288,7 @@ export const seminarWorksheets = [
       'Tersedia Berkas PDF LK 2 Semester 2',
       '6 Topik Refleksi Mata Kuliah Inti Semester II',
       'Refleksi Berbasis Sintesis Nyata 4C & Bukti Artefak LMS',
-      'Dokumentasi Teruji PPL Mandiri & Projek Presensi QR Code SMAN 11',
-      'Pengesahan Resmi Pengampu Seminar PPG & Mahasiswa Calon Guru'
+      'Dokumentasi Teruji PPL Mandiri & Projek Presensi QR Code SMAN 11'
     ],
     topics: [
       {
@@ -431,7 +430,7 @@ export const seminarWorksheets = [
           {
             label: 'Artefak 1',
             question: '1. Mana saja artefak pembelajaran yang dapat saya jadikan bukti dukung?',
-            answer: '1. Dokumen Resmi LK 3: "LK 3 Refleksi Praktik Mengajar Terbimbing PPLM" atas nama Asyhar Qowiim (NIM: 25105260081) yang telah disetujui oleh Guru Pamong Dian C.R., S.Si. dan DPL Ir. Bekti Wulandari, S.Pd.T., M.Pd. pada tanggal 8 Oktober 2026.\n2. Perangkat Pembelajaran Pendukung: Modul Ajar Informatika Kelas X SMA Fase E materi Algoritma Sorting dan Searching beserta Lembar Kerja Peserta Didik (LKPD) dan instrumen penilaiannya.'
+            answer: '1. Dokumen LK 3: "LK 3 Refleksi Praktik Mengajar Terbimbing PPLM" atas nama Asyhar Qowiim (NIM: 25105260081) yang telah disetujui oleh Guru Pamong Dian C.R., S.Si. dan DPL Ir. Bekti Wulandari, S.Pd.T., M.Pd. pada tanggal 8 Oktober 2026.\n2. Perangkat Pembelajaran Pendukung: Modul Ajar Informatika Kelas X SMA Fase E materi Algoritma Sorting dan Searching beserta Lembar Kerja Peserta Didik (LKPD) dan instrumen penilaiannya.'
           },
           {
             label: 'Artefak 2',
@@ -592,13 +591,7 @@ export const seminarWorksheets = [
           }
         ]
       }
-    ],
-    officialSignoff: {
-      locationDate: 'Yogyakarta, 2026',
-      supervisorTitle: 'Dosen Pembimbing / Pengampu Seminar PPG',
-      studentName: 'Asyhar Qowiim',
-      studentNIM: 'NIM. 25105260081'
-    }
+    ]
   },
   {
     id: 'lk-3-refleksi-ppg',
@@ -686,171 +679,215 @@ export const seminarWorksheets = [
   }
 ]
 
-export const generalArtifacts = []
+export const generalArtifacts = [
+  // === ARTEFAK PPL MANDIRI SMAN 11 YOGYAKARTA ===
+  {
+    id: 'ppl-siklus1-rancangan',
+    number: 'PPL · SIKLUS 1',
+    type: 'document',
+    iconType: 'doc',
+    title: 'Rancangan Pembelajaran (Siklus 1)',
+    category: 'PPL SMAN 11 Yogyakarta',
+    course: 'PPL Mandiri SMAN 11 Yogyakarta',
+    semester: 'Siklus 1',
+    summary: 'Modul ajar dan skenario pembelajaran mandiri Siklus 1 pada materi Analisis Data dan Informasi Kelas X (Fase E) di SMA Negeri 11 Yogyakarta.',
+    fileName: 'Rancangan Pembelajaran Siklus 1 - SMAN 11 Yogyakarta.pdf',
+    gdriveUrl: 'https://drive.google.com/file/d/15tJ8kXOQN1sCIFSaOYluy-6eclef8F9G/view?usp=sharing',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=15tJ8kXOQN1sCIFSaOYluy-6eclef8F9G',
+    highlights: [
+      'Modul Ajar Informatika Kelas X (Fase E)',
+      'Skenario Pembelajaran Mandiri Siklus 1',
+      'SMA Negeri 11 Yogyakarta'
+    ]
+  },
+  {
+    id: 'ppl-siklus1-materi',
+    number: 'PPL · SIKLUS 1',
+    type: 'document',
+    iconType: 'book',
+    title: 'Materi Teori Data dan Informasi',
+    category: 'PPL SMAN 11 Yogyakarta',
+    course: 'PPL Mandiri SMAN 11 Yogyakarta',
+    semester: 'Siklus 1',
+    summary: 'Bahan ajar dan materi teori Analisis Data dan Informasi untuk siswa Kelas X (Fase E) pada pelaksanaan Siklus 1 di SMA Negeri 11 Yogyakarta.',
+    fileName: 'Materi Teori Data dan Informasi - Siklus 1.pdf',
+    gdriveUrl: 'https://drive.google.com/file/d/1Qo1a7ybYhIqUc_ZZWDTGCQ4uCVOHOXBX/view?usp=sharing',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1Qo1a7ybYhIqUc_ZZWDTGCQ4uCVOHOXBX',
+    highlights: [
+      'Konsep Dasar Data dan Informasi',
+      'Bahan Ajar Teori Kelas X Fase E',
+      'Materi Pembelajaran Siklus 1'
+    ]
+  },
+  {
+    id: 'ppl-siklus24-rancangan',
+    number: 'PPL · SIKLUS 2 - 4',
+    type: 'document',
+    iconType: 'doc',
+    title: 'Rancangan Pembelajaran (Siklus 2 - 4)',
+    category: 'PPL SMAN 11 Yogyakarta',
+    course: 'PPL Mandiri SMAN 11 Yogyakarta',
+    semester: 'Siklus 2 - 4',
+    summary: 'Modul ajar dan skenario pembelajaran mandiri Siklus 2 hingga Siklus 4 pada materi praktik pengolahan data dan algoritma pemrograman di SMA Negeri 11 Yogyakarta.',
+    fileName: 'Rancangan Pembelajaran Siklus 2-4 - SMAN 11 Yogyakarta.pdf',
+    gdriveUrl: 'https://drive.google.com/file/d/14Owjcna1J7LD-CHwBcofPOoYBOcqkDO8/view?usp=sharing',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=14Owjcna1J7LD-CHwBcofPOoYBOcqkDO8',
+    highlights: [
+      'Modul Ajar Praktik Siklus 2 - 4',
+      'Skenario Praktikum Laboratorium Komputer',
+      'SMA Negeri 11 Yogyakarta'
+    ]
+  },
+  {
+    id: 'ppl-siklus24-materi',
+    number: 'PPL · SIKLUS 2 - 4',
+    type: 'document',
+    iconType: 'book',
+    title: 'Materi Praktik Data dan Informasi',
+    category: 'PPL SMAN 11 Yogyakarta',
+    course: 'PPL Mandiri SMAN 11 Yogyakarta',
+    semester: 'Siklus 2 - 4',
+    summary: 'Bahan ajar dan panduan praktikum pengolahan Data dan Informasi serta penerapan struktur data pada Siklus 2 hingga Siklus 4.',
+    fileName: 'Materi Praktik Data dan Informasi - Siklus 2-4.pdf',
+    gdriveUrl: 'https://drive.google.com/file/d/1_CmCGJ8ihZ_lhR8QGjVgGzCM3m6fmx_S/view?usp=sharing',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=1_CmCGJ8ihZ_lhR8QGjVgGzCM3m6fmx_S',
+    highlights: [
+      'Panduan Praktikum Data dan Informasi',
+      'Latihan Terbimbing & Mandiri Siswa',
+      'Materi Pembelajaran Siklus 2 - 4'
+    ]
+  },
+  {
+    id: 'ppl-ulangan-harian',
+    number: 'PPL · EVALUASI',
+    type: 'document',
+    iconType: 'doc',
+    title: 'Ulangan Harian Informatika',
+    category: 'PPL SMAN 11 Yogyakarta',
+    course: 'PPL Mandiri SMAN 11 Yogyakarta',
+    semester: 'Siklus 2 - 4',
+    summary: 'Instrumen evaluasi dan soal Ulangan Harian mata pelajaran Informatika Kelas X (Fase E) di SMA Negeri 11 Yogyakarta.',
+    fileName: 'Ulangan Harian Informatika - SMAN 11 Yogyakarta.pdf',
+    gdriveUrl: 'https://drive.google.com/file/d/171lHu3jLSXeV3ONIfzJNqPCxuAERR8xO/view?usp=sharing',
+    downloadUrl: 'https://drive.google.com/uc?export=download&id=171lHu3jLSXeV3ONIfzJNqPCxuAERR8xO',
+    highlights: [
+      'Instrumen Evaluasi Pembelajaran',
+      'Soal Ulangan Harian Kelas X Fase E',
+      'Pengukuran Capaian Kompetensi Siswa'
+    ]
+  },
+  {
+    id: 'ppl-media-colab',
+    number: 'PPL · MEDIA PRAKTIK',
+    type: 'external',
+    iconType: 'colab',
+    title: 'Google Colaboratory (Google Colab)',
+    category: 'PPL SMAN 11 Yogyakarta',
+    course: 'PPL Mandiri SMAN 11 Yogyakarta',
+    semester: 'Siklus 2 - 4',
+    summary: 'Platform pemrograman Python interaktif berbasis cloud yang digunakan sebagai media pembelajaran praktik siswa pada Siklus 2 - 4.',
+    externalUrl: 'https://colab.research.google.com/?hl=id',
+    buttonLabel: 'Buka Google Colab',
+    highlights: [
+      'Eksekusi Kode Python Berbasis Cloud Tanpa Instalasi',
+      'Media Praktikum Interaktif Siswa Kelas X',
+      'Mendukung Kolaborasi dan Eksplorasi Kode Langsung'
+    ]
+  },
+  {
+    id: 'ppl-media-notebook',
+    number: 'PPL · MATERI COLAB',
+    type: 'external',
+    iconType: 'notebook',
+    title: 'Materi Sorting, Searching, List, Stack, Queue (Google Colab)',
+    category: 'PPL SMAN 11 Yogyakarta',
+    course: 'PPL Mandiri SMAN 11 Yogyakarta',
+    semester: 'Siklus 2 - 4',
+    summary: 'Notebook interaktif Google Colab berisi materi dan latihan kode program algoritma Sorting, Searching, List, Stack, dan Queue untuk praktik Siklus 2 - 4.',
+    externalUrl: 'https://colab.research.google.com/drive/1X87pjBsIfjmCskdOEPqxLXMjSRvS0zw8?usp=sharing',
+    buttonLabel: 'Buka Materi di Google Colab',
+    highlights: [
+      'Notebook Materi & Latihan Algoritma Python',
+      'Mencakup Sorting, Searching, List, Stack, dan Queue',
+      'Siap Dijalankan Langsung oleh Siswa di Google Colab'
+    ]
+  },
 
-/* Seed data lama, dinonaktifkan sementara.
-export const unusedArtifactSeed = [
+  // === ARTEFAK SEMINAR PPG (KARYA INOVASI) ===
   {
-    id: 'art-modul-ajar',
-    number: 'ART-01',
-    code: 'MODUL-AJAR-FASE-E-2026',
-    title: 'Modul Ajar Informatika Berdiferensiasi (Fase E)',
-    category: 'Perangkat & Modul Ajar',
-    course: 'Pembelajaran Mendalam dan Asesmen (PMA)',
-    semester: 'Semester 1',
-    date: 'Februari 2026',
-    status: 'Telah Diujicobakan di Sekolah Mitra',
-    summary: 'Rancangan modul ajar materi Jaringan Komputer dan Algoritma dengan pendekatan Understanding by Design (UbD) dan diferensiasi konten, proses, serta produk.',
-    author: 'Asyhar Qowiim',
+    id: 'seminar-netlab-link',
+    number: 'SEMINAR · SIMULATOR WEB',
+    type: 'external',
+    iconType: 'netlab',
+    title: 'Web Simulator Jaringan NetLab',
+    category: 'Karya Inovasi Seminar PPG',
+    course: 'Seminar Pendidikan Profesi Guru (PPG)',
+    semester: 'Karya Inovasi',
+    summary: 'Platform simulator topologi jaringan komputer interaktif berbasis web (zero-installation) yang digunakan dalam karya inovasi pembelajaran Jaringan Komputer dan Internet (JKI) Kelas X.',
+    externalUrl: 'https://netlab.thecybersecguru.com',
+    buttonLabel: 'Buka Simulator NetLab',
     highlights: [
-      'Pendekatan Understanding by Design (UbD)',
-      'Diferensiasi Konten, Proses, & Produk',
-      'LKPD Interaktif dengan Pembelajaran Berbasis Masalah (PBL)',
-      'Rubrik Asesmen Diagnostik, Formatif, dan Sumatif'
-    ],
-    components: [
-      {
-        title: 'Tujuan Pembelajaran',
-        content: 'Peserta didik mampu memahami prinsip kerja jaringan lokal dan internet, konfigurasi alamat IP, serta menganalisis jalur paket data secara logis dan kolaboratif.'
-      },
-      {
-        title: 'Skenario Diferensiasi',
-        content: 'Kelompok pemula diberikan bantuan lembar kerja visual bertahap (scaffolding), kelompok menengah merancang topologi star mandiri, dan kelompok mahir mengonfigurasi routing statis pada simulator jaringan.'
-      }
+      'Simulator Jaringan Berbasis Web Browser Tanpa Instalasi',
+      'Mendukung Impor Skenario Topologi Berkas JSON',
+      'Simulasi Switch Cisco Catalyst 2960 & Pengujian ICMP Ping'
     ]
   },
   {
-    id: 'art-pse-modul',
-    number: 'ART-02',
-    code: 'PERANGKAT-PSE-CASEL-2026',
-    title: 'Perangkat Pembelajaran Terintegrasi PSE (CASEL)',
-    category: 'Perangkat & Modul Ajar',
-    course: 'Pembelajaran Sosial Emosional (PSE)',
-    semester: 'Semester 2',
-    date: 'Maret 2026',
-    status: 'Terverifikasi DPL',
-    summary: 'Integrasi lima kompetensi CASEL ke dalam kelas praktikum laboratorium komputer: teknik STOP, lembar check-in roda emosi, dan rubrik asesmen sikap kolaboratif.',
-    author: 'Asyhar Qowiim',
-    highlights: [
-      'Penerapan 5 Kompetensi Sosial Emosional CASEL',
-      'Teknik STOP untuk Mengelola Frustrasi Debugging',
-      'Roda Emosi & Jurnal Refleksi Mandiri Siswa',
-      'Metode Umpan Balik Apresiasi-Saran-Pertanyaan'
-    ],
-    components: [
-      {
-        title: 'Komponen Utama',
-        content: 'Panduan guru untuk memulai kelas dengan mindfulness berdurasi 3 menit, skenario pemecahan konflik kelompok praktikum, serta lembar evaluasi diri siswa skala 1-4.'
-      }
-    ]
-  },
-  {
-    id: 'art-media-simulasi',
-    number: 'ART-03',
-    code: 'PRODUK-INOVASI-NETLAB-2026',
-    title: 'Produk Karya Inovasi: Simulasi Topologi Jaringan Minimarket Berkah (NetLab JSON)',
-    category: 'Media Pembelajaran & Asesmen',
-    course: 'Seminar Pendidikan Guru & Media Interaktif',
-    semester: 'Semester 2',
-    date: '2026',
-    status: 'Produk Digital Siap Simulasikan (NetLab JSON)',
-    summary: 'Produk karya inovasi berkas JSON topologi jaringan retail Minimarket Berkah yang dirancang untuk platform simulator web NetLab (https://netlab.thecybersecguru.com). Menghubungkan Server Kasir, PC Kasir front-end, dan PC Gudang melalui Cisco Catalyst 2960-24TT Switch.',
-    author: 'Asyhar Qowiim',
+    id: 'seminar-json-inovasi',
+    number: 'SEMINAR · FILE JSON INOVASI',
+    type: 'json',
+    iconType: 'json',
+    title: 'File JSON Karya Inovasi (Topologi Minimarket Berkah)',
+    category: 'Karya Inovasi Seminar PPG',
+    course: 'Seminar Pendidikan Profesi Guru (PPG)',
+    semester: 'Karya Inovasi',
+    summary: 'Berkas konfigurasi topologi jaringan produk-karya-inovasi.json (~41 KB) untuk studi kasus jaringan ritel Minimarket Berkah (Server Kasir, PC Kasir, PC Gudang, dan Switch Catalyst 2960) yang siap diimpor ke NetLab.',
     jsonUrl: '/assets/seminar/produk-karya-inovasi.json',
     jsonFileName: 'produk-karya-inovasi.json',
     netlabUrl: 'https://netlab.thecybersecguru.com',
     highlights: [
-      'Berkas Resmi JSON: produk-karya-inovasi.json (Tersedia Unduh)',
-      'Simulator Jaringan Berbasis Web NetLab: https://netlab.thecybersecguru.com',
-      'Panduan 4 Langkah Praktis: Unduh -> Buka NetLab -> Open Individual Workplace -> Upload JSON',
-      'Studi Kasus Ritel Minimarket Berkah: Server Kasir (192.168.1.1), PC Kasir (192.168.1.10), PC Gudang (192.168.1.50)',
-      'Switch Cisco 2960-24TT dengan PVST Spanning Tree & Kabel Straight-Through FastEthernet'
-    ],
-    components: [
-      {
-        title: 'Cara Menguji di NetLab Simulator',
-        content: '1. Unduh berkas produk-karya-inovasi.json dari aplikasi ini. 2. Buka https://netlab.thecybersecguru.com. 3. Klik tombol "Open Individual Workplace". 4. Unggah (Upload) file JSON tersebut untuk mengeksplorasi dan mensimulasikan jaringan secara interaktif.'
-      },
-      {
-        title: 'Deskripsi Topologi & Subnetting',
-        content: 'Mengintegrasikan Server Kasir (192.168.1.1/24) sebagai database POS terpusat, PC Kasir (192.168.1.10/24) untuk kasir transaksi depan, dan PC Gudang (192.168.1.50/27) dengan segmentasi subnet khusus inventaris barang melalui Switch Cisco Catalyst 2960-24TT.'
-      }
+      'Berkas Siap Pakai: produk-karya-inovasi.json (41 KB)',
+      'Studi Kasus Kontekstual Jaringan Minimarket Berkah',
+      'Skenario Troubleshooting Subnetting /24 dan /27'
     ]
   },
   {
-    id: 'art-instrumen-asesmen',
-    number: 'ART-04',
-    code: 'ASESMEN-AUTENTIK-INFOR-2026',
-    title: 'Instrumen Asesmen Autentik & Rubrik Kinerja Informatika',
-    category: 'Media Pembelajaran & Asesmen',
-    course: 'Pembelajaran Mendalam dan Asesmen Dasar',
-    semester: 'Semester 1',
-    date: 'Desember 2025',
-    status: 'Validasi Sejawat & Dosen',
-    summary: 'Dokumentasi instrumen evaluasi otentik meliputi rubrik penilaian proyek, lembar observasi keaktifan diskusi, tes diagnostik kognitif, dan rubrik portofolio unjuk kerja.',
-    author: 'Asyhar Qowiim',
+    id: 'seminar-slide-inovasi',
+    number: 'SEMINAR · SLIDE INOVASI',
+    type: 'document',
+    iconType: 'slides',
+    title: 'Slide Presentasi Karya Inovasi Pembelajaran',
+    category: 'Karya Inovasi Seminar PPG',
+    course: 'Seminar Pendidikan Profesi Guru (PPG)',
+    semester: 'Karya Inovasi',
+    summary: 'Slide presentasi karya inovasi pembelajaran Problem-Based Learning (PBL) Jaringan Komputer Kelas X menggunakan simulator web NetLab pada studi kasus Minimarket Berkah.',
+    fileName: 'Slide Presentasi Karya Inovasi.pdf',
+    gdriveUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing',
+    downloadUrl: '/assets/seminar/karya-inovasi.pdf',
     highlights: [
-      'Rubrik Skala Deskriptif Analitis Kinerja Coding',
-      'Instrumen Observasi Keterampilan Kolaborasi 4C',
-      'Lembar Peer-Assessment Antar Anggota Kelompok',
-      'Panduan Remedial dan Pengayaan Kontekstual'
-    ],
-    components: [
-      {
-        title: 'Indikator Penilaian',
-        content: 'Mengukur ketepatan logika algoritma, kerapian penulisan kode/pseudocode, kemampuan menjelaskan alur kerja, dan etika kerja sama tim.'
-      }
+      'Dek Presentasi Seminar Karya Inovasi PPG',
+      'Transisi Praktikum dari Cisco Packet Tracer ke Web NetLab',
+      'Pemaparan Desain, Skenario PBL, dan Evaluasi Inovasi'
     ]
   },
   {
-    id: 'art-best-practice-ppl',
-    number: 'ART-05',
-    code: 'LAPORAN-BEST-PRACTICE-2026',
-    title: 'Laporan Best Practice PPL Terbimbing SMAN 11 Yogyakarta',
-    category: 'Praktik & Kepemimpinan',
-    course: 'PPL Terbimbing & Mandiri',
-    semester: 'Semester 1 & 2',
-    date: 'Januari - Mei 2026',
-    status: 'Disahkan Kepala Sekolah & Dosen',
-    summary: 'Laporan komprehensif pelaksanaan asistensi mengajar, pengenalan lingkungan persekolahan, studi kasus penanganan siswa pasif, dan hasil refleksi praktik mengajar mandiri.',
-    author: 'Asyhar Qowiim',
+    id: 'seminar-modul-inovasi',
+    number: 'SEMINAR · MODUL AJAR INOVASI',
+    type: 'document',
+    iconType: 'doc',
+    title: 'Modul Ajar Karya Inovasi: Topologi Jaringan NetLab (Fase E)',
+    category: 'Karya Inovasi Seminar PPG',
+    course: 'Seminar Pendidikan Profesi Guru (PPG)',
+    semester: 'Karya Inovasi',
+    summary: 'Modul ajar praktik Informatika elemen Jaringan Komputer dan Internet (JKI) Kelas X (2 JP / 90 Menit) dengan model Problem-Based Learning (PBL) berbantuan simulator web NetLab.',
+    fileName: 'Modul Ajar Praktik Informatika NetLab.pdf',
+    gdriveUrl: 'https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/view?usp=sharing',
+    downloadUrl: '/assets/seminar/modul-ajar-netlab.pdf',
     highlights: [
-      'Studi Kasus Penanganan Pasif Siswa dengan Think-Pair-Share',
-      'Dokumentasi Praktik Mengajar Terbimbing dan Mandiri',
-      'Umpan Balik Konstruktif dari Guru Pamong & Kepala Sekolah',
-      'Refleksi Berkelanjutan Perbaikan Alokasi Waktu Mengajar'
-    ],
-    components: [
-      {
-        title: 'Dampak Nyata',
-        content: 'Meningkatkan partisipasi aktif murid kelas Informatika hingga 85% dan menurunkan tingkat ketakutan siswa terhadap materi pemrograman logika dasar.'
-      }
-    ]
-  },
-  {
-    id: 'art-projek-kepemimpinan',
-    number: 'ART-06',
-    code: 'PROJEK-LEADERSHIP-QR-2026',
-    title: 'Projek Kepemimpinan: Sistem Presensi Digital Siswa QR Code',
-    category: 'Praktik & Kepemimpinan',
-    course: 'Projek Kepemimpinan PPG',
-    semester: 'Semester 2',
-    date: 'Mei 2026',
-    status: 'Telah Diimplementasikan Tim Kelompok A2',
-    summary: 'Rancang bangun solusi inovasi manajerial sekolah berupa sistem presensi digital berbasis QR Code untuk meningkatkan akurasi kehadiran dan efisiensi waktu piket di SMAN 11 Yogyakarta.',
-    author: 'Asyhar Qowiim (Koordinator Teknis Tim A2)',
-    highlights: [
-      'Penerapan 7 Elemen Perancangan Projek Kolaboratif',
-      'Sistem Presensi Real-Time Berbasis Pemindaian QR Code',
-      'Pelatihan Guru Piket dan Staf Tata Usaha Sekolah Mitra',
-      'Efisiensi Pencatatan Kehadiran hingga 60% Lebih Cepat'
-    ],
-    components: [
-      {
-        title: 'Hasil Implementasi',
-        content: 'Sistem berhasil diuji coba pada 6 kelas dengan respon sangat positif dari pihak pimpinan sekolah, guru pamong, dan tenaga kependidikan.'
-      }
+      'Modul Ajar 2 JP (90 Menit) dengan 5 Sintaks PBL',
+      'Terintegrasi Simulator Web NetLab & Studi Kasus Minimarket Berkah',
+      'Dilengkapi LKPD Digital, Rubrik Asesmen, & Soal Evaluasi'
     ]
   }
 ]
-*/
+

@@ -38,6 +38,48 @@ const galleryData = [
     title: 'Foto Mengajar 2',
     category: 'Foto Mengajar',
     src: '/assets/mengajar-2.jpg'
+  },
+  {
+    id: 'eval-1',
+    type: 'photo',
+    title: 'Evaluasi Bersama Guru Pamong',
+    category: 'Dokumentasi Evaluasi',
+    src: '/assets/aistudio/evaluasi1_99a22767.jpeg'
+  },
+  {
+    id: 'eval-2',
+    type: 'photo',
+    title: 'Evaluasi Bersama Guru Pamong',
+    category: 'Dokumentasi Evaluasi',
+    src: '/assets/aistudio/evaluasi2_fa35c4ed.jpeg'
+  },
+  {
+    id: 'eval-3',
+    type: 'photo',
+    title: 'Evaluasi Bersama Guru Pamong',
+    category: 'Dokumentasi Evaluasi',
+    src: '/assets/aistudio/evaluasi3_7ac1632a.jpeg'
+  },
+  {
+    id: 'eval-4',
+    type: 'photo',
+    title: 'Evaluasi Bersama Guru Pamong',
+    category: 'Dokumentasi Evaluasi',
+    src: '/assets/aistudio/evaluasi4_0fed61bd.jpeg'
+  },
+  {
+    id: 'eval-5',
+    type: 'photo',
+    title: 'Evaluasi Bersama Guru Pamong',
+    category: 'Dokumentasi Evaluasi',
+    src: '/assets/aistudio/evaluasi5_46dda959.jpeg'
+  },
+  {
+    id: 'eval-6',
+    type: 'photo',
+    title: 'Evaluasi Bersama Guru Pamong',
+    category: 'Dokumentasi Evaluasi',
+    src: '/assets/aistudio/evaluasi6_953abd8e.jpeg'
   }
 ]
 
@@ -63,7 +105,7 @@ function Gallery() {
     }
   }, [previewPhoto])
 
-  const categories = ['Semua', 'Video Mengajar', 'Foto Mengajar']
+  const categories = ['Semua', 'Video Mengajar', 'Foto Mengajar', 'Dokumentasi Evaluasi']
 
   const filteredItems = selectedCategory === 'Semua'
     ? galleryData
@@ -74,7 +116,7 @@ function Gallery() {
       <div className="section-heading">
         <span className="section-eyebrow">04 · DOKUMENTASI VISUAL</span>
         <h2>Galeri Video & Foto Mengajar</h2>
-        <p>Dokumentasi video dan foto kegiatan pembelajaran di kelas.</p>
+        <p>Dokumentasi video mengajar, foto kegiatan pembelajaran di kelas, serta evaluasi bersama Guru Pamong di SMAN 11 Yogyakarta.</p>
       </div>
 
       <div className="gallery-filter-tabs">

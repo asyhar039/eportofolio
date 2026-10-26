@@ -36,14 +36,24 @@ export const OFFICIAL_GDRIVE_DOCS = {
   },
   // 4. Karya Inovasi / Slide Presentasi
   'karya-inovasi-slide': {
-    id: '1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g',
-    viewUrl: 'https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/view?usp=sharing',
-    previewUrl: 'https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/preview'
+    id: '17Fgn_XrZobkUDdytqj5g4488EecHPkWD',
+    viewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/preview'
+  },
+  'karya-slide': {
+    id: '17Fgn_XrZobkUDdytqj5g4488EecHPkWD',
+    viewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/preview'
   },
   'slide-presentasi': {
-    id: '1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g',
-    viewUrl: 'https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/view?usp=sharing',
-    previewUrl: 'https://drive.google.com/file/d/1Ej5Up8fqmRDSCAqaI1DuFRMTTxqICx-g/preview'
+    id: '17Fgn_XrZobkUDdytqj5g4488EecHPkWD',
+    viewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/preview'
+  },
+  'slide-presentasi-karya-inovasi': {
+    id: '17Fgn_XrZobkUDdytqj5g4488EecHPkWD',
+    viewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/preview'
   },
   // 5. Modul Ajar Informatika NetLab
   'modul-ajar-netlab': {

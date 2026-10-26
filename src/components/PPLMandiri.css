@@ -603,6 +603,154 @@
   margin: 0;
 }
 
+/* Google Colab Media Pembelajaran Cards */
+.ppl-colab-section-card {
+  padding: 26px 28px;
+}
+
+.ppl-colab-section-head {
+  margin-bottom: 18px;
+}
+
+.ppl-colab-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 16px;
+  align-items: stretch;
+}
+
+.ppl-colab-card {
+  background: rgba(15, 23, 42, 0.65);
+  border: 1px solid rgba(56, 189, 248, 0.28);
+  border-radius: 16px;
+  padding: 20px 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 16px;
+  min-width: 0;
+  height: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.25s ease, transform 0.25s ease, background 0.25s ease;
+}
+
+.ppl-colab-card:hover {
+  border-color: rgba(0, 217, 255, 0.48);
+  background: rgba(15, 23, 42, 0.8);
+  transform: translateY(-2px);
+}
+
+.ppl-colab-card-body {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ppl-colab-card-top {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  min-width: 0;
+}
+
+.ppl-colab-icon-box {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.ppl-colab-icon-box.is-platform {
+  background: rgba(249, 171, 0, 0.14);
+  border: 1px solid rgba(249, 171, 0, 0.35);
+}
+
+.ppl-colab-icon-box.is-notebook {
+  background: rgba(56, 189, 248, 0.14);
+  border: 1px solid rgba(56, 189, 248, 0.35);
+}
+
+.ppl-colab-icon-box svg {
+  width: 17px;
+  height: 17px;
+  display: block;
+  flex-shrink: 0;
+}
+
+.ppl-colab-badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 0.7rem;
+  line-height: 1.3;
+  padding: 4px 10px;
+  margin: 0;
+  min-width: 0;
+  word-break: break-word;
+}
+
+.ppl-colab-title {
+  margin: 0;
+  font-size: 1.04rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1.35;
+}
+
+.ppl-colab-subtitle {
+  margin: 0;
+  font-size: 0.86rem;
+  color: rgba(255, 255, 255, 0.72);
+  line-height: 1.55;
+}
+
+.ppl-colab-card-footer {
+  display: flex;
+  align-items: center;
+  margin-top: auto;
+  padding-top: 2px;
+}
+
+.ppl-colab-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #0284c7, #06b6d4);
+  color: #ffffff;
+  font-weight: 600;
+  font-size: 0.84rem;
+  line-height: 1.25;
+  text-decoration: none;
+  box-shadow: 0 6px 18px rgba(6, 182, 212, 0.25);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.ppl-colab-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 22px rgba(6, 182, 212, 0.38);
+}
+
+.ppl-colab-btn svg {
+  width: 15px;
+  height: 15px;
+  flex-shrink: 0;
+  display: block;
+}
+
+.ppl-colab-btn-arrow {
+  font-size: 0.85em;
+  line-height: 1;
+  flex-shrink: 0;
+}
+
 @media (max-width: 768px) {
   .ppl-section {
     padding: 0 14px 60px;
@@ -619,5 +767,63 @@
   .ppl-tabs-nav {
     flex-wrap: nowrap;
     overflow-x: auto;
+  }
+  .ppl-colab-section-card {
+    padding: 20px 16px;
+  }
+  .ppl-colab-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+  .ppl-colab-card {
+    padding: 16px;
+    gap: 14px;
+  }
+  .ppl-colab-icon-box {
+    width: 28px;
+    height: 28px;
+    border-radius: 7px;
+  }
+  .ppl-colab-icon-box svg {
+    width: 15px;
+    height: 15px;
+  }
+  .ppl-colab-badge {
+    font-size: 0.66rem;
+    padding: 3px 8px;
+  }
+  .ppl-colab-title {
+    font-size: 0.96rem;
+  }
+  .ppl-colab-subtitle {
+    font-size: 0.82rem;
+  }
+  .ppl-colab-btn {
+    width: 100%;
+    padding: 10px 14px;
+    font-size: 0.82rem;
+  }
+  .ppl-colab-btn svg {
+    width: 14px;
+    height: 14px;
+  }
+}
+
+@media (max-width: 420px) {
+  .ppl-colab-card-top {
+    gap: 8px;
+  }
+  .ppl-colab-icon-box {
+    width: 26px;
+    height: 26px;
+    border-radius: 6px;
+  }
+  .ppl-colab-icon-box svg {
+    width: 14px;
+    height: 14px;
+  }
+  .ppl-colab-badge {
+    font-size: 0.62rem;
+    padding: 3px 7px;
   }
 }

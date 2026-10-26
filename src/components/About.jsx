@@ -142,8 +142,116 @@ function About() {
           </div>
         </div>
       </div>
+
+      <div className="about-vision-mission">
+        <div className="vm-head">
+          <span className="story-label">VISI & MISI PENDIDIK (SELARAS LK 1 SEMINAR PPG)</span>
+          <h3>Visi Pendidikan & Arah Pengabdian Calon Guru Informatika</h3>
+          <p>
+            Rumusan visi dan langkah konkret sebagai calon guru profesional yang memadukan filosofi Ki Hadjar Dewantara, pembelajaran berpusat pada peserta didik, serta kecakapan literasi digital abad ke-21.
+          </p>
+        </div>
+
+        <div className="vm-grid">
+          <div className="visi-card">
+            <div className="vm-card-badge">
+              <span className="vm-badge-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"></path>
+                  <circle cx="12" cy="12" r="3"></circle>
+                </svg>
+              </span>
+              <span>VISI PRIBADI SEBAGAI CALON GURU</span>
+            </div>
+
+            <h4 className="visi-title">
+              Pendidik Profesional yang Transformatif, Reflektif, Adaptif, dan Berintegritas
+            </h4>
+
+            <p className="visi-statement">
+              &ldquo;Menjadi calon guru Informatika profesional yang transformatif, reflektif, adaptif, dan berintegritas tinggi—yang berperan sebagai pamong, fasilitator, serta agen perubahan (<em>agent of change</em>) dalam menuntun potensi peserta didik sesuai kodrat alam dan kodrat zaman. Berkomitmen memfasilitasi pembelajaran berpusat pada siswa (<em>student-centered learning</em>), menciptakan iklim kelas yang aman, nyaman, dan ramah anak, serta mengembangkan diri melalui praktik reflektif mandiri demi menuntun siswa menjadi pembelajar sepanjang hayat yang bernalar kritis, kreatif, melek teknologi abad ke-21, dan berakhlak mulia.&rdquo;
+            </p>
+
+            <div className="visi-pillars">
+              <div className="visi-pillar-item">
+                <span className="pillar-dot"></span>
+                <div>
+                  <strong>Visi Pendidikan Indonesia yang Inklusif & Berkeadilan</strong>
+                  <span>Menuntun setiap peserta didik sesuai kodrat alam dan kodrat zaman agar memperoleh akses setara terhadap pembelajaran bermakna, kesejahteraan psikologis (<em>student well-being</em>), dan karakter Profil Pelajar Pancasila.</span>
+                </div>
+              </div>
+              <div className="visi-pillar-item">
+                <span className="pillar-dot"></span>
+                <div>
+                  <strong>Pamong, Fasilitator, & Agen Perubahan</strong>
+                  <span>Menghadirkan pembelajaran berpusat pada siswa (<em>student-centered learning</em>) dalam iklim kelas yang aman, nyaman, dan ramah anak.</span>
+                </div>
+              </div>
+              <div className="visi-pillar-item">
+                <span className="pillar-dot"></span>
+                <div>
+                  <strong>Praktisi Reflektif & Adaptif Teknologi Abad 21</strong>
+                  <span>Mengembangkan diri secara berkelanjutan serta mengintegrasikan inovasi teknologi digital untuk menumbuhkan nalar kritis, kreativitas, dan akhlak mulia.</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="misi-card">
+            <div className="vm-card-badge">
+              <span className="vm-badge-icon">
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+              </span>
+              <span>MISI & LANGKAH KONKRET MENCAPAI VISI</span>
+            </div>
+
+            <ul className="misi-list">
+              <li className="misi-item">
+                <span className="misi-number">01</span>
+                <div className="misi-content">
+                  <strong>Menerapkan Pembelajaran Berdiferensiasi</strong>
+                  <p>Melakukan pemetaan awal melalui asesmen diagnostik kognitif dan non-kognitif untuk merancang pembelajaran yang mengakomodasi kesiapan, minat, dan gaya belajar peserta didik.</p>
+                </div>
+              </li>
+              <li className="misi-item">
+                <span className="misi-number">02</span>
+                <div className="misi-content">
+                  <strong>Mengintegrasikan Pembelajaran Sosial Emosional (PSE)</strong>
+                  <p>Membangun kesadaran diri (<em>mindfulness</em>), empati, dan ketahanan emosional peserta didik melalui budaya positif sekolah serta integrasi PSE dalam Modul Ajar.</p>
+                </div>
+              </li>
+              <li className="misi-item">
+                <span className="misi-number">03</span>
+                <div className="misi-content">
+                  <strong>Melakukan Refleksi & Riset Aksi Secara Berkelanjutan</strong>
+                  <p>Menggunakan artefak pembelajaran sebagai bahan evaluasi reflektif serta melaksanakan Penelitian Tindakan Kelas (PTK) guna menyelesaikan persoalan nyata di kelas.</p>
+                </div>
+              </li>
+              <li className="misi-item">
+                <span className="misi-number">04</span>
+                <div className="misi-content">
+                  <strong>Pemanfaatan Teknologi Digital & Inovasi Pembelajaran</strong>
+                  <p>Memanfaatkan platform digital dan media interaktif berbasis web/<em>cloud</em> (seperti <em>Google Colab</em> dan simulator <em>NetLab</em>) untuk menciptakan pengalaman belajar abad ke-21 yang menarik dan inklusif.</p>
+                </div>
+              </li>
+              <li className="misi-item">
+                <span className="misi-number">05</span>
+                <div className="misi-content">
+                  <strong>Membangun Komunitas Belajar (Kolaborasi Ekosistem)</strong>
+                  <p>Berpartisipasi aktif dalam Komunitas Belajar (Kombel) dan MGMP, serta menjalin kemitraan erat dengan guru pamong, rekan sejawat, dan orang tua demi mendukung tumbuh kembang siswa secara inklusif.</p>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
     </section>
   )
 }
 
 export default About
+

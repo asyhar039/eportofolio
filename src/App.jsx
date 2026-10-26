@@ -64,7 +64,10 @@ function App() {
 
   return (
     <div className="app">
-      <Header currentPage={currentPage} onNavigate={handleNavigate} />
+      <Header
+        currentPage={currentPage}
+        onNavigate={handleNavigate}
+      />
       <main>{renderPage()}</main>
       <Footer />
     </div>

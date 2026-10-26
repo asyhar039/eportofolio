@@ -347,7 +347,7 @@ const reflectionData = {
     change: '1. Menyusun modul ajar dengan estimasi alokasi waktu yang rinci dan terstruktur pada tiap tahapan kegiatan.\n2. Menerapkan media interaktif dan permainan edukatif untuk memicu keterlibatan aktif siswa yang masih pasif.\n3. Menindaklanjuti masukan Guru Pamong (Dian C.R., S.Si.) dan DPL (Ir. Bekti Wulandari, M.Pd.) secara konsisten.\n4. Menjalankan evaluasi mandiri (action-reflection) secara rutin seusai pembelajaran.',
     artifactPdfUrl: 'https://drive.google.com/file/d/107v_vtWpLEXBvqLe_hwe_7jGOAmPKKPo/view?usp=sharing',
     artifacts: [
-      'Artefak 1: Dokumen Resmi LK 3 Refleksi Praktik Mengajar Terbimbing PPLM (disetujui Pamong & DPL, 8 Okt 2026) dan Modul Ajar Informatika Kelas X Algoritma Sorting-Searching beserta LKPD.',
+      'Artefak 1: Dokumen LK 3 Refleksi Praktik Mengajar Terbimbing PPLM (disetujui Pamong & DPL, 8 Okt 2026) dan Modul Ajar Informatika Kelas X Algoritma Sorting-Searching beserta LKPD.',
       'Artefak 2: Dipilih karena menyajikan rekaman evaluasi kritis pembelajaran nyata di laboratorium SMAN 11 Yogyakarta beserta masukan konstruktif pamong.',
       'Artefak 3: Uraian pembelajaran yang berhasil (A.1), hambatan waktu presentasi (A.2), masukan pamong perbaikan modul (B.1), dan rencana perbaikan siklus berikutnya (B.2).'
     ]

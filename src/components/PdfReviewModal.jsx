@@ -487,7 +487,7 @@ export default function PdfReviewModal({
   onClose = () => {},
   gdriveUrl = '',
   pdfUrl = '',
-  title = 'Dokumen Resmi',
+  title = 'Dokumen',
   fileName = 'dokumen.pdf'
 }) {
   // Keyboard escape
@@ -568,8 +568,33 @@ export default function PdfReviewModal({
             </div>
           </div>
 
-          {/* Right Controls: Hanya Unduh File & Tutup */}
+          {/* Right Controls: Buka di Google Drive, Unduh File & Tutup */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '10px', flexWrap: 'wrap' }}>
+            {isGdrive && directUrl && (
+              <a
+                href={directUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                style={{
+                  background: 'rgba(56, 189, 248, 0.15)',
+                  border: '1px solid rgba(56, 189, 248, 0.35)',
+                  color: '#38bdf8',
+                  padding: '7px 16px',
+                  borderRadius: '10px',
+                  fontSize: '0.82rem',
+                  fontWeight: '700',
+                  textDecoration: 'none',
+                  display: 'inline-flex',
+                  alignItems: 'center',
+                  gap: '6px'
+                }}
+                title="Buka di Google Drive"
+              >
+                <IconExternal size={14} />
+                <span>Buka di Google Drive</span>
+              </a>
+            )}
+
             <a
               href={downloadUrl}
               download={fileName}
@@ -586,7 +611,7 @@ export default function PdfReviewModal({
                 alignItems: 'center',
                 gap: '6px'
               }}
-              title="Unduh Berkas Resmi"
+              title="Unduh Berkas"
             >
               <IconDownload size={14} />
               <span>Unduh File</span>

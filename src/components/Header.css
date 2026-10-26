@@ -15,14 +15,17 @@
 }
 
 .navbar {
+  position: relative;
   background: rgba(255, 255, 255, 0.96);
   backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
   border: none;
   border-radius: var(--radius-pill);
   padding: 10px 22px;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  gap: 12px;
   width: 100%;
   max-width: 1320px;
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
@@ -39,6 +42,7 @@
   cursor: pointer;
   padding: 0;
   flex-shrink: 0;
+  min-width: 0;
   text-align: left;
 }
 
@@ -48,10 +52,11 @@
   gap: 8px;
   padding-right: 12px;
   border-right: 1.5px solid rgba(11, 31, 51, 0.12);
+  flex-shrink: 0;
 }
 
 .header-logo {
-  height: 32px;
+  height: 36px;
   width: auto;
   object-fit: contain;
   transition: transform 0.2s ease, filter 0.2s ease;
@@ -59,15 +64,15 @@
 }
 
 .header-logo.uny-logo {
-  height: 34px;
+  height: 38px;
 }
 
 .header-logo.ppg-logo {
-  height: 30px;
+  height: 34px;
 }
 
 .header-logo.calon-guru-logo {
-  height: 28px;
+  height: 32px;
   border-radius: 4px;
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
 }
@@ -80,6 +85,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  min-width: 0;
 }
 
 .brand-mark {
@@ -89,11 +95,14 @@
   border-radius: var(--radius-sm);
   font-size: 0.9rem;
   box-shadow: 0 4px 12px rgba(29, 111, 165, 0.3);
+  flex-shrink: 0;
 }
 
 .brand-text {
   color: var(--navy-deep);
   font-size: 1rem;
+  font-weight: 700;
+  white-space: nowrap;
 }
 
 .nav-menu {
@@ -103,6 +112,10 @@
   margin: 0;
   padding: 0;
   align-items: center;
+}
+
+.nav-menu li {
+  display: flex;
 }
 
 .nav-menu button {
@@ -134,16 +147,28 @@
 .menu-toggle {
   display: none;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 5px;
+  width: 40px;
+  height: 40px;
   border: none;
-  background: transparent;
+  border-radius: 50%;
+  background: rgba(11, 31, 51, 0.05);
   cursor: pointer;
   padding: 8px;
+  flex-shrink: 0;
+  transition: background 0.2s ease;
+}
+
+.menu-toggle:hover {
+  background: rgba(29, 111, 165, 0.12);
 }
 
 .menu-toggle span {
-  width: 24px;
+  width: 20px;
   height: 2px;
+  border-radius: 2px;
   background-color: var(--navy-deep);
   transition: var(--transition);
 }
@@ -160,13 +185,26 @@
   transform: translateY(-7px) rotate(-45deg);
 }
 
-@media (max-width: 1080px) {
+@media (max-width: 1240px) and (min-width: 1121px) {
+  .navbar {
+    padding: 9px 16px;
+  }
+
+  .nav-menu button {
+    font-size: 0.78rem;
+    padding: 6px 9px;
+  }
+}
+
+@media (max-width: 1120px) {
   .site-header {
     top: 10px;
+    padding: 0 12px;
   }
 
   .navbar {
-    padding: 10px 16px;
+    padding: 8px 14px;
+    border-radius: 999px;
   }
 
   .menu-toggle {
@@ -175,27 +213,40 @@
 
   .nav-menu {
     position: absolute;
-    top: 70px;
-    left: 16px;
-    right: 16px;
+    top: calc(100% + 8px);
+    left: 0;
+    right: 0;
     background: rgba(255, 255, 255, 0.98);
     backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
     flex-direction: column;
-    padding: 18px;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.2);
-    border: 1px solid rgba(0, 0, 0, 0.06);
-    gap: 6px;
+    align-items: stretch;
+    padding: 0 14px;
+    border-radius: 20px;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+    border: 1px solid rgba(11, 31, 51, 0.08);
+    gap: 4px;
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: all 0.3s ease;
+    visibility: hidden;
+    pointer-events: none;
+    transform: translateY(-8px);
+    transition: max-height 0.3s ease, opacity 0.25s ease, transform 0.25s ease, padding 0.25s ease, visibility 0.25s ease;
   }
 
   .nav-menu.show {
-    max-height: 600px;
+    max-height: calc(100vh - 88px);
+    padding: 12px;
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: translateY(0);
     overflow-y: auto;
+  }
+
+  .nav-menu li {
+    width: 100%;
   }
 
   .nav-menu button {
@@ -203,28 +254,88 @@
     text-align: left;
     padding: 11px 16px;
     font-size: 0.92rem;
+    border-radius: 12px;
+    white-space: normal;
+    line-height: 1.35;
   }
 }
 
 @media (max-width: 640px) {
+  .site-header {
+    top: 8px;
+    padding: 0 10px;
+  }
+
+  .navbar {
+    padding: 7px 12px;
+    gap: 8px;
+  }
+
+  .brand {
+    gap: 8px;
+  }
+
   .header-logos {
-    gap: 6px;
+    gap: 5px;
     padding-right: 8px;
   }
 
   .header-logo.uny-logo {
-    height: 26px;
+    height: 25px;
   }
 
   .header-logo.ppg-logo {
-    height: 24px;
-  }
-
-  .header-logo.calon-guru-logo {
     height: 22px;
   }
 
+  .header-logo.calon-guru-logo {
+    height: 20px;
+  }
+
+  .brand-title-group {
+    gap: 6px;
+  }
+
+  .brand-mark {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+  }
+
   .brand-text {
-    display: none;
+    display: inline-block;
+    font-size: 0.9rem;
+  }
+
+  .menu-toggle {
+    width: 36px;
+    height: 36px;
+  }
+
+  .menu-toggle span {
+    width: 18px;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-logos {
+    gap: 4px;
+    padding-right: 6px;
+  }
+
+  .header-logo.uny-logo {
+    height: 21px;
+  }
+
+  .header-logo.ppg-logo {
+    height: 19px;
+  }
+
+  .brand-mark {
+    padding: 3px 6px;
+    font-size: 0.74rem;
+  }
+
+  .brand-text {
+    font-size: 0.82rem;
   }
 }

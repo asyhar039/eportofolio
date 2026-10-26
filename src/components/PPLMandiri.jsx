@@ -1,27 +1,10 @@
-import React, { useState } from 'react'
-import { createPortal } from 'react-dom'
+import React, { useState, useEffect } from 'react'
 import './PPLMandiri.css'
-import {
-  pplSchoolProfile,
-  pplPhases,
-  pplTeachingArtifacts,
-  pplReflectionLK3,
-  pplGalleryActivities
-} from '../data/pplMandiriData'
+import './Gallery.css'
+import { pplSchoolProfile } from '../data/pplMandiriData'
+import PdfReviewModal, { PdfCanvasViewer } from './PdfReviewModal'
 
-// Modern Minimalist SVG Icons
-const IconSchool = ({ size = 20, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="m4 6 8-4 8 4" />
-    <path d="m18 10 4 2v8a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-8l4-2" />
-    <path d="M14 22v-4a2 2 0 0 0-2-2v0a2 2 0 0 0-2 2v4" />
-    <path d="M18 5v17" />
-    <path d="M6 5v17" />
-    <circle cx="12" cy="9" r="2" />
-  </svg>
-)
-
-const IconLayers = ({ size = 20, className = "" }) => (
+const IconLayers = ({ size = 18, className = '' }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <polygon points="12 2 2 7 12 12 22 7 12 2" />
     <polyline points="2 17 12 22 22 17" />
@@ -29,7 +12,7 @@ const IconLayers = ({ size = 20, className = "" }) => (
   </svg>
 )
 
-const IconDoc = ({ size = 20, className = "" }) => (
+const IconDoc = ({ size = 18, className = '' }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
     <polyline points="14 2 14 8 20 8" />
@@ -38,53 +21,234 @@ const IconDoc = ({ size = 20, className = "" }) => (
   </svg>
 )
 
-const IconCompass = ({ size = 20, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <circle cx="12" cy="12" r="10" />
-    <polygon points="16.24 7.76 14.12 14.12 7.76 16.24 9.88 9.88 16.24 7.76" />
-  </svg>
-)
-
-const IconQr = ({ size = 20, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <rect x="3" y="3" width="7" height="7" />
-    <rect x="14" y="3" width="7" height="7" />
-    <rect x="14" y="14" width="7" height="7" />
-    <rect x="3" y="14" width="7" height="7" />
-  </svg>
-)
-
-const IconCamera = ({ size = 20, className = "" }) => (
+const IconCamera = ({ size = 20, className = '' }) => (
   <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.75" strokeLinecap="round" strokeLinejoin="round" className={className}>
     <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z" />
     <circle cx="12" cy="13" r="4" />
   </svg>
 )
 
-const IconCheck = ({ size = 14, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <polyline points="20 6 9 17 4 12" />
+const IconColab = ({ size = 24, className = '' }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" className={className} aria-hidden="true">
+    <path
+      d="M7.5 7.5a4.5 4.5 0 1 0 0 9 4.5 4.5 0 0 0 3.18-1.32l2.64-2.64a4.5 4.5 0 1 1 3.18 1.32"
+      stroke="#F9AB00"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
+    <path
+      d="M16.5 16.5a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0-3.18 1.32l-2.64 2.64A4.5 4.5 0 0 1 7.5 12.78"
+      stroke="#E8710A"
+      strokeWidth="2.4"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 )
 
-const IconExternal = ({ size = 14, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-    <polyline points="15 3 21 3 21 9" />
-    <line x1="10" y1="14" x2="21" y2="3" />
+const IconCodeNotebook = ({ size = 24, className = '' }) => (
+  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="1.9" strokeLinecap="round" strokeLinejoin="round" className={className} aria-hidden="true">
+    <rect x="3" y="3" width="18" height="18" rx="3" />
+    <polyline points="9 9 6 12 9 15" />
+    <polyline points="15 9 18 12 15 15" />
+    <line x1="13" y1="8" x2="11" y2="16" />
   </svg>
 )
 
-const IconClose = ({ size = 18, className = "" }) => (
-  <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
-    <line x1="18" y1="6" x2="6" y2="18" />
-    <line x1="6" y1="6" x2="18" y2="18" />
-  </svg>
-)
+const pplCycleTabs = {
+  'siklus-1': {
+    id: 'siklus-1',
+    label: 'Siklus 1',
+    fullTitle: 'Praktik Pembelajaran Mandiri Siklus 1',
+    description: 'Perangkat rancangan pembelajaran dan materi ajar teori Data dan Informasi pada pelaksanaan Praktik Pembelajaran Mandiri Siklus 1 di SMA Negeri 11 Yogyakarta.',
+    documents: [
+      {
+        id: 'siklus1-rancangan',
+        code: 'SIKLUS 1 · RANCANGAN PEMBELAJARAN',
+        title: 'Rancangan Pembelajaran (Siklus 1)',
+        subtitle: 'Modul Ajar & Skenario Pembelajaran Mandiri Siklus 1 — SMAN 11 Yogyakarta',
+        fileName: 'Rancangan Pembelajaran Siklus 1 - SMAN 11 Yogyakarta.pdf',
+        gdriveUrl: 'https://drive.google.com/file/d/15tJ8kXOQN1sCIFSaOYluy-6eclef8F9G/view?usp=sharing',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=15tJ8kXOQN1sCIFSaOYluy-6eclef8F9G'
+      },
+      {
+        id: 'siklus1-materi-teori',
+        code: 'SIKLUS 1 · MATERI PEMBELAJARAN',
+        title: 'Materi Teori Data dan Informasi',
+        subtitle: 'Bahan Ajar & Materi Teori Analisis Data dan Informasi Kelas X — Siklus 1',
+        fileName: 'Materi Teori Data dan Informasi - Siklus 1.pdf',
+        gdriveUrl: 'https://drive.google.com/file/d/1Qo1a7ybYhIqUc_ZZWDTGCQ4uCVOHOXBX/view?usp=sharing',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1Qo1a7ybYhIqUc_ZZWDTGCQ4uCVOHOXBX'
+      }
+    ]
+  },
+  'siklus-2-4': {
+    id: 'siklus-2-4',
+    label: 'Siklus 2 - 4',
+    fullTitle: 'Praktik Pembelajaran Mandiri Siklus 2 - 4',
+    description: 'Perangkat rancangan pembelajaran, materi praktik Data dan Informasi, media pembelajaran Google Colab (Sorting, Searching, List, Stack, Queue), serta instrumen Ulangan Harian Informatika pada pelaksanaan Praktik Pembelajaran Mandiri Siklus 2 hingga Siklus 4 di SMA Negeri 11 Yogyakarta.',
+    mediaLinks: [
+      {
+        id: 'colab-platform',
+        code: 'MEDIA PEMBELAJARAN PRAKTIK · PLATFORM',
+        title: 'Google Colaboratory (Google Colab)',
+        subtitle: 'Platform pemrograman Python interaktif berbasis cloud untuk kegiatan praktikum siswa',
+        url: 'https://colab.research.google.com/?hl=id',
+        buttonLabel: 'Buka Google Colab'
+      },
+      {
+        id: 'colab-materi-algoritma',
+        code: 'MEDIA PEMBELAJARAN PRAKTIK · NOTEBOOK MATERI',
+        title: 'Materi Sorting, Searching, List, Stack, Queue',
+        subtitle: 'Notebook Google Colab materi dan latihan praktik algoritma Sorting, Searching, List, Stack, dan Queue',
+        url: 'https://colab.research.google.com/drive/1X87pjBsIfjmCskdOEPqxLXMjSRvS0zw8?usp=sharing',
+        buttonLabel: 'Buka Materi di Google Colab'
+      }
+    ],
+    documents: [
+      {
+        id: 'siklus24-rancangan',
+        code: 'SIKLUS 2 - 4 · RANCANGAN PEMBELAJARAN',
+        title: 'Rancangan Pembelajaran (Siklus 2 - 4)',
+        subtitle: 'Modul Ajar & Skenario Pembelajaran Mandiri Siklus 2 - 4 — SMAN 11 Yogyakarta',
+        fileName: 'Rancangan Pembelajaran Siklus 2-4 - SMAN 11 Yogyakarta.pdf',
+        gdriveUrl: 'https://drive.google.com/file/d/14Owjcna1J7LD-CHwBcofPOoYBOcqkDO8/view?usp=sharing',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=14Owjcna1J7LD-CHwBcofPOoYBOcqkDO8'
+      },
+      {
+        id: 'siklus24-materi-praktik',
+        code: 'SIKLUS 2 - 4 · MATERI PRAKTIK',
+        title: 'Materi Praktik Data dan Informasi',
+        subtitle: 'Bahan Ajar & Panduan Praktikum Data dan Informasi — Siklus 2 - 4',
+        fileName: 'Materi Praktik Data dan Informasi - Siklus 2-4.pdf',
+        gdriveUrl: 'https://drive.google.com/file/d/1_CmCGJ8ihZ_lhR8QGjVgGzCM3m6fmx_S/view?usp=sharing',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=1_CmCGJ8ihZ_lhR8QGjVgGzCM3m6fmx_S'
+      },
+      {
+        id: 'siklus24-ulangan-harian',
+        code: 'EVALUASI · ULANGAN HARIAN',
+        title: 'Ulangan Harian Informatika',
+        subtitle: 'Instrumen Evaluasi & Ulangan Harian Mata Pelajaran Informatika — SMAN 11 Yogyakarta',
+        fileName: 'Ulangan Harian Informatika - SMAN 11 Yogyakarta.pdf',
+        gdriveUrl: 'https://drive.google.com/file/d/171lHu3jLSXeV3ONIfzJNqPCxuAERR8xO/view?usp=sharing',
+        downloadUrl: 'https://drive.google.com/uc?export=download&id=171lHu3jLSXeV3ONIfzJNqPCxuAERR8xO'
+      }
+    ]
+  }
+}
+
+const pplMediaGallery = [
+  {
+    id: 'ppl-vid-1',
+    type: 'video',
+    title: 'Video Mengajar 1',
+    category: 'Video Mengajar',
+    src: '/assets/video-mengajar-1.mp4',
+    thumbnail: '/assets/thumbnail-video-1.jpg'
+  },
+  {
+    id: 'ppl-vid-2',
+    type: 'video',
+    title: 'Video Mengajar 2',
+    category: 'Video Mengajar',
+    src: '/assets/video-mengajar-2.mp4',
+    thumbnail: '/assets/thumbnail-video-2.jpg'
+  },
+  {
+    id: 'ppl-vid-3',
+    type: 'video',
+    title: 'Video Mengajar 3',
+    category: 'Video Mengajar',
+    src: '/assets/video-mengajar-3.mp4'
+  },
+  {
+    id: 'ppl-img-1',
+    type: 'photo',
+    title: 'Foto Mengajar 1',
+    category: 'Foto Mengajar',
+    src: '/assets/mengajar-1.jpg'
+  },
+  {
+    id: 'ppl-img-2',
+    type: 'photo',
+    title: 'Foto Mengajar 2',
+    category: 'Foto Mengajar',
+    src: '/assets/mengajar-2.jpg'
+  },
+  {
+    id: 'ppl-eval-1',
+    type: 'photo',
+    title: 'Evaluasi Bersama Guru Pamong',
+    category: 'Dokumentasi Evaluasi',
+    src: '/assets/aistudio/evaluasi1_99a22767.jpeg'
+  },
+  {
+    id: 'ppl-eval-2',
+    type: 'photo',
+    title: 'Evaluasi Bersama Guru Pamong',
+    category: 'Dokumentasi Evaluasi',
+    src: '/assets/aistudio/evaluasi2_fa35c4ed.jpeg'
+  },
+  {
+    id: 'ppl-eval-3',
+    type: 'photo',
+    title: 'Evaluasi Bersama Guru Pamong',
+    category: 'Dokumentasi Evaluasi',
+    src: '/assets/aistudio/evaluasi3_7ac1632a.jpeg'
+  },
+  {
+    id: 'ppl-eval-4',
+    type: 'photo',
+    title: 'Evaluasi Bersama Guru Pamong',
+    category: 'Dokumentasi Evaluasi',
+    src: '/assets/aistudio/evaluasi4_0fed61bd.jpeg'
+  },
+  {
+    id: 'ppl-eval-5',
+    type: 'photo',
+    title: 'Evaluasi Bersama Guru Pamong',
+    category: 'Dokumentasi Evaluasi',
+    src: '/assets/aistudio/evaluasi5_46dda959.jpeg'
+  },
+  {
+    id: 'ppl-eval-6',
+    type: 'photo',
+    title: 'Evaluasi Bersama Guru Pamong',
+    category: 'Dokumentasi Evaluasi',
+    src: '/assets/aistudio/evaluasi6_953abd8e.jpeg'
+  }
+]
 
 function PPLMandiri() {
-  const [activeTab, setActiveTab] = useState('alur') // 'alur' | 'perangkat' | 'refleksi' | 'inovasi' | 'galeri'
-  const [selectedArtifact, setSelectedArtifact] = useState(null)
+  const [activeTab, setActiveTab] = useState('siklus-1')
+  const [previewDoc, setPreviewDoc] = useState(null)
+  const [mediaFilter, setMediaFilter] = useState('Semua')
+  const [previewPhoto, setPreviewPhoto] = useState(null)
+
+  useEffect(() => {
+    const handleKeyDown = (e) => {
+      if (e.key === 'Escape') {
+        setPreviewPhoto(null)
+      }
+    }
+    if (previewPhoto) {
+      window.addEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = 'hidden'
+    } else {
+      document.body.style.overflow = 'auto'
+    }
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = 'auto'
+    }
+  }, [previewPhoto])
+
+  const currentCycle = pplCycleTabs[activeTab] || pplCycleTabs['siklus-1']
+  const mediaCategories = ['Semua', 'Video Mengajar', 'Foto Mengajar', 'Dokumentasi Evaluasi']
+  const filteredMedia = mediaFilter === 'Semua'
+    ? pplMediaGallery
+    : pplMediaGallery.filter((item) => item.category === mediaFilter)
 
   return (
     <section id="ppl-mandiri" className="ppl-section">
@@ -98,7 +262,7 @@ function PPLMandiri() {
         </div>
         <h1>PPL Mandiri SMAN 11 Yogyakarta</h1>
         <p>
-          Dokumentasi komprehensif seluruh tahapan praktik asistensi mengajar terbimbing, praktik pengajaran mandiri di kelas Informatika (Fase E & F), perancangan modul ajar kontekstual, penerapan inovasi presensi QR Code, dan refleksi evaluatif bersama Guru Pamong serta DPL di SMA Negeri 11 Yogyakarta (SMA Kebangsaan).
+          Dokumentasi pelaksanaan praktik mengajar terbimbing dan mandiri pada mata pelajaran Informatika Kelas X (Fase E), penyusunan perangkat pembelajaran, serta refleksi bersama Guru Pamong dan Dosen Pembimbing Lapangan (DPL) di SMA Negeri 11 Yogyakarta.
         </p>
 
         <div className="ppl-stakeholders-grid">
@@ -128,346 +292,263 @@ function PPLMandiri() {
         </div>
       </div>
 
-      {/* Profile & Key Stats Strip */}
-      <div className="ppl-school-card">
-        <div className="ppl-school-header">
-          <div>
-            <h2>Kemitraan Praktik Persekolahan Berkualitas</h2>
-            <p>{pplSchoolProfile.motto}</p>
-          </div>
-          <span style={{ background: 'rgba(16, 185, 129, 0.18)', color: '#34d399', border: '1px solid rgba(16, 185, 129, 0.35)', padding: '6px 16px', borderRadius: '10px', fontWeight: '700', fontSize: '0.84rem' }}>
-            {pplSchoolProfile.period}
-          </span>
-        </div>
-
-        <div className="ppl-stats-badges">
-          {pplSchoolProfile.keyStats.map((st, idx) => (
-            <div key={idx} className="ppl-stat-item">
-              <span className="ppl-stat-val">{st.value}</span>
-              <span className="ppl-stat-lbl">{st.label}</span>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      {/* Navigation Sub-Tabs */}
-      <div className="ppl-tabs-nav" role="tablist">
+      {/* Navigation Sub-Tabs: Siklus 1, Siklus 2 - 4, & Dokumentasi Video dan Foto Mengajar serta Evaluasi */}
+      <div className="ppl-tabs-nav" role="tablist" aria-label="Pilih Siklus atau Dokumentasi Praktik Pembelajaran Mandiri">
         <button
-          className={`ppl-tab-btn ${activeTab === 'alur' ? 'active' : ''}`}
-          onClick={() => setActiveTab('alur')}
+          type="button"
+          role="tab"
+          aria-selected={activeTab === 'siklus-1'}
+          className={`ppl-tab-btn ${activeTab === 'siklus-1' ? 'active' : ''}`}
+          onClick={() => setActiveTab('siklus-1')}
         >
           <IconLayers size={18} />
-          <span>Alur & Tahapan Pelaksanaan</span>
+          <span>Praktik Pembelajaran Mandiri Siklus 1</span>
         </button>
 
         <button
-          className={`ppl-tab-btn ${activeTab === 'perangkat' ? 'active' : ''}`}
-          onClick={() => setActiveTab('perangkat')}
+          type="button"
+          role="tab"
+          aria-selected={activeTab === 'siklus-2-4'}
+          className={`ppl-tab-btn ${activeTab === 'siklus-2-4' ? 'active' : ''}`}
+          onClick={() => setActiveTab('siklus-2-4')}
         >
           <IconDoc size={18} />
-          <span>Perangkat Ajar & Modul</span>
+          <span>Praktik Pembelajaran Mandiri Siklus 2 - 4</span>
         </button>
 
         <button
-          className={`ppl-tab-btn ${activeTab === 'refleksi' ? 'active' : ''}`}
-          onClick={() => setActiveTab('refleksi')}
-        >
-          <IconCompass size={18} />
-          <span>Refleksi Praktik (LK 3 PPLM)</span>
-        </button>
-
-        <button
-          className={`ppl-tab-btn ${activeTab === 'inovasi' ? 'active' : ''}`}
-          onClick={() => setActiveTab('inovasi')}
-        >
-          <IconQr size={18} />
-          <span>Inovasi Presensi QR Code</span>
-        </button>
-
-        <button
-          className={`ppl-tab-btn ${activeTab === 'galeri' ? 'active' : ''}`}
-          onClick={() => setActiveTab('galeri')}
+          type="button"
+          role="tab"
+          aria-selected={activeTab === 'dokumentasi'}
+          className={`ppl-tab-btn ${activeTab === 'dokumentasi' ? 'active' : ''}`}
+          onClick={() => {
+            setActiveTab('dokumentasi')
+            setMediaFilter('Semua')
+          }}
         >
           <IconCamera size={18} />
-          <span>Catatan Lapangan & Dokumentasi</span>
+          <span>Dokumentasi Video dan Foto Mengajar serta Evaluasi</span>
         </button>
       </div>
 
-      {/* TAB 1: ALUR & TAHAPAN PPL */}
-      {activeTab === 'alur' && (
+      {/* Active Cycle Content (Siklus 1 / Siklus 2 - 4) */}
+      {activeTab !== 'dokumentasi' && (
         <div className="ppl-timeline-container">
-          {pplPhases.map((phase) => (
-            <div key={phase.phase} className="ppl-phase-card">
-              <div className="ppl-phase-top">
-                <span className="ppl-phase-num">{phase.phase}</span>
-                <span className="ppl-phase-period">{phase.period}</span>
-              </div>
-              <h3 className="ppl-phase-title">{phase.title}</h3>
-              <p className="ppl-phase-desc">{phase.description}</p>
+          <div className="ppl-school-card" style={{ marginBottom: '10px', padding: '24px 28px' }}>
+            <span className="ppl-art-code" style={{ display: 'inline-block', marginBottom: '10px' }}>
+              DOKUMEN PERANGKAT AJAR & EVALUASI · {currentCycle.label.toUpperCase()}
+            </span>
+            <h2 style={{ fontSize: '1.45rem', fontWeight: '800', color: '#ffffff', margin: '0 0 8px' }}>
+              {currentCycle.fullTitle}
+            </h2>
+            <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.78)', fontSize: '0.94rem', lineHeight: '1.65' }}>
+              {currentCycle.description}
+            </p>
+          </div>
 
-              <strong style={{ fontSize: '0.88rem', color: '#34d399', display: 'block', marginBottom: '10px' }}>
-                Hasil Capaian & Artefak Terwujud:
-              </strong>
-              <ul className="ppl-outcomes-list">
-                {phase.outcomes.map((out, idx) => (
-                  <li key={idx}>
-                    <span className="ppl-check-bullet"><IconCheck size={14} /></span>
-                    <span>{out}</span>
-                  </li>
+          {currentCycle.mediaLinks && currentCycle.mediaLinks.length > 0 && (
+            <div className="ppl-phase-card ppl-colab-section-card">
+              <div className="ppl-colab-section-head">
+                <span className="ppl-art-code" style={{ display: 'inline-block', marginBottom: '8px' }}>
+                  SIKLUS 2 - 4 · MEDIA PEMBELAJARAN PRAKTIK
+                </span>
+                <h3 className="ppl-phase-title" style={{ margin: '0 0 4px', fontSize: '1.25rem' }}>
+                  Media Pembelajaran Praktik (Google Colaboratory)
+                </h3>
+                <p style={{ margin: 0, fontSize: '0.88rem', color: 'rgba(255, 255, 255, 0.72)' }}>
+                  Media pembelajaran interaktif Google Colab dan materi praktikum algoritma pemrograman pada Siklus 2 - 4.
+                </p>
+              </div>
+
+              <div className="ppl-colab-grid">
+                {currentCycle.mediaLinks.map((link) => (
+                  <div key={link.id} className="ppl-colab-card">
+                    <div className="ppl-colab-card-body">
+                      <div className="ppl-colab-card-top">
+                        <div
+                          className={`ppl-colab-icon-box ${
+                            link.id === 'colab-platform' ? 'is-platform' : 'is-notebook'
+                          }`}
+                        >
+                          {link.id === 'colab-platform' ? (
+                            <IconColab size={18} />
+                          ) : (
+                            <IconCodeNotebook size={17} />
+                          )}
+                        </div>
+
+                        <span className="ppl-art-code ppl-colab-badge">
+                          {link.code}
+                        </span>
+                      </div>
+
+                      <h4 className="ppl-colab-title">{link.title}</h4>
+                      <p className="ppl-colab-subtitle">{link.subtitle}</p>
+                    </div>
+
+                    <div className="ppl-colab-card-footer">
+                      <a
+                        href={link.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="ppl-colab-btn"
+                      >
+                        <IconColab size={15} />
+                        <span>{link.buttonLabel}</span>
+                        <span aria-hidden="true" className="ppl-colab-btn-arrow">↗</span>
+                      </a>
+                    </div>
+                  </div>
                 ))}
-              </ul>
+              </div>
+            </div>
+          )}
+
+          {currentCycle.documents.map((doc) => (
+            <div key={doc.id} className="ppl-phase-card" style={{ padding: '26px 28px' }}>
+              <div style={{ display: 'flex', alignItems: 'flex-start', justifyContent: 'space-between', gap: '16px', flexWrap: 'wrap', marginBottom: '18px' }}>
+                <div>
+                  <span className="ppl-art-code" style={{ display: 'inline-block', marginBottom: '8px' }}>
+                    {doc.code}
+                  </span>
+                  <h3 className="ppl-phase-title" style={{ margin: '0 0 4px', fontSize: '1.25rem' }}>
+                    {doc.title}
+                  </h3>
+                  <p style={{ margin: 0, fontSize: '0.88rem', color: 'rgba(255, 255, 255, 0.7)' }}>
+                    {doc.subtitle}
+                  </p>
+                </div>
+              </div>
+
+              <PdfCanvasViewer
+                gdriveUrl={doc.gdriveUrl}
+                pdfUrl={doc.downloadUrl}
+                title={doc.title}
+                fileName={doc.fileName}
+                height="560px"
+                onExpandFullscreen={() => setPreviewDoc(doc)}
+              />
             </div>
           ))}
         </div>
       )}
 
-      {/* TAB 2: PERANGKAT AJAR & MODUL */}
-      {activeTab === 'perangkat' && (
-        <div className="ppl-artifacts-grid">
-          {pplTeachingArtifacts.map((art) => (
-            <article key={art.id} className="ppl-artifact-card">
-              <div className="ppl-art-badge-wrap">
-                <span className="ppl-art-code">{art.code}</span>
-                <span className="ppl-art-class">{art.targetClass}</span>
-              </div>
-
-              <h3 className="ppl-art-title">{art.title}</h3>
-              <p className="ppl-art-summary">{art.summary}</p>
-
-              <ul className="ppl-art-highlights">
-                {art.highlights.map((h, idx) => (
-                  <li key={idx}>
-                    <span style={{ color: '#34d399', marginTop: '2px' }}><IconCheck size={13} /></span>
-                    <span>{h}</span>
-                  </li>
-                ))}
-              </ul>
-
-              <button
-                className="ppl-open-scenario-btn"
-                style={{ marginTop: 'auto' }}
-                onClick={() => setSelectedArtifact(art)}
-              >
-                <span>Lihat Uraian Skenario Perangkat</span>
-                <IconExternal size={14} />
-              </button>
-            </article>
-          ))}
-        </div>
-      )}
-
-      {/* TAB 3: REFLEKSI PRAKTIK MENGAJAR (LK 3 PPLM) */}
-      {activeTab === 'refleksi' && (
-        <div className="ppl-reflection-block">
-          <div className="ppl-ref-header">
-            <h3>{pplReflectionLK3.documentTitle}</h3>
-            <div className="ppl-ref-meta">
-              <span>Sekolah: <strong>{pplReflectionLK3.school}</strong></span>
-              <span>Guru Pamong: <strong>{pplReflectionLK3.pamong}</strong></span>
-              <span>DPL: <strong>{pplReflectionLK3.dpl}</strong></span>
-              <span>Tanggal Pengesahan: <strong>{pplReflectionLK3.signDate}</strong></span>
-            </div>
-          </div>
-
-          <div className="ppl-ref-cards-grid">
-            <div className="ppl-ref-card" style={{ borderColor: 'rgba(16, 185, 129, 0.35)', background: 'rgba(16, 185, 129, 0.08)' }}>
-              <span className="ppl-ref-badge success">KEBERHASILAN UTAMA (A.1)</span>
-              <h4>{pplReflectionLK3.sections[0].title}</h4>
-              <p>{pplReflectionLK3.sections[0].content}</p>
-            </div>
-
-            <div className="ppl-ref-card" style={{ borderColor: 'rgba(244, 63, 94, 0.35)', background: 'rgba(244, 63, 94, 0.08)' }}>
-              <span className="ppl-ref-badge challenge">KENDALA KELAS & TANTANGAN (A.2)</span>
-              <h4>{pplReflectionLK3.sections[1].title}</h4>
-              <p>{pplReflectionLK3.sections[1].content}</p>
-            </div>
-
-            <div className="ppl-ref-card" style={{ borderColor: 'rgba(56, 189, 248, 0.35)', background: 'rgba(56, 189, 248, 0.08)' }}>
-              <span className="ppl-ref-badge feedback">ARAHAN PAMONG & DPL (B.1)</span>
-              <h4>{pplReflectionLK3.sections[2].title}</h4>
-              <p>{pplReflectionLK3.sections[2].content}</p>
-            </div>
-
-            <div className="ppl-ref-card" style={{ borderColor: 'rgba(251, 146, 60, 0.35)', background: 'rgba(251, 146, 60, 0.08)' }}>
-              <span className="ppl-ref-badge action">RENCANA AKSI PERBAIKAN (B.2)</span>
-              <h4>{pplReflectionLK3.sections[3].title}</h4>
-              <p>{pplReflectionLK3.sections[3].content}</p>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* TAB 4: INOVASI PRESENSI QR CODE DI SMAN 11 */}
-      {activeTab === 'inovasi' && (
-        <div className="ppl-school-card">
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(320px, 1fr))', gap: '28px' }}>
+      {/* Tab 3: Dokumentasi Video dan Foto Mengajar serta Evaluasi */}
+      {activeTab === 'dokumentasi' && (
+        <div className="ppl-school-card" style={{ padding: '32px 28px' }}>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', flexWrap: 'wrap', gap: '16px', marginBottom: '24px' }}>
             <div>
-              <span style={{ background: 'rgba(0, 217, 255, 0.15)', color: 'var(--accent-cyan)', border: '1px solid rgba(0, 217, 255, 0.35)', padding: '4px 14px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '800', textTransform: 'uppercase', letterSpacing: '0.8px' }}>
-                Projek Kepemimpinan Mahasiswa PPG Tim A2
+              <span className="ppl-art-code" style={{ display: 'inline-flex', alignItems: 'center', gap: '6px', marginBottom: '10px' }}>
+                <IconCamera size={15} />
+                <span>DOKUMENTASI VISUAL PPL MANDIRI</span>
               </span>
-              <h2 style={{ fontSize: '1.6rem', color: '#ffffff', margin: '14px 0 10px', fontWeight: '800', lineHeight: '1.3' }}>
-                Transformasi Presensi Digital Berbasis QR Code di SMAN 11 Yogyakarta
+              <h2 style={{ fontSize: '1.5rem', fontWeight: '800', color: '#ffffff', margin: '0 0 6px' }}>
+                Dokumentasi Video dan Foto Mengajar serta Evaluasi
               </h2>
-              <p style={{ color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.95rem', lineHeight: '1.7' }}>
-                Inisiatif nyata calon guru Informatika dalam mengatasi bottleneck kehadiran konvensional di SMA Kebangsaan 11 Yogyakarta. Melalui pemindaian kartu tanda pelajar ber-QR Code secara instan, data langsung tercatat di server sekolah tanpa kertas.
-              </p>
-
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '12px', margin: '22px 0' }}>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <span style={{ color: 'var(--accent-cyan, #00D9FF)' }}><IconCheck size={16} /></span>
-                  <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.85)' }}>Pemindaian instan &lt;2 detik per siswa menggunakan web camera</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <span style={{ color: 'var(--accent-cyan, #00D9FF)' }}><IconCheck size={16} /></span>
-                  <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.85)' }}>Rekapitulasi otomatis tersimpan ke spreadsheet sekolah</span>
-                </div>
-                <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
-                  <span style={{ color: 'var(--accent-cyan, #00D9FF)' }}><IconCheck size={16} /></span>
-                  <span style={{ fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.85)' }}>Diujicobakan sukses pada 6 kelas di SMAN 11 Yogyakarta</span>
-                </div>
-              </div>
             </div>
 
-            <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '24px', borderRadius: '20px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
-              <h4 style={{ color: '#ffffff', margin: '0 0 16px', fontSize: '1.05rem', fontWeight: '700' }}>Matriks Keberhasilan Projek di SMAN 11</h4>
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '14px' }}>
-                <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                  <span style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--accent-cyan, #00D9FF)', display: 'block' }}>60%</span>
-                  <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)' }}>Waktu Presensi Lebih Hemat</span>
-                </div>
-                <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                  <span style={{ fontSize: '1.5rem', fontWeight: '800', color: 'var(--accent-cyan, #00D9FF)', display: 'block' }}>100%</span>
-                  <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)' }}>Data Real-Time Akurat</span>
-                </div>
-                <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                  <span style={{ fontSize: '1.5rem', fontWeight: '800', color: '#fbbf24', display: 'block' }}>0 Lembar</span>
-                  <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)' }}>Kertas Absensi Terbuang</span>
-                </div>
-                <div style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '16px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                  <span style={{ fontSize: '1.5rem', fontWeight: '800', color: '#ffffff', display: 'block' }}>6 Kelas</span>
-                  <span style={{ fontSize: '0.78rem', color: 'rgba(255, 255, 255, 0.7)' }}>Target Uji Coba Lapangan</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      )}
-
-      {/* TAB 5: DOKUMENTASI & CATATAN LAPANGAN */}
-      {activeTab === 'galeri' && (
-        <div>
-          <div className="ppl-media-showcase" style={{ marginBottom: '28px' }}>
-            <h3 style={{ color: '#ffffff', marginBottom: '16px', fontSize: '1.15rem', display: 'flex', alignItems: 'center', gap: '8px' }}>
-              <IconCamera size={20} style={{ color: 'var(--accent-cyan, #00D9FF)' }} />
-              <span>Dokumentasi Foto Praktik Mengajar Terbimbing SMAN 11 Yogyakarta</span>
-            </h3>
-            <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '20px' }}>
-              <div style={{ background: 'rgba(255, 255, 255, 0.05)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.12)' }}>
-                <img src="/assets/mengajar-1.jpg" alt="Foto Praktik Mengajar Terbimbing 1" style={{ width: '100%', height: '190px', objectFit: 'cover' }} />
-                <div style={{ padding: '16px 18px' }}>
-                  <span style={{ fontSize: '0.74rem', color: 'var(--accent-cyan, #00D9FF)', fontWeight: '700', textTransform: 'uppercase' }}>FOTO PRAKTIK KELAS</span>
-                  <h4 style={{ color: '#ffffff', margin: '6px 0 8px', fontSize: '1rem' }}>Praktik Pembelajaran Terbimbing di Kelas</h4>
-                  <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.85rem', lineHeight: '1.5' }}>Penyampaian materi algoritma komputasi dan dialog interaktif dengan peserta didik SMA Negeri 11 Yogyakarta.</p>
-                </div>
-              </div>
-              <div style={{ background: 'rgba(255, 255, 255, 0.05)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.12)' }}>
-                <img src="/assets/mengajar-2.jpg" alt="Foto Praktik Mengajar Terbimbing 2" style={{ width: '100%', height: '190px', objectFit: 'cover' }} />
-                <div style={{ padding: '16px 18px' }}>
-                  <span style={{ fontSize: '0.74rem', color: 'var(--accent-cyan, #00D9FF)', fontWeight: '700', textTransform: 'uppercase' }}>FOTO PRAKTIK LABORATORIUM</span>
-                  <h4 style={{ color: '#ffffff', margin: '6px 0 8px', fontSize: '1rem' }}>Pendampingan Praktikum Laboratorium Komputer</h4>
-                  <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.75)', fontSize: '0.85rem', lineHeight: '1.5' }}>Membimbing siswa menyelesaikan latihan pemrograman Python dan lembar kerja komputasi secara kolaboratif.</p>
-                </div>
-              </div>
+            <div className="gallery-filter-tabs" style={{ margin: 0 }}>
+              {mediaCategories.map((cat) => (
+                <button
+                  key={cat}
+                  type="button"
+                  className={`gallery-filter-btn ${mediaFilter === cat ? 'active' : ''}`}
+                  onClick={() => setMediaFilter(cat)}
+                >
+                  {cat}
+                </button>
+              ))}
             </div>
           </div>
 
-          <div className="ppl-gallery-grid">
-            {pplGalleryActivities.map((act, idx) => (
-              <div key={idx} className="ppl-gallery-card">
-                <span className="ppl-gal-tag">{act.category}</span>
-                <h4>{act.title}</h4>
-                <p>{act.description}</p>
-              </div>
+          <div className="gallery-grid" style={{ maxWidth: '100%' }}>
+            {filteredMedia.map((item) => (
+              <article key={item.id} className={`gallery-card type-${item.type}`}>
+                {item.type === 'video' ? (
+                  <div className="gallery-video-wrapper">
+                    <video
+                      controls
+                      playsInline
+                      preload="metadata"
+                      poster={item.thumbnail}
+                      className="gallery-player"
+                    >
+                      <source src={item.src} type="video/mp4" />
+                      Peramban Anda tidak mendukung pemutar video HTML5.
+                    </video>
+                  </div>
+                ) : (
+                  <div
+                    className="gallery-photo-wrapper"
+                    onClick={() => setPreviewPhoto(item)}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => {
+                      if (e.key === 'Enter' || e.key === ' ') setPreviewPhoto(item)
+                    }}
+                    aria-label={`Buka ${item.title}`}
+                  >
+                    <img src={item.src} alt={item.title} className="gallery-photo-img" />
+                    <div className="gallery-photo-overlay">
+                      <span className="photo-zoom-icon">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                          <circle cx="11" cy="11" r="8"></circle>
+                          <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                          <line x1="11" y1="8" x2="11" y2="14"></line>
+                          <line x1="8" y1="11" x2="14" y2="11"></line>
+                        </svg>
+                        Lihat Foto
+                      </span>
+                    </div>
+                  </div>
+                )}
+
+                <div className="gallery-card-caption">
+                  <span className="gallery-badge-simple">{item.category}</span>
+                  <h3 className="gallery-simple-title">{item.title}</h3>
+                </div>
+              </article>
             ))}
           </div>
         </div>
       )}
 
-      {/* Modal Detail Perangkat Pembelajaran */}
-      {selectedArtifact &&
-        createPortal(
-          <div className="seminar-modal-backdrop" onClick={() => setSelectedArtifact(null)} role="dialog">
-            <div className="seminar-modal-card" onClick={(e) => e.stopPropagation()}>
-              <div className="seminar-modal-head">
-                <div className="seminar-modal-title-wrap">
-                  <h2>{selectedArtifact.title}</h2>
-                  <p>{selectedArtifact.targetClass} • Alokasi: {selectedArtifact.allocation}</p>
-                </div>
-                <button className="seminar-modal-close-btn" onClick={() => setSelectedArtifact(null)}>
-                  <IconClose size={16} />
-                  <span>Tutup</span>
-                </button>
-              </div>
-
-              <div className="seminar-modal-body">
-                <div style={{ background: 'rgba(255, 255, 255, 0.05)', padding: '18px 22px', borderRadius: '14px', border: '1px solid rgba(255, 255, 255, 0.1)', marginBottom: '24px' }}>
-                  <span style={{ fontSize: '0.75rem', fontWeight: '800', color: 'var(--accent-cyan, #00D9FF)', letterSpacing: '0.6px' }}>KODE PERANGKAT: {selectedArtifact.code}</span>
-                  <p style={{ margin: '8px 0 0', color: 'rgba(255, 255, 255, 0.85)', fontSize: '0.92rem', lineHeight: '1.65' }}>{selectedArtifact.summary}</p>
-                </div>
-
-                <div style={{ marginBottom: '24px' }}>
-                  <h4 style={{ color: '#ffffff', margin: '0 0 12px', fontSize: '1.05rem', fontWeight: '700' }}>Sorotan Fitur & Metodologi Perangkat</h4>
-                  <ul style={{ listStyle: 'none', padding: 0, margin: 0, display: 'flex', flexDirection: 'column', gap: '10px' }}>
-                    {selectedArtifact.highlights.map((h, idx) => (
-                      <li key={idx} style={{ display: 'flex', alignItems: 'flex-start', gap: '10px', fontSize: '0.9rem', color: 'rgba(255, 255, 255, 0.85)' }}>
-                        <span style={{ color: 'var(--accent-cyan, #00D9FF)', marginTop: '2px' }}><IconCheck size={14} /></span>
-                        <span>{h}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                {selectedArtifact.sections && (
-                  <div>
-                    <h4 style={{ color: '#ffffff', margin: '0 0 14px', fontSize: '1.05rem', fontWeight: '700' }}>Uraian Komponen Modul Ajar</h4>
-                    <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
-                      {selectedArtifact.sections.map((sec, idx) => (
-                        <div key={idx} style={{ background: 'rgba(255, 255, 255, 0.04)', padding: '16px 20px', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.08)' }}>
-                          <strong style={{ color: 'var(--accent-cyan, #00D9FF)', display: 'block', marginBottom: '6px', fontSize: '0.95rem' }}>{sec.heading}</strong>
-                          <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.82)', fontSize: '0.9rem', lineHeight: '1.6' }}>{sec.content}</p>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-              </div>
-
-              <div className="seminar-modal-foot">
-                <span style={{ fontSize: '0.82rem', color: 'rgba(255, 255, 255, 0.65)' }}>
-                  Perangkat Ajar Resmi PPL SMAN 11 Yogyakarta • Asyhar Qowiim
-                </span>
-                <button
-                  onClick={() => setSelectedArtifact(null)}
-                  style={{
-                    padding: '9px 22px',
-                    background: 'linear-gradient(135deg, var(--accent-blue, #1D6FA5), #0284c7)',
-                    color: '#ffffff',
-                    border: 'none',
-                    borderRadius: '10px',
-                    cursor: 'pointer',
-                    fontWeight: '700',
-                    fontSize: '0.85rem',
-                    fontFamily: 'inherit',
-                    boxShadow: '0 4px 14px rgba(29, 111, 165, 0.4)'
-                  }}
-                >
-                  Tutup
-                </button>
-              </div>
+      {/* Lightbox Modal for Photos */}
+      {previewPhoto && (
+        <div className="gallery-modal-backdrop" onClick={() => setPreviewPhoto(null)}>
+          <div className="gallery-photo-modal-card" onClick={(e) => e.stopPropagation()}>
+            <button
+              type="button"
+              className="gallery-modal-close"
+              onClick={() => setPreviewPhoto(null)}
+              aria-label="Tutup pratinjau foto"
+            >
+              ✕
+            </button>
+            <div className="gallery-photo-modal-img-wrap">
+              <img
+                src={previewPhoto.src}
+                alt={previewPhoto.title}
+                className="gallery-modal-full-img"
+              />
             </div>
-          </div>,
-          document.body
-        )}
+            <div className="gallery-photo-modal-info">
+              <span className="gallery-badge-simple">{previewPhoto.category}</span>
+              <h3>{previewPhoto.title}</h3>
+            </div>
+          </div>
+        </div>
+      )}
+
+      {/* Fullscreen Document Modal */}
+      <PdfReviewModal
+        isOpen={Boolean(previewDoc)}
+        onClose={() => setPreviewDoc(null)}
+        gdriveUrl={previewDoc?.gdriveUrl || ''}
+        pdfUrl={previewDoc?.downloadUrl || ''}
+        title={previewDoc?.title || 'Dokumen PPL SMAN 11 Yogyakarta'}
+        fileName={previewDoc?.fileName || 'dokumen-ppl.pdf'}
+      />
     </section>
   )
 }

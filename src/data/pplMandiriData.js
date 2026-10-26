@@ -77,7 +77,7 @@ export const pplPhases = [
     phase: 'Fase 05',
     title: 'Refleksi Pengalaman, Penilaian Pamong/DPL, & Berbagi Praktik Baik',
     period: 'Akhir Masa PPL',
-    description: 'Penyusunan dokumen resmi LK 3 Refleksi Praktik Mengajar Terbimbing/Mandiri, penelaahan catatan Guru Pamong & DPL, penyusunan laporan Best Practice, serta penyerahan kembali mahasiswa ke kampus UNY.',
+    description: 'Penyusunan dokumen LK 3 Refleksi Praktik Mengajar Terbimbing/Mandiri, penelaahan catatan Guru Pamong & DPL, penyusunan laporan Best Practice, serta penyerahan kembali mahasiswa ke kampus UNY.',
     outcomes: [
       'Pengesahan Dokumen LK 3 PPLM oleh Dian C.R., S.Si. & Ir. Bekti Wulandari, S.Pd.T., M.Pd.',
       'Penyusunan Portofolio Digital berdasarkan pengalaman nyata di sekolah',
@@ -210,7 +210,7 @@ export const pplGalleryActivities = [
   {
     title: 'Apel Pagi & Pengenalan Lingkungan SMA Kebangsaan 11',
     category: 'Orientasi Sekolah',
-    description: 'Mengikuti upacara bendera hari Senin dan pengenalan resmi mahasiswa PPL PPG Calon Guru di hadapan civitas akademika SMA Negeri 11 Yogyakarta.'
+    description: 'Mengikuti upacara bendera hari Senin dan pengenalan mahasiswa PPL PPG Calon Guru di hadapan civitas akademika SMA Negeri 11 Yogyakarta.'
   },
   {
     title: 'Observasi & Inventarisasi Laboratorium Komputer',

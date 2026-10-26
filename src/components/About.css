@@ -67,9 +67,9 @@
 }
 
 .badge-icon-logo {
-  height: 20px;
+  height: 24px;
   width: auto;
-  border-radius: 3px;
+  border-radius: 4px;
   display: block;
 }
 
@@ -449,8 +449,224 @@
   line-height: 1.4;
 }
 
+/* Visi & Misi Section */
+.about-vision-mission {
+  margin-top: 40px;
+  background: rgba(11, 31, 51, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 32px;
+  padding: clamp(28px, 4vw, 48px);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-vision-mission::before {
+  content: "";
+  position: absolute;
+  bottom: -100px;
+  left: -100px;
+  width: 340px;
+  height: 340px;
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+.vm-head {
+  margin-bottom: 32px;
+  max-width: 720px;
+}
+
+.vm-head h3 {
+  font-size: clamp(1.5rem, 3.5vw, 2.2rem);
+  line-height: 1.2;
+  color: var(--white);
+  font-weight: 700;
+  letter-spacing: -0.4px;
+  margin-bottom: 12px;
+}
+
+.vm-head p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: clamp(0.92rem, 1.6vw, 1rem);
+  line-height: 1.7;
+}
+
+.vm-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.35fr;
+  gap: clamp(24px, 3.5vw, 36px);
+  align-items: stretch;
+  position: relative;
+  z-index: 1;
+}
+
+.visi-card,
+.misi-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 24px;
+  padding: clamp(24px, 3vw, 34px);
+  display: flex;
+  flex-direction: column;
+}
+
+.visi-card {
+  background: linear-gradient(160deg, rgba(21, 57, 91, 0.75) 0%, rgba(11, 31, 51, 0.85) 100%);
+  border-color: rgba(0, 217, 255, 0.22);
+  box-shadow: 0 16px 40px rgba(0, 0, 0, 0.22);
+}
+
+.vm-card-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  align-self: flex-start;
+  background: rgba(0, 217, 255, 0.12);
+  border: 1px solid rgba(0, 217, 255, 0.28);
+  color: var(--accent-cyan);
+  padding: 8px 14px;
+  border-radius: var(--radius-pill);
+  font-size: 0.74rem;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  margin-bottom: 22px;
+}
+
+.vm-badge-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--accent-cyan);
+}
+
+.visi-title {
+  font-size: clamp(1.25rem, 2.4vw, 1.55rem);
+  line-height: 1.3;
+  color: var(--white);
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.visi-statement {
+  color: rgba(255, 255, 255, 0.88);
+  font-size: clamp(0.95rem, 1.6vw, 1.04rem);
+  line-height: 1.75;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 3px solid var(--accent-cyan);
+  padding: 16px 18px;
+  border-radius: 14px;
+  margin-bottom: 24px;
+}
+
+.visi-pillars {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: auto;
+}
+
+.visi-pillar-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  border-radius: 14px;
+  padding: 12px 14px;
+}
+
+.pillar-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: var(--accent-cyan);
+  box-shadow: 0 0 10px rgba(0, 217, 255, 0.6);
+  margin-top: 6px;
+  flex: 0 0 auto;
+}
+
+.visi-pillar-item div {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.visi-pillar-item strong {
+  color: var(--white);
+  font-size: 0.9rem;
+  font-weight: 600;
+}
+
+.visi-pillar-item span {
+  color: rgba(255, 255, 255, 0.68);
+  font-size: 0.82rem;
+  line-height: 1.45;
+}
+
+.misi-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.misi-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  padding: 16px 18px;
+  transition: var(--transition);
+}
+
+.misi-item:hover {
+  border-color: rgba(0, 217, 255, 0.35);
+  background: rgba(0, 217, 255, 0.06);
+  transform: translateY(-2px);
+}
+
+.misi-number {
+  width: 36px;
+  height: 36px;
+  flex: 0 0 auto;
+  border-radius: 10px;
+  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
+  color: var(--white);
+  font-size: 0.82rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 14px rgba(0, 217, 255, 0.25);
+}
+
+.misi-content {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.misi-content strong {
+  color: var(--white);
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.35;
+}
+
+.misi-content p {
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin: 0;
+}
+
 @media (max-width: 968px) {
-  .story-grid {
+  .story-grid,
+  .vm-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -480,4 +696,10 @@
   .about-commitment-card {
     min-height: 240px;
   }
+
+  .misi-item {
+    padding: 14px;
+    gap: 12px;
+  }
 }
+
