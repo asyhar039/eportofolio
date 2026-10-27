@@ -97,16 +97,16 @@ function About() {
         <div className="story-grid">
           <div className="story-text">
             <p>
-              Halo, nama saya <strong>Asyhar Qowiim</strong>. Saya berasal dari Kecamatan Kombeng, Kutai Timur, sebuah wilayah unik yang terus bertransformasi dan menunjukkan perkembangan pesat setiap tahunnya. Daerah kami dianugerahi kesuburan tanah yang luar biasa, menjadikannya lumbung kekayaan hasil bumi seperti minyak kelapa sawit yang luas serta potensi pertambangan batu bara yang melimpah.
+              Halo, nama saya <strong>Asyhar Qowiim</strong>. Saya berasal dari Kecamatan Kombeng, Kutai Timur—wilayah yang terus berkembang dengan potensi perkebunan kelapa sawit dan pertambangan batu bara yang melimpah.
             </p>
             <p>
-              Tumbuh di lingkungan keluarga pendidik—dengan orang tua sebagai guru SD dan kakak yang mengabdi di pondok pesantren—telah membentuk karakter saya untuk menghargai pengabdian. Sebagai lulusan S1 Informatika dari Universitas Teknologi Yogyakarta angkatan 2025, saya merasa memiliki tanggung jawab besar untuk memastikan bahwa kekayaan alam yang dimiliki Kombeng diimbangi dengan kualitas sumber daya manusia yang mumpuni di era digital.
+              Tumbuh di keluarga pendidik—dengan orang tua sebagai guru SD dan kakak yang mengabdi di pondok pesantren—menumbuhkan kecintaan saya pada dunia pendidikan. Sebagai lulusan S1 Informatika Universitas Teknologi Yogyakarta (2025), saya terdorong untuk memastikan kemajuan daerah diimbangi oleh kesiapan sumber daya manusia di era digital.
             </p>
             <p>
-              Inspirasi saya untuk menjadi guru profesional berakar dari keinginan melanjutkan estafet perjuangan ayah saya yang telah memasuki masa pensiun, di tengah kondisi daerah yang masih sangat kekurangan tenaga pendidik informatika. Tujuan saya adalah pulang dan mengabdi untuk menjembatani kesenjangan literasi digital, sehingga generasi muda di Kalimantan Timur tidak hanya menjadi penonton dalam kemajuan daerahnya, tetapi mampu menjadi inovator yang mengelola potensi lokal dengan teknologi modern.
+              Keinginan menjadi guru profesional berangkat dari tekad melanjutkan pengabdian ayah saya yang telah pensiun, sekaligus menjawab kebutuhan tenaga pendidik Informatika di daerah. Tujuan saya adalah menjembatani kesenjangan literasi digital agar generasi muda Kalimantan Timur mampu mengelola potensi lokal melalui inovasi teknologi.
             </p>
             <p className="story-commit">
-              Saya berkomitmen penuh untuk mendedikasikan ilmu saya demi mencetak generasi yang kompetitif dan siap menghadapi tantangan masa depan.
+              Saya berkomitmen mendedikasikan ilmu dan kompetensi saya untuk mendampingi lahirnya generasi yang adaptif, berkarakter, dan siap menghadapi tantangan masa depan.
             </p>
           </div>
 
@@ -169,7 +169,7 @@ function About() {
             </h4>
 
             <p className="visi-statement">
-              &ldquo;Menjadi calon guru Informatika profesional yang transformatif, reflektif, adaptif, dan berintegritas tinggi—yang berperan sebagai pamong, fasilitator, serta agen perubahan (<em>agent of change</em>) dalam menuntun potensi peserta didik sesuai kodrat alam dan kodrat zaman. Berkomitmen memfasilitasi pembelajaran berpusat pada siswa (<em>student-centered learning</em>), menciptakan iklim kelas yang aman, nyaman, dan ramah anak, serta mengembangkan diri melalui praktik reflektif mandiri demi menuntun siswa menjadi pembelajar sepanjang hayat yang bernalar kritis, kreatif, melek teknologi abad ke-21, dan berakhlak mulia.&rdquo;
+              &ldquo;Menjadi guru Informatika profesional yang transformatif, reflektif, adaptif, dan berintegritas dalam menuntun potensi peserta didik sesuai kodrat alam dan kodrat zaman. Berkomitmen menghadirkan pembelajaran berpusat pada siswa dalam iklim kelas yang aman dan inklusif, guna membentuk pembelajar sepanjang hayat yang bernalar kritis, kreatif, cakap digital, dan berakhlak mulia.&rdquo;
             </p>
 
             <div className="visi-pillars">

@@ -9,8 +9,8 @@ const coursesData = [
     title: 'Filosofi Pendidikan dan Pendidikan Nilai',
     description: 'Pemahaman mendalam mengenai dasar filosofis pendidikan, pembentukan karakter, dan penanaman nilai dalam proses belajar.',
     detail: {
-      fullTitle: 'detail mata kuliah Filosofi Pendidikan dan Pendidikan nilai',
-      fullDescription: 'Mata kuliah Filosofi Pendidikan dan Pendidikan Nilai (FPPN) ini, membekali peserta PPG sebagai calon guru dengan kemampuan untuk memahami filosofi pendidikan Indonesia, menginternalisasi nilai-nilai ke-Indonesia-an dalam menjalankan tugas sebagai pendidik dan dalam kehidupan keseharian, serta berkomitmen pada nilai-nilai moral dan etika, dasar-dasar kepemimpinan, dan sebagai pembelajar sepanjang hayat.',
+      fullTitle: 'Detail Mata Kuliah Filosofi Pendidikan dan Pendidikan Nilai',
+      fullDescription: 'Mata kuliah Filosofi Pendidikan dan Pendidikan Nilai (FPPN) membekali calon guru dengan pemahaman filosofi pendidikan nasional berdasarkan pemikiran Ki Hadjar Dewantara dan Pancasila, internalisasi nilai karakter bangsa, kepemimpinan pendidik, kode etik profesi, serta komitmen sebagai pembelajar sepanjang hayat.',
       topics: [
         {
           name: 'Landasan Filosofi Pendidikan Nasional',
@@ -52,8 +52,8 @@ const coursesData = [
     title: 'Peserta Didik dan Pemahamannya',
     description: 'Dokumentasi proses memahami karakteristik, perkembangan, dan kebutuhan peserta didik sebagai dasar perencanaan.',
     detail: {
-      fullTitle: 'Detail Mata Kuliah Pemahaman tentang Peserta Didik dan Pembelajaran',
-      fullDescription: 'Mata kuliah ini bertujuan membekali peserta PPG Calon Guru dengan kompetensi dalam memahami karakteristik, kebutuhan, dan potensi peserta didik secara holistik sebagai dasar dalam merancang, melaksanakan dan evaluasi pembelajaran yang efektif dan berpusat pada peserta didik menggunakan pendekatan Pembelajaran Mendalam. Peserta PPG mempelajari berbagai teori perkembangan peserta didik (kognitif, sosial-emosional, moral, dan fisik), gaya belajar, perbedaan individu, serta konteks sosial dan budaya yang mempengaruhi proses belajar. Selain itu, mata kuliah ini juga mengkaji prinsip-prinsip pembelajaran yang konstruktif, humanistik, dan berdiferensiasi, serta bagaimana merancang pengalaman belajar yang adaptif dan inklusif. Mahasiswa akan dilatih untuk melakukan identifikasi kebutuhan belajar peserta didik melalui observasi, asesmen, dan refleksi, serta menerapkan hasil pemahaman tersebut dalam perencanaan, pelaksanaan, dan evaluasi pembelajaran melalui pembelajaran mikro. Mata kuliah ini terintegrasi dengan mata kuliah PPL terbimbing. Mahasiswa akan terlibat dalam studi kasus, diskusi kolaboratif, simulasi, dan refleksi untuk mengembangkan kemampuan dalam mengidentifikasi kebutuhan belajar, melakukan profiling peserta didik, serta merancang strategi pembelajaran yang responsif dan adaptif. Dengan demikian, lulusan diharapkan mampu menciptakan lingkungan belajar yang memuliakan keberagaman, mendorong kemandirian, dan mendukung perkembangan optimal setiap peserta didik.',
+      fullTitle: 'Detail Mata Kuliah Pemahaman tentang Peserta Didik dan Pembelajarannya',
+      fullDescription: 'Mata kuliah ini membekali calon guru dengan pemahaman holistik mengenai karakteristik, perkembangan (kognitif, sosial-emosional, moral, dan fisik), gaya belajar, serta latar belakang sosio-budaya peserta didik. Melalui observasi, asesmen diagnostik, dan pembelajaran mikro yang terintegrasi dengan PPL Terbimbing, mahasiswa dilatih merancang pembelajaran yang konstruktif, humanistik, berdiferensiasi, dan inklusif.',
       topics: [
         {
           name: 'Memahami Peserta Didik Secara Holistik',
@@ -123,7 +123,7 @@ const coursesData = [
     description: 'Mata kuliah yang membekali prinsip perancangan pembelajaran mendalam dan asesmen dasar yang efektif.',
     detail: {
       fullTitle: 'Detail Mata Kuliah Pembelajaran Mendalam dan Asesmen (PMA) Dasar SMK',
-      fullDescription: 'Mata kuliah ini membekali peserta PPG calon Guru dengan pemahaman konseptual multistruktural, mengaplikasikan keterampilan praktis relasional, dan merefleksi pemikiran abstrak mendalam mengenai pendekatan pembelajaran kejuruan mendalam di SMK dan keterampilan praktis mengenai pendekatan pembelajaran mendalam (deep learning) dalam konteks pembelajaran di SMK. Melalui pendekatan case method dan Project Based Learning pada mata kuliah ini peserta diharapkan mampu menelaah, merancang, melaksanakan, serta mengevaluasi pembelajaran dan asesmen yang mengimplementasikan pembelajaran mendalam di SMK. Mata kuliah ini terintegrasi dengan mata kuliah Praktik Pengalaman Lapangan (PPL) Terbimbing sesuai dengan kekhasan pembelajaran di SMK, dan menekankan evaluasi reflektif menggunakan asesmen yang menerapkan prinsip keadilan, keterbukaan, objektivitas, keberlanjutan, holistik, keanekaragaman, integritas, akuntabilitas, responsivitas, dan keterhubungan dengan tujuan pendidikan.',
+      fullDescription: 'Mata kuliah ini membekali calon guru dengan konsep dan keterampilan praktis merancang, melaksanakan, serta mengevaluasi pembelajaran mendalam (deep learning) dan asesmen autentik dalam konteks pendidikan kejuruan. Melalui pendekatan Case Method, Project-Based Learning, dan kerangka Understanding by Design (UbD) yang terintegrasi dengan PPL Terbimbing, mahasiswa menerapkan asesmen yang objektif, adil, dan berorientasi pada keberagaman murid.',
       topics: [
         {
           name: 'Pendekatan Pembelajaran Mendalam di SMK',
@@ -228,7 +228,7 @@ const coursesData = [
   },
   { number: '07', semester: 2, category: 'Pedagogik', title: 'Pembelajaran Sosial Emosional', description: 'Pengembangan pembelajaran yang memperhatikan aspek sosial dan emosional (CASEL) peserta didik dalam lingkungan belajar.' },
   { number: '08', semester: 2, category: 'Pedagogik', title: 'Pengembangan Keprofesian Berkelanjutan', description: 'Penguatan kompetensi pendidik sebagai praktisi reflektif dan ilmuwan melalui filsafat ilmu, Best Practice, dan KTI.' },
-  { number: '09', semester: 2, category: 'PPL', title: 'Yogyakarta_Praktik Pengalaman Lapangan (PPL) Mandiri', description: 'Pelaksanaan praktik mengajar mandiri di SMAN 11 Yogyakarta pada materi logika algoritma sorting dan searching.' },
+  { number: '09', semester: 2, category: 'PPL', title: 'Praktik Pengalaman Lapangan (PPL) Mandiri', description: 'Pelaksanaan praktik mengajar mandiri di SMAN 11 Yogyakarta pada materi logika algoritma sorting dan searching.' },
   { number: '10', semester: 2, category: 'Pedagogik', title: 'Pembelajaran Mendalam dan Asesmen Lanjut SMK', description: 'Perancangan pembelajaran mendalam dan asesmen autentik berorientasi DUDI lintas disiplin kejuruan di SMK.' },
   { number: '11', semester: 2, category: 'Seminar', title: 'Seminar Pendidikan Profesi Guru', description: 'Refleksi pengalaman belajar, penyusunan portofolio digital, dan berbagi hasil karya inovasi pembelajaran selama PPG.' },
   { number: '12', semester: 2, category: 'Kepemimpinan', title: 'Projek Kepemimpinan', description: 'Pengembangan kepemimpinan personal, growth mindset, dan inovasi sistem presensi digital QR Code di SMAN 11 Yogyakarta.' }

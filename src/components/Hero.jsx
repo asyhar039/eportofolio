@@ -57,15 +57,16 @@ function Hero({ onNavigate }) {
             </button>
           </div>
           <div className="keywords">
-            <span><span className="dot"></span> Belajar</span>
-            <span><span className="dot"></span> Berkembang</span>
-            <span><span className="dot"></span> Berkontribusi</span>
+            <span>Belajar</span>
+            <span className="keyword-sep">•</span>
+            <span>Berkembang</span>
+            <span className="keyword-sep">•</span>
+            <span>Berkontribusi</span>
           </div>
         </div>
 
         <div className="hero-visual">
           <article className="profile-card">
-            <div className="card-glow"></div>
             <div className="card-topline">
               <span className="badge">
                 <img src="/assets/logo-ppg-calon-guru.jpeg" alt="PPG Calon Guru" className="card-badge-logo" />

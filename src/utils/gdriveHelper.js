@@ -18,9 +18,9 @@ export const OFFICIAL_GDRIVE_DOCS = {
   },
   // 1. LK 4: Desain Karya Inovatif - Asyhar Qowiim
   'lk-4-desain-karya-inovatif': {
-    id: '1EjkEvU1eC4Dtq8HSL7I8bRgPLhIS55Ys',
-    viewUrl: 'https://drive.google.com/file/d/1EjkEvU1eC4Dtq8HSL7I8bRgPLhIS55Ys/view?usp=sharing',
-    previewUrl: 'https://drive.google.com/file/d/1EjkEvU1eC4Dtq8HSL7I8bRgPLhIS55Ys/preview'
+    id: '15cMRK3-qO0Isc5GfJx_Ri-T8kdz_aQ0g',
+    viewUrl: 'https://drive.google.com/file/d/15cMRK3-qO0Isc5GfJx_Ri-T8kdz_aQ0g/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/15cMRK3-qO0Isc5GfJx_Ri-T8kdz_aQ0g/preview'
   },
   // 2. LK 2 (Sem. II) - Refleksi Pengalaman Belajar Semester 2
   'lk-2-semester-2': {
@@ -36,24 +36,24 @@ export const OFFICIAL_GDRIVE_DOCS = {
   },
   // 4. Karya Inovasi / Slide Presentasi
   'karya-inovasi-slide': {
-    id: '17Fgn_XrZobkUDdytqj5g4488EecHPkWD',
-    viewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing',
-    previewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/preview'
+    id: '1vByjW1b0fE9TgC1-WyV50666IxSYKGju',
+    viewUrl: 'https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/preview'
   },
   'karya-slide': {
-    id: '17Fgn_XrZobkUDdytqj5g4488EecHPkWD',
-    viewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing',
-    previewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/preview'
+    id: '1vByjW1b0fE9TgC1-WyV50666IxSYKGju',
+    viewUrl: 'https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/preview'
   },
   'slide-presentasi': {
-    id: '17Fgn_XrZobkUDdytqj5g4488EecHPkWD',
-    viewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing',
-    previewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/preview'
+    id: '1vByjW1b0fE9TgC1-WyV50666IxSYKGju',
+    viewUrl: 'https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/preview'
   },
   'slide-presentasi-karya-inovasi': {
-    id: '17Fgn_XrZobkUDdytqj5g4488EecHPkWD',
-    viewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing',
-    previewUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/preview'
+    id: '1vByjW1b0fE9TgC1-WyV50666IxSYKGju',
+    viewUrl: 'https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/preview'
   },
   // 5. Modul Ajar Informatika NetLab
   'modul-ajar-netlab': {

@@ -758,164 +758,154 @@ export const seminarWorksheets = [
     id: 'lk-4-desain-karya-inovatif',
     number: 'LK 4',
     badge: 'LEMBAR KERJA 4 (LK 4)',
-    title: 'LK 4: Penyusunan Desain Karya Inovatif',
-    subtitle: 'Inovasi PBL Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab',
+    title: 'LK 4: Desain Karya Inovatif Pembelajaran',
+    subtitle: 'Inovasi Pengembangan Media Simulasi Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab',
     category: 'Lembar Kerja Seminar PPG',
-    program: 'Pendidikan Profesi Guru (PPG)',
+    program: 'Program Studi Informatika Pendidikan Profesi Guru (PPG) Prajabatan - Universitas Negeri Yogyakarta',
     course: 'Seminar Pendidikan Profesi Guru (Seminar PPG)',
     semester: 'Semester 2',
     date: '2026',
     author: 'Asyhar Qowiim (NIM: 25105260081)',
-    institution: 'Bidang Studi Informatika',
+    institution: 'Program Studi Informatika PPG Prajabatan - Universitas Negeri Yogyakarta',
     pdfUrl: '/assets/seminar/lk-4-desain-karya-inovatif.pdf',
-    gdriveUrl: 'https://drive.google.com/file/d/1EjkEvU1eC4Dtq8HSL7I8bRgPLhIS55Ys/preview',
+    gdriveUrl: 'https://drive.google.com/file/d/15cMRK3-qO0Isc5GfJx_Ri-T8kdz_aQ0g/preview',
     pdfFileName: 'LK 4 Desain Karya Inovatif Asyhar Qowiim NIM 25105260081.pdf',
-    summary: 'Penyusunan desain karya inovatif "Inovasi PBL Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab" untuk siswa Kelas X SMA (Elemen JKI, 1 pertemuan / 2 JP x 45 menit), mencakup Identitas Karya, Gagasan & Riset Inovasi, Rancangan & Implementasi (Prototipe NetLab & 5 Sintaks PBL), Evaluasi Karya Inovatif (Kebaruan, Kreativitas, Kebermanfaatan), serta Daftar Pustaka.',
+    summary: 'Penyusunan desain karya inovatif pembelajaran "Inovasi Pengembangan Media Simulasi Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab" untuk siswa Kelas X SMA (Elemen JKI, alokasi waktu 1 pertemuan / 2 JP x 45 menit / 90 menit). Mencakup Identitas Karya Inovasi, Gagasan & Riset Inovasi (Tantangan Lab, Solusi Inovatif, Rumusan Masalah, Tujuan & Landasan Teori TPACK/Edgar Dale), Rancangan & Implementasi Pengembangan (Prototipe NetLab & 3 Tahapan Praktikum 90 Menit), Evaluasi Karya Inovatif (Kebaruan, Kreativitas, Kebermanfaatan), Kesimpulan & Rekomendasi (Pendekatan Virtual-First, N-Gain 0,74), serta Daftar Pustaka.',
     highlights: [
-      'I. Identitas Karya: Transisi dari Cisco Packet Tracer ke Web Simulator NetLab (Zero-Installation)',
-      'II. Gagasan & Riset Inovasi: Tantangan Lab, Solusi PBL Masalah di Awal, & Riset Penguat (Cone of Experience, N-Gain 0,74)',
-      'III. Rancangan & Implementasi: Prototipe Workspace NetLab & 5 Sintaks PBL (2 JP / 90 Menit)',
-      'IV. Evaluasi Karya Inovatif: Kebaruan (Novelty), Kreativitas (Creativity), & Kebermanfaatan (Utility)',
-      'V. Daftar Pustaka & Kutipan Jurnal Lengkap'
+      'I. Identitas Karya Inovasi: "Inovasi Pengembangan Media Simulasi Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab"',
+      'II. Gagasan & Riset Inovasi: Tantangan Lab, Solusi Simulator NetLab (<150 MB RAM), Kerangka TPACK & Edgar Dale (Retensi 90%, N-Gain 0,74)',
+      'III. Rancangan & Implementasi Pengembangan: Prototipe In-Browser NetLab & 3 Tahapan Praktikum (Orientasi 15m, Eksplorasi Mandiri 60m, Evaluasi & Refleksi 15m)',
+      'IV. Evaluasi Karya Inovatif: Kebaruan (Zero-Installation), Kreativitas (Jebakan Logika IP), & Kebermanfaatan (Reduksi Waktu 57,1%, N-Gain 0,74)',
+      'V. Kesimpulan & Rekomendasi (Pendekatan Virtual-First) serta Daftar Pustaka Lengkap'
     ],
     lk4Sections: {
       identitasMahasiswa: {
         nama: 'Asyhar Qowiim',
-        nim: '25105260081'
+        nim: '25105260081',
+        prodi: 'Program Studi Informatika Pendidikan Profesi Guru (PPG) Prajabatan - Universitas Negeri Yogyakarta'
       },
       identitasKarya: [
         {
           no: 1,
           label: 'Nama Karya Inovasi',
-          isi: '"Inovasi PBL Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab"'
+          isi: '"Inovasi Pengembangan Media Simulasi Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab"'
         },
         {
           no: 2,
           label: 'Sasaran Subjek Pembelajaran',
-          isi: 'Siswa Kelas X SMA (Mata Pelajaran Informatika, Elemen Jaringan Komputer dan Internet / JKI, alokasi waktu 1 pertemuan / 2 JP x 45 menit).'
+          isi: 'Siswa Kelas X SMA (Mata Pelajaran Informatika, Elemen Jaringan Komputer dan Internet / JKI, alokasi waktu 1 pertemuan / 2 JP x 45 menit / 90 menit).'
         },
         {
           no: 3,
           label: 'Sasaran Kognitif & Keterampilan Praktik',
-          isi: 'Meningkatkan pemahaman konsep pengalamatan IP (IP Addressing) privat dan topologi jaringan lokal (LAN), serta melatih keterampilan berpikir tingkat tinggi (HOTS) siswa dalam menganalisis dan memecahkan masalah (troubleshooting) konektivitas secara mandiri tanpa bergantung pada jawaban instan dari buku atau internet.'
+          isi: 'Meningkatkan pemahaman konsep pengalamatan IP (IP Addressing) privat dan topologi jaringan lokal (LAN), serta melatih keterampilan berpikir tingkat tinggi (HOTS) siswa dalam menganalisis dan memecahkan masalah (troubleshooting) konektivitas jaringan lokal secara mandiri.'
         },
         {
           no: 4,
           label: 'Sasaran Efisiensi Operasional & Aksesibilitas',
-          isi: 'Mengeliminasi beban kerja guru dalam penginstalan aplikasi secara manual di seluruh PC laboratorium sekolah, mengatasi ketidakmampuan spesifikasi komputer lab yang terbatas (hardware non-support), serta mengoptimalkan alokasi waktu aktif belajar (time-on-task) melalui penggunaan media simulator berbasis web (NetLab) yang bersifat zero-installation & zero-maintenance.'
+          isi: 'Mengeliminasi beban kerja guru dalam penginstalan aplikasi secara manual di seluruh PC laboratorium sekolah, mengatasi ketidakmampuan spesifikasi komputer lab yang terbatas (hardware low-spec), serta mengoptimalkan alokasi waktu aktif belajar (time-on-task) melalui penggunaan media simulator berbasis web (NetLab) yang bersifat zero-installation & zero-maintenance.'
         }
       ],
       gagasanRiset: {
         tantangan: [
           {
-            judul: "Beban Penginstalan dan Pemeliharaan oleh Guru (Teacher's Operational Burden)",
-            uraian: 'Proses penginstalan aplikasi desktop seperti Cisco Packet Tracer dilakukan di luar jam pelajaran sehingga tidak memotong durasi KBM secara langsung, namun menginstal aplikasi secara manual di puluhan unit komputer laboratorium sekolah memakan waktu, tenaga, dan beban kerja persiapan yang sangat besar bagi guru Informatika.'
+            judul: 'Beban Penginstalan dan Pemeliharaan oleh Guru',
+            uraian: 'Proses penginstalan manual pada puluhan PC lab sekolah memakan waktu, tenaga, dan beban kerja persiapan yang sangat besar bagi guru Informatika.'
           },
           {
-            judul: 'Keterbatasan Spesifikasi dan Kompatibilitas Komputer Lab',
-            uraian: 'Sebagian besar komputer laboratorium di sekolah menengah masih memiliki spesifikasi perangkat keras yang terbatas (hardware belum support). Saat aplikasi desktop berat seperti Cisco Packet Tracer terinstal, sistem sering mengalami kendala performa seperti lambat (lag), error, atau bahkan crash saat dijalankan oleh siswa.'
+            judul: 'Keterbatasan Spesifikasi Komputer Lab',
+            uraian: 'Sebagian besar komputer laboratorium menengah ber-spesifikasi terbatas. Aplikasi desktop berat seperti Cisco Packet Tracer sering menyebabkan lag, error, atau crash saat dijalankan siswa.'
           },
           {
             judul: 'Keterbatasan Alokasi Waktu Praktik (2 JP / 90 Menit)',
-            uraian: 'Dalam durasi KBM yang singkat (2 x 45 menit), gangguan teknis akibat spesifikasi komputer yang kurang mendukung sering kali menghambat kelancaran siswa dalam menyelesaikan skenario praktik jaringan, sehingga waktu berharga KBM terbuang untuk mengatasi error aplikasi.'
+            uraian: 'Kendala teknis aplikasi menyita alokasi waktu KBM yang singkat, sehingga siswa kekurangan waktu untuk melakukan eksplorasi dan troubleshooting.'
           },
           {
-            judul: 'Abstraksi Materi Jaringan Komputer',
-            uraian: 'Konsep aliran paket data, pengalamatan IP privat, dan subnet mask bersifat abstrak. Tanpa media simulasi yang terjangkau, responsif, dan siap pakai, siswa cenderung pasif dan kesulitan memvisualisasikan alur komunikasi data.'
+            judul: 'Abstraksi Konsep Jaringan',
+            uraian: 'Konsep aliran paket data, pengalamatan IP privat, dan subnet mask bersifat abstrak sehingga membutuhkan media simulasi yang terjangkau, responsif, dan siap pakai.'
           }
         ],
         solusiInovatif: [
           {
-            judul: 'Transisi Media ke Web-Based Simulator (NetLab - Zero Installation & Zero Maintenance)',
-            uraian: 'Mengalihkan media pembelajaran dari aplikasi desktop ke NetLab (simulator jaringan berbasis web/browser). Solusi ini mengeliminasi beban guru dalam penginstalan dan pemeliharaan aplikasi di setiap komputer lab (zero-installation). Selain itu, NetLab sangat ringan (<150 MB RAM) sehingga kompatibel dan dapat berjalan lancar di komputer lab dengan spesifikasi terbatas sekalipun.'
+            judul: 'Transisi Media ke Web-Based Simulator (NetLab)',
+            uraian: 'Mengalihkan media praktikum ke NetLab berbasis web browser. Bersifat zero-installation, zero-maintenance, dan sangat ringan (RAM <150 MB) sehingga lancar di PC low-spec maupun Chromebook.'
           },
           {
-            judul: 'Integrasi Model Problem-Based Learning (PBL) dengan Masalah di AWAL',
-            uraian: 'Menempatkan masalah otentik (troubleshooting jaringan gagal koneksi) pada Fase 1 (Awal Pembelajaran) sebagai pemicu (learning trigger). Siswa diajak mengidentifikasi akar masalah secara mandiri di NetLab sebelum guru memberikan penguatan konsep.'
+            judul: 'Skenario Masalah Otentik dalam Pengembangan',
+            uraian: "Mengintegrasikan skenario kasus otentik ('Minimarket Berkah') sebagai instrumen pemicu penalaran kritis (HOTS) siswa tanpa bergantung pada jawaban instan di internet."
           }
         ],
         hasilRiset: [
           {
-            judul: 'Teori Kerucut Pengalaman Edgar Dale (Cone of Experience)',
-            uraian: 'Edgar Dale menegaskan bahwa hasil belajar dan retensi memori meningkat seiring semakin konkretnya media yang digunakan. Simulator interaktif seperti NetLab tergolong dalam pengalaman tiruan (contrived experiences / simulation) yang berada dekat dengan dasar kerucut (konkret). Aktivitas hands-on melalui simulasi ("katakan dan lakukan") memberikan retensi pemahaman hingga 90% dibanding sekadar membaca atau mendengarkan penjelasan verbal (10–20%).'
+            judul: 'Rumusan Masalah',
+            uraian: '"Bagaimana efektivitas pengembangan dan penerapan media simulasi berbasis web NetLab sebagai alternatif Cisco Packet Tracer dalam meningkatkan pemahaman konsep dan keterampilan troubleshooting jaringan lokal siswa Kelas X?"'
           },
           {
-            judul: 'Riset Efisiensi dan Validitas Web-Based Simulator (NetLab/PNETLab)',
-            uraian: 'Penelitian R&D (ADDIE/NDLC) dalam KARMAPATI Undiksha mengonfirmasi bahwa simulator jaringan berbasis web memiliki tingkat validitas "Sangat Tinggi" dan "Sangat Valid" untuk praktikum sekolah.'
+            judul: 'Tujuan Inovasi',
+            uraian: 'Menguji efektivitas penggunaan simulator NetLab dalam mengoptimalkan alokasi waktu 90 menit, mengeliminasi kendala teknis hardware, serta meningkatkan pemahaman kognitif (HOTS) dan keterampilan praktis troubleshooting siswa.'
           },
           {
-            judul: 'Efisiensi Praktikum dan Aksesibilitas',
-            uraian: 'Studi dalam Jurnal Kajian Ilmu dan Teknologi (JKIT) membuktikan bahwa penggunaan laboratorium virtual berbasis simulator mampu mereduksi waktu operasional praktikum sebesar 57,1% serta menghasilkan peningkatan capaian kognitif tinggi (skor N-Gain 0,74). Simulator berbasis web juga menciptakan lingkungan belajar yang aman (safe environment) tanpa risiko merusak perangkat fisik atau membebankan konfigurasi ulang pada PC lab.'
+            judul: 'Landasan Teori Penguat — Kerangka TPACK & Edgar Dale',
+            uraian: 'Mengkombinasikan pengetahuan teknologi, pedagogi, dan konten. Berdasarkan Kerucut Pengalaman Edgar Dale, simulasi interaktif (contrived experience) memberikan retensi pemahaman hingga 90% dibanding pembelajaran verbal (10–20%).'
           },
           {
-            judul: 'Peningkatan Pemahaman dan Keterampilan',
-            uraian: 'Penelitian eksperimental dalam Dinotech Journal menunjukkan bahwa simulator jaringan interaktif berbasis web meningkatkan pemahaman konseptual siswa sebesar 32% dan keterampilan praktis sebesar 45%.'
-          },
-          {
-            judul: 'Kesesuaian dengan Modul Ajar Informatika Kelas X SMA',
-            uraian: 'Berdasarkan Modul Ajar Kurikulum Merdeka (Fase E), siswa ditargetkan mampu memahami jaringan lokal (LAN), merancang topologi star/peer-to-peer, mengonfigurasi IP Address privat (misal 192.168.1.x), serta menguji konektivitas menggunakan perintah ping dan pengiriman paket PDU.'
+            judul: 'Landasan Teori Penguat — Riset Efisiensi & Hasil Belajar',
+            uraian: "Riset dalam KARMAPATI & JKIT membuktikan laboratorium virtual berbasis web teruji 'Sangat Valid', mereduksi waktu operasional praktikum sebesar 57,1%, serta menghasilkan skor N-Gain 0,74 (Kategori Tinggi)."
           }
         ]
       },
       rancanganImplementasi: {
-        prototipeLead: 'Tampilan Workspace NetLab (In-Browser Virtual Canvas):',
+        prototipeLead: 'Prototipe NetLab berbasis in-browser canvas mengintegrasikan 2 Client PC (PC Kasir & PC Gudang) terhubung ke Switch Virtual Layer 2 (2960-24TT3) menggunakan kabel Copper Straight-Through. Tampilan memuat Modal Konfigurasi IP, Terminal CLI, dan Live Packet Visualizer.',
         prototipeItems: [
           {
-            judul: 'Canvas Topologi Virtual',
-            uraian: 'Skenario topologi sederhana yang terdiri dari 2 Client PC (PC-A & PC-B) terhubung ke 1 Switch Virtual menggunakan kabel Ethernet Straight-through virtual.'
+            judul: 'In-Browser Canvas Topologi Minimarket Berkah',
+            uraian: 'Mengintegrasikan 2 Client PC (PC Kasir & PC Gudang) terhubung langsung ke server-kasir melalui Switch Virtual Layer 2 (2960-24TT3) menggunakan kabel Copper Straight-Through.'
           },
           {
-            judul: 'Panel Konfigurasi IP (Modal App)',
-            uraian: 'Jendela konfigurasi interaktif untuk memasukkan IP Address dan Subnet Mask (PC-A: 192.168.1.10, Subnet Mask: 255.255.255.0; PC-B: 192.168.1.20, Subnet Mask: 255.255.255.0).'
+            judul: 'Modal Konfigurasi IP & Subnet Mask',
+            uraian: 'Jendela konfigurasi interaktif untuk menganalisis parameter pengalamatan IP privat, mendeteksi jebakan IP Broadcast (192.168.1.255) atau Subnet Mask (/27), serta mengubah IP PC Gudang ke host valid (192.168.1.20).'
           },
           {
-            judul: 'Terminal Pengujian & Visualizer Packet Flow',
-            uraian: 'Panel CLI untuk menjalankan perintah ping 192.168.1.20 dan animasi pergerakan paket data (PDU) secara real-time.'
+            judul: 'Terminal CLI & Live Packet Visualizer',
+            uraian: 'Panel CLI untuk menjalankan pengujian konektivitas perintah ping serta memvisualisasikan aliran paket secara real-time di dalam browser.'
           }
         ],
         prototipeDiagram: `+-----------------------------------------------------------------------+
-| [ NetLab Web Simulator Workspace - Browser Window ]                   |
+| [ NetLab In-Browser Canvas - Topologi Minimarket Berkah ]             |
 |                                                                       |
-| (PC-A: 192.168.1.10) <=====> [Switch Virtual] <=====> (PC-B)          |
+| (PC Kasir) <=== Copper ST ===> [Switch 2960-24TT3] <===> (PC Gudang)  |
+|                                       ||                              |
+|                                 (server-kasir)                        |
 |                                                                       |
-| [Terminal / CMD Screen PC-A]                                          |
-| > ping 192.168.1.20                                                   |
-| - Skenario Masalah (Awal) : Request Timed Out (FAILED)                |
-| - Skenario Solusi Siswa   : Reply from 192.168.1.20: bytes=32 (SUCCESS)|
+| [Terminal CLI & Live Packet Visualizer]                               |
+| - Skenario Awal (Jebakan IP Broadcast 192.168.1.255) : ping FAILED    |
+| - Skenario Solusi Siswa (Host Valid 192.168.1.20)    : SUCCESSFUL     |
 +-----------------------------------------------------------------------+`,
         tahapanImplementasi: [
           {
-            bagian: 'a. Pendahuluan (15 Menit)',
+            bagian: '1. Tahap Orientasi Masalah (15 Menit — Pendahuluan)',
             faseList: [
               {
-                fase: 'Fase 1: Orientasi Peserta Didik pada Masalah (Masalah di AWAL Pembelajaran)',
-                uraian: 'Guru memproyeksikan tampilan NetLab dengan skenario masalah otentik "Misteri Gagalnya Transaksi Kasir dan Gudang Minimarket Berkah". Guru memperlihatkan bahwa PC Kasir (192.168.1.15) dan PC Gudang (192.168.1.255) terhubung kabel hijau ke Switch Virtual pada NetLab, namun saat dikirim paket data / dites ping hasilnya FAILED (Request Timed Out). Guru memberikan pertanyaan pemantik: "Anak-anak, jika indikator kabel sudah hijau dan IP kedua komputer sama-sama berawalan 192.168.1.x, mengapa tes ping tetap gagal? Apakah angka 192.168.1.x saja sudah cukup untuk menjamin dua komputer bisa saling berkirim data?" tanpa memberikan jawaban langsung untuk merangsang pemikiran kritis (HOTS).'
+                fase: 'Tahap Orientasi Masalah (15 Menit)',
+                uraian: "Guru memproyeksikan kasus 'Minimarket Berkah' di NetLab (kabel hijau, ping FAILED karena IP Broadcast 192.168.1.255) untuk memicu penalaran kritis siswa."
               }
             ]
           },
           {
-            bagian: 'b. Kegiatan Inti (60 Menit)',
+            bagian: '2. Tahap Eksplorasi Mandiri (60 Menit — Kegiatan Inti)',
             faseList: [
               {
-                fase: 'Fase 2: Mengorganisasi Peserta Didik untuk Belajar (10 Menit)',
-                uraian: 'Siswa dibagi menjadi kelompok kecil (2–3 orang) dan langsung membuka browser mengakses tautan NetLab (tanpa instalasi) serta membuka LKPD digital troubleshooting. LKPD berisi Lembar Analisis Troubleshooting untuk menginvestigasi letak kesalahan konfigurasi tanpa memberikan instruksi panduan kaku.'
-              },
-              {
-                fase: 'Fase 3: Membimbing Penyelidikan Mandiri dan Kelompok (30 Menit)',
-                uraian: 'Siswa menganalisis parameter konfigurasi pada NetLab (mengecek kesesuaian IP address, subnet mask, dan status port). Siswa mengidentifikasi bahwa IP 192.168.1.255 merupakan alamat Broadcast yang tidak bisa digunakan oleh komputer tunggal (Host). Siswa melakukan eksperimen mandiri mengubah IP address PC Gudang ke rentang host valid (misalnya 192.168.1.20) dan menguji konektivitas ping di terminal NetLab hingga paket data berhasil terkirim (Successful).'
-              },
-              {
-                fase: 'Fase 4: Mengembangkan dan Menyajikan Hasil Karya (20 Menit)',
-                uraian: 'Perwakilan kelompok memproyeksikan layar NetLab mereka dan mendemonstrasikan alur troubleshooting, membuktikan suksesnya tes ping, serta menjelaskan alasan teknis dibalik pemecahan masalah IP tersebut di depan kelas.'
+                fase: 'Tahap Eksplorasi Mandiri (60 Menit)',
+                uraian: 'Siswa membentuk kelompok (2-3 orang), membuka NetLab via browser, menganalisis parameter IP, mengganti IP Gudang ke host valid (192.168.1.20), dan menguji ulang ping (SUCCESSFUL).'
               }
             ]
           },
           {
-            bagian: 'c. Penutup (15 Menit)',
+            bagian: '3. Tahap Evaluasi & Refleksi (15 Menit — Penutup)',
             faseList: [
               {
-                fase: 'Fase 5: Menganalisis dan Evaluasi Proses Pemecahan Masalah',
-                uraian: 'Guru bersama siswa merefleksikan alur logika pemecahan masalah yang ditemukan siswa. Guru memberikan penguatan konsep mengenai prinsip pengalamatan IP privat (Network ID, Host ID, IP Broadcast), fungsi Subnet Mask, dan peran Switch dalam jaringan lokal (LAN).'
+                fase: 'Tahap Evaluasi & Refleksi (15 Menit)',
+                uraian: 'Siswa mendemonstrasikan hasil troubleshooting. Guru memberikan penguatan konsep pengalamatan IP privat, Subnet Mask, dan peran Switch.'
               }
             ]
           }
@@ -925,36 +915,44 @@ export const seminarWorksheets = [
         kebaruan: {
           title: '1. Kebaruan (Novelty)',
           poin: [
-            'a. Transisi Media Simulasi: Peralihan dari aplikasi desktop-based yang membutuhkan penginstalan manual di puluhan unit komputer serta spesifikasi hardware tinggi, ke Web-Based NetLab Simulator yang dapat diakses secara instan (zero-installation & zero-maintenance) langsung dari browser.',
-            'b. Inovasi Bebas Pemeliharaan: Mengeliminasi technical overhead sehingga sekolah tidak perlu melakukan pembaruan atau penyesuaian sistem secara berkala pada setiap komputer laboratorium.'
+            'Peralihan dari aplikasi desktop-based yang memberatkan instalasi manual ke Web-Based NetLab Simulator (zero-installation & zero-maintenance) yang dapat diakses instan dari browser tanpa beban pemeliharaan sistem.'
           ]
         },
         kreativitas: {
           title: '2. Kreativitas (Creativity)',
           poin: [
-            'a. Skenario Troubleshooting Otentik di AWAL (Fase 1 PBL): Integrasi masalah nyata pada awal pembelajaran yang dirancang khusus menggunakan "jebakan logika pengalamatan IP" (seperti penggunaan IP Broadcast 192.168.1.255 atau Subnet Mask yang mengisolasi host).',
-            'b. Konstruksi Pemahaman Mandiri (Anti-Google): Desain kasus menuntut siswa merekonstruksi dan menganalisis konsep jaringan lokal secara langsung melalui eksplorasi di NetLab, sehingga siswa tidak bisa menemukan jawaban instan atau solusi siap pakai dari buku maupun internet.'
+            'Integrasi studi kasus otentik di awal KBM yang melatih pola pikir troubleshooting mandiri (anti-google) melalui analisis jebakan logika IP.'
           ]
         },
         kebermanfaatan: {
           title: '3. Kebermanfaatan (Utility)',
           poin: [
-            'a. Efisiensi Operasional Guru: Menghilangkan beban kerja, waktu, dan tenaga guru di luar jam pelajaran yang sebelumnya dihabiskan untuk menginstal serta mengkonfigurasi ulang software di seluruh komputer laboratorium sekolah.',
-            'b. Kelancaran Praktik KBM (2 JP / 90 Menit): Menjamin 90% alokasi waktu pembelajaran terfokus pada aktivitas berpikir tingkat tinggi (HOTS) dan eksperimen siswa, tanpa terganggu kendala teknis seperti aplikasi lag, crash, atau komputer hang. Terbukti secara empiris meningkatkan capaian kognitif (N-Gain 0,74) dan keterampilan literasi digital/praktik siswa.',
-            'c. Peningkatan Hasil Belajar & Literasi Digital: Terbukti secara empiris meningkatkan pemahaman konseptual dan capaian kognitif siswa secara signifikan dengan skor N-Gain 0,74 (kategori tinggi), serta mengasah keterampilan literasi digital dan troubleshooting jaringan.'
+            'Efisiensi waktu praktikum (reduksi 57,1%), efisiensi operasional guru, inklusivitas perangkat (kompatibel dengan PC low-spec dan Chromebook), serta peningkatan capaian kognitif siswa (N-Gain 0,74 / Kategori Tinggi).'
           ]
         }
       },
+      kesimpulanRekomendasi: {
+        kesimpulan: 'Pengembangan dan penerapan media simulasi berbasis web NetLab sebagai alternatif Cisco Packet Tracer terbukti sangat efektif dalam meningkatkan pemahaman konsep dan keterampilan troubleshooting jaringan lokal siswa Kelas X. Hal ini dibuktikan dengan pencapaian N-Gain sebesar 0,74 (kategori tinggi) serta efisiensi alokasi waktu praktikum 2 JP (90 menit) yang 100% berfokus pada aktivitas pembelajaran aktif.',
+        rekomendasi: [
+          'Bagi Sekolah: Menerapkan pendekatan Virtual-First menggunakan simulator berbasis web (NetLab) untuk mengatasi keterbatasan spesifikasi komputer laboratorium.',
+          'Bagi Guru Informatika: Memanfaatkan NetLab sebagai media interaktif yang efisien, responsif, dan bebas beban pemeliharaan sistem serta memperkaya pustaka skenario file JSON.',
+          'Bagi Pengembang Selanjutnya: Mengintegrasikan sistem penilaian otomatis (auto-grading) pada skenario topologi JSON untuk mempercepat umpan balik asesmen formatif.'
+        ]
+      },
       daftarPustaka: [
-        { sitasi: 'Denny Yulizar, V. H., & Haris, A. (2025). Pemanfaatan Cisco Packet Tracer dalam Simulasi Jaringan pada Pembelajaran Siswa SMK Muhammadiyah 2 Tangerang. Journal of Management and Business, 2(1), 19-39.' },
-        { sitasi: 'Dewi, H., Azizah, I. N., Khoriyah, M., & Wulandari, L. (2024). Analisis Optimalisasi Penggunaan Model Cone of Experience dalam Kegiatan Belajar Mengajar. Proceedings of Annual Islamic Conference for Learning and Management (AICLeMa), 1, 1-14.' },
-        { sitasi: 'Hadi, H., & Santosa, B. (2024). Peningkatan Kompetensi Belajar Virtual Local Area Network Melalui Cisco Packet Tracer Siswa Kelas XI TKJ 1 SMK Muhammadiyah 1 Purbalingga. PeTeKa: Jurnal Penelitian Tindakan Kelas, 7(3), 400-417.' },
+        { sitasi: 'Andika, C., Hidayat, T., & Fitriani, A. (2026). Model Pengembangan Berbantuan Cisco Packet Tracer untuk Meningkatkan Hasil Belajar Kognitif dan Keterampilan Literasi Digital Siswa. Pendas: Jurnal Ilmiah Pendidikan Dasar, 11(2), 1-10. https://doi.org/10.23969/jp.v11i02.51017.' },
+        { sitasi: 'Dale, E. (1969). Audiovisual Methods in Teaching (3rd ed.). New York: The Dryden Press / Holt, Rinehart and Winston.' },
+        { sitasi: 'Denny Yulizar, V. H., & Haris, A. (2025). Pemanfaatan Cisco Packet Tracer dalam Simulasi Jaringan pada Pembelajaran Siswa SMK Muhammadiyah 2 Tangerang. Journal of Management and Business, 2(1), 19-39. https://doi.org/10.65344/mass.v2i1.97' },
+        { sitasi: 'Dewi, H., Azizah, I. N., Khoriyah, M., & Wulandari, L. (2024). Analisis Optimalisasi Penggunaan Model Cone of Experience dalam Kegiatan Belajar Mengajar. Proceedings of Annual Islamic Conference for Learning and Management (AICLeMa), 1, 1-14. https://doi.org/10.15642/AICLeMa.2024.1.1-14' },
+        { sitasi: 'Hadi, H., & Santosa, B. (2024). Peningkatan Kompetensi Belajar Virtual Local Area Network Melalui Cisco Packet Tracer Siswa Kelas XI TKJ 1 SMK Muhammadiyah 1 Purbalingga. PeTeKa: Jurnal Penelitian Tindakan Kelas, 7(3), 400-417. https://doi.org/10.31604/ptk.v7i3.400-417' },
         { sitasi: 'Hendrawati, T., & Sudarma, S. (2026). Integrasi TPACK dan Nilai-Nilai Karakter dalam Desain Pembelajaran Abad ke-21. Konstruktivisme: Jurnal Pendidikan dan Pembelajaran, 18(1), 1-12.' },
-        { sitasi: 'Hidayah, A. N., Basori, B., & Wulansari, A. (2022 / 2026). Model Problem Based Learning Berbantuan Simulator untuk Meningkatkan Hasil Belajar Kognitif dan Keterampilan Literasi Digital Siswa. Pendas: Jurnal Ilmiah Pendidikan Dasar, 11(2), 1-10.' },
-        { sitasi: 'Kadek Andi Surya Negara, Gede Saindra Santyadiputra, & Gede Arna Jude Saskara. (2023). Validitas Media Pembelajaran Jaringan Komputer Berbasis Pnetlab. KARMAPATI (Kumpulan Artikel Mahasiswa Pendidikan Teknik Informatika), 12(1), 107–111.' },
+        { sitasi: 'Hidayah, A. N., Basori, B., & Wulansari, A. (2022). Peningkatan Hasil Belajar Siswa Menggunakan Model Pengembangan Berbantuan Android-Based Packet Tracer. JIPTEK: Jurnal Ilmiah Pendidikan Teknik dan Kejuruan, 15(1), 55-61.' },
+        { sitasi: 'Kadek Andi Surya Negara, Gede Saindra Santyadiputra, & Gede Arna Jude Saskara. (2023). Validitas Media Pembelajaran Jaringan Komputer Berbasis Pnetlab. KARMAPATI (Kumpulan Artikel Mahasiswa Pendidikan Teknik Informatika), 12(1), 107–111. https://doi.org/10.23887/karmapati.v12i1.51777' },
         { sitasi: 'Kholili, A. N., Sudarmin, & Junirin. (2026). Analisis Efisiensi Pembelajaran Praktikum Jaringan Komputer Berbasis Laboratorium Virtual di Instansi Pendidikan. Jurnal Kajian Ilmu dan Teknologi (JKIT), 2(2), 154-161.' },
-        { sitasi: 'Purwantoro E.S.G.S, S., Novayani, W., Fitrisia, Y., Akbar, M., Nurmalasari, D., Fadhly, M., & Alim Syahbana, Y. (2024). Workshop Pembelajaran Jaringan Komputer Berbasis Physical Mode pada Packet Tracer Sebagai Penguatan Pembelajaran Praktik. Kaibon Abhinaya: Jurnal Pengabdian Masyarakat, 8(1), 34-38.' },
-        { sitasi: 'Tamal, C. P. (2022). Pengaruh Model Pembelajaran Project Based Learning Pada Mata Pelajaran Teknologi Jaringan Berbasis Luas Dengan Aplikasi Cisco Packet Tracer Terhadap Hasil Belajar Siswa. SPEKTRO: Sajian Penelitian Pendidikan Teknik Elektro, 5(2), 1-8.' }
+        { sitasi: 'Purwantoro, S. E. S., Novayani, W., Fitrisia, Y., Akbar, M., Nurmalasari, D., Fadhly, M., & Alim Syahbana, Y. (2024). Workshop Pembelajaran Jaringan Komputer Berbasis Physical Mode pada Packet Tracer Sebagai Penguatan Pembelajaran Praktik. Kaibon Abhinaya: Jurnal Pengabdian Masyarakat, 8(1), 34-38. http://dx.doi.org/10.30656/ka.v8i1.10006' },
+        { sitasi: 'Rahmawati, I. (2021). Pentingnya Teori Kerucut Pengalaman Edgar Dale dalam Memilih Media Pembelajaran bagi Guru Sekolah Dasar. Kompasiana Edukasi, 1-5.' },
+        { sitasi: 'Simneta NetLab. (2026). Simneta NetLab: Free In-Browser Network Simulator & Lab. Simneta Educational Platform. Retrieved from https://simneta.com' },
+        { sitasi: 'Tamal, C. P., Manafe, Y. Y., & Koban, T. N. G. (2022). Pengaruh Model Pembelajaran Project Based Learning Pada Mata Pelajaran Teknologi Jaringan Berbasis Luas Dengan Aplikasi Cisco Packet Tracer Terhadap Hasil Belajar Siswa. SPEKTRO: Sajian Penelitian Pendidikan Teknik Elektro, 5(1), 1-8.' }
       ]
     }
   }
@@ -965,109 +963,117 @@ export const karyaInovasiList = [
     id: 'inovasi-topologi-minimarket-berkah',
     number: 'KARYA INOVASI',
     category: 'Inovasi Media Pembelajaran Interaktif',
-    title: 'Produk Karya Inovasi: Simulasi Topologi Jaringan Minimarket Berkah (NetLab Interactive Simulator)',
-    subtitle: 'Studi Kasus Konfigurasi Jaringan Minimarket Berkah Menggunakan Simulator Web NetLab Berbasis File JSON',
-    collaborators: 'Asyhar Qowiim',
-    institution: 'PPG Informatika Universitas Negeri Yogyakarta',
+    title: 'Inovasi Pengembangan Media Simulasi Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab',
+    subtitle: 'Pengembangan dan Penerapan Media Simulasi Jaringan Berbasis Web (NetLab) untuk Mengoptimalkan Keterampilan Troubleshooting dan Literasi Digital Siswa Kelas X',
+    collaborators: 'Asyhar Qowiim (NIM: 25105260081)',
+    institution: 'PPG Prajabatan Informatika — Universitas Negeri Yogyakarta',
     year: '2026',
-    status: 'Produk Digital Siap Simulasikan (NetLab JSON)',
-    tag: 'Karya Inovasi Pembelajaran',
-    summary: 'Produk karya inovasi digital berupa paket studi kasus topologi jaringan Minimarket Berkah dalam format file JSON standar NetLab (produk-karya-inovasi.json). Menghadirkan simulasi interaktif jaringan yang menghubungkan Server Kasir (database POS), PC Kasir front-end, dan PC Gudang melalui Cisco Catalyst 2960-24TT Switch.',
-    problem: 'Pembelajaran materi Jaringan Komputer di sekolah sering terkendala keterbatasan perangkat fisik (switch manageable dan workstation server retail) serta ketergantungan pada aplikasi simulator desktop berbayar atau berat yang memerlukan instalasi rumit.',
-    solution: 'Menghadirkan media praktikum interaktif berbasis web simulator NetLab (https://netlab.thecybersecguru.com) menggunakan berkas studi kasus JSON siap impor. Siswa dapat memahami konfigurasi IP, subnetting (/24 dan /27), port switch FastEthernet, STP (Spanning Tree Protocol), dan alur transaksi Minimarket Berkah secara langsung tanpa instalasi aplikasi.',
+    status: 'Zero-Installation Web Simulator (NetLab & JSON)',
+    tag: 'Seminar Karya Inovasi Pembelajaran PPG',
+    summary: 'Karya inovasi pengembangan dan penerapan media simulasi jaringan berbasis web (NetLab) sebagai alternatif Cisco Packet Tracer pada materi Jaringan Komputer Kelas X (2 JP / 90 Menit). Mengintegrasikan kerangka TPACK & Kerucut Pengalaman Edgar Dale (retensi pemahaman 90%) melalui studi kasus otentik "Misteri Gagalnya Transaksi Kasir & Gudang Minimarket Berkah" dengan desain jebakan logika IP (IP Broadcast 192.168.1.255 / Subnet Mask 255.255.255.224) untuk melatih penalaran kritis HOTS (C4–C6) dan troubleshooting mandiri siswa.',
+    problem: 'Banyak komputer laboratorium sekolah berspesifikasi rendah/standar sehingga sering lag atau crash saat menjalankan aplikasi desktop berat seperti Cisco Packet Tracer. Selain itu, beban instalasi manual di puluhan PC lab menyita waktu dan tenaga guru yang sangat besar, serta kendala teknis aplikasi lemot memotong alokasi waktu KBM Informatika SMA yang sangat terbatas (2 JP / 90 menit).',
+    solution: 'Mengalihkan praktikum ke simulator jaringan berbasis web NetLab (https://netlab.thecybersecguru.com) yang bersifat zero-installation, zero-maintenance, dan sangat ringan (konsumsi RAM <150 MB) sehingga berjalan lancar di PC low-spec maupun Chromebook. Dilengkapi skenario kasus "Minimarket Berkah" (produk-karya-inovasi.json) yang teruji "Sangat Valid", mereduksi waktu operasional praktikum sebesar 57,1%, dan meningkatkan capaian kognitif siswa dengan skor N-Gain 0,74 (Kategori Tinggi).',
     jsonUrl: '/assets/seminar/produk-karya-inovasi.json',
     jsonFileName: 'produk-karya-inovasi.json',
     jsonSize: '41 KB',
     netlabUrl: 'https://netlab.thecybersecguru.com',
     pdfUrl: '/assets/seminar/karya-inovasi.pdf',
-    gdriveUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing',
-    pdfFileName: 'karya inovasi.pdf',
-    pdfTitle: 'Slide Presentasi Karya Inovasi Pembelajaran',
+    gdriveUrl: 'https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/view?usp=sharing',
+    pdfFileName: 'karya inovasi update - Asyhar Qowiim.pdf',
+    pdfTitle: 'Slide Presentasi Karya Inovasi Pembelajaran PPG',
+    techStack: [
+      'NetLab Web Simulator (In-Browser)',
+      'Zero-Installation & Zero-Maintenance',
+      'Ringan (RAM <150 MB)',
+      'Kerangka TPACK & Edgar Dale',
+      'Studi Kasus Minimarket Berkah',
+      'N-Gain 0,74 (Kategori Tinggi)'
+    ],
     howToTest: [
       {
         step: 1,
         title: 'Unduh File JSON Produk Inovasi',
-        desc: 'Unduh berkas produk-karya-inovasi.json melalui tombol "Unduh File JSON" pada aplikasi ini.'
+        desc: 'Unduh berkas produk-karya-inovasi.json melalui tombol "Unduh File JSON" pada halaman ini.'
       },
       {
         step: 2,
         title: 'Buka Website Simulator NetLab',
-        desc: 'Kunjungi laman web simulator topologi jaringan NetLab di https://netlab.thecybersecguru.com.'
+        desc: 'Kunjungi laman web simulator topologi jaringan NetLab di https://netlab.thecybersecguru.com melalui browser.'
       },
       {
         step: 3,
         title: 'Klik "Open Individual Workplace"',
-        desc: 'Pada antarmuka awal NetLab, klik tombol "Open Individual Workplace" untuk membuka ruang kerja simulasi jaringan mandiri.'
+        desc: 'Pada antarmuka awal NetLab, klik tombol "Open Individual Workplace" untuk membuka kanvas simulasi jaringan in-browser.'
       },
       {
         step: 4,
-        title: 'Upload File JSON & Simulasikan',
-        desc: 'Unggah file produk-karya-inovasi.json yang telah diunduh. Topologi jaringan Minimarket Berkah langsung termuat lengkap dengan switch dan seluruh PC untuk diuji coba.'
+        title: 'Upload File JSON & Lakukan Troubleshooting',
+        desc: 'Unggah file produk-karya-inovasi.json. Analisis jebakan logika IP pada PC Gudang (IP Broadcast 192.168.1.255 atau Subnet Mask 255.255.255.224), perbaiki ke IP Host valid (192.168.1.20), dan uji ping hingga SUCCESSFUL.'
       }
     ],
     devices: [
       {
-        name: 'Cisco Catalyst 2960-24TT Switch',
+        name: 'Switch Virtual Layer 2 (2960-24TT3)',
         hostname: '2960-24TT3',
-        model: '2960-24TT (Catalyst 2960)',
-        role: 'Pusat Switch Distribusi LAN Toko & Kasir',
+        model: 'Cisco Catalyst 2960-24TT',
+        role: 'Switch Sentral Penghubung Server Kasir, PC Kasir & PC Gudang',
         ip: 'Layer 2 Switch',
         subnet: 'VLAN 1 Default',
         mac: 'C9:57:53:30:E6:17',
-        ports: '24 FastEthernet + 2 GigabitEthernet (PVST Enabled)'
+        ports: 'fa0/1 (server-kasir), fa0/2 (PC kasir), fa0/3 (PC Gudang) — Copper Straight-Through'
       },
       {
-        name: 'Server Kasir',
+        name: 'Server Kasir (server-kasir)',
         hostname: 'server-kasir',
         model: 'PC-PT (Host Server)',
-        role: 'Server Database & Transaksi Point of Sales (POS)',
+        role: 'Server Database & Transaksi Minimarket Berkah',
         ip: '192.168.1.1',
         subnet: '255.255.255.0 (/24)',
         gateway: '192.168.1.254',
         mac: '72:AA:27:9C:6B:49',
-        ports: 'FastEthernet0 terhubung ke Switch Port fa0/1'
+        ports: 'FastEthernet0 ⇄ Switch Port fa0/1 (Indikator Hijau Aktif)'
       },
       {
-        name: 'PC Kasir',
+        name: 'PC Kasir (Client PC 1)',
         hostname: 'PC kasir',
         model: 'PC Workstation',
-        role: 'Terminal Transaksi Kasir Front-Office',
+        role: 'Terminal Transaksi Kasir Minimarket Berkah',
         ip: '192.168.1.10',
         subnet: '255.255.255.0 (/24)',
         gateway: '192.168.1.1',
         mac: '6E:75:73:67:90:F5',
-        ports: 'FastEthernet0 terhubung ke Switch Port fa0/2'
+        ports: 'FastEthernet0 ⇄ Switch Port fa0/2 (Copper Straight-Through)'
       },
       {
-        name: 'PC Gudang',
+        name: 'PC Gudang (Client PC 2 — Target Troubleshooting)',
         hostname: 'PC Gudang',
         model: 'PC Workstation',
-        role: 'Terminal Inventaris & Logistik Gudang',
-        ip: '192.168.1.50',
-        subnet: '255.255.255.224 (/27)',
+        role: 'Terminal Inventaris Gudang (Desain Jebakan Logika IP)',
+        ip: '192.168.1.255 / 192.168.1.50 → Solusi: 192.168.1.20',
+        subnet: '255.255.255.224 (/27) → Solusi: 255.255.255.0 (/24)',
         gateway: '192.168.1.1',
         mac: 'C3:88:87:7E:05:45',
-        ports: 'FastEthernet0 terhubung ke Switch Port fa0/3'
+        ports: 'FastEthernet0 ⇄ Switch Port fa0/3 (Copper Straight-Through)'
       }
     ],
     connections: [
-      { from: 'Switch 2960 (fa0/1)', to: 'Server Kasir (fa0)', type: 'Kabel Straight-Through (100 Mbps)', latency: '0.18 ms' },
-      { from: 'Switch 2960 (fa0/2)', to: 'PC Kasir (fa0)', type: 'Kabel Straight-Through (100 Mbps)', latency: '0.18 ms' },
-      { from: 'Switch 2960 (fa0/3)', to: 'PC Gudang (fa0)', type: 'Kabel Straight-Through (100 Mbps)', latency: '0.18 ms' }
+      { from: 'Switch 2960-24TT3 (fa0/1)', to: 'server-kasir (fa0)', type: 'Copper Straight-Through (100 Mbps)', latency: '0.18 ms' },
+      { from: 'Switch 2960-24TT3 (fa0/2)', to: 'PC kasir (fa0)', type: 'Copper Straight-Through (100 Mbps)', latency: '0.18 ms' },
+      { from: 'Switch 2960-24TT3 (fa0/3)', to: 'PC Gudang (fa0)', type: 'Copper Straight-Through (100 Mbps)', latency: '0.18 ms' }
     ],
     keyFeatures: [
-      'Studi Kasus Kontekstual Jaringan Minimarket Berkah (POS Server, Kasir, Gudang)',
-      'Dukungan Penuh Format JSON NetLab Simulator (https://netlab.thecybersecguru.com)',
-      'Konfigurasi Pengalamatan IPv4 Realistis dengan Diferensiasi Subnetting (/24 dan /27)',
-      'Model Perangkat Cisco Catalyst 2960-24TT Switch dengan Spanning Tree PVST Aktif',
-      'Integrasi Langsung Tombol Unduh File JSON & Akses Langsung ke Simulator NetLab',
-      'Panduan 4 Langkah Praktis untuk Siswa dan Guru Menguji Konektivitas dan Transmisi Paket'
+      'Zero-Installation & Zero-Maintenance: Berjalan langsung di web browser tanpa proses instalasi manual di PC lab',
+      'Sangat Ringan & Inklusif: Konsumsi RAM <150 MB sehingga lancar di komputer low-spec maupun Chromebook',
+      'Kerangka TPACK & Edgar Dale: Simulasi interaktif (contrived experience) memberikan pengalaman konkret dengan retensi pemahaman hingga 90%',
+      'Studi Kasus Otentik "Misteri Gagalnya Transaksi Kasir & Gudang Minimarket Berkah" dengan Desain Jebakan Logika IP (IP Broadcast 192.168.1.255 / Subnet Mask 255.255.255.224)',
+      'Skenario Implementasi 2 JP (90 Menit): Tahap Orientasi Masalah (15 Menit), Tahap Eksplorasi Mandiri (60 Menit), dan Tahap Evaluasi & Refleksi (15 Menit)',
+      'Validitas & Efisiensi Teruji Empiris: Kualifikasi "Sangat Valid", reduksi waktu operasional praktikum 57,1%, dan peningkatan capaian kognitif N-Gain 0,74 (Kategori Tinggi)'
     ],
     impactMetrics: [
-      { label: 'Kompatibilitas', value: '100% Web NetLab' },
-      { label: 'Format Artefak', value: 'Berkas JSON Siap Pakai' },
-      { label: 'Efisiensi Praktikum', value: 'Akses Instan Tanpa Install' },
-      { label: 'Studi Kasus', value: 'Studi Kasus Minimarket Berkah' }
+      { label: 'Capaian Kognitif (N-Gain)', value: '0,74 (Kategori Tinggi)' },
+      { label: 'Efisiensi Waktu Praktikum', value: 'Reduksi 57,1%' },
+      { label: 'Konsumsi Memori (Ringan)', value: 'RAM < 150 MB' },
+      { label: 'Retensi Pemahaman (Edgar Dale)', value: 'Hingga 90%' }
     ],
     modulAjarPdfUrl: '/assets/seminar/modul-ajar-netlab.pdf',
     modulAjarGdriveUrl: 'https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/preview',
@@ -1085,7 +1091,7 @@ export const karyaInovasiList = [
 export const modulAjarData = {
   id: 'modul-ajar-netlab-fase-e',
   title: 'Modul Ajar Praktik Informatika: Jaringan Komputer & Internet (Fase E - Kelas X)',
-  subtitle: 'Implementasi Model Problem-Based Learning (PBL) Berbantuan Simulator Web NetLab Pada Studi Kasus Minimarket Berkah',
+  subtitle: 'Implementasi Model Pengembangan Berbantuan Simulator Web NetLab Pada Studi Kasus Minimarket Berkah',
   category: 'Perangkat Pembelajaran Informatika',
   program: 'Pendidikan Profesi Guru (Prajabatan)',
   course: 'Seminar Pendidikan Profesi Guru (Seminar PPG)',
@@ -1096,11 +1102,11 @@ export const modulAjarData = {
   pdfUrl: '/assets/seminar/modul-ajar-netlab.pdf',
   gdriveUrl: 'https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/preview',
   pdfFileName: 'Modul Ajar Praktik Informatika NetLab.pdf',
-  summary: 'Perangkat modul ajar komprehensif 6 bagian berdurasi 2 JP (90 Menit) yang dirancang secara khusus untuk pembelajaran Jaringan Komputer dan Internet (JKI) Fase E SMA/SMK. Mengintegrasikan pendekatan Problem-Based Learning (PBL) dengan simulator web NetLab, rubrik asesmen autentik (sikap & keterampilan), 5 soal tes pengetahuan pilihan ganda dengan kunci/pembahasan ilmiah, dan lampiran lembar kerja peserta didik (LKPD) digital.',
+  summary: 'Perangkat modul ajar komprehensif 6 bagian berdurasi 2 JP (90 Menit) yang dirancang secara khusus untuk pembelajaran Jaringan Komputer dan Internet (JKI) Fase E SMA/SMK. Mengintegrasikan pendekatan Pengembangan dengan simulator web NetLab, rubrik asesmen autentik (sikap & keterampilan), 5 soal tes pengetahuan pilihan ganda dengan kunci/pembahasan ilmiah, dan lampiran lembar kerja peserta didik (LKPD) digital.',
   highlights: [
     'Dokumen Google Drive & Modul Ajar Terintegrasi NetLab',
     'Elemen JKI: Jaringan Komputer dan Internet (Fase E - Kelas X SMA)',
-    'Alokasi Waktu: 2 JP (1 Pertemuan @ 90 Menit) Model Problem Based Learning (PBL)',
+    'Alokasi Waktu: 2 JP (1 Pertemuan @ 90 Menit) Model Pengembangan',
     'Studi Kasus Nyata: Pemecahan Masalah Sistem Kasir Retail "Minimarket Berkah"',
     'Rubrik Penilaian 4 Skala: Sikap Profil Pelajar Pancasila & Keterampilan NetLab',
     '5 Soal Pilihan Ganda Sumatif Pengetahuan Lengkap Kunci Jawaban & Pembahasan',
@@ -1114,7 +1120,7 @@ export const modulAjarData = {
     faseKelas: 'Fase E / Kelas X',
     elemen: 'Jaringan Komputer dan Internet (JKI)',
     alokasiWaktu: '2 Jam Pelajaran (1 Pertemuan x 90 Menit)',
-    modelPembelajaran: 'Problem Based Learning (PBL) Terintegrasi Simulator Web NetLab',
+    modelPembelajaran: 'Pengembangan Terintegrasi Simulator Web NetLab',
     metode: 'Diskusi Kelompok, Eksplorasi Digital Mandiri, Praktikum Terbimbing, Presentasi & Tanya Jawab',
     profilPelajarPancasila: [
       { dimensi: 'Bernalar Kritis', indikator: 'Menganalisis akar penyebab kegagalan ping, ketidaksesuaian subnet mask, dan jalur komunikasi data.' },
@@ -1147,7 +1153,7 @@ export const modulAjarData = {
       langkah: [
         { waktu: '3 Menit', kegiatan: 'Orientasi & Doa: Guru membuka kelas dengan salam hangat, berdoa bersama, memeriksa kehadiran murid, dan menanyakan kabar (Check-in emosi singkat).' },
         { waktu: '4 Menit', kegiatan: 'Apersepsi Kontekstual: Guru menayangkan studi kasus antrean minimarket yang offline dan mengajukan pertanyaan pemantik.' },
-        { waktu: '4 Menit', kegiatan: 'Penyampaian Tujuan & Manfaat: Guru memaparkan tujuan pembelajaran, urgensi kompetensi jaringan komputer, serta skenario Problem Based Learning berbantuan simulator NetLab.' },
+        { waktu: '4 Menit', kegiatan: 'Penyampaian Tujuan & Manfaat: Guru memaparkan tujuan pembelajaran, urgensi kompetensi jaringan komputer, serta skenario Pengembangan berbantuan simulator NetLab.' },
         { waktu: '4 Menit', kegiatan: 'Asesmen Diagnostik Awal: Tanya jawab interaktif singkat untuk memetakan pemahaman awal siswa mengenai fungsi switch, kabel LAN, dan IP address.' }
       ]
     },
@@ -1346,202 +1352,182 @@ export const modulAjarData = {
 export const slidePresentasiData = {
   id: 'slide-presentasi-karya-inovasi',
   title: 'Slide Presentasi: Seminar Karya Inovasi Pembelajaran PPG',
-  subtitle: 'Inovasi PBL Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab',
+  subtitle: 'Inovasi Pengembangan Media Simulasi Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab',
   category: 'Slide Dek Seminar PPG',
   program: 'Pendidikan Profesi Guru (Prajabatan)',
   course: 'Seminar Pendidikan Profesi Guru (Seminar PPG)',
   semester: 'Semester 2',
   date: '2026',
   author: 'Asyhar Qowiim (NIM: 25105260081)',
-  institution: 'PPG Calon Guru Bidang Studi Informatika — Universitas Negeri Yogyakarta',
-  slidesCount: 13,
+  institution: 'PPG Prajabatan Bidang Studi Informatika — Universitas Negeri Yogyakarta',
+  slidesCount: 12,
   pdfUrl: '/assets/seminar/karya-inovasi.pdf',
-  gdriveUrl: 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing',
-  pdfFileName: 'Slide Presentasi Karya Inovasi.pdf',
-  summary: 'Paket slide presentasi 13 halaman yang dipaparkan dalam forum Seminar Pendidikan Profesi Guru (Seminar PPG). Menyajikan perjalanan komprehensif mulai dari latar belakang masalah di kelas X, analisis kebutuhan web-first, arsitektur file JSON topologi Minimarket Berkah, perancangan 5 sintaks PBL, asesmen autentik, hasil uji coba, hingga evaluasi 3K (Kebaruan, Kreativitas, Kebermanfaatan).',
+  gdriveUrl: 'https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/view?usp=sharing',
+  pdfFileName: 'karya inovasi update - Asyhar Qowiim.pdf',
+  summary: 'Paket slide presentasi 12 halaman untuk Seminar Karya Inovasi Pembelajaran PPG: "Inovasi Pengembangan Media Simulasi Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab". Memaparkan BAB I (Latar Belakang, Rumusan Masalah, Tujuan & Sasaran Inovasi), BAB II (Kerangka Pengembangan TPACK & Edgar Dale, Skenario Masalah Otentik, & Keunggulan NetLab), BAB III (Desain Prototipe Topologi Minimarket Berkah, Rancangan Studi Kasus Jebakan Logika IP, & Skenario Implementasi 90 Menit), BAB IV (Hasil & Pembahasan Evaluasi Kebaruan, Kreativitas, Kebermanfaatan & Efisiensi Empiris N-Gain 0,74), BAB V (Kesimpulan & Rekomendasi Virtual-First), serta Sumber Referensi.',
   slides: [
     {
       slideNumber: 1,
-      title: 'Seminar Karya Inovasi Pembelajaran PPG',
-      subtitle: 'Inovasi PBL Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab',
+      title: 'SEMINAR KARYA INOVASI PEMBELAJARAN PPG',
+      subtitle: 'Inovasi Pengembangan Media Simulasi Jaringan Komputer Kelas X: Transisi dari Cisco Packet Tracer ke NetLab',
       category: 'Cover & Identitas',
-      presenter: 'Asyhar Qowiim (NIM: 25105260081)',
-      institution: 'Pendidikan Profesi Guru (PPG) Calon Guru — Bidang Studi Informatika UNY',
+      presenter: 'Asyhar Qowiim | 25105260081',
+      institution: 'Universitas Negeri Yogyakarta — Pendidikan Profesi Guru Prajabatan',
       keyPoints: [
-        'Karya Inovasi Pembelajaran Abad 21',
-        'Model Pembelajaran: Problem-Based Learning (PBL)',
-        'Media Pembelajaran: NetLab Interactive Web Simulator & JSON Schema',
-        'Studi Kasus Kontekstual: Jaringan Ritel Retail Modern "Minimarket Berkah"'
+        'Pengembangan dan penerapan media simulasi jaringan berbasis web (NetLab) untuk mengoptimalkan keterampilan troubleshooting dan literasi digital siswa Kelas X.',
+        'Penyusun: Asyhar Qowiim | NIM: 25105260081',
+        'Program: Pendidikan Profesi Guru (PPG) Prajabatan — Universitas Negeri Yogyakarta'
       ],
-      content: 'Presentasi pertanggungjawaban karya inovasi pembelajaran dalam rangka Mata Kuliah Seminar PPG Informatika. Mengangkat transformasi metode praktikum jaringan komputer kelas X SMA/SMK guna mengatasi hambatan infrastruktur sekolah melalui pemanfaatan platform berbasis web terbuka.',
-      visualNotes: 'Desain modern bertema dark blue cyan dengan logo UNY, lencana PPG Calon Guru, dan grafis topologi jaringan interaktif.'
+      content: 'Pengembangan dan penerapan media simulasi jaringan berbasis web (NetLab) untuk mengoptimalkan keterampilan troubleshooting dan literasi digital siswa Kelas X.',
+      visualNotes: 'Cover presentasi dark futuristic cyber network dengan logo Universitas Negeri Yogyakarta dan PPG Prajabatan.'
     },
     {
       slideNumber: 2,
-      title: 'Latar Belakang & Identifikasi Permasalahan',
-      subtitle: 'Kesenjangan Praktikum Jaringan Komputer di Sekolah',
-      category: 'Problem Identification',
+      title: 'BAB I — LATAR BELAKANG: MENGAPA KITA PERLU BERALIH KE NETLAB?',
+      subtitle: 'Tiga Kendala Utama Praktikum Jaringan Komputer di Sekolah',
+      category: 'BAB I · Latar Belakang',
       keyPoints: [
-        'Keterbatasan Perangkat Keras Fisik: Tidak semua sekolah memiliki switch dan server yang memadai untuk praktikum tiap murid.',
-        'Kelemahan Cisco Packet Tracer: Membutuhkan instalasi desktop berat, RAM besar, dan akun Cisco NetAcad yang sering gagal verifikasi.',
-        'Disparitas Gawai Siswa: Siswa dengan laptop spesifikasi rendah tertinggal saat menjalankan aplikasi desktop yang memakan resource tinggi.',
-        'Materi Abstrak & Kurang Kontekstual: Praktikum sering terpaku pada teori buku tanpa simulasi kasus nyata dunia usaha.'
+        'Spesifikasi Komputer Lab Terbatas: Banyak komputer laboratorium sekolah ber-spesifikasi rendah/standar sehingga sering lag atau crash saat menjalankan aplikasi desktop berat seperti Cisco Packet Tracer.',
+        'Beban Instalasi Guru Sangat Tinggi: Guru harus mengunduh dan menginstal aplikasi manual di puluhan komputer lab di luar jam pelajaran. Hal ini menyita waktu dan tenaga persiapan yang sangat besar.',
+        'Alokasi Waktu KBM Terbatas (2 JP): Jam pelajaran Informatika di SMA sangat singkat (2 JP / 90 menit). Kendala teknis seperti aplikasi lemot menyita alokasi waktu praktik siswa yang berharga.'
       ],
-      content: 'Praktikum jaringan komputer di kelas X kerap mengalami hambatan operasional di laboratorium komputer. Penggunaan perangkat lunak desktop monolitik menyita waktu belajar efektif untuk instalasi dan troubleshooting teknis aplikasi ketimbang pemahaman materi inti.',
-      visualNotes: 'Diagram perbandingan kesenjangan: Lab konvensional vs Kebutuhan kurikulum merdeka abad 21.'
+      content: 'Mengidentifikasi tiga permasalahan utama di laboratorium komputer sekolah menengah yang mendasari perlunya transisi dari simulator desktop berat ke simulator berbasis web NetLab.',
+      visualNotes: 'Tiga kartu ikon: Spesifikasi Komputer Lab Terbatas, Beban Instalasi Guru Sangat Tinggi, dan Alokasi Waktu KBM Terbatas (2 JP).'
     },
     {
       slideNumber: 3,
-      title: 'Analisis Kebutuhan & Rasional Pemilihan NetLab',
-      subtitle: 'Mengapa Beralih ke Web-Based Simulator?',
-      category: 'Solution Rationale',
+      title: 'BAB I — RUMUSAN MASALAH, TUJUAN & SASARAN INOVASI',
+      subtitle: 'Fokus Pengembangan Media Simulasi Jaringan Kelas X',
+      category: 'BAB I · Rumusan & Tujuan',
       keyPoints: [
-        'Zero Installation: 100% berjalan di peramban web (Google Chrome, Firefox, Safari) tanpa perlu hak administrator PC.',
-        'Inklusif & Ringan: Berjalan mulus di Chromebook, laptop low-end, maupun PC sekolah.',
-        'Portabilitas Format JSON: Arsitektur topologi disimpan dalam berkas teks JSON berukuran kecil (~41 KB) yang sangat mudah dibagikan.',
-        'Fokus Pedagogis: Antarmuka bersih memungkinkan siswa langsung fokus pada logika jaringan, ICMP Ping, dan pemecahan masalah (troubleshooting).'
+        'Rumusan Masalah: Bagaimana efektivitas pengembangan dan penerapan media simulasi berbasis web NetLab sebagai alternatif Cisco Packet Tracer dalam meningkatkan pemahaman konsep dan keterampilan troubleshooting jaringan lokal siswa Kelas X?',
+        'Tujuan Inovasi: Mengoptimalkan alokasi waktu 90 menit dan mengeliminasi kendala teknis hardware melalui simulator web-based yang bersifat zero-installation.',
+        'Sasaran Inovasi (Siswa): Peningkatan kemampuan kognitif, HOTS (C4–C6), dan literasi digital.',
+        'Sasaran Inovasi (Guru): Efisiensi operasional tanpa beban instalasi di setiap unit PC lab.'
       ],
-      content: 'Platform NetLab (netlab.thecybersecguru.com) dipilih sebagai media inovasi karena memberikan kemerdekaan belajar yang merata. Guru dapat menyiapkan skenario masalah dalam format JSON dan siswa langsung mengimpor ruang kerja dalam hitungan detik.',
-      visualNotes: 'Tabel komparasi matriks fitur: NetLab Web Simulator vs Cisco Packet Tracer Desktop.'
+      content: 'Merumuskan fokus pertanyaan riset pengembangan serta menetapkan tujuan dan sasaran terukur baik bagi siswa Kelas X maupun guru Informatika.',
+      visualNotes: 'Pemaparan terstruktur Rumusan Masalah, Tujuan Inovasi, dan Sasaran Inovasi.'
     },
     {
       slideNumber: 4,
-      title: 'Desain Karya Inovatif: Berkas Topologi JSON',
-      subtitle: 'produk-karya-inovasi.json — Solusi Praktikum Portabel',
-      category: 'Product Design',
+      title: 'BAB II — KERANGKA PENGEMBANGAN & SKENARIO IMPLEMENTASI',
+      subtitle: 'Landasan TPACK, Edgar Dale, dan Keunggulan In-Browser NetLab',
+      category: 'BAB II · Kerangka Pengembangan',
       keyPoints: [
-        'Berkas JSON Standar Terbuka: Memuat metadata, daftar perangkat (devices), interface port, dan konfigurasi IP.',
-        'Distribusi Cepat: File berukuran 41 KB dapat dibagikan via grup WhatsApp kelas, Google Drive, atau flashdisk.',
-        'Plug & Play di NetLab: Siswa cukup memilih menu "Upload" di ruang kerja NetLab, seluruh topologi instan termuat.',
-        'Reusability: Template dapat dimodifikasi oleh guru lain untuk skenario pembelajaran lanjutan (VLAN, Routing, dll).'
+        'Kerangka Pengembangan Media (TPACK & Edgar Dale): Integrasi Pengetahuan Teknologi, Pedagogi, dan Konten (TPACK) dalam merancang simulator web-based NetLab; memanfaatkan prinsip Cone of Experience Edgar Dale di mana simulasi interaktif (contrived experience) memberikan pengalaman konkret dengan retensi pemahaman hingga 90%.',
+        'Skenario Masalah Otentik dalam Pengembangan: Penggunaan skenario "Minimarket Berkah" di awal kegiatan praktikum sebagai instrumen uji penalaran kritis siswa (HOTS).',
+        'Keunggulan Simulator NetLab (In-Browser) — Zero-Installation & Zero-Maintenance: Berjalan langsung di web browser tanpa memerlukan proses instalasi.',
+        'Keunggulan Simulator NetLab — Sangat Ringan: Menggunakan konsumsi RAM <150 MB sehingga lancar di komputer low-spec maupun Chromebook.',
+        'Keunggulan Simulator NetLab — Validitas Teruji: Memiliki kualifikasi validitas "Sangat Tinggi" dan "Sangat Valid" dari ahli media dan desain.'
       ],
-      content: 'Inti dari karya inovasi ini adalah artefak digital produk-karya-inovasi.json. Berkas ini merepresentasikan jaringan komputer terpadu yang memadukan model Cisco Catalyst 2960-24TT Switch dengan workstation dan host server dalam skema terstruktur.',
-      visualNotes: 'Cuplikan kode JSON schema berdampingan dengan render visual kanvas perangkat di browser.'
+      content: 'Memadukan kerangka teoritis TPACK dan Kerucut Pengalaman Edgar Dale dengan keunggulan teknis NetLab yang ringan, bebas instalasi, dan teruji validitasnya.',
+      visualNotes: 'Matriks 3 kolom: Kerangka Pengembangan Media (TPACK & Edgar Dale), Skenario Masalah Otentik dalam Pengembangan, dan Keunggulan Simulator NetLab (In-Browser).'
     },
     {
       slideNumber: 5,
-      title: 'Studi Kasus Kontekstual: Minimarket Berkah',
-      subtitle: 'Menghubungkan Materi Komputasi dengan Ekosistem Ritel Nyata',
-      category: 'Contextual Case',
+      title: 'BAB III — DESAIN PROTOTIPE KARYA INOVASI NETLAB',
+      subtitle: 'Gambar: Tampilan In-Browser NetLab Topologi Minimarket Berkah',
+      category: 'BAB III · Desain Prototipe',
       keyPoints: [
-        'Server Kasir (192.168.1.1/24): Menyimpan database harga barang, stok gudang, dan sistem Point of Sales (POS).',
-        'PC Kasir (192.168.1.10/24): Terminal kasir meja depan untuk transaksi pembayaran konsumen.',
-        'PC Gudang (192.168.1.50/27): Terminal administrasi logistik penerimaan stok barang masuk.',
-        'Switch Cisco Catalyst 2960: Switch sentral layer 2 yang menghubungkan seluruh node melalui kabel FastEthernet.'
+        'Integrasi Perangkat: Memvisualisasikan integrasi 2 Client PC (PC kasir dan PC Gudang) yang terhubung langsung ke server-kasir melalui Switch Virtual Layer 2 (2960-24TT3).',
+        'Media Transmisi: Menggunakan media transmisi Copper Straight-Through (ST) pada port FastEthernet0/1, FastEthernet0/2, dan FastEthernet0/3.',
+        'Status Koneksi Fisik: Indikator port hijau aktif menunjukkan lapisan fisik dan data link normal, siap digunakan untuk simulasi pengujian aliran paket dan konfigurasi IP.'
       ],
-      content: 'Studi kasus dirancang sedekat mungkin dengan fenomena sehari-hari yang dialami peserta didik. Siswa diajak memahami bahwa di balik antrean kasir minimarket modern, terdapat arsitektur jaringan lokal yang saling bertukar data harga dan stok secara real-time.',
-      visualNotes: 'Diagram topologi bintang (star topology) Minimarket Berkah dengan ikon Server, Kasir, Gudang, dan Switch 2960.'
+      content: 'Memvisualisasikan integrasi 2 Client PC (PC kasir dan PC Gudang) yang terhubung langsung ke server-kasir melalui Switch Virtual Layer 2 (2960-24TT3) menggunakan media transmisi Copper Straight-Through (ST). Indikator port hijau aktif menunjukkan lapisan fisik dan data link normal, siap digunakan untuk simulasi pengujian aliran paket dan konfigurasi IP.',
+      visualNotes: 'Tangkapan layar asli kanvas NetLab menampilkan server-kasir, Switch 2960-24TT3, PC kasir, dan PC Gudang dengan indikator link ST hijau.'
     },
     {
       slideNumber: 6,
-      title: 'Rancangan 5 Sintaks Problem-Based Learning (PBL)',
-      subtitle: 'Alur Pembelajaran 2 JP (90 Menit) Terstruktur',
-      category: 'Pedagogical Framework',
+      title: 'BAB III — RANCANGAN STUDI KASUS',
+      subtitle: '"Misteri Gagalnya Transaksi Kasir & Gudang Minimarket Berkah"',
+      category: 'BAB III · Rancangan Studi Kasus',
       keyPoints: [
-        'Sintaks 1 (10 m): Orientasi Masalah — Menayangkan kasus antrean kasir lumpuh akibat database offline.',
-        'Sintaks 2 (10 m): Organisasi Belajar — Pembentukan tim 3-4 murid, pembagian LKPD & file JSON.',
-        'Sintaks 3 (20 m): Penyelidikan Terbimbing — Impor JSON ke NetLab, inspeksi IP, uji PING, deteksi error subnet /27.',
-        'Sintaks 4 (15 m): Penyajian Karya — Verifikasi konektivitas sukses (Ping Reply) & presentasi solusi di depan kelas.',
-        'Sintaks 5 (5 m): Evaluasi Pemecahan Masalah — Refleksi teknis, konfirmasi prinsip subnetting & gateway.'
+        'Judul Kasus: "Misteri Gagalnya Transaksi Kasir & Gudang Minimarket Berkah"',
+        'Desain Jebakan Logika IP — Status Visual NetLab: Kabel berwarna hijau dan terhubung ke Switch (terlihat normal).',
+        'Desain Jebakan Logika IP — Akar Masalah: PC Gudang diberi IP 192.168.1.255 yang merupakan IP Broadcast (bukan IP Host) atau dipasang Subnet Mask 255.255.255.224 yang mengisolasi host.'
       ],
-      content: 'Skenario pembelajaran disusun berpedoman pada 5 sintaks PBL (Arends, 2012). Melalui tahapan ini, pembelajaran bertransformasi dari sekadar mendengarkan ceramah guru menjadi penyelidikan aktif berpusat pada peserta didik (student-centered).',
-      visualNotes: 'Timeline alur alokasi waktu 90 menit dengan 5 blok sintaks bertingkat dan indikator aktivitas.'
+      content: 'Merancang studi kasus dengan jebakan logika pengalamatan IP di mana indikator fisik terlihat hijau normal namun komunikasi data gagal, guna menantang daya analisis HOTS siswa.',
+      visualNotes: 'Penjelasan judul kasus dan rincian Desain Jebakan Logika IP beserta ilustrasi jaringan LAN.'
     },
     {
       slideNumber: 7,
-      title: 'Skenario Troubleshooting Kasir Offline',
-      subtitle: 'Akar Masalah: Diferensiasi Subnet Mask /24 vs /27',
-      category: 'Troubleshooting Analysis',
+      title: 'BAB III — SKENARIO IMPLEMENTASI PEMBELAJARAN',
+      subtitle: 'Alur Praktikum 2 JP (90 Menit): Pendahuluan, Kegiatan Inti, & Penutup',
+      category: 'BAB III · Skenario Implementasi',
       keyPoints: [
-        'Penyebab Error: PC Gudang dikonfigurasi dengan netmask 255.255.255.224 (/27) sehingga berada di subnet berbeda dari server.',
-        'Gejala Teknis: Perintah PING dari PC Gudang menuju Server Kasir (192.168.1.1) menghasilkan "Request timed out".',
-        'Analisis HOTS Murid: Siswa mengidentifikasi rentang host subnet /27 (192.168.1.32 s/d 192.168.1.63) dan memahami perlunya routing atau penyelarasan netmask.',
-        'Solusi Siswa: Menyelaraskan netmask PC Gudang menjadi 255.255.255.0 (/24) agar berada di segmen LAN yang sama.'
+        'Pendahuluan — Tahap Orientasi (15 Menit): Pengenalan kasus troubleshooting IP di NetLab.',
+        'Kegiatan Inti — Tahap Eksplorasi Mandiri (60 Menit): Siswa menganalisis parameter IP, mengganti IP Broadcast ke IP Host valid, dan melakukan uji ping.',
+        'Penutup — Tahap Evaluasi & Refleksi (15 Menit): Penguatan konsep pengalamatan IP dan fungsi Switch.'
       ],
-      content: 'Skenario troubleshooting dirancang untuk merangsang keterampilan berpikir tingkat tinggi (Higher Order Thinking Skills). Siswa tidak hanya mencari tombol yang salah, melainkan bernalar secara matematis dan logis mengenai pembagian ruang alamat IP.',
-      visualNotes: 'Grafik kalkulasi biner subnet mask /24 vs /27 dan simulasi pesan Request Timed Out vs Reply from 192.168.1.1.'
+      content: 'Pembagian alokasi waktu pembelajaran 90 menit yang terfokus penuh pada orientasi masalah kasus di NetLab (15 menit), eksplorasi troubleshooting mandiri oleh siswa (60 menit), serta evaluasi dan penguatan konsep (15 menit).',
+      visualNotes: 'Alur 3 tahapan: Pendahuluan (15 Menit), Kegiatan Inti (60 Menit), dan Penutup (15 Menit).'
     },
     {
       slideNumber: 8,
-      title: 'Langkah Praktis Uji Mandiri di NetLab',
-      subtitle: '4 Tahap Mudah Bagi Guru dan Siswa',
-      category: 'Hands-on Guide',
+      title: 'BAB IV — HASIL & PEMBAHASAN: EVALUASI KEBARUAN & KREATIVITAS',
+      subtitle: 'Kebaruan (Novelty) & Kreativitas (Creativity)',
+      category: 'BAB IV · Kebaruan & Kreativitas',
       keyPoints: [
-        'Langkah 1: Unduh berkas produk-karya-inovasi.json melalui portal portofolio.',
-        'Langkah 2: Buka tautan https://netlab.thecybersecguru.com pada web browser.',
-        'Langkah 3: Klik "Open Individual Workplace" untuk memulai ruang simulasi mandiri.',
-        'Langkah 4: Klik tombol "Upload" berkas JSON, lalu topologi langsung siap dioperasikan dan diuji coba!'
+        'Kebaruan (Novelty) — Transisi Web-Based: Transisi dari aplikasi desktop yang memberatkan instalasi PC ke Web-Based NetLab Simulator yang dapat diakses secara instan (zero-installation).',
+        'Kebaruan (Novelty) — Bebas Beban Instalasi: Mengeliminasi beban kerja guru dalam penginstalan ulang software di laboratorium.',
+        'Kreativitas (Creativity) — Troubleshooting Mandiri: Integrasi studi kasus otentik di awal KBM yang melatih pola pikir troubleshooting mandiri tanpa bergantung pada internet.'
       ],
-      content: 'Kemudahan operasional ini memastikan bahwa setiap siswa di kelas dapat langsung memulai praktikum secara mandiri tanpa menunggu guru mengatur konfigurasi server laboratorium yang rumit.',
-      visualNotes: 'Cuplikan antarmuka 4 langkah disertai tombol aksi interaktif dan tangkapan layar simulator NetLab.'
+      content: 'Mengevaluasi nilai kebaruan transisi simulator web zero-installation serta nilai kreativitas penyajian kasus troubleshooting otentik di awal pembelajaran.',
+      visualNotes: 'Pemaparan poin Kebaruan (Novelty) dan Kreativitas (Creativity) dengan grafis isometrik perangkat digital.'
     },
     {
       slideNumber: 9,
-      title: 'Desain Asesmen Komprehensif Abad 21',
-      subtitle: 'Diagnostik, Formatif Autentik, dan Sumatif HOTS',
-      category: 'Assessment Strategy',
+      title: 'BAB IV — HASIL & PEMBAHASAN: KEBERMANFAATAN & EFISIENSI EMPIRIS',
+      subtitle: 'Efisiensi Waktu, Peningkatan Kognitif (N-Gain 0,74), & Inklusivitas Perangkat',
+      category: 'BAB IV · Kebermanfaatan Empiris',
       keyPoints: [
-        'Asesmen Diagnostik: Pemetaan kesiapan belajar awal dan gaya belajar peserta didik.',
-        'Asesmen Formatif Sikap: Rubrik 4 skala observasi Profil Pelajar Pancasila (Bernalar Kritis, Gotong Royong, Kreatif).',
-        'Asesmen Formatif Praktik: Rubrik kinerja pengoperasian NetLab, verifikasi IP, dan ketepatan troubleshooting.',
-        'Asesmen Sumatif: 5 butir soal pilihan ganda berbobot HOTS dilengkapi kunci jawaban ilmiah dan pembahasan.'
+        'Efisiensi Waktu Praktikum: Integrasi studi kasus otentik di awal KBM yang melatih pola pikir troubleshooting mandiri tanpa bergantung pada internet serta mereduksi waktu operasional praktikum.',
+        'Peningkatan Capaian Kognitif: Penggunaan simulator meningkatkan pemahaman konsep jaringan lokal dengan skor N-Gain 0,74 (Kategori Tinggi).',
+        'Inklusivitas Perangkat: Pembelajaran praktik dapat dijalankan secara lancar pada PC low-spec maupun Chromebook.'
       ],
-      content: 'Asesmen dirancang holistik mencakup ranah kognitif, afektif, dan psikomotorik. Guru pamong dan penguji dapat melihat keselarasan antara tujuan pembelajaran (TP), aktivitas kelas, dan instrumen evaluasi yang diterapkan.',
-      visualNotes: 'Tiga pilar asesmen: Sikap Pancasila, Keterampilan Praktik NetLab, dan Pengetahuan Soal PG.'
+      content: 'Membuktikan kebermanfaatan empiris penggunaan simulator NetLab melalui peningkatan pemahaman konsep jaringan lokal (N-Gain 0,74 / Kategori Tinggi), efisiensi waktu praktikum, dan inklusivitas perangkat.',
+      visualNotes: 'Tiga poin kebermanfaatan empiris: Efisiensi Waktu Praktikum, Peningkatan Capaian Kognitif (N-Gain 0,74), dan Inklusivitas Perangkat.'
     },
     {
       slideNumber: 10,
-      title: 'Hasil Uji Coba & Respon Peserta Didik',
-      subtitle: 'Peningkatan Keterlibatan dan Efisiensi Waktu Kelas',
-      category: 'Implementation Results',
+      title: 'BAB V — PENUTUP: KESIMPULAN & REKOMENDASI',
+      subtitle: 'Efektivitas Transisi ke NetLab & Pendekatan Virtual-First',
+      category: 'BAB V · Kesimpulan & Rekomendasi',
       keyPoints: [
-        '100% Akses Berhasil: Seluruh siswa di kelas berhasil menjalankan simulasi tanpa hambatan spesifikasi laptop.',
-        'Efisiensi Setup Waktu: Waktu persiapan praktikum berkurang drastis dari rata-rata 25 menit menjadi hanya 2 menit.',
-        'Peningkatan Keaktifan: Partisipasi siswa pasif meningkat signifikan karena simulasi web terasa interaktif dan tidak menakutkan.',
-        'Respon Positif Murid: Siswa merasa bangga berhasil memecahkan masalah sistem kasir minimarket seperti teknisi profesional.'
+        'Kesimpulan: Transisi media simulasi dari Cisco Packet Tracer ke NetLab berbasis web terbukti sangat efektif dalam meningkatkan pemahaman konsep dan keterampilan troubleshooting jaringan lokal siswa Kelas X. Hal ini dibuktikan dengan pencapaian N-Gain sebesar 0,74 (kategori tinggi) serta efisiensi alokasi waktu praktikum yang 100% berfokus pada aktivitas pembelajaran aktif.',
+        'Rekomendasi 1: Sekolah disarankan menerapkan pendekatan Virtual-First untuk praktikum jaringan komputer.',
+        'Rekomendasi 2: Guru Informatika dapat memanfaatkan NetLab sebagai media efisien yang bebas beban pemeliharaan sistem.'
       ],
-      content: 'Implementasi inovasi ini di sekolah mitra (SMAN 11 Yogyakarta) membuktikan bahwa hambatan teknologi dapat dijembatani melalui pemilihan alat bantu yang tepat guna, inklusif, dan ramah pengguna.',
-      visualNotes: 'Grafik batang perbandingan efisiensi waktu persiapan praktikum dan persentase keterlibatan siswa di kelas.'
+      content: 'Menyimpulkan efektivitas transisi media simulasi ke NetLab berbasis web serta merekomendasikan pendekatan Virtual-First bagi sekolah dan guru Informatika.',
+      visualNotes: 'Ringkasan Kesimpulan (N-Gain 0,74 & 100% waktu aktif belajar) serta 2 poin Rekomendasi.'
     },
     {
       slideNumber: 11,
-      title: 'Evaluasi Karya Inovasi: Nilai 3K',
-      subtitle: 'Kebaruan (Novelty), Kreativitas, & Kebermanfaatan Luas',
-      category: 'Innovation Evaluation',
+      title: 'SUMBER REFERENSI',
+      subtitle: 'Landasan Jurnal Ilmiah & Literatur Pendukung',
+      category: 'Daftar Pustaka',
       keyPoints: [
-        'Kebaruan (Novelty): Peralihan praktikum jaringan ke teknologi cloud web simulator dengan artefak JSON portabel.',
-        'Kreativitas (Creativity): Pemaduan studi kasus ritel modern Minimarket Berkah dengan tantangan subnetting diferensiasi.',
-        'Kebermanfaatan (Usefulness): Menghapus kesenjangan infrastruktur sekolah, hemat biaya lisensi, dan relevan dengan dunia kerja.'
+        'Andika, C., et al. (2026). Model Pengembangan Berbantuan Cisco Packet Tracer. Pendas: Jurnal Ilmiah Pendidikan Dasar.',
+        'Dale, E. (1946/1969). Audio-Visual Methods in Teaching. New York: Dryden Press.',
+        'Hendrawati, T., & Sudarma, S. (2026). Integrasi TPACK dan Nilai-Nilai Karakter dalam Desain Pembelajaran Abad ke-21. Konstruktivisme.',
+        'Kholili, A. N., et al. (2026). Analisis Efisiensi Pembelajaran Praktikum Jaringan Komputer Berbasis Laboratorium Virtual. Jurnal Kajian Ilmu dan Teknologi (JKIT).',
+        'Negara, K. A. S., et al. (2023). Validitas Media Pembelajaran Jaringan Komputer Berbasis PNETLab. KARMAPATI Undiksha.',
+        'Yulizar, D., & Haris, A. (2025). Pemanfaatan Cisco Packet Tracer dalam Simulasi Jaringan. Journal of Management and Business.'
       ],
-      content: 'Karya inovasi ini dirancang agar pembelajaran jaringan menjadi lebih adil, mudah diakses, menyenangkan, dan relevan dengan kebutuhan murid.',
-      visualNotes: 'Bagan segitiga emas 3K: Novelty, Creativity, dan Usefulness dengan ikon pendukung.'
+      content: 'Daftar referensi jurnal ilmiah dan buku rujukan yang mendasari pengembangan karya inovasi media simulasi jaringan berbasis web NetLab.',
+      visualNotes: 'Daftar 6 sitasi referensi utama pada slide Sumber Referensi.'
     },
     {
       slideNumber: 12,
-      title: 'Refleksi Pengalaman Calon Guru',
-      subtitle: 'Lessons Learned Selama Mengembangkan Karya Inovasi',
-      category: 'Reflective Practice',
+      title: 'THANK YOU — ASYHAR QOWIIM',
+      subtitle: 'Penutup Presentasi Seminar Karya Inovasi Pembelajaran PPG',
+      category: 'Penutup',
       keyPoints: [
-        'Empati Pedagogis: Guru harus peka terhadap keterbatasan gawai siswa dan tidak memaksakan perangkat lunak yang memberatkan.',
-        'Pentingnya Kontekstualisasi: Murid jauh lebih antusias belajar ketika masalah komputasi dikaitkan dengan kehidupan nyata mereka.',
-        'Resiliensi dalam Inovasi: Menemukan dan menguji simulator baru membutuhkan ketekunan, tetapi hasilnya memberikan dampak jangka panjang bagi mutu pembelajaran.'
+        'Penyusun: Asyhar Qowiim (NIM: 25105260081)',
+        'Program Studi Informatika — Pendidikan Profesi Guru (PPG) Prajabatan Universitas Negeri Yogyakarta'
       ],
-      content: 'Pengembangan inovasi ini menguatkan identitas saya sebagai calon guru profesional yang reflektif dan adaptif (sesuai amanat LK 1 dan LK 2). Guru bukanlah penghafal kurikulum lama, melainkan kurator pengalaman belajar yang memerdekakan potensi siswa.',
-      visualNotes: 'Kutipan reflektif calon guru dan siklus refleksi berkelanjutan Ki Hadjar Dewantara.'
-    },
-    {
-      slideNumber: 13,
-      title: 'Kesimpulan & Rencana Penerapan',
-      subtitle: 'Membagikan Praktik Baik ke Komunitas Belajar & MGMP',
-      category: 'Conclusion & Next Steps',
-      keyPoints: [
-        'Kesimpulan: Peralihan dari Cisco Packet Tracer ke NetLab terbukti mempermudah praktikum, lebih ringan, dan meningkatkan pemahaman jaringan komputer kelas X.',
-        'Berbagi di MGMP: Berencana membagikan modul ajar dan berkas praktik topologi di forum MGMP Informatika SMA/SMK.',
-        'Pengembangan Lanjutan: Menambahkan skenario simulasi Wireless LAN (WLAN), keamanan firewall, dan routing antar-VLAN.',
-        'Komitmen Pendidik: Terus berinovasi menghadirkan pembelajaran yang humanis, menyenangkan, dan berpusat pada murid.'
-      ],
-      content: 'Terima kasih kepada Dosen Pembimbing, Guru Pamong, Rekan Sejawat Mahasiswa PPG, dan Siswa SMAN 11 Yogyakarta atas dukungan penuh selama perancangan dan pelaksanaan inovasi ini.',
-      visualNotes: 'Lencana penutup, kontak pemateri (Asyhar Qowiim - NIM 25105260081), dan ucapan terima kasih.'
+      content: 'Terima kasih atas perhatian dan masukan Bapak/Ibu Dosen Penguji, Dosen Pembimbing, Guru Pamong, serta rekan sejawat mahasiswa PPG.',
+      visualNotes: 'Slide penutup bertuliskan THANK YOU — ASYHAR QOWIIM.'
     }
   ]
 }

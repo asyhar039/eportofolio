@@ -44,42 +44,42 @@ const galleryData = [
     type: 'photo',
     title: 'Evaluasi Bersama Guru Pamong',
     category: 'Dokumentasi Evaluasi',
-    src: '/assets/aistudio/evaluasi1_99a22767.jpeg'
+    src: '/assets/evaluasi-1.jpeg'
   },
   {
     id: 'eval-2',
     type: 'photo',
     title: 'Evaluasi Bersama Guru Pamong',
     category: 'Dokumentasi Evaluasi',
-    src: '/assets/aistudio/evaluasi2_fa35c4ed.jpeg'
+    src: '/assets/evaluasi-2.jpeg'
   },
   {
     id: 'eval-3',
     type: 'photo',
     title: 'Evaluasi Bersama Guru Pamong',
     category: 'Dokumentasi Evaluasi',
-    src: '/assets/aistudio/evaluasi3_7ac1632a.jpeg'
+    src: '/assets/evaluasi-3.jpeg'
   },
   {
     id: 'eval-4',
     type: 'photo',
     title: 'Evaluasi Bersama Guru Pamong',
     category: 'Dokumentasi Evaluasi',
-    src: '/assets/aistudio/evaluasi4_0fed61bd.jpeg'
+    src: '/assets/evaluasi-4.jpeg'
   },
   {
     id: 'eval-5',
     type: 'photo',
     title: 'Evaluasi Bersama Guru Pamong',
     category: 'Dokumentasi Evaluasi',
-    src: '/assets/aistudio/evaluasi5_46dda959.jpeg'
+    src: '/assets/evaluasi-5.jpeg'
   },
   {
     id: 'eval-6',
     type: 'photo',
     title: 'Evaluasi Bersama Guru Pamong',
     category: 'Dokumentasi Evaluasi',
-    src: '/assets/aistudio/evaluasi6_953abd8e.jpeg'
+    src: '/assets/evaluasi-6.jpeg'
   }
 ]
 

@@ -106,41 +106,25 @@
 
 .about-card-body {
   display: grid;
-  grid-template-columns: 1.5fr 0.5fr;
+  grid-template-columns: 1.35fr 0.65fr;
   gap: 32px;
   align-items: stretch;
 }
 
 .about-profile-left {
   display: grid;
-  grid-template-columns: 220px 1fr;
-  gap: 32px;
+  grid-template-columns: 200px 1fr;
+  gap: 28px;
   align-items: center;
 }
 
 .avatar-container {
-  width: 220px;
-  height: 220px;
+  width: 200px;
+  height: 200px;
   border-radius: 50%;
   background: linear-gradient(135deg, var(--accent-cyan), var(--accent-blue));
   padding: 4px;
-  box-shadow: 
-    0 16px 40px rgba(0, 0, 0, 0.3),
-    0 0 40px rgba(0, 217, 255, 0.3);
-  animation: avatarGlow 3s ease-in-out infinite;
-}
-
-@keyframes avatarGlow {
-  0%, 100% {
-    box-shadow: 
-      0 16px 40px rgba(0, 0, 0, 0.3),
-      0 0 40px rgba(0, 217, 255, 0.3);
-  }
-  50% {
-    box-shadow: 
-      0 16px 40px rgba(0, 0, 0, 0.3),
-      0 0 60px rgba(0, 217, 255, 0.5);
-  }
+  box-shadow: 0 14px 36px rgba(0, 0, 0, 0.28);
 }
 
 .profile-avatar-img,
@@ -183,10 +167,10 @@
 
 .quote-box {
   display: flex;
-  gap: 16px;
-  background: rgba(255, 255, 255, 0.05);
-  border-left: 3px solid var(--accent-cyan);
-  padding: 16px;
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.06);
+  border: 1px solid rgba(0, 217, 255, 0.24);
+  padding: 16px 18px;
   border-radius: var(--radius-md);
 }
 
@@ -203,14 +187,15 @@
 }
 
 .about-commitment-card {
-  background: linear-gradient(135deg, #15395B 0%, #102A43 55%, #0B1F33 100%);
+  background: linear-gradient(145deg, #15395B 0%, #102A43 55%, #0B1F33 100%);
   color: var(--white);
+  border: 1px solid rgba(255, 255, 255, 0.14);
   border-radius: 24px;
-  padding: clamp(24px, 3vw, 36px);
+  padding: clamp(24px, 3vw, 32px);
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
-  min-height: 280px;
+  min-height: 260px;
   position: relative;
   overflow: hidden;
 }
@@ -219,22 +204,10 @@
   position: absolute;
   top: -40%;
   right: -40%;
-  width: 240px;
-  height: 240px;
-  background: radial-gradient(circle, rgba(0, 217, 255, 0.35) 0%, transparent 70%);
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(0, 217, 255, 0.22) 0%, transparent 70%);
   pointer-events: none;
-  animation: glowPulse 4s ease-in-out infinite;
-}
-
-@keyframes glowPulse {
-  0%, 100% {
-    opacity: 0.5;
-    transform: scale(1);
-  }
-  50% {
-    opacity: 0.9;
-    transform: scale(1.15);
-  }
 }
 
 .commitment-pattern {
@@ -389,9 +362,11 @@
 }
 
 .story-text .story-commit {
-  color: rgba(255, 255, 255, 0.88);
-  border-left: 3px solid var(--accent-cyan);
-  padding-left: 16px;
+  color: rgba(255, 255, 255, 0.92);
+  background: rgba(0, 217, 255, 0.07);
+  border: 1px solid rgba(0, 217, 255, 0.22);
+  border-radius: 14px;
+  padding: 14px 18px;
   font-weight: 500;
 }
 
@@ -548,11 +523,11 @@
 }
 
 .visi-statement {
-  color: rgba(255, 255, 255, 0.88);
-  font-size: clamp(0.95rem, 1.6vw, 1.04rem);
+  color: rgba(255, 255, 255, 0.9);
+  font-size: clamp(0.94rem, 1.55vw, 1.02rem);
   line-height: 1.75;
   background: rgba(255, 255, 255, 0.05);
-  border-left: 3px solid var(--accent-cyan);
+  border: 1px solid rgba(0, 217, 255, 0.24);
   padding: 16px 18px;
   border-radius: 14px;
   margin-bottom: 24px;

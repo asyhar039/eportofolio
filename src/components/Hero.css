@@ -197,35 +197,22 @@
 
 .keywords {
   display: flex;
-  gap: 24px;
+  align-items: center;
+  gap: 12px;
   flex-wrap: wrap;
 }
 
 .keywords span {
   display: inline-flex;
   align-items: center;
-  gap: 10px;
   font-size: 0.85rem;
   font-weight: 600;
-  color: rgba(255, 255, 255, 0.6);
+  color: rgba(255, 255, 255, 0.72);
 }
 
-.keywords .dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, var(--accent-blue), var(--accent-cyan));
-  box-shadow: 0 0 12px rgba(0, 217, 255, 0.5);
-  animation: dotPulse 2s ease-in-out infinite;
-}
-
-@keyframes dotPulse {
-  0%, 100% {
-    box-shadow: 0 0 12px rgba(0, 217, 255, 0.5);
-  }
-  50% {
-    box-shadow: 0 0 20px rgba(0, 217, 255, 0.8);
-  }
+.keywords .keyword-sep {
+  color: var(--accent-cyan);
+  opacity: 0.75;
 }
 
 .hero-visual {
@@ -236,34 +223,14 @@
 }
 
 .profile-card {
-  background: linear-gradient(135deg, #15395B 0%, #1a3a52 100%);
+  background: linear-gradient(145deg, #133251 0%, #0e253d 100%);
   color: var(--white);
   padding: 40px;
-  border-radius: 32px;
-  box-shadow: 
-    0 20px 60px rgba(0, 0, 0, 0.3),
-    0 0 0 1px rgba(255, 255, 255, 0.1) inset;
+  border-radius: 28px;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.32);
   position: relative;
   overflow: hidden;
-}
-
-.card-glow {
-  position: absolute;
-  top: -50%;
-  right: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(0, 217, 255, 0.15) 0%, transparent 70%);
-  animation: glowRotate 10s linear infinite;
-}
-
-@keyframes glowRotate {
-  0% {
-    transform: rotate(0deg);
-  }
-  100% {
-    transform: rotate(360deg);
-  }
 }
 
 .card-topline {
@@ -457,9 +424,10 @@
   }
 
   .floating-card {
-    left: 20px;
-    right: 20px;
+    width: 100%;
     flex-direction: column;
     text-align: center;
+    padding: 14px 18px;
+    gap: 8px;
   }
 }

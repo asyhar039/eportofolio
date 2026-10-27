@@ -276,7 +276,7 @@ function Seminar() {
       })
     } else if (selectedLk.lk4Sections) {
       const lk4 = selectedLk.lk4Sections
-      textToCopy += `=== I. IDENTITAS KARYA ===\n`
+      textToCopy += `=== I. IDENTITAS KARYA INOVASI ===\n`
       lk4.identitasKarya?.forEach((item) => {
         textToCopy += `${item.no}. ${item.label}: ${item.isi}\n`
       })
@@ -288,15 +288,15 @@ function Seminar() {
       lk4.gagasanRiset?.solusiInovatif?.forEach((sol) => {
         textToCopy += `- ${sol.judul}: ${sol.uraian}\n`
       })
-      textToCopy += `\n3. Hasil Riset Sederhana & Landasan Teori Penguat:\n`
+      textToCopy += `\n3. Rumusan Masalah, Tujuan & Landasan Teori:\n`
       lk4.gagasanRiset?.hasilRiset?.forEach((r) => {
         textToCopy += `- ${r.judul}: ${r.uraian}\n`
       })
-      textToCopy += `\n=== III. RANCANGAN & IMPLEMENTASI ===\n1. Prototipe Karya Inovasi (Desain Antarmuka NetLab & Skenario):\n`
+      textToCopy += `\n=== III. RANCANGAN & IMPLEMENTASI PENGEMBANGAN ===\n1. Desain Prototipe Karya Inovasi NetLab:\n`
       lk4.rancanganImplementasi?.prototipeItems?.forEach((p) => {
         textToCopy += `• ${p.judul}: ${p.uraian}\n`
       })
-      textToCopy += `\n2. Rencana Implementasi Kelas (5 Sintaks PBL - 2 JP / 90 Menit):\n`
+      textToCopy += `\n2. Tahapan Implementasi Pembelajaran Praktikum (2 JP / 90 Menit):\n`
       lk4.rancanganImplementasi?.tahapanImplementasi?.forEach((th) => {
         textToCopy += `${th.bagian}\n`
         th.faseList.forEach((f) => {
@@ -304,7 +304,13 @@ function Seminar() {
         })
       })
       textToCopy += `\n=== IV. EVALUASI KARYA INOVATIF ===\n${lk4.evaluasiInovasi.kebaruan.title}:\n${lk4.evaluasiInovasi.kebaruan.poin.join('\n')}\n\n${lk4.evaluasiInovasi.kreativitas.title}:\n${lk4.evaluasiInovasi.kreativitas.poin.join('\n')}\n\n${lk4.evaluasiInovasi.kebermanfaatan.title}:\n${lk4.evaluasiInovasi.kebermanfaatan.poin.join('\n')}\n\n`
-      textToCopy += `=== V. DAFTAR PUSTAKA & KUTIPAN JURNAL LENGKAP ===\n`
+      if (lk4.kesimpulanRekomendasi) {
+        const rekText = Array.isArray(lk4.kesimpulanRekomendasi.rekomendasi)
+          ? lk4.kesimpulanRekomendasi.rekomendasi.map((r, idx) => `${idx + 1}. ${r}`).join('\n')
+          : lk4.kesimpulanRekomendasi.rekomendasi
+        textToCopy += `=== V. KESIMPULAN & REKOMENDASI ===\n1. Kesimpulan:\n${lk4.kesimpulanRekomendasi.kesimpulan}\n\n2. Rekomendasi Tindak Lanjut:\n${rekText}\n\n`
+      }
+      textToCopy += `=== DAFTAR PUSTAKA ===\n`
       lk4.daftarPustaka.forEach((dp) => {
         textToCopy += `- ${dp.sitasi}\n`
       })
@@ -323,7 +329,6 @@ function Seminar() {
       {/* Hero Banner */}
       <div className="seminar-hero-banner">
         <div className="seminar-badge-top">
-          <span className="pulse-dot"></span>
           Mata Kuliah Seminar PPG Informatika
         </div>
         <h1>Seminar Pendidikan Profesi Guru</h1>
@@ -346,10 +351,10 @@ function Seminar() {
           </div>
           <div className="seminar-stat-card">
             <span className="seminar-stat-val">Modul Ajar</span>
-            <span className="seminar-stat-lbl">2 JP (90 Mnt) 5 Sintaks PBL & 5 Soal PG</span>
+            <span className="seminar-stat-lbl">2 JP (90 Mnt) 5 Tahap Pengembangan & 5 Soal PG</span>
           </div>
           <div className="seminar-stat-card">
-            <span className="seminar-stat-val">13 Slide</span>
+            <span className="seminar-stat-val">12 Slide</span>
             <span className="seminar-stat-lbl">Dek Presentasi Seminar Lengkap</span>
           </div>
         </div>
@@ -1003,7 +1008,7 @@ function Seminar() {
                           Fase E · Kelas X SMA/SMK
                         </span>
                         <span style={{ background: 'rgba(52, 211, 153, 0.15)', color: '#34d399', border: '1px solid rgba(52, 211, 153, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
-                          2 JP (90 Menit) PBL
+                          2 JP (90 Menit) Pengembangan
                         </span>
                       </div>
 
@@ -1047,7 +1052,7 @@ function Seminar() {
                       </div>
                       <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
                         <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Elemen & Model</span>
-                        <strong style={{ color: '#ffffff', fontSize: '0.92rem' }}>JKI · Problem Based Learning (PBL)</strong>
+                        <strong style={{ color: '#ffffff', fontSize: '0.92rem' }}>JKI · Pengembangan</strong>
                       </div>
                       <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
                         <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Media Praktik</span>
@@ -1174,7 +1179,7 @@ function Seminar() {
                           3. SLIDE PRESENTASI SEMINAR
                         </span>
                         <span style={{ background: 'rgba(168, 85, 247, 0.15)', color: '#c084fc', border: '1px solid rgba(168, 85, 247, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
-                          13 Slide Presentasi
+                          12 Slide Presentasi
                         </span>
                         <span style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
                           PPG Informatika UNY
@@ -1234,7 +1239,7 @@ function Seminar() {
                       </button>
 
                       <a
-                        href={slidePresentasiData.gdriveUrl || 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing'}
+                        href={slidePresentasiData.gdriveUrl || 'https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/view?usp=sharing'}
                         target="_blank"
                         rel="noopener noreferrer"
                         style={{
@@ -1308,7 +1313,7 @@ function Seminar() {
                           <span>Preview</span>
                         </button>
                         <a
-                          href={slidePresentasiData.gdriveUrl || 'https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/view?usp=sharing'}
+                          href={slidePresentasiData.gdriveUrl || 'https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/view?usp=sharing'}
                           target="_blank"
                           rel="noopener noreferrer"
                           style={{
@@ -1351,7 +1356,7 @@ function Seminar() {
                       </div>
                     </div>
                     <iframe
-                      src="https://drive.google.com/file/d/17Fgn_XrZobkUDdytqj5g4488EecHPkWD/preview"
+                      src="https://drive.google.com/file/d/1vByjW1b0fE9TgC1-WyV50666IxSYKGju/preview"
                       style={{ width: '100%', height: '640px', border: 'none', display: 'block' }}
                       title="Preview Slide Presentasi"
                       allow="autoplay"
@@ -1739,13 +1744,19 @@ function Seminar() {
                           <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>NIM</span>
                           <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.95rem', fontFamily: 'Geist Mono, monospace' }}>{selectedLk.lk4Sections.identitasMahasiswa.nim}</strong>
                         </div>
+                        {selectedLk.lk4Sections.identitasMahasiswa.prodi && (
+                          <div style={{ background: 'rgba(255, 255, 255, 0.05)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '14px', borderRadius: '12px' }}>
+                            <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.6)', display: 'block', textTransform: 'uppercase', letterSpacing: '0.6px', marginBottom: '4px' }}>Bidang Studi / LPTK</span>
+                            <strong style={{ color: '#ffffff', fontSize: '0.9rem' }}>{selectedLk.lk4Sections.identitasMahasiswa.prodi}</strong>
+                          </div>
+                        )}
                       </div>
                     )}
 
-                    {/* I. IDENTITAS KARYA */}
+                    {/* I. IDENTITAS KARYA INOVASI */}
                     <div style={{ marginBottom: '26px' }}>
                       <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '12px', fontWeight: '700' }}>
-                        I. IDENTITAS KARYA
+                        I. IDENTITAS KARYA INOVASI
                       </h4>
                       <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                         {selectedLk.lk4Sections.identitasKarya?.map((item) => (
@@ -1799,10 +1810,10 @@ function Seminar() {
                         </div>
                       </div>
 
-                      {/* 3. Hasil Riset Sederhana & Landasan Teori Penguat */}
+                      {/* 3. Rumusan Masalah, Tujuan & Landasan Teori */}
                       <div>
                         <h5 style={{ color: '#c084fc', fontSize: '0.95rem', marginBottom: '10px', fontWeight: '700' }}>
-                          3. Hasil Riset Sederhana & Landasan Teori Penguat
+                          3. Rumusan Masalah, Tujuan & Landasan Teori
                         </h5>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
                           {selectedLk.lk4Sections.gagasanRiset?.hasilRiset?.map((r, idx) => (
@@ -1817,16 +1828,16 @@ function Seminar() {
                       </div>
                     </div>
 
-                    {/* III. RANCANGAN & IMPLEMENTASI */}
+                    {/* III. RANCANGAN & IMPLEMENTASI PENGEMBANGAN */}
                     <div style={{ marginBottom: '26px' }}>
                       <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '12px', fontWeight: '700' }}>
-                        III. RANCANGAN & IMPLEMENTASI
+                        III. RANCANGAN & IMPLEMENTASI PENGEMBANGAN
                       </h4>
 
-                      {/* 1. Prototipe Karya Inovasi */}
+                      {/* 1. Desain Prototipe Karya Inovasi NetLab */}
                       <div style={{ marginBottom: '18px' }}>
                         <h5 style={{ color: '#34d399', fontSize: '0.95rem', marginBottom: '6px', fontWeight: '700' }}>
-                          1. Prototipe Karya Inovasi (Desain Antarmuka NetLab & Skenario)
+                          1. Desain Prototipe Karya Inovasi NetLab
                         </h5>
                         <p style={{ color: 'rgba(255, 255, 255, 0.78)', fontSize: '0.88rem', margin: '0 0 10px' }}>
                           {selectedLk.lk4Sections.rancanganImplementasi?.prototipeLead}
@@ -1846,10 +1857,10 @@ function Seminar() {
                         )}
                       </div>
 
-                      {/* 2. Rencana Implementasi Kelas (5 Sintaks PBL - 2 JP / 90 Menit) */}
+                      {/* 2. Tahapan Implementasi Pembelajaran Praktikum (2 JP / 90 Menit) */}
                       <div>
                         <h5 style={{ color: '#38bdf8', fontSize: '0.95rem', marginBottom: '10px', fontWeight: '700' }}>
-                          2. Rencana Implementasi Kelas (5 Sintaks PBL - 2 JP / 90 Menit)
+                          2. Tahapan Implementasi Pembelajaran Praktikum (2 JP / 90 Menit)
                         </h5>
                         <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
                           {selectedLk.lk4Sections.rancanganImplementasi?.tahapanImplementasi?.map((th, idx) => (
@@ -1917,10 +1928,43 @@ function Seminar() {
                       </div>
                     </div>
 
-                    {/* V. DAFTAR PUSTAKA & KUTIPAN JURNAL LENGKAP */}
+                    {/* V. KESIMPULAN & REKOMENDASI */}
+                    {selectedLk.lk4Sections.kesimpulanRekomendasi && (
+                      <div style={{ marginBottom: '26px' }}>
+                        <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '12px', fontWeight: '700' }}>
+                          V. KESIMPULAN & REKOMENDASI
+                        </h4>
+                        <div style={{ background: 'rgba(56, 189, 248, 0.06)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '12px', padding: '16px 20px', marginBottom: '12px' }}>
+                          <strong style={{ color: 'var(--accent-cyan)', display: 'block', marginBottom: '6px', fontSize: '0.92rem' }}>
+                            1. Kesimpulan:
+                          </strong>
+                          <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.88)', fontSize: '0.9rem', lineHeight: '1.65' }}>
+                            {selectedLk.lk4Sections.kesimpulanRekomendasi.kesimpulan}
+                          </p>
+                        </div>
+                        <div style={{ background: 'rgba(52, 211, 153, 0.06)', border: '1px solid rgba(52, 211, 153, 0.25)', borderRadius: '12px', padding: '16px 20px' }}>
+                          <strong style={{ color: '#34d399', display: 'block', marginBottom: '8px', fontSize: '0.92rem' }}>
+                            2. Rekomendasi Tindak Lanjut:
+                          </strong>
+                          {Array.isArray(selectedLk.lk4Sections.kesimpulanRekomendasi.rekomendasi) ? (
+                            <ul style={{ margin: 0, paddingLeft: '20px', color: 'rgba(255, 255, 255, 0.88)', fontSize: '0.88rem', lineHeight: '1.65' }}>
+                              {selectedLk.lk4Sections.kesimpulanRekomendasi.rekomendasi.map((rek, rIdx) => (
+                                <li key={rIdx} style={{ marginBottom: '6px' }}>{rek}</li>
+                              ))}
+                            </ul>
+                          ) : (
+                            <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.88)', fontSize: '0.9rem', lineHeight: '1.65' }}>
+                              {selectedLk.lk4Sections.kesimpulanRekomendasi.rekomendasi}
+                            </p>
+                          )}
+                        </div>
+                      </div>
+                    )}
+
+                    {/* DAFTAR PUSTAKA */}
                     <div>
                       <h4 style={{ color: '#ffffff', fontSize: '1.1rem', marginBottom: '10px', fontWeight: '700' }}>
-                        V. DAFTAR PUSTAKA & KUTIPAN JURNAL LENGKAP
+                        DAFTAR PUSTAKA
                       </h4>
                       <ul style={{ margin: 0, paddingLeft: '20px', color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.86rem', lineHeight: '1.7' }}>
                         {selectedLk.lk4Sections.daftarPustaka.map((dp, dIdx) => (
