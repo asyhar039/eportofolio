@@ -57,9 +57,19 @@ export const OFFICIAL_GDRIVE_DOCS = {
   },
   // 5. Modul Ajar Informatika NetLab
   'modul-ajar-netlab': {
-    id: '1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_',
-    viewUrl: 'https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/view?usp=sharing',
-    previewUrl: 'https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/preview'
+    id: '1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal',
+    viewUrl: 'https://drive.google.com/file/d/1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal/preview'
+  },
+  'modul-ajar-netlab-fase-e': {
+    id: '1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal',
+    viewUrl: 'https://drive.google.com/file/d/1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal/preview'
+  },
+  'karya-modul': {
+    id: '1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal',
+    viewUrl: 'https://drive.google.com/file/d/1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal/view?usp=sharing',
+    previewUrl: 'https://drive.google.com/file/d/1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal/preview'
   }
 }
 

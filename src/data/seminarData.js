@@ -1076,9 +1076,9 @@ export const karyaInovasiList = [
       { label: 'Retensi Pemahaman (Edgar Dale)', value: 'Hingga 90%' }
     ],
     modulAjarPdfUrl: '/assets/seminar/modul-ajar-netlab.pdf',
-    modulAjarGdriveUrl: 'https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/preview',
-    modulAjarFileName: 'Modul Ajar Informatika NetLab.pdf',
-    modulAjarTitle: 'Modul Ajar Informatika: Topologi Jaringan NetLab',
+    modulAjarGdriveUrl: 'https://drive.google.com/file/d/1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal/view?usp=sharing',
+    modulAjarFileName: 'Modul Ajar Informatika Fase E (Kelas X) - NetLab.pdf',
+    modulAjarTitle: 'MODUL AJAR INFORMATIKA FASE E (KELAS X): Praktikum Troubleshooting Subnet Mask di NetLab',
     evidenceLinks: [
       { id: 'slide', label: 'Slide Presentasi Karya Inovasi', note: 'Preview Slide Presentasi', gdriveKey: 'slide' },
       { id: 'modul', label: 'Modul Ajar Informatika NetLab', note: 'Preview Dokumen', gdriveKey: 'modul' },
@@ -1090,8 +1090,8 @@ export const karyaInovasiList = [
 
 export const modulAjarData = {
   id: 'modul-ajar-netlab-fase-e',
-  title: 'Modul Ajar Praktik Informatika: Jaringan Komputer & Internet (Fase E - Kelas X)',
-  subtitle: 'Implementasi Model Pengembangan Berbantuan Simulator Web NetLab Pada Studi Kasus Minimarket Berkah',
+  title: 'MODUL AJAR INFORMATIKA FASE E (KELAS X)',
+  subtitle: 'ELEMEN: JARINGAN KOMPUTER DAN INTERNET (JKI) · Praktikum Troubleshooting Subnet Mask di NetLab (2 JP / 90 Menit)',
   category: 'Perangkat Pembelajaran Informatika',
   program: 'Pendidikan Profesi Guru (Prajabatan)',
   course: 'Seminar Pendidikan Profesi Guru (Seminar PPG)',
@@ -1100,251 +1100,120 @@ export const modulAjarData = {
   author: 'Asyhar Qowiim (NIM: 25105260081)',
   institution: 'PPG Calon Guru Bidang Studi Informatika — Universitas Negeri Yogyakarta',
   pdfUrl: '/assets/seminar/modul-ajar-netlab.pdf',
-  gdriveUrl: 'https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/preview',
-  pdfFileName: 'Modul Ajar Praktik Informatika NetLab.pdf',
-  summary: 'Perangkat modul ajar komprehensif 6 bagian berdurasi 2 JP (90 Menit) yang dirancang secara khusus untuk pembelajaran Jaringan Komputer dan Internet (JKI) Fase E SMA/SMK. Mengintegrasikan pendekatan Pengembangan dengan simulator web NetLab, rubrik asesmen autentik (sikap & keterampilan), 5 soal tes pengetahuan pilihan ganda dengan kunci/pembahasan ilmiah, dan lampiran lembar kerja peserta didik (LKPD) digital.',
+  gdriveUrl: 'https://drive.google.com/file/d/1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal/view?usp=sharing',
+  gdrivePreviewUrl: 'https://drive.google.com/file/d/1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal/preview',
+  pdfFileName: 'Modul Ajar Informatika Fase E (Kelas X) - NetLab.pdf',
+  summary: 'Modul Ajar Informatika Fase E (Kelas X) pada Elemen Jaringan Komputer dan Internet (JKI) untuk Praktikum Troubleshooting Subnet Mask di NetLab berdurasi 1 Pertemuan x 2 JP (90 Menit). Menggunakan model Praktikum Eksploratif, Guided Inquiry, dan Peer Collaboration berbantuan Web Simulator NetLab (Zero-Installation) pada studi kasus Minimarket Berkah, dilengkapi Tujuan Pembelajaran, Pemahaman Bermakna, Pertanyaan Pemantik, Alur Kegiatan Praktikum 90 Menit, serta Asesmen Post-Test (5 Soal Pilihan Ganda beserta Kunci Jawaban).',
   highlights: [
-    'Dokumen Google Drive & Modul Ajar Terintegrasi NetLab',
-    'Elemen JKI: Jaringan Komputer dan Internet (Fase E - Kelas X SMA)',
-    'Alokasi Waktu: 2 JP (1 Pertemuan @ 90 Menit) Model Pengembangan',
-    'Studi Kasus Nyata: Pemecahan Masalah Sistem Kasir Retail "Minimarket Berkah"',
-    'Rubrik Penilaian 4 Skala: Sikap Profil Pelajar Pancasila & Keterampilan NetLab',
-    '5 Soal Pilihan Ganda Sumatif Pengetahuan Lengkap Kunci Jawaban & Pembahasan',
-    'Lampiran LKPD Digital Siswa & Panduan Troubleshooting Jaringan Lokal'
+    'Satuan Pendidikan / Kelas: SMA / Kelas X (Fase E) · Elemen Jaringan Komputer dan Internet (JKI)',
+    'Alokasi Waktu: 1 Pertemuan x 2 JP (90 Menit)',
+    'Model & Metode: Praktikum Eksploratif, Guided Inquiry, Peer Collaboration',
+    'Media & Alat Digital: Web Simulator NetLab (Zero-Installation), Browser, PC Lab / Chromebook',
+    'Skenario Praktikum 90 Menit: Orientasi Masalah (15 Menit), Eksplorasi & Troubleshooting (60 Menit), Evaluasi & Refleksi (15 Menit)',
+    'Asesmen Post-Test: 5 Soal Pilihan Ganda lengkap dengan Kunci Jawaban'
   ],
   informasiUmum: {
     penyusun: 'Asyhar Qowiim',
     nim: '25105260081',
-    instansi: 'SMA Negeri 11 Yogyakarta / PPG Universitas Negeri Yogyakarta',
-    jenjang: 'SMA / MA / SMK',
-    faseKelas: 'Fase E / Kelas X',
-    elemen: 'Jaringan Komputer dan Internet (JKI)',
-    alokasiWaktu: '2 Jam Pelajaran (1 Pertemuan x 90 Menit)',
-    modelPembelajaran: 'Pengembangan Terintegrasi Simulator Web NetLab',
-    metode: 'Diskusi Kelompok, Eksplorasi Digital Mandiri, Praktikum Terbimbing, Presentasi & Tanya Jawab',
-    profilPelajarPancasila: [
-      { dimensi: 'Bernalar Kritis', indikator: 'Menganalisis akar penyebab kegagalan ping, ketidaksesuaian subnet mask, dan jalur komunikasi data.' },
-      { dimensi: 'Gotong Royong', indikator: 'Bekerja sama secara aktif dan berbagi peran dalam investigasi kelompok menyelesaikan LKPD.' },
-      { dimensi: 'Kreatif', indikator: 'Menemukan alternatif solusi konfigurasi IP address dan desain jalur jaringan.' },
-      { dimensi: 'Mandiri', indikator: 'Mampu mengoperasikan simulator NetLab dan mengunggah berkas JSON secara mandiri.' }
-    ],
+    satuanPendidikanKelas: 'SMA / Kelas X (Fase E)',
+    alokasiWaktu: '1 Pertemuan x 2 JP (90 Menit)',
+    modelMetode: 'Praktikum Eksploratif, Guided Inquiry, Peer Collaboration',
+    mediaAlatDigital: 'Web Simulator NetLab (Zero-Installation), Browser, PC Lab / Chromebook',
+    kompetensiAwal: 'Peserta didik telah memahami konsep dasar perangkat keras jaringan (PC, Switch, Router) serta fungsi umum jaringan lokal (LAN).',
     saranaPrasarana: [
-      'Laboratorium Komputer / Laptop Siswa dengan peramban modern (Google Chrome / Mozilla Firefox / Microsoft Edge)',
-      'Akses koneksi internet menuju simulator web https://netlab.thecybersecguru.com',
-      'Berkas topologi JSON: produk-karya-inovasi.json (~41 KB)',
-      'Proyektor LCD / Smart Board untuk demonstrasi guru dan presentasi siswa',
-      'Lembar Kerja Peserta Didik (LKPD) Digital dan Instrumen Asesmen'
+      'Web Browser (Google Chrome / Microsoft Edge / Mozilla Firefox).',
+      'Platform Simulator Jaringan Web: NetLab Simulator (In-Browser Virtual Canvas & Terminal CLI).',
+      'Komputer / Laptop Lab Sekolah, PC Low-Spec, atau Chromebook dengan koneksi internet/local host. Proyektor & LKPD Digital / Cetak.'
     ],
-    targetPesertaDidik: 'Peserta didik reguler/tipikal Kelas X (32–36 siswa) dengan keragaman gaya belajar visual, auditori, dan kinestetik.'
+    targetPesertaDidik: 'Peserta didik reguler/tipikal Kelas X SMA (tidak ada kesulitan spesifik dalam mengoperasikan perangkat komputer dan web browser).'
   },
   komponenInti: {
-    capaianPembelajaran: 'Pada akhir Fase E, peserta didik mampu memahami internet dan jaringan lokal, komunikasi data via ponsel/komputer, konektivitas internet melalui jaringan kabel dan nirkabel (bluetooth, wifi, internet), enkripsi untuk memproteksi data pada saat melakukan koneksi perangkat ke jaringan lokal maupun internet yang tersedia.',
     tujuanPembelajaran: [
-      { kode: 'TP 1', taksonomi: 'C4 (Menganalisis)', deskripsi: 'Melalui penayangan studi kasus Minimarket Berkah, peserta didik dapat menganalisis arsitektur dan topologi jaringan lokal sistem kasir retail dengan tepat.' },
-      { kode: 'TP 2', taksonomi: 'P3 (Mempraktikkan)', deskripsi: 'Melalui eksplorasi platform web NetLab, peserta didik dapat mengonfigurasi dan menguji konektivitas pengalamatan IPv4 serta subnet mask secara teliti dan terampil.' },
-      { kode: 'TP 3', taksonomi: 'C5 (Mengevaluasi/Troubleshoot)', deskripsi: 'Melalui diskusi kelompok berbantuan LKPD, peserta didik dapat memecahkan masalah (troubleshoot) kegagalan komunikasi data antar-perangkat jaringan komputer secara kritis dan kolaboratif.' }
+      'Peserta didik mampu menganalisis dan merancang topologi jaringan lokal (LAN) menggunakan simulator berbasis web NetLab secara cermat.',
+      'Peserta didik mampu mengonfigurasi pengalamatan IP Privat (IPv4 & Subnet Mask) pada perangkat virtual di NetLab dengan tepat.',
+      'Peserta didik mampu memecahkan masalah (troubleshooting) gagal koneksi jaringan lokal melalui analisis logika IP pada NetLab secara mandiri dan kritis.'
     ],
-    pemahamanBermakna: 'Jaringan komputer lokal (LAN) bekerja melalui keselarasan pengalamatan IP, subnet mask, dan perangkat switch. Kegagalan komunikasi satu simpul (misalnya Server POS kasir) dapat melumpuhkan seluruh transaksi retail nyata. Pemahaman jaringan komputer membekali siswa kecakapan pemecahan masalah kontekstual yang dibutuhkan di dunia industri dan bisnis modern.',
-    pertanyaanPemantik: 'Pernahkah kalian berbelanja di minimarket dan kasir tiba-tiba mengumumkan: "Mohon maaf antreannya tertahan sebentar kak, sistem kasir sedang offline dan tidak terhubung ke server toko"? Menurut analisis logika kalian, apa yang sedang terjadi di kabel atau switch jaringan minimarket tersebut?'
+    pemahamanBermakna: [
+      'Pengalamatan IP bukan sekadar susunan angka acak, melainkan sistem aturan logika yang menentukan apakah dua komputer dapat saling berkomunikasi.',
+      'Keterampilan menganalisis dan memecahkan masalah jaringan (troubleshooting) sangat krusial dalam dunia kerja teknologi informasi.'
+    ],
+    pertanyaanPemantik: 'Jika dua komputer di dalam NetLab sudah terhubung kabel berwarna hijau ke Switch, apakah keduanya pasti langsung bisa saling berkirim data? Mengapa tes ping masih bisa gagal?'
   },
-  kegiatanPembelajaran: {
-    pendahuluan: {
-      durasi: '15 Menit',
-      langkah: [
-        { waktu: '3 Menit', kegiatan: 'Orientasi & Doa: Guru membuka kelas dengan salam hangat, berdoa bersama, memeriksa kehadiran murid, dan menanyakan kabar (Check-in emosi singkat).' },
-        { waktu: '4 Menit', kegiatan: 'Apersepsi Kontekstual: Guru menayangkan studi kasus antrean minimarket yang offline dan mengajukan pertanyaan pemantik.' },
-        { waktu: '4 Menit', kegiatan: 'Penyampaian Tujuan & Manfaat: Guru memaparkan tujuan pembelajaran, urgensi kompetensi jaringan komputer, serta skenario Pengembangan berbantuan simulator NetLab.' },
-        { waktu: '4 Menit', kegiatan: 'Asesmen Diagnostik Awal: Tanya jawab interaktif singkat untuk memetakan pemahaman awal siswa mengenai fungsi switch, kabel LAN, dan IP address.' }
-      ]
+  kegiatanPraktikum: [
+    {
+      tahap: 'Orientasi Masalah',
+      waktu: '15 Menit',
+      aktivitas: 'Guru memproyeksikan kasus Minimarket Berkah di NetLab (Kabel hijau, ping FAILED karena Subnet Mask PC Gudang typo 255.255.255.254).'
     },
-    inti: {
-      durasi: '60 Menit',
-      sintaksPBL: [
-        {
-          sintaks: 'Sintaks 1: Orientasi Siswa pada Masalah',
-          alokasi: '10 Menit',
-          aktivitas: 'Guru menyajikan masalah autentik: "Server Kasir Minimarket Berkah mengalami gangguan koneksi, PC Kasir tidak bisa menghubungi database 192.168.1.1". Siswa mencermati bagan topologi dan merumuskan hipotesis awal.'
-        },
-        {
-          sintaks: 'Sintaks 2: Mengorganisasikan Siswa untuk Belajar',
-          alokasi: '10 Menit',
-          aktivitas: 'Guru mengelompokkan siswa ke dalam tim 3–4 orang secara heterogen, membagikan LKPD Digital, dan membagikan tautan berkas produk-karya-inovasi.json untuk diunduh.'
-        },
-        {
-          sintaks: 'Sintaks 3: Membimbing Penyelidikan Individu & Kelompok',
-          alokasi: '20 Menit',
-          aktivitas: 'Siswa membuka web simulator NetLab (https://netlab.thecybersecguru.com), mengklik "Open Individual Workplace", mengunggah berkas JSON, memeriksa konfigurasi IP tiap simpul (Server, PC Kasir, PC Gudang), menjalankan ICMP Ping, mencatat request timed out, dan mendiskusikan ketidakcocokan subnet mask /27 pada PC Gudang.'
-        },
-        {
-          sintaks: 'Sintaks 4: Mengembangkan & Menyajikan Hasil Karya',
-          alokasi: '15 Menit',
-          aktivitas: 'Kelompok mendokumentasikan hasil perbaikan konfigurasi pada LKPD. Dua kelompok mempresentasikan temuan mereka di depan kelas dengan mendemonstrasikan simulasi Ping 100% sukses di layar NetLab.'
-        },
-        {
-          sintaks: 'Sintaks 5: Menganalisis & Mengevaluasi Proses Pemecahan Masalah',
-          alokasi: '5 Menit',
-          aktivitas: 'Guru memberikan penguatan konseptual mengenai kesesuaian netmask pada segmen LAN yang sama, fungsi switch layer 2 Catalyst 2960, dan mengevaluasi efisiensi simulator web dibanding aplikasi desktop.'
-        }
-      ]
+    {
+      tahap: 'Eksplorasi & Troubleshooting',
+      waktu: '60 Menit',
+      aktivitas: 'Siswa berpasangan mendiagnosis error subnet mask di NetLab, mengoreksi menjadi 255.255.255.0, dan memverifikasi ping SUCCESSFUL.'
     },
-    penutup: {
-      durasi: '15 Menit',
-      langkah: [
-        { waktu: '4 Menit', kegiatan: 'Refleksi Bersama: Siswa dan guru merangkum konsep kunci yang telah dipelajari mengenai topologi LAN dan troubleshooting IP.' },
-        { waktu: '6 Menit', kegiatan: 'Asesmen Formatif/Pengetahuan: Siswa mengerjakan 5 soal pilihan ganda mandiri secara digital/tertulis.' },
-        { waktu: '3 Menit', kegiatan: 'Umpan Balik & Apresiasi: Guru memberikan apresiasi atas kolaborasi aktif kelompok dan menyampaikan topik pertemuan berikutnya (Routing & Keamanan Jaringan).' },
-        { waktu: '2 Menit', kegiatan: 'Doa Penutup & Salam: Guru memimpin doa penutup dan mengakhiri sesi pembelajaran.' }
-      ]
+    {
+      tahap: 'Evaluasi & Refleksi',
+      waktu: '15 Menit',
+      aktivitas: 'Siswa mendemonstrasikan hasil perbaikan dan guru memberikan penguatan konsep Subnet Mask /24.'
     }
-  },
-  asesmenPembelajaran: {
-    diagnostik: {
-      jenis: 'Asesmen Diagnostik Non-Kognitif & Kognitif Awal',
-      teknik: 'Tanya jawab lisan dan lembar emosi pembuka sesi praktikum.'
-    },
-    formatifSikap: {
-      judul: 'Rubrik Asesmen Sikap Profil Pelajar Pancasila',
-      kriteria: [
-        {
-          dimensi: 'Bernalar Kritis',
-          skor4: 'Mampu menganalisis akar masalah koneksi dan ketidakcocokan subnet secara mandiri, runtut, dan tepat.',
-          skor3: 'Mampu menganalisis masalah koneksi dengan sedikit bantuan petunjuk fasilitator.',
-          skor2: 'Mampu menyebutkan gejala error namun belum mampu mengidentifikasi akar penyebab subnet.',
-          skor1: 'Belum mampu menganalisis masalah konektivitas jaringan.'
-        },
-        {
-          dimensi: 'Gotong Royong',
-          skor4: 'Sangat aktif berbagi peran, membantu rekan tim, dan menghargai masukan dalam kelompok.',
-          skor3: 'Aktif bekerja sama dalam kelompok dan berkontribusi menyelesaikan LKPD.',
-          skor2: 'Kurang aktif berkontribusi, hanya mengamati rekan kelompok bekerja.',
-          skor1: 'Pasif dan tidak terlibat dalam diskusi kelompok.'
-        },
-        {
-          dimensi: 'Kreatif',
-          skor4: 'Mengajukan ide solusi troubleshooting orisinal dan efisien dalam pengujian NetLab.',
-          skor3: 'Mampu memberikan variasi solusi yang sesuai instruksi LKPD.',
-          skor2: 'Cenderung meniru solusi kelompok lain tanpa variasi pemikiran.',
-          skor1: 'Belum mampu menghasilkan ide perbaikan konfigurasi.'
-        }
-      ]
-    },
-    formatifKeterampilan: {
-      judul: 'Rubrik Asesmen Keterampilan Praktik Simulasi NetLab',
-      kriteria: [
-        {
-          aspek: 'Operasional Simulator NetLab',
-          skor4: 'Terampil membuka workplace, mengunggah berkas JSON, dan mengelola antarmuka NetLab tanpa kendala teknis.',
-          skor3: 'Mampu mengunggah file JSON dan menggunakan antarmuka NetLab dengan sedikit panduan.',
-          skor2: 'Memerlukan bimbingan berulang untuk mengunggah file JSON ke workplace NetLab.',
-          skor1: 'Belum mampu mengoperasikan antarmuka simulator web NetLab.'
-        },
-        {
-          aspek: 'Konfigurasi IP & Uji Ping',
-          skor4: 'Mampu memverifikasi seluruh IP address dan melakukan uji ICMP Ping antar-node dengan hasil akurat 100%.',
-          skor3: 'Mampu menguji ping antar-node namun memerlukan bimbingan saat membaca status reply.',
-          skor2: 'Hanya mampu menguji satu node dan belum memahami output command ping.',
-          skor1: 'Tidak mampu menjalankan pengujian koneksi jaringan.'
-        },
-        {
-          aspek: 'Ketepatan Troubleshooting',
-          skor4: 'Mampu mendeteksi kesalahan subnet /27 pada PC Gudang dan memperbaikinya menjadi segmen yang serasi secara tepat.',
-          skor3: 'Mampu menemukan kesalahan subnet setelah diberikan petunjuk oleh guru.',
-          skor2: 'Mengetahui terjadi kesalahan namun keliru dalam memberikan netmask perbaikan.',
-          skor1: 'Tidak mampu menemukan kesalahan pengalamatan pada topologi.'
-        }
-      ]
-    },
-    sumatifPengetahuan: {
-      judul: 'Instrumen Tes Sumatif Pengetahuan (5 Soal Pilihan Ganda)',
-      soalList: [
-        {
-          nomor: 1,
-          soal: 'Pada topologi jaringan Minimarket Berkah, perangkat Cisco Catalyst 2960-24TT berfungsi sebagai pusat penghubung lalu lintas data. Berdasarkan model referensi OSI, pada lapisan (layer) berapakah switch tersebut bekerja secara standar dalam meneruskan frame?',
-          pilihan: [
-            'A. Layer 1 (Physical Layer)',
-            'B. Layer 7 (Application Layer)',
-            'C. Layer 2 (Data Link Layer)',
-            'D. Layer 3 (Network Layer)',
-            'E. Layer 4 (Transport Layer)'
-          ],
-          kunci: 'C',
-          pembahasan: 'Cisco Catalyst 2960-24TT adalah switch Layer 2 (Data Link Layer) standar yang meneruskan frame data berdasarkan alamat MAC (Media Access Control) perangkat yang terhubung ke port FastEthernet-nya.'
-        },
-        {
-          nomor: 2,
-          soal: 'Seorang teknisi di Minimarket Berkah mendapati bahwa PC Kasir (192.168.1.10) tidak dapat melakukan transaksi karena perintah PING menuju Server Kasir (192.168.1.1) menghasilkan pesan "Request timed out". Padahal kabel LAN dalam keadaan baik dan lampu indikator port switch menyala hijau. Manakah di antara kemungkinan berikut yang paling tepat menjadi penyebab kegagalan komunikasi tersebut?',
-          pilihan: [
-            'A. Kabel yang digunakan adalah tipe straight-through',
-            'B. Kecepatan port switch terlalu cepat untuk server kasir',
-            'C. Terdapat kesalahan konfigurasi subnet mask atau bentrokan alamat IP (IP Conflict) pada workstation kasir',
-            'D. Protokol Spanning Tree mematikan semua port switch secara permanen',
-            'E. Server kasir tidak dilengkapi dengan printer thermal kasir'
-          ],
-          kunci: 'C',
-          pembahasan: 'Jika lampu indikator fisik dan kabel normal (Layer 1 & 2 terhubung), kegagalan PING (Request timed out) pada jaringan lokal biasanya disebabkan oleh masalah Layer 3: kesalahan konfigurasi alamat IPv4, subnet mask yang tidak satu network, atau adanya IP conflict dengan perangkat lain.'
-        },
-        {
-          nomor: 3,
-          soal: 'Pada skenario topologi Minimarket Berkah, PC Gudang dikonfigurasi dengan alamat IP 192.168.1.50 dan Subnet Mask 255.255.255.224 (/27). Mengapa PC Gudang tidak dapat berkomunikasi secara langsung dengan Server Kasir (192.168.1.1 /24) tanpa bantuan router?',
-          pilihan: [
-            'A. Karena PC Gudang menggunakan kabel crossover',
-            'B. Karena dengan prefix /27, alamat 192.168.1.50 berada pada subnet terpisah (192.168.1.32/27) sehingga dianggap berada di luar jaringan lokal Server Kasir',
-            'C. Karena switch Cisco Catalyst 2960 tidak mendukung transmisi data komputer gudang',
-            'D. Karena angka oktet terakhir 50 lebih besar daripada angka 1',
-            'E. Karena simulator NetLab hanya memperbolehkan maksimal dua perangkat terhubung'
-          ],
-          kunci: 'B',
-          pembahasan: 'Subnet mask /27 (255.255.255.224) membagi kelas C menjadi blok berukuran 32 IP. IP 192.168.1.50 berada di subnet kedua (192.168.1.32 s/d 192.168.1.63). Sementara Server Kasir menggunakan /24 (192.168.1.0 s/d 192.168.1.255). Perbedaan subnetting pada workstation menyebabkan PC Gudang menganggap server berada di network berbeda dan membutuhkan default gateway/routing.'
-        },
-        {
-          nomor: 4,
-          soal: 'Dalam pelaksanaan praktikum jaringan komputer kelas X, guru beralih menggunakan platform NetLab web daripada aplikasi desktop Cisco Packet Tracer. Keunggulan operasional utama dari platform NetLab yang mendukung pemerataan pembelajaran adalah...',
-          pilihan: [
-            'A. Membutuhkan spesifikasi laptop gaming berkecepatan tinggi',
-            'B. Bersifat zero-installation berbasis web browser dengan portabilitas berkas skenario JSON yang ringan, sehingga dapat dijalankan pada seluruh jenis gawai siswa tanpa kendala lisensi',
-            'C. Mengharuskan siswa membeli lisensi berbayar tahunan dari vendor simulator',
-            'D. Hanya dapat dioperasikan secara offline tanpa sambungan internet',
-            'E. Memiliki perintah konfigurasi router BGP tingkat enterprise yang sangat rumit'
-          ],
-          kunci: 'B',
-          pembahasan: 'NetLab menawarkan kemudahan zero-installation (berbasis web browser penuh), ringan, dan menggunakan berkas JSON standar sehingga menghapus disparitas spesifikasi laptop murid dan kendala lisensi akun berbayar di sekolah.'
-        },
-        {
-          nomor: 5,
-          soal: 'Ketika siswa melakukan investigasi jaringan pada LKPD, langkah sistematis pertama yang harus dilakukan menurut metodologi troubleshooting jaringan adalah...',
-          pilihan: [
-            'A. Langsung mengganti seluruh switch fisik di laboratorium',
-            'B. Memeriksa layer fisik (konektivitas kabel dan status port) kemudian memverifikasi konfigurasi pengalamatan IP melalui perintah ipconfig/ifconfig dan pengujian ping',
-            'C. Menghapus database minimarket dan menginstalnya kembali',
-            'D. Mematikan listrik laboratorium secara mendadak',
-            'E. Mengubah topologi star menjadi topologi bus konvensional'
-          ],
-          kunci: 'B',
-          pembahasan: 'Metodologi troubleshooting standar (bottom-up approach) dimulai dari memeriksa sambungan fisik (kabel dan lampu link interface), disusul pemeriksaan konfigurasi Layer 3 (IP address & subnet mask), kemudian pengujian konektivitas menggunakan ICMP Ping.'
-        }
-      ]
-    }
-  },
-  lampiranLKPD: {
-    judul: 'Lembar Kerja Peserta Didik (LKPD) Digital: Troubleshooting Jaringan Minimarket Berkah',
-    petunjukPengerjaan: [
-      'Buka peramban Google Chrome atau Mozilla Firefox di perangkat laptop kalian.',
-      'Akses situs simulator web https://netlab.thecybersecguru.com dan klik tombol "Open Individual Workplace".',
-      'Unduh berkas produk-karya-inovasi.json melalui portal portofolio atau media sekolah.',
-      'Klik tombol "Upload" pada NetLab dan pilih berkas JSON yang telah diunduh.',
-      'Amati topologi yang terbentuk: Server Kasir (fa0/1), PC Kasir (fa0/2), PC Gudang (fa0/3) terhubung ke Switch Catalyst 2960.',
-      'Lakukan pengetesan ICMP Ping dari PC Kasir ke Server Kasir (192.168.1.1) dan dari PC Gudang ke Server Kasir.',
-      'Catat hasil pengujian pada tabel investigasi di bawah dan temukan penyebab kegagalan koneksi!'
-    ],
-    tabelInvestigasi: [
-      { perangkat: 'Server Kasir', ipTarget: '192.168.1.1', netmask: '255.255.255.0 (/24)', statusUji: 'Normal / Host Server', catatan: 'Database POS melayani port koneksi kasir' },
-      { perangkat: 'PC Kasir', ipTarget: '192.168.1.10', netmask: '255.255.255.0 (/24)', statusUji: 'Uji PING ke 192.168.1.1', catatan: 'Koneksi normal jika IP satu subnet /24' },
-      { perangkat: 'PC Gudang', ipTarget: '192.168.1.50', netmask: '255.255.255.224 (/27)', statusUji: 'Uji PING ke 192.168.1.1', catatan: 'Request timed out! Subnet mask /27 memisahkan network' }
-    ],
-    pertanyaanRefleksiSiswa: [
-      '1. Mengapa PC Gudang tidak dapat terhubung ke Server Kasir meskipun tersambung pada switch yang sama?',
-      '2. Bagaimana solusi perbaikan konfigurasi agar PC Gudang dapat berkomunikasi langsung dengan Server Kasir?',
-      '3. Apa manfaat yang kalian rasakan saat belajar jaringan komputer menggunakan simulator web NetLab dibanding menghafal teori semata?'
+  ],
+  asesmenPostTest: {
+    judul: 'III. ASESMEN POST-TEST (5 SOAL PILIHAN GANDA)',
+    soalList: [
+      {
+        nomor: 1,
+        soal: 'Pada Subnet Mask 255.255.255.0, alamat IP mana yang VALID dipasang pada PC siswa?',
+        pilihan: [
+          'A. 192.168.1.0',
+          'B. 192.168.1.20 (Kunci)',
+          'C. 192.168.1.255',
+          'D. 255.255.255.0'
+        ],
+        kunci: 'B. 192.168.1.20'
+      },
+      {
+        nomor: 2,
+        soal: 'PC Kasir (Subnet 255.255.255.0) gagal ping ke PC Gudang (Subnet 255.255.255.254) di NetLab padahal kabel hijau. Penyebab utamanya adalah...',
+        pilihan: [
+          'A. Kabel putus',
+          'B. Mismatch Subnet Mask (Kunci)',
+          'C. Router rusak',
+          'D. IP sama'
+        ],
+        kunci: 'B. Mismatch Subnet Mask'
+      },
+      {
+        nomor: 3,
+        soal: 'Perangkat Layer 2 yang menghubungkan komputer dalam satu LAN di NetLab adalah...',
+        pilihan: [
+          'A. Router',
+          'B. Switch (Kunci)',
+          'C. Modem',
+          'D. Access Point'
+        ],
+        kunci: 'B. Switch'
+      },
+      {
+        nomor: 4,
+        soal: 'Fungsi utama Default Gateway pada jaringan komputer adalah...',
+        pilihan: [
+          'A. Pintu keluar ke jaringan luar/internet (Kunci)',
+          'B. Menyimpan domain',
+          'C. Mengubah warna kabel',
+          'D. Menghapus IP'
+        ],
+        kunci: 'A. Pintu keluar ke jaringan luar/internet'
+      },
+      {
+        nomor: 5,
+        soal: 'Keunggulan utama simulator web NetLab dibanding aplikasi desktop adalah...',
+        pilihan: [
+          'A. Berat',
+          'B. Zero-installation & ringan di browser (Kunci)',
+          'C. Mahal',
+          'D. Wajib hardware fisik'
+        ],
+        kunci: 'B. Zero-installation & ringan di browser'
+      }
     ]
   }
 }

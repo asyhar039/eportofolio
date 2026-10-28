@@ -351,7 +351,7 @@ function Seminar() {
           </div>
           <div className="seminar-stat-card">
             <span className="seminar-stat-val">Modul Ajar</span>
-            <span className="seminar-stat-lbl">2 JP (90 Mnt) 5 Tahap Pengembangan & 5 Soal PG</span>
+            <span className="seminar-stat-lbl">2 JP (90 Mnt) Praktikum Troubleshooting NetLab & 5 Soal Post-Test</span>
           </div>
           <div className="seminar-stat-card">
             <span className="seminar-stat-val">12 Slide</span>
@@ -1005,10 +1005,10 @@ function Seminar() {
                           2. PERANGKAT AJAR INFORMATIKA (MODUL AJAR)
                         </span>
                         <span style={{ background: 'rgba(56, 189, 248, 0.15)', color: '#38bdf8', border: '1px solid rgba(56, 189, 248, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
-                          Fase E · Kelas X SMA/SMK
+                          {modulAjarData.informasiUmum.satuanPendidikanKelas}
                         </span>
                         <span style={{ background: 'rgba(52, 211, 153, 0.15)', color: '#34d399', border: '1px solid rgba(52, 211, 153, 0.3)', padding: '4px 12px', borderRadius: '8px', fontSize: '0.78rem', fontWeight: '700' }}>
-                          2 JP (90 Menit) Pengembangan
+                          {modulAjarData.informasiUmum.alokasiWaktu}
                         </span>
                       </div>
 
@@ -1040,27 +1040,27 @@ function Seminar() {
                       {modulAjarData.summary}
                     </p>
 
-                    {/* Meta details bar */}
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '12px', marginBottom: '22px' }}>
+                    {/* Meta details bar (Sesuai I. Informasi Umum Modul Ajar Baru) */}
+                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '12px', marginBottom: '22px' }}>
                       <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
-                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Penyusun</span>
-                        <strong style={{ color: '#ffffff', fontSize: '0.92rem' }}>{modulAjarData.informasiUmum.penyusun}</strong>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Satuan Pendidikan / Kelas</span>
+                        <strong style={{ color: '#ffffff', fontSize: '0.92rem' }}>{modulAjarData.informasiUmum.satuanPendidikanKelas}</strong>
                       </div>
                       <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
-                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>NIM Calon Guru</span>
-                        <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.92rem', fontFamily: 'Geist Mono, monospace' }}>{modulAjarData.informasiUmum.nim}</strong>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Alokasi Waktu</span>
+                        <strong style={{ color: 'var(--accent-cyan)', fontSize: '0.92rem' }}>{modulAjarData.informasiUmum.alokasiWaktu}</strong>
                       </div>
                       <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
-                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Elemen & Model</span>
-                        <strong style={{ color: '#ffffff', fontSize: '0.92rem' }}>JKI · Pengembangan</strong>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Model & Metode</span>
+                        <strong style={{ color: '#ffffff', fontSize: '0.92rem' }}>{modulAjarData.informasiUmum.modelMetode}</strong>
                       </div>
                       <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', padding: '12px 16px', borderRadius: '12px' }}>
-                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Media Praktik</span>
-                        <strong style={{ color: '#38bdf8', fontSize: '0.92rem' }}>Web Simulator NetLab (JSON)</strong>
+                        <span style={{ fontSize: '0.72rem', color: 'rgba(255, 255, 255, 0.55)', display: 'block', textTransform: 'uppercase', marginBottom: '3px' }}>Media & Alat Digital</span>
+                        <strong style={{ color: '#38bdf8', fontSize: '0.92rem' }}>{modulAjarData.informasiUmum.mediaAlatDigital}</strong>
                       </div>
                     </div>
 
-                    {/* Action buttons: Hanya Preview & Unduh File */}
+                    {/* Action buttons: Preview, Buka di Google Drive & Unduh File */}
                     <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
                       <button
                         type="button"
@@ -1085,8 +1085,30 @@ function Seminar() {
                       </button>
 
                       <a
+                        href={modulAjarData.gdriveUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        style={{
+                          display: 'inline-flex',
+                          alignItems: 'center',
+                          gap: '8px',
+                          background: 'rgba(56, 189, 248, 0.14)',
+                          border: '1px solid rgba(56, 189, 248, 0.35)',
+                          color: '#38bdf8',
+                          borderRadius: '12px',
+                          padding: '12px 24px',
+                          fontSize: '0.9rem',
+                          fontWeight: '700',
+                          textDecoration: 'none'
+                        }}
+                      >
+                        <IconExternal size={16} />
+                        <span>Buka di Google Drive</span>
+                      </a>
+
+                      <a
                         href={modulAjarData.pdfUrl || '/assets/seminar/modul-ajar-netlab.pdf'}
-                        download={modulAjarData.pdfFileName || 'Modul Ajar Praktik Informatika NetLab.pdf'}
+                        download={modulAjarData.pdfFileName || 'Modul Ajar Informatika Fase E (Kelas X) - NetLab.pdf'}
                         style={{
                           display: 'inline-flex',
                           alignItems: 'center',
@@ -1107,14 +1129,130 @@ function Seminar() {
                     </div>
                   </div>
 
+                  {/* Ringkasan Isi Modul Ajar Sesuai Dokumen Baru */}
+                  <div style={{ marginTop: '24px', display: 'flex', flexDirection: 'column', gap: '20px' }}>
+                    {/* I. INFORMASI UMUM */}
+                    <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '16px', padding: '20px 24px' }}>
+                      <h3 style={{ color: 'var(--accent-cyan)', fontSize: '1.05rem', fontWeight: '800', margin: '0 0 14px' }}>
+                        I. INFORMASI UMUM
+                      </h3>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))', gap: '14px' }}>
+                        <div style={{ background: 'rgba(15, 23, 42, 0.55)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '14px 16px' }}>
+                          <strong style={{ color: '#ffffff', display: 'block', fontSize: '0.88rem', marginBottom: '6px' }}>A. Kompetensi Awal</strong>
+                          <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.82)', fontSize: '0.86rem', lineHeight: '1.6' }}>
+                            {modulAjarData.informasiUmum.kompetensiAwal}
+                          </p>
+                        </div>
+                        <div style={{ background: 'rgba(15, 23, 42, 0.55)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '14px 16px' }}>
+                          <strong style={{ color: '#ffffff', display: 'block', fontSize: '0.88rem', marginBottom: '6px' }}>B. Sarana dan Prasarana Digital</strong>
+                          <ol style={{ margin: 0, paddingLeft: '18px', color: 'rgba(255, 255, 255, 0.82)', fontSize: '0.85rem', lineHeight: '1.55' }}>
+                            {modulAjarData.informasiUmum.saranaPrasarana.map((sp, idx) => (
+                              <li key={idx} style={{ marginBottom: '4px' }}>{sp}</li>
+                            ))}
+                          </ol>
+                        </div>
+                        <div style={{ background: 'rgba(15, 23, 42, 0.55)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '14px 16px' }}>
+                          <strong style={{ color: '#ffffff', display: 'block', fontSize: '0.88rem', marginBottom: '6px' }}>C. Target Peserta Didik</strong>
+                          <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.82)', fontSize: '0.86rem', lineHeight: '1.6' }}>
+                            {modulAjarData.informasiUmum.targetPesertaDidik}
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+
+                    {/* II. KOMPONEN INTI & KEGIATAN PRAKTIKUM (90 MENIT) */}
+                    <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '16px', padding: '20px 24px' }}>
+                      <h3 style={{ color: 'var(--accent-cyan)', fontSize: '1.05rem', fontWeight: '800', margin: '0 0 14px' }}>
+                        II. KOMPONEN INTI & KEGIATAN PRAKTIKUM (90 MENIT)
+                      </h3>
+
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '14px', marginBottom: '16px' }}>
+                        <div style={{ background: 'rgba(15, 23, 42, 0.55)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '14px 16px' }}>
+                          <strong style={{ color: '#ffffff', display: 'block', fontSize: '0.88rem', marginBottom: '6px' }}>A. Tujuan Pembelajaran (TP)</strong>
+                          <ol style={{ margin: 0, paddingLeft: '18px', color: 'rgba(255, 255, 255, 0.84)', fontSize: '0.85rem', lineHeight: '1.6' }}>
+                            {modulAjarData.komponenInti.tujuanPembelajaran.map((tp, idx) => (
+                              <li key={idx} style={{ marginBottom: '5px' }}>{tp}</li>
+                            ))}
+                          </ol>
+                        </div>
+
+                        <div style={{ display: 'flex', flexDirection: 'column', gap: '12px' }}>
+                          <div style={{ background: 'rgba(15, 23, 42, 0.55)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '14px 16px' }}>
+                            <strong style={{ color: '#ffffff', display: 'block', fontSize: '0.88rem', marginBottom: '6px' }}>B. Pemahaman Bermakna</strong>
+                            <ol style={{ margin: 0, paddingLeft: '18px', color: 'rgba(255, 255, 255, 0.84)', fontSize: '0.85rem', lineHeight: '1.6' }}>
+                              {modulAjarData.komponenInti.pemahamanBermakna.map((pb, idx) => (
+                                <li key={idx} style={{ marginBottom: '4px' }}>{pb}</li>
+                              ))}
+                            </ol>
+                          </div>
+
+                          <div style={{ background: 'rgba(56, 189, 248, 0.08)', border: '1px solid rgba(56, 189, 248, 0.25)', borderRadius: '12px', padding: '14px 16px' }}>
+                            <strong style={{ color: '#38bdf8', display: 'block', fontSize: '0.88rem', marginBottom: '4px' }}>C. Pertanyaan Pemantik</strong>
+                            <p style={{ margin: 0, color: 'rgba(255, 255, 255, 0.88)', fontSize: '0.86rem', lineHeight: '1.6', fontStyle: 'italic' }}>
+                              &ldquo;{modulAjarData.komponenInti.pertanyaanPemantik}&rdquo;
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Tabel Tahap Kegiatan Praktikum */}
+                      <div style={{ overflowX: 'auto', borderRadius: '12px', border: '1px solid rgba(255, 255, 255, 0.1)' }}>
+                        <table style={{ width: '100%', borderCollapse: 'collapse', fontSize: '0.86rem', textAlign: 'left' }}>
+                          <thead>
+                            <tr style={{ background: 'rgba(29, 111, 165, 0.35)', color: '#ffffff' }}>
+                              <th style={{ padding: '12px 16px', fontWeight: '700', width: '25%' }}>Tahap</th>
+                              <th style={{ padding: '12px 16px', fontWeight: '700', width: '15%' }}>Waktu</th>
+                              <th style={{ padding: '12px 16px', fontWeight: '700' }}>Aktivitas Pembelajaran Praktikum</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            {modulAjarData.kegiatanPraktikum.map((row, idx) => (
+                              <tr key={idx} style={{ borderTop: '1px solid rgba(255, 255, 255, 0.08)', background: idx % 2 === 0 ? 'rgba(15, 23, 42, 0.45)' : 'rgba(15, 23, 42, 0.25)' }}>
+                                <td style={{ padding: '12px 16px', color: '#ffffff', fontWeight: '700' }}>{row.tahap}</td>
+                                <td style={{ padding: '12px 16px', color: 'var(--accent-cyan)', fontWeight: '700', whiteSpace: 'nowrap' }}>{row.waktu}</td>
+                                <td style={{ padding: '12px 16px', color: 'rgba(255, 255, 255, 0.85)', lineHeight: '1.55' }}>{row.aktivitas}</td>
+                              </tr>
+                            ))}
+                          </tbody>
+                        </table>
+                      </div>
+                    </div>
+
+                    {/* III. ASESMEN POST-TEST (5 SOAL PILIHAN GANDA) */}
+                    <div style={{ background: 'rgba(255, 255, 255, 0.04)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '16px', padding: '20px 24px' }}>
+                      <h3 style={{ color: 'var(--accent-cyan)', fontSize: '1.05rem', fontWeight: '800', margin: '0 0 14px' }}>
+                        {modulAjarData.asesmenPostTest.judul}
+                      </h3>
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '12px' }}>
+                        {modulAjarData.asesmenPostTest.soalList.map((item) => (
+                          <div key={item.nomor} style={{ background: 'rgba(15, 23, 42, 0.55)', border: '1px solid rgba(255, 255, 255, 0.08)', borderRadius: '12px', padding: '14px 16px' }}>
+                            <strong style={{ color: '#ffffff', fontSize: '0.87rem', display: 'block', marginBottom: '8px', lineHeight: '1.5' }}>
+                              {item.nomor}. {item.soal}
+                            </strong>
+                            <ul style={{ listStyle: 'none', padding: 0, margin: '0 0 8px', color: 'rgba(255, 255, 255, 0.8)', fontSize: '0.83rem', lineHeight: '1.55' }}>
+                              {item.pilihan.map((pil, pIdx) => {
+                                const isKey = pil.includes('(Kunci)')
+                                return (
+                                  <li key={pIdx} style={{ color: isKey ? '#34d399' : 'rgba(255, 255, 255, 0.8)', fontWeight: isKey ? '700' : '400', marginBottom: '2px' }}>
+                                    {pil}
+                                  </li>
+                                )
+                              })}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+
                   {/* Direct Document Preview Frame */}
                   <div style={{ marginTop: '24px', background: 'rgba(15, 23, 42, 0.75)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255, 255, 255, 0.12)', boxShadow: '0 12px 30px rgba(0,0,0,0.35)' }}>
                     <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', padding: '14px 20px', background: 'rgba(255, 255, 255, 0.04)', borderBottom: '1px solid rgba(255, 255, 255, 0.1)', flexWrap: 'wrap', gap: '10px' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
                         <IconPdf size={18} style={{ color: '#38bdf8' }} />
-                        <span style={{ color: '#ffffff', fontWeight: '700', fontSize: '0.92rem' }}>{modulAjarData.pdfFileName || 'Modul Ajar Praktik Informatika NetLab.pdf'}</span>
+                        <span style={{ color: '#ffffff', fontWeight: '700', fontSize: '0.92rem' }}>{modulAjarData.pdfFileName || 'Modul Ajar Informatika Fase E (Kelas X) - NetLab.pdf'}</span>
                       </div>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '8px', flexWrap: 'wrap' }}>
                         <button
                           type="button"
                           onClick={() => openGdriveReview(modulAjarData.id, modulAjarData.gdriveUrl, modulAjarData.title, modulAjarData.pdfFileName, modulAjarData.pdfUrl)}
@@ -1137,8 +1275,29 @@ function Seminar() {
                           <span>Preview</span>
                         </button>
                         <a
+                          href={modulAjarData.gdriveUrl}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          style={{
+                            background: 'rgba(56, 189, 248, 0.14)',
+                            border: '1px solid rgba(56, 189, 248, 0.35)',
+                            color: '#38bdf8',
+                            padding: '6px 14px',
+                            borderRadius: '8px',
+                            fontSize: '0.8rem',
+                            fontWeight: '700',
+                            textDecoration: 'none',
+                            display: 'inline-flex',
+                            alignItems: 'center',
+                            gap: '6px'
+                          }}
+                        >
+                          <IconExternal size={14} />
+                          <span>Google Drive</span>
+                        </a>
+                        <a
                           href={modulAjarData.pdfUrl || '/assets/seminar/modul-ajar-netlab.pdf'}
-                          download={modulAjarData.pdfFileName || 'Modul Ajar Praktik Informatika NetLab.pdf'}
+                          download={modulAjarData.pdfFileName || 'Modul Ajar Informatika Fase E (Kelas X) - NetLab.pdf'}
                           style={{
                             background: 'rgba(52, 211, 153, 0.15)',
                             border: '1px solid rgba(52, 211, 153, 0.35)',
@@ -1159,7 +1318,7 @@ function Seminar() {
                       </div>
                     </div>
                     <iframe
-                      src="https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/preview"
+                      src="https://drive.google.com/file/d/1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal/preview"
                       style={{ width: '100%', height: '640px', border: 'none', display: 'block' }}
                       title="Preview Modul Ajar"
                       allow="autoplay"

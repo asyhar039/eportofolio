@@ -206,15 +206,15 @@ export const generalArtifacts = [
     category: 'Modul Ajar Inovasi',
     iconType: 'book',
     type: 'document',
-    title: 'Modul Ajar Informatika JKI (Integrasi Simulator NetLab)',
-    summary: 'Modul ajar elemen Jaringan Komputer dan Internet (JKI) kelas X (2 JP / 90 Menit) yang mengintegrasikan simulator berbasis web NetLab.',
+    title: 'Modul Ajar Informatika Fase E (Kelas X): Praktikum Troubleshooting Subnet Mask di NetLab',
+    summary: 'Modul ajar elemen Jaringan Komputer dan Internet (JKI) Kelas X (1 Pertemuan x 2 JP / 90 Menit) dengan model Praktikum Eksploratif, Guided Inquiry, dan Peer Collaboration berbantuan Web Simulator NetLab (Zero-Installation).',
     highlights: [
-      'Alur pembelajaran 5 tahap pengembangan berbantuan simulator NetLab',
-      'LKPD praktikum perancangan topologi Star dan pengalamatan IPv4',
-      'Dilengkapi rubrik penilaian unjuk kerja dan 5 soal evaluasi pilihan ganda'
+      'Model & Metode: Praktikum Eksploratif, Guided Inquiry, Peer Collaboration (2 JP / 90 Menit)',
+      'Skenario Kasus Minimarket Berkah: Orientasi Masalah (15 mnt), Eksplorasi & Troubleshooting Subnet Mask (60 mnt), Evaluasi & Refleksi (15 mnt)',
+      'Dilengkapi Tujuan Pembelajaran (TP), Pemahaman Bermakna, Pertanyaan Pemantik, & Asesmen Post-Test (5 Soal Pilihan Ganda beserta Kunci)'
     ],
-    fileName: 'Modul Ajar Informatika NetLab - Asyhar Qowiim.pdf',
-    gdriveUrl: 'https://drive.google.com/file/d/1cbCTGtK0DNpJdRJrGevd2QjBK0ruSda_/view?usp=sharing',
+    fileName: 'Modul Ajar Informatika Fase E (Kelas X) - NetLab.pdf',
+    gdriveUrl: 'https://drive.google.com/file/d/1UpeepkWvk4RWlUBfZwbUsyfa7LlKLfal/view?usp=sharing',
     downloadUrl: '/assets/seminar/modul-ajar-netlab.pdf'
   },
   {
