@@ -97,10 +97,10 @@ function About() {
         <div className="story-grid">
           <div className="story-text">
             <p>
-              Halo, nama saya <strong>Asyhar Qowiim</strong>. Saya berasal dari Kecamatan Kombeng, Kutai Timur—wilayah yang terus berkembang dengan potensi perkebunan kelapa sawit dan pertambangan batu bara yang melimpah.
+              Halo, nama saya <strong>Asyhar Qowiim</strong>. Saya berasal dari Kecamatan Kombeng, Kutai Timur, wilayah yang terus berkembang dengan potensi perkebunan kelapa sawit dan pertambangan batu bara yang melimpah.
             </p>
             <p>
-              Tumbuh di keluarga pendidik—dengan orang tua sebagai guru SD dan kakak yang mengabdi di pondok pesantren—menumbuhkan kecintaan saya pada dunia pendidikan. Sebagai lulusan S1 Informatika Universitas Teknologi Yogyakarta (2025), saya terdorong untuk memastikan kemajuan daerah diimbangi oleh kesiapan sumber daya manusia di era digital.
+              Tumbuh di keluarga pendidik, dengan orang tua sebagai guru SD, dan kakak yang mengabdi di pondok pesantren menumbuhkan kecintaan saya pada dunia pendidikan. Sebagai lulusan S1 Informatika Universitas Teknologi Yogyakarta (2025), saya terdorong untuk memastikan kemajuan daerah diimbangi oleh kesiapan sumber daya manusia di era digital.
             </p>
             <p>
               Keinginan menjadi guru profesional berangkat dari tekad melanjutkan pengabdian ayah saya yang telah pensiun, sekaligus menjawab kebutuhan tenaga pendidik Informatika di daerah. Tujuan saya adalah menjembatani kesenjangan literasi digital agar generasi muda Kalimantan Timur mampu mengelola potensi lokal melalui inovasi teknologi.
